@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "extraction_date": "2026-11-16",
+  "source": "InEK DatenBrowser original XLSX exports",
+  "source_url": "https://datenbrowser.inek.org/",
+  "selection_source_cell": "Info!A2",
+  "delivery_source_cell": "Info!A5",
+  "count_source_cell": "Info!B8",
+  "documented_delivery_snapshot": "2026-01-16",
+  "documented_delivery_snapshot_source": "https://datenbrowser.inek.org/assets/manual/InekDatenBrowser.pdf",
+  "selection_logic": "OR within each field; AND across distinct fields. Further secondary diagnoses are a separate field.",
+  "analysis_unit": "Hospital DRG episode, not person",
+  "sd_conventions": {
+    "Info": "sample, empirically inferred",
+    "DRG-Verteilung": "population, empirically inferred"
+  },
+  "exports": [
+    {
+      "filename": "acute_all_2025.xlsx",
+      "sha256": "5a9749e16b941001122f2ccff23b7c4878dbc37894df01c1750dfc97aeb1643b",
+      "size_bytes": 406858,
+      "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+      "selection": "Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); ",
+      "n": 279277,
+      "info_sd_diagnostic": {
+        "population": {
+          "second_raw_moment": 44829001.71558996,
+          "distance_Q_to_integer": 0.2844100371003151
+        },
+        "sample": {
+          "second_raw_moment": 44828913.0,
+          "distance_Q_to_integer": 0.0
+        }
+      },
+      "drg_sd_diagnostic": {
+        "population": {
+          "n_drg": 438,
+          "median_distance_Q_to_integer": 0.0,
+          "max_distance_Q_to_integer": 9.313225746154785e-10,
+          "fraction_within_1e_5": 1.0
+        },
+        "sample": {
+          "n_drg": 438,
+          "median_distance_Q_to_integer": 0.2450860306330469,
+          "max_distance_Q_to_integer": 0.5,
+          "fraction_within_1e_5": 0.0091324200913242
+        }
+      }
+    },
+    {
+      "filename": "acute_all_death_2025.xlsx",
+      "sha256": "e6feb55365ff842af4257f0a604b45494cdd00f6b02582fe55d36d1a7ed7b26c",
+      "size_bytes": 160341,
+      "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+      "selection": "Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); ",
+      "n": 12749,
+      "info_sd_diagnostic": {
+        "population": {
+          "second_raw_moment": 3591943.7735203737,
+          "distance_Q_to_integer": 0.22647962626069784
+        },
+        "sample": {
+          "second_raw_moment": 3591792.0000000005,
+          "distance_Q_to_integer": 4.656612873077393e-10
+        }
+      },
+      "drg_sd_diagnostic": {
+        "population": {
+          "n_drg": 114,
+          "median_distance_Q_to_integer": 0.0,
+          "max_distance_Q_to_integer": 2.9103830456733704e-11,
+          "fraction_within_1e_5": 1.0
+        },
+        "sample": {
+          "n_drg": 114,
+          "median_distance_Q_to_integer": 0.24727726522769444,
+          "max_distance_Q_to_integer": 0.4946358560700901,
+          "fraction_within_1e_5": 0.02631578947368421
+        }
+      }
+    },
+    {
+      "filename": "acute_all_pneumonia_2025.xlsx",
+      "sha256": "3df384ba9ba509a86a6fa6429e5b91bc2ea1e91b4891743f51d4e2ee444407b0",
+      "size_bytes": 181865,
+      "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+      "selection": "weitere Nebendiagnosen(J12.0, J12.1, J12.2, J12.3, J12.8, J12.9, J13, J14, J15.0, J15.1, J15.2, J15.3, J15.4, J15.5, J15.6, J15.7, J15.8, J15.9, J16.0, J16.8, J17.0, J17.1, J17.2, J17.3, J17.8, J18.0, J18.1, J18.2, J18.8, J18.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); ",
+      "n": 10901,
+      "info_sd_diagnostic": {
+        "population": {
+          "second_raw_moment": 8510470.089348506,
+          "distance_Q_to_integer": 0.08934850618243217
+        },
+        "sample": {
+          "second_raw_moment": 8510071.0,
+          "distance_Q_to_integer": 0.0
+        }
+      },
+      "drg_sd_diagnostic": {
+        "population": {
+          "n_drg": 123,
+          "median_distance_Q_to_integer": 0.0,
+          "max_distance_Q_to_integer": 5.820766091346741e-11,
+          "fraction_within_1e_5": 1.0
+        },
+        "sample": {
+          "n_drg": 123,
+          "median_distance_Q_to_integer": 0.2499744923986782,
+          "max_distance_Q_to_integer": 0.5,
+          "fraction_within_1e_5": 0.016260162601626018
+        }
+      }
+    },
+    {
+      "filename": "acute_dys_2025.xlsx",
+      "sha256": "357814c53dac14bec6176cb341c68b2da81be33ce4d412181fa5214247c92622",
+      "size_bytes": 227521,
+      "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); ",
+      "n": 33643,
+      "info_sd_diagnostic": {
+        "population": {
+          "second_raw_moment": 18783464.875620183,
+          "distance_Q_to_integer": 0.12437981739640236
+        },
+        "sample": {
+          "second_raw_moment": 18783171.0,
+          "distance_Q_to_integer": 0.0
+        }
+      },
+      "drg_sd_diagnostic": {
+        "population": {
+          "n_drg": 171,
+          "median_distance_Q_to_integer": 0.0,
+          "max_distance_Q_to_integer": 2.3283064365386963e-10,
+          "fraction_within_1e_5": 1.0
+        },
+        "sample": {
+          "n_drg": 171,
+          "median_distance_Q_to_integer": 0.23999999999978172,
+          "max_distance_Q_to_integer": 0.5,
+          "fraction_within_1e_5": 0.04093567251461988
+        }
+      }
+    },
+    {
+      "filename": "acute_dys_death_2025.xlsx",
+      "sha256": "c8e275ef1a377543c5956ad58250248d50c43926e64aab9222e9fdb8f8cdc215",
+      "size_bytes": 109881,
+      "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); ",
+      "n": 5003,
+      "info_sd_diagnostic": {
+        "population": {
+          "second_raw_moment": 1875828.2830457664,
+          "distance_Q_to_integer": 0.28304576640948653
+        },
+        "sample": {
+          "second_raw_moment": 1875639.0000000002,
+          "distance_Q_to_integer": 2.3283064365386963e-10
+        }
+      },
+      "drg_sd_diagnostic": {
+        "population": {
+          "n_drg": 59,
+          "median_distance_Q_to_integer": 0.0,
+          "max_distance_Q_to_integer": 1.4551915228366852e-11,
+          "fraction_within_1e_5": 1.0
+        },
+        "sample": {
+          "n_drg": 59,
+          "median_distance_Q_to_integer": 0.263465681746311,
+          "max_distance_Q_to_integer": 0.47933884297435725,
+          "fraction_within_1e_5": 0.05084745762711865
+        }
+      }
+    },
+    {
+      "filename": "acute_dys_pneumonia_2025.xlsx",
+      "sha256": "7ba2510bc4ef5bf53003a61e48007ca84986c6e52c94e7af9ec176d5b2d96a36",
+      "size_bytes": 120633,
+      "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); weitere Nebendiagnosen(J12.0, J12.1, J12.2, J12.3, J12.8, J12.9, J13, J14, J15.0, J15.1, J15.2, J15.3, J15.4, J15.5, J15.6, J15.7, J15.8, J15.9, J16.0, J16.8, J17.0, J17.1, J17.2, J17.3, J17.8, J18.0, J18.1, J18.2, J18.8, J18.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); ",
+      "n": 3875,
+      "info_sd_diagnostic": {
+        "population": {
+          "second_raw_moment": 5253973.014305461,
+          "distance_Q_to_integer": 0.014305461198091507
+        },
+        "sample": {
+          "second_raw_moment": 5253261.0,
+          "distance_Q_to_integer": 0.0
+        }
+      },
+      "drg_sd_diagnostic": {
+        "population": {
+          "n_drg": 66,
+          "median_distance_Q_to_integer": 0.0,
+          "max_distance_Q_to_integer": 5.820766091346741e-11,
+          "fraction_within_1e_5": 1.0
+        },
+        "sample": {
+          "n_drg": 66,
+          "median_distance_Q_to_integer": 0.2399999999998954,
+          "max_distance_Q_to_integer": 0.48979591837269254,
+          "fraction_within_1e_5": 0.030303030303030304
+        }
+      }
+    }
+  ],
+  "cohort": "acute neurological complex treatment"
+}

@@ -1,0 +1,643 @@
+{
+  "title": "Draft Dysphagia and inpatient burden in German acute stroke care",
+  "search_date": "2026-11-16",
+  "search_type": "targeted narrative literature search, not systematic review",
+  "search_scope": "Primary acute stroke dysphagia cohorts, nationwide administrative and registry studies, outcomes, LOS, FEES, costs and relevant interventional/reporting evidence.",
+  "limits": {
+    "publication_year_min": null,
+    "recency_filter_days_for_query28": 730,
+    "languages": [
+      "English",
+      "German"
+    ],
+    "duplicate_screening": false,
+    "formal_risk_of_bias": false,
+    "meta_analysis": false,
+    "full_text_review": "Selective where accessible; primary abstracts used otherwise"
+  },
+  "queries": [
+    {
+      "id": 1,
+      "query": "post stroke dysphagia nationwide administrative database mortality length of stay aspiration pneumonia study Germany InEK Ungerer 2026",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 2,
+      "query": "post stroke dysphagia hospital outcomes national inpatient sample Patel 2018 dysphagia",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 3,
+      "query": "European Stroke Organisation European Society Swallowing Disorders guideline diagnosis treatment post stroke dysphagia 2021 Dziewas",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 4,
+      "query": "German FEES registry 2019 safety clinical impact neurological patients Dziewas prospective multicenter",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 5,
+      "query": "dysphagia acute stroke registry screening pneumonia mortality Al-Khaled 2016 12000",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 6,
+      "query": "Bray dysphagia screening stroke associated pneumonia delay 2017 stroke national audit",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 7,
+      "query": "Arnold Liesirova Broeg-Morvay Meisterander Schlager dysphagia acute stroke incidence burden outcome 2016",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 8,
+      "query": "stroke dysphagia screening Hinchey 2005 Titsworth 2013 pneumonia prospective quality improvement",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 9,
+      "query": "dysphagia acute stroke Al-Khaled 2016 screening 12000 pneumonia mortality",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 10,
+      "query": "Bray dysphagia screening stroke associated pneumonia delay 2017 national audit",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 11,
+      "query": "Arnold Liesirova Broeg-Morvay dysphagia acute stroke incidence burden outcome 2016",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 12,
+      "query": "stroke dysphagia screening Hinchey 2005 Titsworth 2013 pneumonia",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 13,
+      "query": "Labeit FEES acute stroke hospital implementation pneumonia flexible endoscopic swallowing study 2020 2021 2022 PubMed",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 14,
+      "query": "Suntrup Krueger 2018 dysphagia 674423 157 hospitals 10.1159",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 15,
+      "query": "stroke dysphagia Bonilha 2014 economic burden hospital costs 12 month PubMed",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 16,
+      "query": "Galovic 2019 development validation prognostic model swallowing recovery oral intake ischemic stroke PubMed FOOD trial Dennis 2005",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 17,
+      "query": "\"Costs of post-stroke dysphagia during acute hospitalization\" PubMed",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 18,
+      "query": "\"Development and implementation of a swallowing screen\" \"Lancet\" stroke Middleton fever sugar swallowing 2011",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 19,
+      "query": "\"Effect of timing and method of enteral tube feeding\" PubMed",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 20,
+      "query": "\"Dysphagia in Patients with Acute Ischemic Stroke\" \"doi\" Al-Khaled",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 21,
+      "query": "\"The association between delays in screening\" \"doi\" \"Bray\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 22,
+      "query": "\"Formal dysphagia screening protocols prevent pneumonia\" doi",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 23,
+      "query": "\"Prospective quality initiative to maximize dysphagia screening\" doi",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 24,
+      "query": "\"Implementation of evidence-based treatment protocols\" \"QASC\" PubMed",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 25,
+      "query": "site:pubmed.ncbi.nlm.nih.gov \"RECORD\" \"Benchimol\" 2015",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 26,
+      "query": "site:pubmed.ncbi.nlm.nih.gov \"Diagnosis of Stroke-Associated Pneumonia\" \"2015\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 27,
+      "query": "\"Early flexible endoscopic evaluation of swallowing after mechanical thrombectomy\" DOI",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 28,
+      "query": "post stroke dysphagia administrative nationwide inpatient 2025 2026 study",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": 730
+    },
+    {
+      "id": 29,
+      "query": "\"One-Year Risk of Pneumonia and Mortality\" \"doi\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 30,
+      "query": "\"Healthcare costs of post-stroke oropharyngeal dysphagia\" \"doi\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 31,
+      "query": "\"Adjustment of oral diet based on flexible\" \"authors\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 32,
+      "query": "\"An Exploratory Classification Framework\" PubMed",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 33,
+      "query": "site:pubmed.ncbi.nlm.nih.gov PHAST-TRAC 2018 pharyngeal electrical stimulation tracheotomised stroke",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 34,
+      "query": "site:pubmed.ncbi.nlm.nih.gov STROBE 2007 von Elm PLoS medicine e296",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 35,
+      "query": "\"The Effect of Improved Dysphagia Care\" \"45\" \"101\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 36,
+      "query": "\"European Stroke Organisation\" \"34746431\" \"2021\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 37,
+      "query": "\"40489041\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    },
+    {
+      "id": 38,
+      "query": "\"Dysphagia Management is Associated with Reduced Mortality\"",
+      "engine": "system1",
+      "date": "2026-11-16",
+      "recency_days": null
+    }
+  ],
+  "additional_discovery": [
+    {
+      "pmid": "42964110",
+      "route": "parallel-agent freshness search; independently opened primary PubMed record",
+      "verified": "2026-11-16"
+    },
+    {
+      "pmid": "40489041",
+      "route": "parallel-agent freshness search; independently searched and opened primary source",
+      "verified": "2026-11-16"
+    }
+  ],
+  "references": [
+    {
+      "key": "AlKhaled2016",
+      "authors": "Al-Khaled M, Matthis C, Binder A, et al.",
+      "year": 2016,
+      "title": "Dysphagia in Patients with Acute Ischemic Stroke: Early Dysphagia Screening May Reduce Stroke-Related Pneumonia and Improve Stroke Outcomes",
+      "journal": "Cerebrovasc Dis. 42(1-2):81-89",
+      "doi": "10.1159/000445299",
+      "pmid": "27074007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27074007/",
+      "doi_url": "https://doi.org/10.1159/000445299",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Arnold2016",
+      "authors": "Arnold M, Liesirova K, Broeg-Morvay A, et al.",
+      "year": 2016,
+      "title": "Dysphagia in Acute Stroke: Incidence, Burden and Impact on Clinical Outcome",
+      "journal": "PLoS One. 11(2):e0148424",
+      "doi": "10.1371/journal.pone.0148424",
+      "pmid": "26863627",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26863627/",
+      "doi_url": "https://doi.org/10.1371/journal.pone.0148424",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Bray2017",
+      "authors": "Bray BD, Smith CJ, Cloud GC, et al.",
+      "year": 2017,
+      "title": "The association between delays in screening for and assessing dysphagia after acute stroke, and the risk of stroke-associated pneumonia",
+      "journal": "J Neurol Neurosurg Psychiatry. 88(1):25-30",
+      "doi": "10.1136/jnnp-2016-313356",
+      "pmid": "27298147",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27298147/",
+      "doi_url": "https://doi.org/10.1136/jnnp-2016-313356",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Hinchey2005",
+      "authors": "Hinchey JA, Shephard T, Furie K, et al.",
+      "year": 2005,
+      "title": "Formal dysphagia screening protocols prevent pneumonia",
+      "journal": "Stroke. 36(9):1972-1976",
+      "doi": "10.1161/01.STR.0000177529.86868.8d",
+      "pmid": "16109909",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16109909/",
+      "doi_url": "https://doi.org/10.1161/01.STR.0000177529.86868.8d",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Titsworth2013",
+      "authors": "Titsworth WL, Abram J, Fullerton A, et al.",
+      "year": 2013,
+      "title": "Prospective quality initiative to maximize dysphagia screening reduces hospital-acquired pneumonia prevalence in patients with stroke",
+      "journal": "Stroke. 44(11):3154-3160",
+      "doi": "10.1161/STROKEAHA.111.000204",
+      "pmid": "23963330",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23963330/",
+      "doi_url": "https://doi.org/10.1161/STROKEAHA.111.000204",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "SuntrupKrueger2018",
+      "authors": "Suntrup-Krueger S, Minnerup J, Muhle P, et al.",
+      "year": 2018,
+      "title": "The Effect of Improved Dysphagia Care on Outcome in Patients with Acute Stroke: Trends from 8-Year Data of a Large Stroke Register",
+      "journal": "Cerebrovasc Dis. 45(3-4):101-108",
+      "doi": "10.1159/000487811",
+      "pmid": "29533960",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29533960/",
+      "doi_url": "https://doi.org/10.1159/000487811",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Dziewas2021Guideline",
+      "authors": "Dziewas R, Michou E, Trapl-Grundschober M, et al.",
+      "year": 2021,
+      "title": "European Stroke Organisation and European Society for Swallowing Disorders guideline for the diagnosis and treatment of post-stroke dysphagia",
+      "journal": "Eur Stroke J. 6(3):LXXXIX-CXV",
+      "doi": "10.1177/23969873211039721",
+      "pmid": "34746431",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34746431/",
+      "doi_url": "https://doi.org/10.1177/23969873211039721",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Dziewas2019Registry",
+      "authors": "Dziewas R, Auf dem Brinke M, Birkmann U, et al.",
+      "year": 2019,
+      "title": "Safety and clinical impact of FEES - results of the FEES-registry",
+      "journal": "Neurol Res Pract. 1:16",
+      "doi": "10.1186/s42466-019-0021-5",
+      "pmid": "33324882",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33324882/",
+      "doi_url": "https://doi.org/10.1186/s42466-019-0021-5",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Ungerer2026",
+      "authors": "Ungerer MN, Bartig D, Moreno Agredo A, Braun T, Gumbinger C",
+      "year": 2026,
+      "title": "Fiberoptic endoscopic evaluation of swallowing in German stroke units: a retrospective diagnosis-related group analysis (2019-2024)",
+      "journal": "Neurol Res Pract. 8:46",
+      "doi": "10.1186/s42466-026-00506-3",
+      "pmid": "42277987",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42277987/",
+      "doi_url": "https://doi.org/10.1186/s42466-026-00506-3",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Vasan2023",
+      "authors": "Vasan V, Hardigan TA, Ali M, et al.",
+      "year": 2023,
+      "title": "Dysphagia after ischemic and hemorrhagic stroke: A propensity-matched 20-year analysis of the national inpatient sample",
+      "journal": "J Stroke Cerebrovasc Dis. 32(9):107295",
+      "doi": "10.1016/j.jstrokecerebrovasdis.2023.107295",
+      "pmid": "37544059",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37544059/",
+      "doi_url": "https://doi.org/10.1016/j.jstrokecerebrovasdis.2023.107295",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Ho2018",
+      "authors": "Ho CH, Lin WC, Hsu YF, Lee IH, Hung YC",
+      "year": 2018,
+      "title": "One-Year Risk of Pneumonia and Mortality in Patients with Poststroke Dysphagia: A Nationwide Population-Based Study",
+      "journal": "J Stroke Cerebrovasc Dis. 27(5):1311-1317",
+      "doi": "10.1016/j.jstrokecerebrovasdis.2017.12.017",
+      "pmid": "29395642",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29395642/",
+      "doi_url": "https://doi.org/10.1016/j.jstrokecerebrovasdis.2017.12.017",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Labeit2023Costs",
+      "authors": "Labeit B, Kremer A, Muhle P, Claus I, Warnecke T, Dziewas R, Suntrup-Krueger S",
+      "year": 2023,
+      "title": "Costs of post-stroke dysphagia during acute hospitalization from a health-insurance perspective",
+      "journal": "Eur Stroke J. 8(1):361-369",
+      "doi": "10.1177/23969873221147740",
+      "pmid": "37021194",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37021194/",
+      "doi_url": "https://doi.org/10.1177/23969873221147740",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Bonilha2014",
+      "authors": "Bonilha HS, Simpson AN, Ellis C, Mauldin P, Martin-Harris B, Simpson K",
+      "year": 2014,
+      "title": "The one-year attributable cost of post-stroke dysphagia",
+      "journal": "Dysphagia. 29(5):545-552",
+      "doi": "10.1007/s00455-014-9543-8",
+      "pmid": "24948438",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24948438/",
+      "doi_url": "https://doi.org/10.1007/s00455-014-9543-8",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Marin2021",
+      "authors": "Marin S, Serra-Prat M, Ortega O, et al.",
+      "year": 2021,
+      "title": "Healthcare costs of post-stroke oropharyngeal dysphagia and its complications: malnutrition and respiratory infections",
+      "journal": "Eur J Neurol. 28(11):3670-3681",
+      "doi": "10.1111/ene.14998",
+      "pmid": "34176195",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34176195/",
+      "doi_url": "https://doi.org/10.1111/ene.14998",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Braun2019",
+      "authors": "Braun T, Juenemann M, Viard M, et al.",
+      "year": 2019,
+      "title": "Adjustment of oral diet based on flexible endoscopic evaluation of swallowing (FEES) in acute stroke patients: a cross-sectional hospital-based registry study",
+      "journal": "BMC Neurol. 19(1):282",
+      "doi": "10.1186/s12883-019-1499-8",
+      "pmid": "31718562",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31718562/",
+      "doi_url": "https://doi.org/10.1186/s12883-019-1499-8",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Pinho2024",
+      "authors": "Pinho J, Meyer T, Mall B, et al.",
+      "year": 2024,
+      "title": "Early flexible endoscopic evaluation of swallowing after mechanical thrombectomy in stroke patients",
+      "journal": "Ann Clin Transl Neurol. 11(3):757-767",
+      "doi": "10.1002/acn3.51998",
+      "pmid": "38217067",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38217067/",
+      "doi_url": "https://doi.org/10.1002/acn3.51998",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Galovic2019",
+      "authors": "Galovic M, Stauber AJ, Leisi N, et al.",
+      "year": 2019,
+      "title": "Development and Validation of a Prognostic Model of Swallowing Recovery and Enteral Tube Feeding After Ischemic Stroke",
+      "journal": "JAMA Neurol. 76(5):561-570",
+      "doi": "10.1001/jamaneurol.2018.4858",
+      "pmid": "30742198",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30742198/",
+      "doi_url": "https://doi.org/10.1001/jamaneurol.2018.4858",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Dennis2005FOOD",
+      "authors": "Dennis MS, Lewis SC, Warlow C; FOOD Trial Collaboration",
+      "year": 2005,
+      "title": "Effect of timing and method of enteral tube feeding for dysphagic stroke patients (FOOD): a multicentre randomised controlled trial",
+      "journal": "Lancet. 365(9461):764-772",
+      "doi": "10.1016/S0140-6736(05)17983-5",
+      "pmid": "15733717",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15733717/",
+      "doi_url": "https://doi.org/10.1016/S0140-6736(05)17983-5",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Middleton2011QASC",
+      "authors": "Middleton S, McElduff P, Ward J, et al.; QASC Trialists Group",
+      "year": 2011,
+      "title": "Implementation of evidence-based treatment protocols to manage fever, hyperglycaemia, and swallowing dysfunction in acute stroke (QASC): a cluster randomised controlled trial",
+      "journal": "Lancet. 378(9804):1699-1706",
+      "doi": "10.1016/S0140-6736(11)61485-2",
+      "pmid": "21996470",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21996470/",
+      "doi_url": "https://doi.org/10.1016/S0140-6736(11)61485-2",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Dziewas2018PHAST",
+      "authors": "Dziewas R, Stellato R, van der Tweel I, et al.; PHAST-TRAC investigators",
+      "year": 2018,
+      "title": "Pharyngeal electrical stimulation for early decannulation in tracheotomised patients with neurogenic dysphagia after stroke (PHAST-TRAC): a prospective, single-blinded, randomised trial",
+      "journal": "Lancet Neurol. 17(10):849-859",
+      "doi": "10.1016/S1474-4422(18)30255-2",
+      "pmid": "30170898",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30170898/",
+      "doi_url": "https://doi.org/10.1016/S1474-4422(18)30255-2",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Horn2026",
+      "authors": "Horn J, Simpson KN, Simpson AN, Bonilha LF, Bonilha HS",
+      "year": 2026,
+      "title": "An Exploratory Classification Framework for Poststroke Dysphagia Severity Using Administrative Data: Administrative Data Dysphagia Severity Scale",
+      "journal": "Am J Speech Lang Pathol. 35(1):98-108",
+      "doi": "10.1044/2025_AJSLP-24-00313",
+      "pmid": "41124314",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41124314/",
+      "doi_url": "https://doi.org/10.1044/2025_AJSLP-24-00313",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Smith2015PISCES",
+      "authors": "Smith CJ, Kishore AK, Vail A, et al.",
+      "year": 2015,
+      "title": "Diagnosis of Stroke-Associated Pneumonia: Recommendations From the Pneumonia in Stroke Consensus Group",
+      "journal": "Stroke. 46(8):2335-2340",
+      "doi": "10.1161/STROKEAHA.115.009617",
+      "pmid": "26111886",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26111886/",
+      "doi_url": "https://doi.org/10.1161/STROKEAHA.115.009617",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Benchimol2015RECORD",
+      "authors": "Benchimol EI, Smeeth L, Guttmann A, et al.; RECORD Working Committee",
+      "year": 2015,
+      "title": "The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) statement",
+      "journal": "PLoS Med. 12(10):e1001885",
+      "doi": "10.1371/journal.pmed.1001885",
+      "pmid": "26440803",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26440803/",
+      "doi_url": "https://doi.org/10.1371/journal.pmed.1001885",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "vonElm2007STROBE",
+      "authors": "von Elm E, Altman DG, Egger M, Pocock SJ, Gotzsche PC, Vandenbroucke JP; STROBE Initiative",
+      "year": 2007,
+      "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies",
+      "journal": "PLoS Med. 4(10):e296",
+      "doi": "10.1371/journal.pmed.0040296",
+      "pmid": "17941714",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17941714/",
+      "doi_url": "https://doi.org/10.1371/journal.pmed.0040296",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Selg2026",
+      "authors": "Selg J, Mirkoska V, Holmlund T, et al.",
+      "year": 2026,
+      "title": "Incidence of dysphagia in acute stroke patients—a prospective multicentre cohort study",
+      "journal": "Front Neurol. 17:1886254",
+      "doi": "10.3389/fneur.2026.1886254",
+      "pmid": "42964110",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42964110/",
+      "doi_url": "https://doi.org/10.3389/fneur.2026.1886254",
+      "verified_date": "2026-11-16"
+    },
+    {
+      "key": "Hotz2025",
+      "authors": "Hotz JF, Kaindl L, Schneider L, et al.; Austria Stroke Unit Registry Collaborators",
+      "year": 2025,
+      "title": "Dysphagia Management is Associated with Reduced Mortality in Patients with Moderate to Severe Acute Ischemic Stroke",
+      "journal": "Neurol Ther. 14(4):1539-1552",
+      "doi": "10.1007/s40120-025-00783-1",
+      "pmid": "40489041",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40489041/",
+      "doi_url": "https://doi.org/10.1007/s40120-025-00783-1",
+      "verified_date": "2026-11-16"
+    }
+  ],
+  "official_sources": [
+    {
+      "key": "InEKData2025",
+      "url": "https://datenbrowser.inek.org/DRG202601"
+    },
+    {
+      "key": "InEKManual2026",
+      "url": "https://datenbrowser.inek.org/assets/manual/InekDatenBrowser.pdf"
+    },
+    {
+      "key": "BfArMOPS2025",
+      "url": "https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2025/block-8-97...8-98.htm"
+    },
+    {
+      "key": "BfArMR132025",
+      "url": "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-r10-r19.htm"
+    },
+    {
+      "key": "BfArMU692025",
+      "url": "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u69-u69.htm"
+    }
+  ],
+  "interpretation_notes": [
+    "Nationwide OPS-defined care cohort includes TIA and ophthalmic ischemia, not all stroke admissions.",
+    "Exposure is any R13 secondary diagnosis; comparator is not clinical absence of dysphagia.",
+    "J69.0 includes aspiration pneumonitis as well as pneumonia.",
+    "Exact multi-code unions used; summing code rows is invalid.",
+    "DRG-stratified LOS is descriptive; no causal savings.",
+    "The nationwide delivery is not a random sample; intervals use independent-episode models.",
+    "No private ChatGPT Page was created; final delivery is local manuscript for root to persist."
+  ]
+}

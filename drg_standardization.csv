@@ -1,0 +1,6 @@
+cohort,analysis,drgs,exposed_cases_covered,coverage,mean_difference_days,ci_lower,ci_upper,note
+acute,all_comparable,171,33063,0.9827601581309634,3.6119811689649746,3.4475040773896435,3.7764582605403056,Dysphagia-case weights; descriptive standardization within observable DRGs.
+acute,both_arms_ge20,59,32105,0.9542846951817614,3.5992115516169694,3.4358883094651897,3.762534793768749,Dysphagia-case weights; descriptive standardization within observable DRGs.
+acute,variance_estimable,171,33063,0.9827601581309634,3.6119811689649746,3.4475040773896435,3.7764582605403056,Dysphagia-case weights; descriptive standardization within observable DRGs.
+acute_survivors,all_comparable,58,27222,0.9504888268156425,3.5938532263282497,3.411585970461706,3.776120482194793,Requires explicit death rows in both exports; coverage denominator is all dysphagia survivors.
+acute_survivors,both_arms_ge20,44,27063,0.9449371508379888,3.5849807134193243,3.4023622829660374,3.7675991438726113,Requires explicit death rows in both exports; coverage denominator is all dysphagia survivors.
