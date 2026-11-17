@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "visual_review": "All four figures inspected by figure owner and independently by root: no clipping or overlap; correct labels, populations and units; unavailable Reha DRG interval explicitly marked.",
+  "formats_verified": "174 mm width; figure heights 116/157 mm; 600 dpi RGB TIFF; embedded Arial TrueType in EPS and PDF; PNG dimensions match 600 dpi",
+  "contrast_to_white": {
+    "#005A8D": 7.375969792410638,
+    "#222222": 15.909984431773273,
+    "#555555": 7.455177810447525
+  },
+  "reproducible_source": "make_nrp_figures.py",
+  "requirements": "figure_requirements.txt",
+  "cohort": "acute",
+  "source_row_checks": [
+    "acute/1/age_sex/matched_crude",
+    "acute/1/age_sex/standardized",
+    "acute/1/age_sex_principal_diagnosis/matched_crude",
+    "acute/1/age_sex_principal_diagnosis/standardized",
+    "acute/1/age_pccl/matched_crude",
+    "acute/1/age_pccl/standardized",
+    "acute/1/age_principal_diagnosis_pccl_sensitivity/matched_crude",
+    "acute/1/age_principal_diagnosis_pccl_sensitivity/standardized",
+    "acute/2/los_crude/mean_difference",
+    "acute/2/los_drg_all_comparable/mean_difference",
+    "acute/2/fees/all",
+    "acute/2/fees/dys",
+    "acute/2/fees/no_dys"
+  ],
+  "source_numeric_rows_checked": 13,
+  "figure_files": [
+    {
+      "path": "figures/nrp/acute/Fig1.eps",
+      "sha256": "babbeaabec2f266420cdac5911aad377a4e8d8e038f2990975b5fa3ff6c7f4c8",
+      "size_bytes": 161360
+    },
+    {
+      "path": "figures/nrp/acute/Fig1.tiff",
+      "sha256": "022c8ead80b6d2f77afd47998646db4b13a0c2eb130fa3d850b2bc5ef6002d2f",
+      "size_bytes": 450060
+    },
+    {
+      "path": "figures/nrp/acute/Fig1.png",
+      "sha256": "0123385a2deda9221b7e7d8e3ee31d1c8b5144ab9114325b5cf8c7c6f4f2feb5",
+      "size_bytes": 287461
+    },
+    {
+      "path": "figures/nrp/acute/Fig1.pdf",
+      "sha256": "2c3a14818530db9a3032f7d1a00e7725b928b5dddbd6e82bb3cd765d4ffaa954",
+      "size_bytes": 45991
+    },
+    {
+      "path": "figures/nrp/acute/Fig1.svg",
+      "sha256": "7fc21cafa9b796033664bedf19b788730c8107568ab273f8233025bb8a5048a1",
+      "size_bytes": 17545
+    },
+    {
+      "path": "figures/nrp/acute/Fig2.eps",
+      "sha256": "7223bf60eed3a2851b6f324609b12dba3895bdf626664d260e33edc033d9ad11",
+      "size_bytes": 163351
+    },
+    {
+      "path": "figures/nrp/acute/Fig2.tiff",
+      "sha256": "f5e2fb4798b613cb7625b93dac76c6b6669402964db8d78947fd8339200cf267",
+      "size_bytes": 507498
+    },
+    {
+      "path": "figures/nrp/acute/Fig2.png",
+      "sha256": "ec7a327ff14528eab3f7aaf9727dcaecddfbd6aac0f9d14c3d9360faf765c329",
+      "size_bytes": 297723
+    },
+    {
+      "path": "figures/nrp/acute/Fig2.pdf",
+      "sha256": "07fa13d9f7d789226fc8ce56ed4e1174f20ab56343d95afdf621f7d32e9a0dc7",
+      "size_bytes": 47911
+    },
+    {
+      "path": "figures/nrp/acute/Fig2.svg",
+      "sha256": "b5f7c50cdb614be478667df14ae0249550bea1f0a40f350cbb2aef3737084587",
+      "size_bytes": 15517
+    }
+  ],
+  "upstream_combined_qa_sha256": "41045b1e9bd73d867629239d566ad7c363c7acadf0551ef927fe4df7b53f332f",
+  "upstream_additional_checks": [
+    "All six FEES Wilson intervals independently reproduced as score-test quadratic roots from verified event counts",
+    "All eight model populations and sixteen plotted series denominators agree with source common-support counts"
+  ]
+}

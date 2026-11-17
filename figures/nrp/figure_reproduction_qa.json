@@ -1,0 +1,47 @@
+{
+  "cohort": "acute",
+  "status": "PASS",
+  "mode": "Isolated packaged script plus cohort-only aggregate plotting CSV",
+  "invoked_from_different_working_directory": true,
+  "raw_workbooks_available": false,
+  "internal_model_json_available": false,
+  "separately_installed_plotting_dependencies_used": true,
+  "exit_code": 0,
+  "image_checks": {
+    "Fig1.png": {
+      "dimensions": [
+        4110,
+        2740
+      ],
+      "mode": "RGBA",
+      "decoded_pixels_identical": true
+    },
+    "Fig1.tiff": {
+      "dimensions": [
+        4110,
+        2740
+      ],
+      "mode": "RGB",
+      "decoded_pixels_identical": true
+    },
+    "Fig2.png": {
+      "dimensions": [
+        4110,
+        3708
+      ],
+      "mode": "RGBA",
+      "decoded_pixels_identical": true
+    },
+    "Fig2.tiff": {
+      "dimensions": [
+        4110,
+        3708
+      ],
+      "mode": "RGB",
+      "decoded_pixels_identical": true
+    }
+  },
+  "csv_input_unchanged": true,
+  "script_sha256": "9af567d28d3f8c2cd89e53f721d8c39ea731e6ec92571bdebf69a1c4fed3bcf4",
+  "plot_data_sha256": "9219576f61951fb869f9f4355f12e6ba48ffbcd55b170027a9e3561fe5d8497d"
+}

@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "software": {
+    "python": "3.12.14",
+    "matplotlib": "3.11.2"
+  },
+  "dimensions_mm": {
+    "figure1": [
+      174,
+      116
+    ],
+    "figure2": [
+      174,
+      157
+    ]
+  },
+  "formats": [
+    "EPS with embedded TrueType fonts",
+    "RGB TIFF 600 dpi",
+    "PNG 600 dpi",
+    "PDF vector",
+    "SVG vector"
+  ],
+  "interpretation": "No NIHSS-independent or causal dysphagia effect is shown. Figure 1 adults; Figure 2 all-age episodes. FEES is coded frequency, not unmet need.",
+  "source_script_sha256": "9af567d28d3f8c2cd89e53f721d8c39ea731e6ec92571bdebf69a1c4fed3bcf4",
+  "qa_file": "figure_qa.json",
+  "cohort": "acute",
+  "font": {
+    "family": "Arial",
+    "minimum_point_size": 8
+  },
+  "font_files_distributed": false,
+  "data_source_hashes": {
+    "acute": {
+      "acute_reanalysis.json": "4507c65a759ad002399021b918e4c325e5d6a18e0d2943db23f3a822c52c1bd6",
+      "acute_joint_twofactor.json": "510bb5886d1a1c15903a266c57d56d4c62dc776692e8b8fd12a24e7ec6c6a4db",
+      "acute_joint_standardization.json": "698cafa839310aa7eced437b228858c449088fa9c2f81bd89c110d0710dcafb2"
+    }
+  },
+  "fees_workbook_audits": {
+    "acute": {
+      "status": "PASS",
+      "code": "1-613",
+      "measure": "Hospital episodes with at least one coded FEES, not procedure mentions",
+      "sources": {
+        "all": {
+          "file": "acute_all_2025.xlsx",
+          "sha256": "5a9749e16b941001122f2ccff23b7c4878dbc37894df01c1750dfc97aeb1643b",
+          "sheet": "Prozeduren",
+          "exact_code": "1-613",
+          "count_column": "Fälle",
+          "case_denominator_cell": "Info!B8"
+        },
+        "dys": {
+          "file": "acute_dys_2025.xlsx",
+          "sha256": "357814c53dac14bec6176cb341c68b2da81be33ce4d412181fa5214247c92622",
+          "sheet": "Prozeduren",
+          "exact_code": "1-613",
+          "count_column": "Fälle",
+          "case_denominator_cell": "Info!B8"
+        }
+      },
+      "groups": {
+        "all": {
+          "events": 8958,
+          "denominator": 279277,
+          "rate": 0.032075681133784735,
+          "wilson_95_ci": [
+            0.03142859984323169,
+            0.03273563485763994
+          ]
+        },
+        "dys": {
+          "events": 6776,
+          "denominator": 33643,
+          "rate": 0.20140891121481438,
+          "wilson_95_ci": [
+            0.19715760246140604,
+            0.20572840023846886
+          ]
+        },
+        "no_dys": {
+          "events": 2182,
+          "denominator": 245634,
+          "rate": 0.008883135070877811,
+          "wilson_95_ci": [
+            0.00851967441968124,
+            0.009261956589940416
+          ]
+        }
+      },
+      "interpretation": "Recorded FEES frequency does not establish clinical need, unmet need, underuse, undercoding, or the frequency of all instrumental swallowing assessments including VFSS."
+    }
+  },
+  "plot_data_file": "acute_plotted_data.csv",
+  "plot_data_sha256": "9219576f61951fb869f9f4355f12e6ba48ffbcd55b170027a9e3561fe5d8497d",
+  "upstream_combined_manifest_sha256": "4669525ef0e9167cbd48738ff33c44abb72425c57cca26cd8a8f535c5841669d"
+}
