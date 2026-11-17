@@ -102,11 +102,15 @@ The exports do not prove unique-case exclusivity across codes/instruments or qua
 
 The diagnosis script uses exact named endcode sets and reports missing-code checks for every required export. Complete I61 contains nine specified endcodes. The I63 sensitivity explicitly excludes I63.6 and includes I63.0/.1/.2/.3/.4/.5/.8/.9; it must never be called complete I63. Individual diagnosis comparisons are included when their rows are observed. Restricting diagnosis improves diagnostic comparability but leaves within-diagnosis neurological severity and other confounding unresolved.
 
-### Planned joint demographic and diagnosis adjustment
+### Simultaneous age-by-PCCL and age-by-sex extension
+
+Eight new all-principal-diagnosis exports (two adult age bands by total, dysphagia, total-death and dysphagia-death groups) support two separate genuine simultaneous standardizations: age-by-PCCL and age-by-sex. Counts are observed within directly selected age groups, not reconstructed from products of separate marginals. The code verifies source filters, original adult totals, every native age category, exhaustive Info distributions and event nesting. Common support requires both exposure denominators to be positive; zero-event cells remain included. Pooled reference weights and matched crude comparisons are calculated on the retained population, with fixed-weight independent-binomial delta intervals. See `joint_twofactor_methods.md` and the aggregate `joint_twofactor_summary.csv` when computation is complete. Neither model jointly controls for principal diagnosis, NIHSS, or the other second factor. Detailed cells remain internal in Git-ignored `results/`.
+
+### Simultaneous demographic and diagnosis standardization
 
 The original exports provide separate age, sex, and PCCL marginals. They cannot be combined into artificial patient records or a joint model. The planned additional exports select adult age band (18-74 or 75+) and principal diagnosis jointly and report Info sex distributions, allowing genuine age-by-sex-by-diagnosis cells. This uses the actual available dataset filters; a sex selector is not assumed from a handbook screenshot. The three diagnosis groups are I63, I61, and other principal diagnoses derived by total minus the two directly queried mutually exclusive groups. The same exports can support a separate age-by-diagnosis-by-PCCL analysis, without joint sex/PCCL adjustment. Mortality comparisons must use the same restricted cohort for crude and standardized estimates, explicitly report excluded sex/age groups, and handle empty or suppressed cells without zeros or invented overlap.
 
-This optional extension is pending until new exports are acquired and validated. The plan contains no estimated effects. Functional subgroup analyses, PCCL standardization, and future joint adjustment are exploratory additions selected after inspecting the original study presentation and data; none was prospectively prespecified.
+The complete 24-export extension has been computed and independently verified. Aggregate estimates and source metadata are in the joint_threefactor summary, manifest and validation files. Functional subgroup analyses, PCCL standardization, and joint adjustment are exploratory additions selected after inspecting the original study presentation and data; none was prospectively prespecified.
 
 ### Added primary sources
 

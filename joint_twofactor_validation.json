@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "synthetic_not_clinical_results": true,
+  "checks_passed": 22,
+  "checks": [
+    "rational_dys_rate",
+    "rational_no_dys_rate",
+    "rational_rr",
+    "rational_risk_difference",
+    "rational_rr_ci",
+    "rational_risk_difference_ci",
+    "denominator_only_exclusion",
+    "matching_crude_denominators",
+    "matching_crude_events",
+    "coverage_all",
+    "weights_sum_one",
+    "order_invariance",
+    "zero_event_stratum_retained",
+    "negative_complement_event_rejected",
+    "negative_complement_denominator_rejected",
+    "complement_events_over_denominator_rejected",
+    "zero_total_risk_no_log_ci",
+    "direct_joint_cell_mapping",
+    "all_sex_categories_kept",
+    "eight_queries_only",
+    "missing_code_not_zero",
+    "diagnosis_partition_mismatch_rejected"
+  ],
+  "note": "Does not substitute for independent actual-workbook verification."
+}

@@ -1,6 +1,6 @@
-# Planned joint mortality standardization
+# Joint mortality standardization
 
-**Status: planned; no real joint estimates until the required new exports are available and validated.** Existing single-factor and functional sensitivity results are separate completed analyses.
+**Status: completed for this cohort on 17 November 2026; all 24 source exports were validated and the estimates independently recalculated.** The methods below document the acquisition and estimation protocol.
 
 ## Query design
 
@@ -28,7 +28,7 @@ Only cells with both N_D>0 and N_C>0 have common support. Exclude unsupported ce
 
 For retained joint cell g, use fixed pooled weights w_g=N_Tg/ΣN_Tg. For group j, standardized risk P_j=Σw_g p_jg and variance V_j=Σw_g²p_jg(1−p_jg)/N_jg. The standardized RR is P_D/P_C, with log-scale standard error sqrt(V_D/P_D²+V_C/P_C²); the risk difference is P_D−P_C, with standard error sqrt(V_D+V_C). Normal/delta 95% intervals use z=1.959963984540054. Undefined log intervals at a zero standardized event risk stay undefined; no automatic continuity correction is used.
 
-Sparse event cells and boundary event probabilities are flagged. All intervals assume independent episodes and fixed observed reference weights. They do not cover hospital clustering, repeated admissions, missing coding, or selection bias.
+Cells with fewer than five events or non-events in either comparison group and boundary event probabilities are flagged. All intervals assume independent episodes and fixed observed reference weights. They do not cover hospital clustering, repeated admissions, missing coding, or selection bias.
 
 ## Interpretation and limits
 

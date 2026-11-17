@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "review_scope": "Code and methodological review of both joint modules; full three-factor actual-data validation remains pending until all required exports exist.",
+  "checks_passed": 11,
+  "checks": [
+    "acute_actual_twofactor_output_identical",
+    "acute_all_four_original_filter_sets_valid",
+    "rehab_actual_twofactor_output_identical",
+    "rehab_all_four_original_filter_sets_valid",
+    "wrong_reference_OPS_rejected",
+    "unexpected_reference_R13_rejected",
+    "missing_reference_death_filter_rejected",
+    "malformed_source_N_1.5_rejected",
+    "malformed_source_N_True_rejected",
+    "malformed_source_N_'12'_rejected",
+    "small_non_event_cell_flagged_without_boundary"
+  ],
+  "mathematics_review": "Pooled fixed common-support weights, direct risks, log-RR delta interval and RD variance are internally consistent. OtherHD reconstruction is valid for mutually exclusive principal diagnoses; missing inputs are not zero-imputed.",
+  "remaining_limitations": [
+    "Fixed-weight binomial model intervals omit clustering, repeat admissions, coding uncertainty and residual confounding.",
+    "Two broad age bands leave within-band confounding.",
+    "PCCL is not an admission severity measure and may include downstream diagnoses.",
+    "Boundary/sparse cells retained but flagged; Wald/delta precision may be optimistic for rare strata."
+  ]
+}

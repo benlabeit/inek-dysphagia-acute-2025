@@ -61,7 +61,11 @@ def read_info(path):
         return rows[row-1][column-1]
     if cell(8,1) != 'Fallzahl':
         raise ValueError(path.name+': unrecognized Info layout')
-    n = int(cell(8,2))
+    raw_n = cell(8,2)
+    if (isinstance(raw_n, bool) or not isinstance(raw_n, (int, float))
+            or not math.isfinite(raw_n) or not float(raw_n).is_integer()):
+        raise ValueError(path.name+': non-integer source population')
+    n = int(raw_n)
     if n <= 0:
         raise ValueError(path.name+': no positive source population')
     distributions = {}
@@ -140,6 +144,27 @@ def validate_export(export, cohort, age, hd, kind):
         raise ValueError('Export contains cases outside its selected adult age band: '+export['source']['path'])
 
 
+def validate_reference(reference, cohort, kind):
+    """Validate the unrestricted original cohort, not merely its total size."""
+    if reference['delivery'] != DELIVERY:
+        raise ValueError('Original reference delivery differs')
+    fields = selection_fields(reference['selection'])
+    allowed = {'Prozeduren', 'Nebendiagnosen', 'Entlassungsgrund'}
+    if set(fields) - allowed:
+        raise ValueError('Unexpected original reference filters: '+str(set(fields)-allowed))
+    if fields.get('Prozeduren') != set(OPS[cohort]):
+        raise ValueError('Original reference OPS differs')
+    expected_nd = {'R13.0', 'R13.1', 'R13.9'} if kind.startswith('dys') else set()
+    if fields.get('Nebendiagnosen', set()) != expected_nd:
+        raise ValueError('Original reference R13 definition differs')
+    death = fields.get('Entlassungsgrund', set())
+    if kind.endswith('death'):
+        if len(death) != 1 or not next(iter(death)).startswith('07'):
+            raise ValueError('Original reference requires discharge 07')
+    elif death:
+        raise ValueError('Unexpected original reference death filter')
+
+
 def contrast(a, n, b, m):
     if n<=0 or m<=0 or not(0<=a<=n and 0<=b<=m):
         raise ValueError('Invalid two-group contrast')
@@ -188,7 +213,9 @@ def standardize(cells):
         vd += w*w*p*(1-p)/cell['dys_n']
         vc += w*w*q*(1-q)/cell['no_dys_n']
         cell.update(reference_weight=w, dys_rate=p, no_dys_rate=q,
-                    sparse_event_cell=min(cell['dys_events'],cell['no_dys_events'])<5,
+                    sparse_event_cell=min(cell['dys_events'],cell['no_dys_events'],
+                                          cell['dys_n']-cell['dys_events'],
+                                          cell['no_dys_n']-cell['no_dys_events'])<5,
                     boundary_probability=p in [0,1] or q in [0,1])
     rr = pd/pc if pc>0 else None
     ci = None
@@ -243,8 +270,7 @@ def analyze(cohort, raw_dir):
     references={kind:read_info(raw_dir/f'{cohort}_{kind}_2025.xlsx') for kind in KINDS}
     reference_checks={}
     for kind,reference in references.items():
-        if reference['delivery']!=DELIVERY:
-            raise ValueError('Original reference delivery differs')
+        validate_reference(reference, cohort, kind)
         adult_expected=sum(reference['distributions']['age'][label] for label in sum(QUERY_AGES.values(),[]))
         adult_observed=sum(exports[age,'allhd',kind]['n'] for age in QUERY_AGES)
         if adult_expected!=adult_observed:

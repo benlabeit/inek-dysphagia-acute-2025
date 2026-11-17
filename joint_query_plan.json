@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "planned_pending_new_exports",
+  "status": "completed_24_exports_validated_and_estimates_independently_verified",
   "cohort": "acute",
   "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
   "source_url": "https://datenbrowser.inek.org/",
@@ -1101,5 +1101,7 @@
     "acute_dys_death_2025.xlsx"
   ],
   "reference_check": "New allHD native-age and adult totals must match the four original reference exports exactly.",
-  "observed_age_selector_name": "Altersgruppe"
+  "observed_age_selector_name": "Altersgruppe",
+  "completed_date": "2026-11-17",
+  "completed_source_manifest": "joint_threefactor_query_manifest.json"
 }

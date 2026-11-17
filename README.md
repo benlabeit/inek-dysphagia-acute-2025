@@ -22,14 +22,49 @@ Completed additions use the same original exports and do not change the original
 
 These are separate descriptive standardizations or code-conditioned comparisons. None is admission-NIHSS adjustment, and their attenuation cannot be interpreted as a causal percentage explained. PCCL can include downstream complications. Functional coding is incomplete, may depend on assessment practices, and cannot be aligned precisely with dysphagia or outcome onset. The code-absent complement is not a normal-function group.
 
-The joint age-by-sex-by-principal-diagnosis analysis requires additional exports. A planned query definition and reproducible implementation are included separately; the current original six/seven workbooks do not supply the required cross-classified cells. Until the new files are obtained and validated, it remains **pending**, not an accomplished multivariable adjustment. The exact 24-query plan is `joint_query_plan.json`, with methods in `joint_standardization_methods.md`. The default runner performs an availability check only and creates no joint effect estimates. Once all additional files are obtained, use:
+## Simultaneous two-factor revision of 17 November 2026
+
+Eight additional directly age-filtered exports have been obtained and validated against the original source totals and every native age category. The following **separate simultaneous two-factor mortality analyses are completed**:
+
+- Age plus PCCL: standardized RR **2.78 (2.67-2.89)**, using 279,255 adult episodes and 14 supported strata.
+- Age plus sex: standardized RR **4.21 (4.07-4.36)**, using 279,248 adult episodes and 4 supported strata.
+
+These use adult age bands 18-74 and 75+, with pooled common-support weights and a crude comparison recalculated on the same retained population. The PCCL analysis does not also adjust for sex; the sex analysis does not also adjust for PCCL. Neither adjusts for principal diagnosis or NIHSS. PCCL can incorporate downstream diagnoses and is a descriptive severity sensitivity. Broad age bands leave residual age confounding. No causal or admission-NIHSS-independent effect is established.
+
+`joint_twofactor_summary.csv` contains reviewed aggregate results when available. Detailed cell counts remain in Git-ignored `results/`; sparse and boundary cells are flagged there. `joint_twofactor_query_manifest.json`, when available, records the eight source filters and hashes without full cell tables. Methods are in `joint_twofactor_methods.md`; `qa_joint_twofactor.py` has 22 synthetic validation checks, explicitly distinct from actual-data verification. `verify_joint_actual.py` independently rereads the workbooks and recalculates risks, variances, coverage and intervals with exact rational arithmetic; its reviewed report is `joint_twofactor_independent_validation.json` when available.
+
+After supplying the eight additional all-diagnosis age exports in `raw/`, run:
+
+```sh
+python run_all.py --twofactor
+```
+
+An isolated run is `python analyze_joint_twofactor.py --cohort acute`; verify it with `python verify_joint_actual.py --cohort acute --twofactor`. The default runner only checks availability; `--twofactor` requires all eight files and validates them before estimation. `--check-inputs` validates the original manifest only. The raw workbooks are never edited.
+
+### Completed three-factor diagnosis analyses
+
+All **24 required exports for this cohort** have now been obtained and validated. The full I63 and I61 diagnosis populations were directly queried within each age band; all remaining principal diagnoses were reconstructed by subtraction from the all-diagnosis population. Both exposure groups and their deaths were reconstructed within each joint stratum. The results are:
+
+- Age plus sex plus principal diagnosis: standardized mortality RR **3.98 (3.82-4.14)**, using 279,248 supported adult episodes across 12 strata.
+- Age plus principal diagnosis plus PCCL: standardized mortality RR **2.19 (2.10-2.29)**, using 279,254 supported adult episodes across 41 strata.
+
+These are separate three-factor models. Sex and PCCL are not simultaneously included in one model. Principal diagnosis is grouped as full I63, full I61 and all remaining diagnoses; within-diagnosis severity and within-band age confounding remain. PCCL can reflect downstream diagnoses and does not substitute for admission NIHSS. The results describe adjusted associations, not an independent causal dysphagia effect.
+
+`joint_threefactor_summary.csv` contains standardized risks, risk ratios and risk differences with model-based confidence intervals, matched crude comparisons, common-support coverage and aggregate sparse/boundary flags. `joint_threefactor_query_manifest.json` records the 24 export definitions, source hashes and reference checks. `joint_threefactor_independent_validation.json` records independent workbook-based verification. Full stratum JSONs and raw workbooks are not included.
+
+Reproduce all completed analyses, both two-factor models, both three-factor models, independent numerical verification and aggregate exports with:
 
 ```sh
 python run_all.py --joint
 ```
 
-This validates the original inputs and executes all completed analyses followed by the new joint mortality analysis. A missing joint workbook causes the requested joint run to fail; it never substitutes a zero cell. An isolated check is `python analyze_joint_standardization.py --cohort acute --status-only`. `--check-inputs` applies to the original manifest only; it does not validate the new joint analysis.
+Place the original cohort files and all 24 new files listed in `joint_query_plan.json` in `raw/`. The eight two-factor files are a subset of these 24, not another eight required downloads. A missing workbook stops its corresponding computation without zero substitution. The default runner performs availability checks only; `--twofactor` executes only the additional two-factor models. See `joint_standardization_methods.md` for formulas, source validation and limitations.
 
+### Post hoc cell-exclusion influence diagnostics
+
+The primary estimates above remain unchanged. Deterministic diagnostics recalculated each model after excluding strata with an observed risk of 0 or 1 in either group, and separately after excluding strata with fewer than five events or non-events in either group. Pooled weights were renormalized within the retained population, and each crude comparator used that same population. For age plus principal diagnosis plus PCCL, the RR was **2.20 (2.10-2.29)** after excluding boundary strata (89.72% of primary reference weight retained), and **2.17 (2.08-2.26)** after excluding sparse strata (86.16% retained).
+
+These are post hoc, outcome-dependent exclusions that change the target population. They assess numerical influence and do not replace the primary analysis, remove confounding, or resolve the limitations of model-based confidence intervals. `acute_joint_influence.csv` and `acute_joint_influence.json` contain aggregate results only. `analyze_joint_influence.py` reproduces these deterministic diagnostics and is included in `run_all.py --joint`.
 
 ### Additional pipeline steps and curated tables
 

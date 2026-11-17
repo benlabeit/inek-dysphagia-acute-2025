@@ -1,7 +1,7 @@
 {
   "validation_date": "2026-11-17",
   "cohort": "acute",
-  "scope": "Original-input analyses plus completed PCCL, principal-diagnosis and functional-code sensitivities. Joint adjustment remains a separate pending extension.",
+  "scope": "Original-input analyses, completed severity sensitivities, both two-factor mortality models and both three-factor diagnosis mortality models.",
   "baseline_numeric_values_compared": 3023,
   "new_numeric_values_compared": 1769,
   "baseline_csv_equal": {
@@ -29,23 +29,279 @@
   "joint_implementation_validation": "See joint_standardization_validation.json; synthetic validation and schema checks are not study effect estimates.",
   "manuscript_artifacts": {
     "manuscript_acute.md": {
-      "sha256": "0f0417847e2413fbbc78035ddea8518ec4def737d0188e86b50609626bd44add",
-      "bytes": 69149
+      "sha256": "fcae385fa4d86d8c60c6b746e04782a84f871d28dff7d7b2cadeca99c8b9fef5",
+      "bytes": 80050
     },
     "Manuscript_Acute_Dysphagia_2025.docx": {
-      "sha256": "6f8ee48eda6359b294c40f4e1412cccbd9a6069f59727d3f60274261b690b559",
-      "bytes": 65998
+      "sha256": "b125bb0b95b6cc93bcedccd795d9db8e772e0a7de3cfd73aadde8bdc8fd63727",
+      "bytes": 69723
     },
     "Manuscript_Acute_Dysphagia_2025.pdf": {
-      "sha256": "fade79f0fa3c7b1be94240aa7309189fe193ca427304a08382d6f7917f217f11",
-      "bytes": 168928
+      "sha256": "bd72d30e88fada272a413ea5512c05aefe183cb1c9fef338df16120ac615641c",
+      "bytes": 178491
     }
   },
   "document_validation": {
-    "markdown_and_editable_word_content": "matched by document QA",
-    "independent_pdf_pages_visually_reviewed": 26,
-    "independent_pdf_layout": "passed",
-    "native_word_pagination": "not verified; independent PDF is not a Word render",
-    "joint_adjustment_in_manuscript": "not performed; explicitly pending"
+    "markdown_and_editable_word_content": "PASS; exact frozen source-to-Word structural comparison",
+    "independent_pdf_pages_visually_reviewed": 30,
+    "independent_pdf_layout": "PASS",
+    "native_word_pagination": "Not available because bundled LibreOffice is absent; native Word pagination not verified",
+    "joint_adjustment_in_manuscript": "Completed two-factor and three-factor mortality standardizations, plus deterministic post hoc cell-exclusion influence diagnostics",
+    "source_sha256": "fcae385fa4d86d8c60c6b746e04782a84f871d28dff7d7b2cadeca99c8b9fef5",
+    "tables": 9,
+    "references": 34
+  },
+  "twofactor_implementation_validation": "See joint_twofactor_validation.json; 22 synthetic checks are separate from actual-data validation.",
+  "twofactor_actual_data_validation": {
+    "cohort": "acute",
+    "status": "passed",
+    "method": "Independent openpyxl source reads and exact-rational pooled risk/variance calculation",
+    "dimensions": {
+      "sex": {
+        "source_cells": 8,
+        "retained_cells": 4,
+        "exact_weight_sum": "1",
+        "rr": 4.208295876110373,
+        "ci": [
+          4.066312889432721,
+          4.355236466655225
+        ],
+        "adult_all_n": 279255,
+        "adult_all_deaths": 12749,
+        "common_support": {
+          "included_cells": 4,
+          "excluded_cells": 4,
+          "all_n": 279248,
+          "dys_n": 33641,
+          "no_dys_n": 245607,
+          "all_coverage": 0.9999749333046857,
+          "dys_coverage": 1.0,
+          "no_dys_coverage": 0.9999714999959286
+        }
+      },
+      "pccl": {
+        "source_cells": 14,
+        "retained_cells": 14,
+        "exact_weight_sum": "1",
+        "rr": 2.775742691725068,
+        "ci": [
+          2.6685833079880013,
+          2.8872051577337414
+        ],
+        "adult_all_n": 279255,
+        "adult_all_deaths": 12749,
+        "common_support": {
+          "included_cells": 14,
+          "excluded_cells": 0,
+          "all_n": 279255,
+          "dys_n": 33641,
+          "no_dys_n": 245614,
+          "all_coverage": 1.0,
+          "dys_coverage": 1.0,
+          "no_dys_coverage": 1.0
+        }
+      }
+    }
+  },
+  "twofactor_isolated_pipeline_validation": {
+    "cohort": "acute",
+    "status": "PASS",
+    "original_input_workbooks": 6,
+    "new_input_workbooks": 8,
+    "cross_cohort_inputs": 0,
+    "invoked_from_different_working_directory": true,
+    "full_runner_twofactor_exit_code": 0,
+    "independent_actual_data_verification_exit_code": 0,
+    "existing_curated_tables_byte_identical": {
+      "key_results.csv": true,
+      "drg_standardization.csv": true,
+      "sd_convention_audit.csv": true,
+      "severity_summary.csv": true,
+      "pccl_strata.csv": true,
+      "diagnosis_sensitivity.csv": true,
+      "functional_sensitivity.csv": true,
+      "functional_coverage_bounds.csv": true
+    },
+    "twofactor_json_identical_to_independently_verified_root_result": true,
+    "twofactor_aggregate_csv_byte_identical": true,
+    "default_threefactor_status": "pending, 8/24 available; no three-factor estimates",
+    "missing_threefactor_exit_code": 2,
+    "missing_twofactor_exit_code": 2,
+    "missing_twofactor_created_effect_estimates": false,
+    "input_hashes_unchanged": true,
+    "hardened_module_recheck": {
+      "status": "PASS",
+      "commands": [
+        {
+          "script": "analyze_joint_twofactor.py",
+          "exit_code": 0
+        },
+        {
+          "script": "verify_joint_actual.py",
+          "exit_code": 0
+        },
+        {
+          "script": "qa_joint_twofactor.py",
+          "exit_code": 0
+        }
+      ],
+      "actual_json_and_csv_byte_identical_to_prior_verified_outputs": true,
+      "synchronized_file_sha256": {
+        "analyze_joint_standardization.py": "f8ebeaf266b6ac2842905b2ec4498b0310be9cda94bcde4b558ba5f15b57cc3a",
+        "analyze_joint_twofactor.py": "f71d4ed3773fbc8670f97858e0bae8f7f08961b935fce73e1bd000edf5f52765",
+        "joint_standardization_methods.md": "9d530cd2bad3bfa803a27b878de338447c2246bc228400eba5e8b9ebfd2c90e6",
+        "joint_twofactor_methods.md": "fb033a5e21d6a1f812758b33b5de83ef7f149e6fcee37dfc7eb15561e2293d3c"
+      }
+    }
+  },
+  "joint_code_method_review": {
+    "status": "PASS",
+    "review_scope": "Code and methodological review of both joint modules; full three-factor actual-data validation remains pending until all required exports exist.",
+    "checks_passed": 11,
+    "checks": [
+      "acute_actual_twofactor_output_identical",
+      "acute_all_four_original_filter_sets_valid",
+      "rehab_actual_twofactor_output_identical",
+      "rehab_all_four_original_filter_sets_valid",
+      "wrong_reference_OPS_rejected",
+      "unexpected_reference_R13_rejected",
+      "missing_reference_death_filter_rejected",
+      "malformed_source_N_1.5_rejected",
+      "malformed_source_N_True_rejected",
+      "malformed_source_N_'12'_rejected",
+      "small_non_event_cell_flagged_without_boundary"
+    ],
+    "mathematics_review": "Pooled fixed common-support weights, direct risks, log-RR delta interval and RD variance are internally consistent. OtherHD reconstruction is valid for mutually exclusive principal diagnoses; missing inputs are not zero-imputed.",
+    "remaining_limitations": [
+      "Fixed-weight binomial model intervals omit clustering, repeat admissions, coding uncertainty and residual confounding.",
+      "Two broad age bands leave within-band confounding.",
+      "PCCL is not an admission severity measure and may include downstream diagnoses.",
+      "Boundary/sparse cells retained but flagged; Wald/delta precision may be optimistic for rare strata."
+    ]
+  },
+  "threefactor_actual_data_validation": {
+    "cohort": "acute",
+    "status": "passed",
+    "method": "Independent openpyxl source reads and exact-rational pooled risk/variance calculation",
+    "dimensions": {
+      "sex": {
+        "source_cells": 24,
+        "retained_cells": 12,
+        "exact_weight_sum": "1",
+        "rr": 3.9776090105660544,
+        "ci": [
+          3.822916555375,
+          4.138561020562038
+        ],
+        "adult_all_n": 279255,
+        "adult_all_deaths": 12749,
+        "common_support": {
+          "included_cells": 12,
+          "excluded_cells": 12,
+          "all_n": 279248,
+          "dys_n": 33641,
+          "no_dys_n": 245607,
+          "all_coverage": 0.9999749333046857,
+          "dys_coverage": 1.0,
+          "no_dys_coverage": 0.9999714999959286
+        }
+      },
+      "pccl": {
+        "source_cells": 42,
+        "retained_cells": 41,
+        "exact_weight_sum": "1",
+        "rr": 2.1925026409614676,
+        "ci": [
+          2.100031376207907,
+          2.2890457185945903
+        ],
+        "adult_all_n": 279255,
+        "adult_all_deaths": 12749,
+        "common_support": {
+          "included_cells": 41,
+          "excluded_cells": 1,
+          "all_n": 279254,
+          "dys_n": 33640,
+          "no_dys_n": 245614,
+          "all_coverage": 0.9999964190435265,
+          "dys_coverage": 0.9999702743675871,
+          "no_dys_coverage": 1.0
+        }
+      }
+    }
+  },
+  "code_review_timing_note": "The code/method review preceded full three-factor data collection. Actual completed three-factor verification is reported separately above.",
+  "full_joint_isolated_pipeline_validation": {
+    "cohort": "acute",
+    "status": "PASS",
+    "original_input_workbooks": 6,
+    "new_input_workbooks": 24,
+    "cross_cohort_inputs": 0,
+    "invoked_from_different_working_directory": true,
+    "full_runner_joint_exit_code": 0,
+    "existing_curated_tables_byte_identical": {
+      "key_results.csv": true,
+      "drg_standardization.csv": true,
+      "sd_convention_audit.csv": true,
+      "severity_summary.csv": true,
+      "pccl_strata.csv": true,
+      "diagnosis_sensitivity.csv": true,
+      "functional_sensitivity.csv": true,
+      "functional_coverage_bounds.csv": true
+    },
+    "full_model_jsons_byte_identical_to_independently_verified_root_results": {
+      "acute_joint_twofactor.json": true,
+      "acute_joint_standardization.json": true
+    },
+    "independent_actual_workbook_verification": "PASS for both two-factor and three-factor analyses",
+    "curated_joint_outputs_byte_identical": {
+      "joint_twofactor_summary.csv": true,
+      "joint_twofactor_query_manifest.json": true,
+      "joint_twofactor_independent_validation.json": true,
+      "joint_threefactor_summary.csv": true,
+      "joint_threefactor_query_manifest.json": true,
+      "joint_threefactor_independent_validation.json": true,
+      "acute_joint_influence.json": true,
+      "acute_joint_influence.csv": true
+    },
+    "full_joint_status": "computed with 24/24 validated sources",
+    "missing_query_exit_code": 2,
+    "missing_query_created_estimates": false,
+    "input_hashes_unchanged": true,
+    "detailed_cell_jsons_in_repository_root": false
+  },
+  "deterministic_influence_diagnostics": {
+    "status": "computed and primary estimates matched",
+    "aggregate_rows": 6,
+    "source_result_sha256": "698cafa839310aa7eced437b228858c449088fa9c2f81bd89c110d0710dcafb2",
+    "analysis_type": "post_hoc_outcome_dependent_influence_diagnostics",
+    "individual_stratum_counts_included": false,
+    "simulation_included": false
+  },
+  "curated_exporter_validation": {
+    "status": "PASS",
+    "checks_passed": 15,
+    "checks": [
+      "acute_twofactor_matching_QA_accepted",
+      "acute_twofactor_stale_rr_rejected",
+      "acute_twofactor_stale_ci_rejected",
+      "acute_twofactor_stale_coverage_rejected",
+      "acute_twofactor_unreviewed_cell_list_rejected",
+      "rehab_twofactor_matching_QA_accepted",
+      "rehab_twofactor_stale_rr_rejected",
+      "rehab_twofactor_stale_ci_rejected",
+      "rehab_twofactor_stale_coverage_rejected",
+      "rehab_twofactor_unreviewed_cell_list_rejected",
+      "acute_threefactor_matching_QA_accepted",
+      "acute_threefactor_stale_rr_rejected",
+      "acute_threefactor_stale_ci_rejected",
+      "acute_threefactor_stale_coverage_rejected",
+      "acute_threefactor_unreviewed_cell_list_rejected"
+    ],
+    "scope": "Curated exporter accepts matching independent QA and rejects stale RR/CI/coverage or unreviewed detailed fields."
+  },
+  "document_release_checkpoint": {
+    "filename": "joint_acute_document_checkpoint.json",
+    "sha256": "11e520de5e0be7e2796b55e7403a3e628ecbf6195b401efa1f29d58e61deff29"
   }
 }

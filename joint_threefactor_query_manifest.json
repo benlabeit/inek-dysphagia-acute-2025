@@ -1,0 +1,298 @@
+{
+  "cohort": "acute",
+  "analysis": "threefactor",
+  "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+  "source_result_sha256": "698cafa839310aa7eced437b228858c449088fa9c2f81bd89c110d0710dcafb2",
+  "exports": {
+    "acute_joint_age18_74_allhd_all_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_allhd_all_2025.xlsx",
+        "sha256": "af2aae0038dd583494fd58f64f8f7409628f6ccd26676b7b9112afa474ab4491",
+        "size_bytes": 312966
+      },
+      "selection": "Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 132183
+    },
+    "acute_joint_age18_74_allhd_dys_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_allhd_dys_2025.xlsx",
+        "sha256": "996ef739c4f519b5bd477a2bfa4660037d9dd61d0cd549a51bddfd60df8ee3c8",
+        "size_bytes": 164543
+      },
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 11541
+    },
+    "acute_joint_age18_74_allhd_all_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_allhd_all_death_2025.xlsx",
+        "sha256": "209f863f69055d2c465f044b7cc24b7d72cd30c144f4fa9e97d9d38c3ac16f9b",
+        "size_bytes": 102883
+      },
+      "selection": "Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 2825
+    },
+    "acute_joint_age18_74_allhd_dys_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_allhd_dys_death_2025.xlsx",
+        "sha256": "c5c5dd4f352e60b7594bdf99518404b9cf15c34189f3a4ac42d0745e52b37a08",
+        "size_bytes": 65474
+      },
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 918
+    },
+    "acute_joint_age18_74_i63_all_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i63_all_2025.xlsx",
+        "sha256": "bbfa974aa9968d932480de8d2db5661f711211475f9af3c3a1c2f349939f99af",
+        "size_bytes": 222497
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 82630
+    },
+    "acute_joint_age18_74_i63_dys_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i63_dys_2025.xlsx",
+        "sha256": "2b358199abeb1251223f6e0392a6a0a12495495dcfe98303c5e37d1be22c799b",
+        "size_bytes": 132800
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 9006
+    },
+    "acute_joint_age18_74_i63_all_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i63_all_death_2025.xlsx",
+        "sha256": "d466bf9d0b54cdb7688911a758ca12eec5469c905cfdca6de91c79a21199b176",
+        "size_bytes": 81649
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 1941
+    },
+    "acute_joint_age18_74_i63_dys_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i63_dys_death_2025.xlsx",
+        "sha256": "c9bdbba2092d3215e317f0ffa33e7ca1ad650fa6763ee32ef759894a38f55d5e",
+        "size_bytes": 54981
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 672
+    },
+    "acute_joint_age18_74_i61_all_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i61_all_2025.xlsx",
+        "sha256": "32271ddebc9c00ac01bc57282b4df1781cbbe88ac287533173230a984dfd17ab",
+        "size_bytes": 95374
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 5540
+    },
+    "acute_joint_age18_74_i61_dys_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i61_dys_2025.xlsx",
+        "sha256": "28d12be8f822a446b7dac9642b550bc53b3e98de198484e60fc3452548a7b1a3",
+        "size_bytes": 63646
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 1296
+    },
+    "acute_joint_age18_74_i61_all_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i61_all_death_2025.xlsx",
+        "sha256": "aa61591363775be983cdcdb47f29f183897ed54d354f53c83b3b63fdbc89095c",
+        "size_bytes": 39466
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 364
+    },
+    "acute_joint_age18_74_i61_dys_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age18_74_i61_dys_death_2025.xlsx",
+        "sha256": "418c26b7fcc506575523201b35c5236938230ec7670cf2e5b1f121126f777351",
+        "size_bytes": 28060
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(18-29 Jahre, 30-39 Jahre, 40-49 Jahre, 50-54 Jahre, 55-59 Jahre, 60-64 Jahre, 65-74 Jahre); ",
+      "n": 112
+    },
+    "acute_joint_age75plus_allhd_all_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_allhd_all_2025.xlsx",
+        "sha256": "236b878c220fff1a413291b52ba8db1b5ed059a8b35733e75a09b5b63a6e41eb",
+        "size_bytes": 300656
+      },
+      "selection": "Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 147072
+    },
+    "acute_joint_age75plus_allhd_dys_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_allhd_dys_2025.xlsx",
+        "sha256": "ee63bd5eea3e65f215d4af68f3b32641652078ea5fa1ff4c7a6fce11bf270a05",
+        "size_bytes": 171588
+      },
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 22100
+    },
+    "acute_joint_age75plus_allhd_all_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_allhd_all_death_2025.xlsx",
+        "sha256": "2ea2a5260ac8f4dbfba40d1d23c7e50465892b76ec5022c3db46ec2fe0a4c02e",
+        "size_bytes": 130889
+      },
+      "selection": "Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 9924
+    },
+    "acute_joint_age75plus_allhd_dys_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_allhd_dys_death_2025.xlsx",
+        "sha256": "987baf3d5bd88dfaff6e3c6ffa21ba4d54812560bc524fa5e3931c1b9efcb6b1",
+        "size_bytes": 94266
+      },
+      "selection": "Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 4085
+    },
+    "acute_joint_age75plus_i63_all_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i63_all_2025.xlsx",
+        "sha256": "1f7ccd877cd112039394ac1048354868d1184b91f4d99ec659fd05ce00c4bdc7",
+        "size_bytes": 221888
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 93384
+    },
+    "acute_joint_age75plus_i63_dys_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i63_dys_2025.xlsx",
+        "sha256": "01675defc702e3e9be19a77faee340f8e04ba1f98833319f5b0222a3416cfcf5",
+        "size_bytes": 145737
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 17606
+    },
+    "acute_joint_age75plus_i63_all_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i63_all_death_2025.xlsx",
+        "sha256": "dda2b0b33877757265e2dde0814a146e4c4c8ce941f79aaf29c60b8d9c6e2fad",
+        "size_bytes": 107336
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 7486
+    },
+    "acute_joint_age75plus_i63_dys_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i63_dys_death_2025.xlsx",
+        "sha256": "3599782cdbb0e7668e012625940e8f9eafbd210bfdecbe4d033e889e0a4d56ce",
+        "size_bytes": 82014
+      },
+      "selection": "Hauptdiagnose(I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.6, I63.8, I63.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 3199
+    },
+    "acute_joint_age75plus_i61_all_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i61_all_2025.xlsx",
+        "sha256": "8340228befc14229a075a67dde37363c6c69e6bb857a4614927acac85ebf4a67",
+        "size_bytes": 91575
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 6606
+    },
+    "acute_joint_age75plus_i61_dys_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i61_dys_2025.xlsx",
+        "sha256": "758a31759fd628ac7bda945317c7fd80a4aa5e19eeda5553a90299f5ed68484a",
+        "size_bytes": 65154
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 2068
+    },
+    "acute_joint_age75plus_i61_all_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i61_all_death_2025.xlsx",
+        "sha256": "376b2a8d157da571fa69dffbddc23561195e674a9a738bd2f1438417f7c1d681",
+        "size_bytes": 51375
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 1331
+    },
+    "acute_joint_age75plus_i61_dys_death_2025.xlsx": {
+      "source": {
+        "path": "raw/acute_joint_age75plus_i61_dys_death_2025.xlsx",
+        "sha256": "a800f27840320de7b9848b78acad3578da06c87d38263afbcbe1b72fba0a45e0",
+        "size_bytes": 38818
+      },
+      "selection": "Hauptdiagnose(I61.0, I61.1, I61.2, I61.3, I61.4, I61.5, I61.6, I61.8, I61.9); Nebendiagnosen(R13.0, R13.1, R13.9); Prozeduren(8-981.20, 8-981.21, 8-981.22, 8-981.23, 8-981.30, 8-981.31, 8-981.32, 8-981.33, 8-98b.20, 8-98b.21, 8-98b.22, 8-98b.23, 8-98b.30, 8-98b.31, 8-98b.32, 8-98b.33); Entlassungsgrund(07 Tod); Altersgruppe(75-79 Jahre, 80+ Jahre); ",
+      "n": 499
+    }
+  },
+  "original_reference_checks": {
+    "all": {
+      "original_n": 279277,
+      "expected_adult_n": 279255,
+      "new_adult_n": 279255,
+      "native_age_counts_match": true,
+      "original_source": {
+        "path": "raw/acute_all_2025.xlsx",
+        "sha256": "5a9749e16b941001122f2ccff23b7c4878dbc37894df01c1750dfc97aeb1643b",
+        "size_bytes": 406858
+      }
+    },
+    "dys": {
+      "original_n": 33643,
+      "expected_adult_n": 33641,
+      "new_adult_n": 33641,
+      "native_age_counts_match": true,
+      "original_source": {
+        "path": "raw/acute_dys_2025.xlsx",
+        "sha256": "357814c53dac14bec6176cb341c68b2da81be33ce4d412181fa5214247c92622",
+        "size_bytes": 227521
+      }
+    },
+    "all_death": {
+      "original_n": 12749,
+      "expected_adult_n": 12749,
+      "new_adult_n": 12749,
+      "native_age_counts_match": true,
+      "original_source": {
+        "path": "raw/acute_all_death_2025.xlsx",
+        "sha256": "e6feb55365ff842af4257f0a604b45494cdd00f6b02582fe55d36d1a7ed7b26c",
+        "size_bytes": 160341
+      }
+    },
+    "dys_death": {
+      "original_n": 5003,
+      "expected_adult_n": 5003,
+      "new_adult_n": 5003,
+      "native_age_counts_match": true,
+      "original_source": {
+        "path": "raw/acute_dys_death_2025.xlsx",
+        "sha256": "c8e275ef1a377543c5956ad58250248d50c43926e64aab9222e9fdb8f8cdc215",
+        "size_bytes": 109881
+      }
+    }
+  },
+  "raw_workbooks_included": false,
+  "individual_stratum_counts_included": false,
+  "verification": "Exact query filters, delivery, integer distributions, population partitions, original adult totals, native age counts and event nesting validated; independent numerical QA reported separately.",
+  "diagnosis_partition": {
+    "i63": [
+      "I63.0",
+      "I63.1",
+      "I63.2",
+      "I63.3",
+      "I63.4",
+      "I63.5",
+      "I63.6",
+      "I63.8",
+      "I63.9"
+    ],
+    "i61": [
+      "I61.0",
+      "I61.1",
+      "I61.2",
+      "I61.3",
+      "I61.4",
+      "I61.5",
+      "I61.6",
+      "I61.8",
+      "I61.9"
+    ],
+    "otherhd": "All principal diagnoses minus full directly selected I63 and I61, separately within each age/sex or age/PCCL and event/exposure group"
+  }
+}

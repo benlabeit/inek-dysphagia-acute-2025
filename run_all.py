@@ -59,6 +59,8 @@ def main():
                         help='Only validate all files, selections, deliveries, counts and hashes.')
     parser.add_argument('--allow-hash-mismatch', action='store_true',
                         help='Explicitly permit changed file bytes; exact stored metadata and N still required.')
+    parser.add_argument('--twofactor', action='store_true',
+                        help='Also calculate separate age-by-PCCL and age-by-sex mortality analyses; all 8 all-HD age exports are required.')
     parser.add_argument('--joint', action='store_true',
                         help='Also calculate joint mortality standardization; all 24 new exports are required.')
     args = parser.parse_args()
@@ -68,8 +70,17 @@ def main():
     result_dir = ROOT / 'results'
     result_dir.mkdir(exist_ok=True)
     commands = list(SCRIPTS)
+    commands.append(['analyze_joint_twofactor.py', '--cohort', 'acute'] +
+                    ([] if (args.twofactor or args.joint) else ['--status-only']))
     commands.append(['analyze_joint_standardization.py', '--cohort', 'acute'] +
                     ([] if args.joint else ['--status-only']))
+    if args.twofactor or args.joint:
+        commands.append(['verify_joint_actual.py', '--cohort', 'acute', '--twofactor'])
+        if args.joint:
+            commands.append(['verify_joint_actual.py', '--cohort', 'acute'])
+            commands.append(['analyze_joint_influence.py', '--cohort', 'acute'])
+        commands.append(['export_joint_tables.py', '--cohort', 'acute',
+                         '--analysis', 'both' if args.joint else 'twofactor'])
     for entry in commands:
         command = [entry] if isinstance(entry, str) else entry
         name = command[0]

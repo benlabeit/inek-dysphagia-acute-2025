@@ -1,0 +1,51 @@
+{
+  "cohort": "acute",
+  "status": "passed",
+  "method": "Independent openpyxl source reads and exact-rational pooled risk/variance calculation",
+  "dimensions": {
+    "sex": {
+      "source_cells": 24,
+      "retained_cells": 12,
+      "exact_weight_sum": "1",
+      "rr": 3.9776090105660544,
+      "ci": [
+        3.822916555375,
+        4.138561020562038
+      ],
+      "adult_all_n": 279255,
+      "adult_all_deaths": 12749,
+      "common_support": {
+        "included_cells": 12,
+        "excluded_cells": 12,
+        "all_n": 279248,
+        "dys_n": 33641,
+        "no_dys_n": 245607,
+        "all_coverage": 0.9999749333046857,
+        "dys_coverage": 1.0,
+        "no_dys_coverage": 0.9999714999959286
+      }
+    },
+    "pccl": {
+      "source_cells": 42,
+      "retained_cells": 41,
+      "exact_weight_sum": "1",
+      "rr": 2.1925026409614676,
+      "ci": [
+        2.100031376207907,
+        2.2890457185945903
+      ],
+      "adult_all_n": 279255,
+      "adult_all_deaths": 12749,
+      "common_support": {
+        "included_cells": 41,
+        "excluded_cells": 1,
+        "all_n": 279254,
+        "dys_n": 33640,
+        "no_dys_n": 245614,
+        "all_coverage": 0.9999964190435265,
+        "dys_coverage": 0.9999702743675871,
+        "no_dys_coverage": 1.0
+      }
+    }
+  }
+}
