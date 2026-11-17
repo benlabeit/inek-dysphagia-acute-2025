@@ -1,0 +1,2806 @@
+{
+  "AlKhaled2016": {
+    "id": "AlKhaled2016",
+    "type": "article-journal",
+    "title": "Dysphagia in Patients with Acute Ischemic Stroke: Early Dysphagia Screening May Reduce Stroke-Related Pneumonia and Improve Stroke Outcomes",
+    "author": [
+      {
+        "family": "Al-Khaled",
+        "given": "Mohamed"
+      },
+      {
+        "family": "Matthis",
+        "given": "Christine"
+      },
+      {
+        "family": "Binder",
+        "given": "Andreas"
+      },
+      {
+        "family": "Mudter",
+        "given": "Jonas"
+      },
+      {
+        "family": "Schattschneider",
+        "given": "Joern"
+      },
+      {
+        "family": "Pulkowski",
+        "given": "Ulrich"
+      },
+      {
+        "family": "Strohmaier",
+        "given": "Tim"
+      },
+      {
+        "family": "Niehoff",
+        "given": "Torsten"
+      },
+      {
+        "family": "Zybur",
+        "given": "Roland"
+      },
+      {
+        "family": "Eggers",
+        "given": "Juergen"
+      },
+      {
+        "family": "Valdueza",
+        "given": "Jose M"
+      },
+      {
+        "family": "Royl",
+        "given": "Georg"
+      },
+      {
+        "literal": "for QugSS II Group"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "container-title": "Cerebrovascular diseases (Basel, Switzerland)",
+    "container-title-short": "Cerebrovasc Dis",
+    "volume": "42",
+    "issue": "1-2",
+    "page": "81-89",
+    "PMID": "27074007",
+    "DOI": "10.1159/000445299",
+    "URL": "https://doi.org/10.1159/000445299"
+  },
+  "Arnold2016": {
+    "id": "Arnold2016",
+    "type": "article-journal",
+    "title": "Dysphagia in Acute Stroke: Incidence, Burden and Impact on Clinical Outcome",
+    "author": [
+      {
+        "family": "Arnold",
+        "given": "Marcel"
+      },
+      {
+        "family": "Liesirova",
+        "given": "Kai"
+      },
+      {
+        "family": "Broeg-Morvay",
+        "given": "Anne"
+      },
+      {
+        "family": "Meisterernst",
+        "given": "Julia"
+      },
+      {
+        "family": "Schlager",
+        "given": "Markus"
+      },
+      {
+        "family": "Mono",
+        "given": "Marie-Luise"
+      },
+      {
+        "family": "El-Koussy",
+        "given": "Marwan"
+      },
+      {
+        "family": "Kägi",
+        "given": "Georg"
+      },
+      {
+        "family": "Jung",
+        "given": "Simon"
+      },
+      {
+        "family": "Sarikaya",
+        "given": "Hakan"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "container-title": "PloS one",
+    "container-title-short": "PLoS One",
+    "volume": "11",
+    "issue": "2",
+    "page": "e0148424",
+    "PMID": "26863627",
+    "DOI": "10.1371/journal.pone.0148424",
+    "URL": "https://doi.org/10.1371/journal.pone.0148424"
+  },
+  "Bray2017": {
+    "id": "Bray2017",
+    "type": "article-journal",
+    "title": "The association between delays in screening for and assessing dysphagia after acute stroke, and the risk of stroke-associated pneumonia",
+    "author": [
+      {
+        "family": "Bray",
+        "given": "Benjamin D"
+      },
+      {
+        "family": "Smith",
+        "given": "Craig J"
+      },
+      {
+        "family": "Cloud",
+        "given": "Geoffrey C"
+      },
+      {
+        "family": "Enderby",
+        "given": "Pam"
+      },
+      {
+        "family": "James",
+        "given": "Martin"
+      },
+      {
+        "family": "Paley",
+        "given": "Lizz"
+      },
+      {
+        "family": "Tyrrell",
+        "given": "Pippa J"
+      },
+      {
+        "family": "Wolfe",
+        "given": "Charles D A"
+      },
+      {
+        "family": "Rudd",
+        "given": "Anthony G"
+      },
+      {
+        "literal": "SSNAP Collaboration"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "container-title": "Journal of neurology, neurosurgery, and psychiatry",
+    "container-title-short": "J Neurol Neurosurg Psychiatry",
+    "volume": "88",
+    "issue": "1",
+    "page": "25-30",
+    "PMID": "27298147",
+    "DOI": "10.1136/jnnp-2016-313356",
+    "URL": "https://doi.org/10.1136/jnnp-2016-313356"
+  },
+  "Hinchey2005": {
+    "id": "Hinchey2005",
+    "type": "article-journal",
+    "title": "Formal dysphagia screening protocols prevent pneumonia",
+    "author": [
+      {
+        "family": "Hinchey",
+        "given": "Judith A"
+      },
+      {
+        "family": "Shephard",
+        "given": "Timothy"
+      },
+      {
+        "family": "Furie",
+        "given": "Karen"
+      },
+      {
+        "family": "Smith",
+        "given": "Don"
+      },
+      {
+        "family": "Wang",
+        "given": "David"
+      },
+      {
+        "family": "Tonn",
+        "given": "Sarah"
+      },
+      {
+        "literal": "Stroke Practice Improvement Network Investigators"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "container-title": "Stroke",
+    "container-title-short": "Stroke",
+    "volume": "36",
+    "issue": "9",
+    "page": "1972-1976",
+    "PMID": "16109909",
+    "DOI": "10.1161/01.STR.0000177529.86868.8d",
+    "URL": "https://doi.org/10.1161/01.STR.0000177529.86868.8d"
+  },
+  "Titsworth2013": {
+    "id": "Titsworth2013",
+    "type": "article-journal",
+    "title": "Prospective quality initiative to maximize dysphagia screening reduces hospital-acquired pneumonia prevalence in patients with stroke",
+    "author": [
+      {
+        "family": "Titsworth",
+        "given": "W Lee"
+      },
+      {
+        "family": "Abram",
+        "given": "Justine"
+      },
+      {
+        "family": "Fullerton",
+        "given": "Amy"
+      },
+      {
+        "family": "Hester",
+        "given": "Jeannette"
+      },
+      {
+        "family": "Guin",
+        "given": "Peggy"
+      },
+      {
+        "family": "Waters",
+        "given": "Michael F"
+      },
+      {
+        "family": "Mocco",
+        "given": "J"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "container-title": "Stroke",
+    "container-title-short": "Stroke",
+    "volume": "44",
+    "issue": "11",
+    "page": "3154-3160",
+    "PMID": "23963330",
+    "DOI": "10.1161/STROKEAHA.111.000204",
+    "URL": "https://doi.org/10.1161/STROKEAHA.111.000204"
+  },
+  "SuntrupKrueger2018": {
+    "id": "SuntrupKrueger2018",
+    "type": "article-journal",
+    "title": "The Effect of Improved Dysphagia Care on Outcome in Patients with Acute Stroke: Trends from 8-Year Data of a Large Stroke Register",
+    "author": [
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Minnerup",
+        "given": "Jens"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Schröder",
+        "given": "Jens Burchard"
+      },
+      {
+        "family": "Marian",
+        "given": "Thomas"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Kalic",
+        "given": "Marianne"
+      },
+      {
+        "family": "Berger",
+        "given": "Klaus"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "container-title": "Cerebrovascular diseases (Basel, Switzerland)",
+    "container-title-short": "Cerebrovasc Dis",
+    "volume": "45",
+    "issue": "3-4",
+    "page": "101-108",
+    "PMID": "29533960",
+    "DOI": "10.1159/000487811",
+    "URL": "https://doi.org/10.1159/000487811"
+  },
+  "Dziewas2021Guideline": {
+    "id": "Dziewas2021Guideline",
+    "type": "article-journal",
+    "title": "European Stroke Organisation and European Society for Swallowing Disorders guideline for the diagnosis and treatment of post-stroke dysphagia",
+    "author": [
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Michou",
+        "given": "Emilia"
+      },
+      {
+        "family": "Trapl-Grundschober",
+        "given": "Michaela"
+      },
+      {
+        "family": "Lal",
+        "given": "Avtar"
+      },
+      {
+        "family": "Arsava",
+        "given": "Ethem Murat"
+      },
+      {
+        "family": "Bath",
+        "given": "Philip M"
+      },
+      {
+        "family": "Clavé",
+        "given": "Pere"
+      },
+      {
+        "family": "Glahn",
+        "given": "Jörg"
+      },
+      {
+        "family": "Hamdy",
+        "given": "Shaheen"
+      },
+      {
+        "family": "Pownall",
+        "given": "Sue"
+      },
+      {
+        "family": "Schindler",
+        "given": "Antonio"
+      },
+      {
+        "family": "Walshe",
+        "given": "Margaret"
+      },
+      {
+        "family": "Wirth",
+        "given": "Rainer"
+      },
+      {
+        "family": "Wright",
+        "given": "David"
+      },
+      {
+        "family": "Verin",
+        "given": "Eric"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "European stroke journal",
+    "container-title-short": "Eur Stroke J",
+    "volume": "6",
+    "issue": "3",
+    "page": "LXXXIX-CXV",
+    "PMID": "34746431",
+    "DOI": "10.1177/23969873211039721",
+    "URL": "https://doi.org/10.1177/23969873211039721"
+  },
+  "Dziewas2019Registry": {
+    "id": "Dziewas2019Registry",
+    "type": "article-journal",
+    "title": "Safety and clinical impact of FEES - results of the FEES-registry",
+    "author": [
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Auf dem Brinke",
+        "given": "Matthias"
+      },
+      {
+        "family": "Birkmann",
+        "given": "Ulrich"
+      },
+      {
+        "family": "Bräuer",
+        "given": "Götz"
+      },
+      {
+        "family": "Busch",
+        "given": "Kolja"
+      },
+      {
+        "family": "Cerra",
+        "given": "Franziska"
+      },
+      {
+        "family": "Damm-Lunau",
+        "given": "Renate"
+      },
+      {
+        "family": "Dunkel",
+        "given": "Juliane"
+      },
+      {
+        "family": "Fellgiebel",
+        "given": "Amelie"
+      },
+      {
+        "family": "Garms",
+        "given": "Elisabeth"
+      },
+      {
+        "family": "Glahn",
+        "given": "Jörg"
+      },
+      {
+        "family": "Hagen",
+        "given": "Sandra"
+      },
+      {
+        "family": "Held",
+        "given": "Sophie"
+      },
+      {
+        "family": "Helfer",
+        "given": "Christine"
+      },
+      {
+        "family": "Hiller",
+        "given": "Mirko"
+      },
+      {
+        "family": "Horn-Schenk",
+        "given": "Christina"
+      },
+      {
+        "family": "Kley",
+        "given": "Christoph"
+      },
+      {
+        "family": "Lange",
+        "given": "Nikolaus"
+      },
+      {
+        "family": "Lapa",
+        "given": "Sriramya"
+      },
+      {
+        "family": "Ledl",
+        "given": "Christian"
+      },
+      {
+        "family": "Lindner-Pfleghar",
+        "given": "Beate"
+      },
+      {
+        "family": "Mertl-Rötzer",
+        "given": "Marion"
+      },
+      {
+        "family": "Müller",
+        "given": "Madeleine"
+      },
+      {
+        "family": "Neugebauer",
+        "given": "Hermann"
+      },
+      {
+        "family": "Özsucu",
+        "given": "Duygu"
+      },
+      {
+        "family": "Ohms",
+        "given": "Michael"
+      },
+      {
+        "family": "Perniß",
+        "given": "Markus"
+      },
+      {
+        "family": "Pfeilschifter",
+        "given": "Waltraud"
+      },
+      {
+        "family": "Plass",
+        "given": "Tanja"
+      },
+      {
+        "family": "Roth",
+        "given": "Christian"
+      },
+      {
+        "family": "Roukens",
+        "given": "Robin"
+      },
+      {
+        "family": "Schmidt-Wilcke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Schumann",
+        "given": "Beate"
+      },
+      {
+        "family": "Schwarze",
+        "given": "Julia"
+      },
+      {
+        "family": "Schweikert",
+        "given": "Kathi"
+      },
+      {
+        "family": "Stege",
+        "given": "Holger"
+      },
+      {
+        "family": "Theuerkauf",
+        "given": "Dirk"
+      },
+      {
+        "family": "Thomas",
+        "given": "Randall S"
+      },
+      {
+        "family": "Vahle",
+        "given": "Ulrich"
+      },
+      {
+        "family": "Voigt",
+        "given": "Nancy"
+      },
+      {
+        "family": "Weber",
+        "given": "Hermann"
+      },
+      {
+        "family": "Werner",
+        "given": "Cornelius J"
+      },
+      {
+        "family": "Wirth",
+        "given": "Rainer"
+      },
+      {
+        "family": "Wittich",
+        "given": "Ingo"
+      },
+      {
+        "family": "Woldag",
+        "given": "Hartwig"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "container-title": "Neurological research and practice",
+    "container-title-short": "Neurol Res Pract",
+    "volume": "1",
+    "page": "16",
+    "PMID": "33324882",
+    "DOI": "10.1186/s42466-019-0021-5",
+    "URL": "https://doi.org/10.1186/s42466-019-0021-5"
+  },
+  "Ungerer2026": {
+    "id": "Ungerer2026",
+    "type": "article-journal",
+    "title": "Fiberoptic endoscopic evaluation of swallowing in German stroke units: a retrospective diagnosis-related group analysis (2019-2024)",
+    "author": [
+      {
+        "family": "Ungerer",
+        "given": "Matthias N"
+      },
+      {
+        "family": "Bartig",
+        "given": "Dirk"
+      },
+      {
+        "family": "Agredo",
+        "given": "Annika Moreno"
+      },
+      {
+        "family": "Braun",
+        "given": "Tobias"
+      },
+      {
+        "family": "Gumbinger",
+        "given": "Christoph"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Neurological research and practice",
+    "container-title-short": "Neurol Res Pract",
+    "volume": "8",
+    "issue": "1",
+    "page": "46",
+    "PMID": "42277987",
+    "DOI": "10.1186/s42466-026-00506-3",
+    "URL": "https://doi.org/10.1186/s42466-026-00506-3"
+  },
+  "Vasan2023": {
+    "id": "Vasan2023",
+    "type": "article-journal",
+    "title": "Dysphagia after ischemic and hemorrhagic stroke: A propensity-matched 20-year analysis of the national inpatient sample",
+    "author": [
+      {
+        "family": "Vasan",
+        "given": "Vikram"
+      },
+      {
+        "family": "Hardigan",
+        "given": "Trevor A"
+      },
+      {
+        "family": "Ali",
+        "given": "Muhammad"
+      },
+      {
+        "family": "Downes",
+        "given": "Margaret"
+      },
+      {
+        "family": "Devarajan",
+        "given": "Alex"
+      },
+      {
+        "family": "Rossitto",
+        "given": "Christina P"
+      },
+      {
+        "family": "Schuldt",
+        "given": "Braxton R"
+      },
+      {
+        "family": "Odland",
+        "given": "Ian C"
+      },
+      {
+        "family": "Kellner",
+        "given": "Christopher P"
+      },
+      {
+        "family": "Fifi",
+        "given": "Johanna T"
+      },
+      {
+        "family": "Mocco",
+        "given": "J"
+      },
+      {
+        "family": "Majidi",
+        "given": "Shahram"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Journal of stroke and cerebrovascular diseases : the official journal of National Stroke Association",
+    "container-title-short": "J Stroke Cerebrovasc Dis",
+    "volume": "32",
+    "issue": "9",
+    "page": "107295",
+    "PMID": "37544059",
+    "DOI": "10.1016/j.jstrokecerebrovasdis.2023.107295",
+    "URL": "https://doi.org/10.1016/j.jstrokecerebrovasdis.2023.107295"
+  },
+  "Ho2018": {
+    "id": "Ho2018",
+    "type": "article-journal",
+    "title": "One-Year Risk of Pneumonia and Mortality in Patients with Poststroke Dysphagia: A Nationwide Population-Based Study",
+    "author": [
+      {
+        "family": "Ho",
+        "given": "Chung-Han"
+      },
+      {
+        "family": "Lin",
+        "given": "Wen-Chih"
+      },
+      {
+        "family": "Hsu",
+        "given": "Ya-Fang"
+      },
+      {
+        "family": "Lee",
+        "given": "I-Hui"
+      },
+      {
+        "family": "Hung",
+        "given": "Yi-Chieh"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "container-title": "Journal of stroke and cerebrovascular diseases : the official journal of National Stroke Association",
+    "container-title-short": "J Stroke Cerebrovasc Dis",
+    "volume": "27",
+    "issue": "5",
+    "page": "1311-1317",
+    "PMID": "29395642",
+    "DOI": "10.1016/j.jstrokecerebrovasdis.2017.12.017",
+    "URL": "https://doi.org/10.1016/j.jstrokecerebrovasdis.2017.12.017"
+  },
+  "Labeit2023Costs": {
+    "id": "Labeit2023Costs",
+    "type": "article-journal",
+    "title": "Costs of post-stroke dysphagia during acute hospitalization from a health-insurance perspective",
+    "author": [
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Kremer",
+        "given": "Almut"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "European stroke journal",
+    "container-title-short": "Eur Stroke J",
+    "volume": "8",
+    "issue": "1",
+    "page": "361-369",
+    "PMID": "37021194",
+    "DOI": "10.1177/23969873221147740",
+    "URL": "https://doi.org/10.1177/23969873221147740"
+  },
+  "Bonilha2014": {
+    "id": "Bonilha2014",
+    "type": "article-journal",
+    "title": "The one-year attributable cost of post-stroke dysphagia",
+    "author": [
+      {
+        "family": "Bonilha",
+        "given": "Heather Shaw"
+      },
+      {
+        "family": "Simpson",
+        "given": "Annie N"
+      },
+      {
+        "family": "Ellis",
+        "given": "Charles"
+      },
+      {
+        "family": "Mauldin",
+        "given": "Patrick"
+      },
+      {
+        "family": "Martin-Harris",
+        "given": "Bonnie"
+      },
+      {
+        "family": "Simpson",
+        "given": "Kit"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "container-title": "Dysphagia",
+    "container-title-short": "Dysphagia",
+    "volume": "29",
+    "issue": "5",
+    "page": "545-552",
+    "PMID": "24948438",
+    "DOI": "10.1007/s00455-014-9543-8",
+    "URL": "https://doi.org/10.1007/s00455-014-9543-8"
+  },
+  "Marin2021": {
+    "id": "Marin2021",
+    "type": "article-journal",
+    "title": "Healthcare costs of post-stroke oropharyngeal dysphagia and its complications: malnutrition and respiratory infections",
+    "author": [
+      {
+        "family": "Marin",
+        "given": "Sergio"
+      },
+      {
+        "family": "Serra-Prat",
+        "given": "Mateu"
+      },
+      {
+        "family": "Ortega",
+        "given": "Omar"
+      },
+      {
+        "family": "Audouard Fericgla",
+        "given": "Monica"
+      },
+      {
+        "family": "Valls",
+        "given": "Jordi"
+      },
+      {
+        "family": "Palomera",
+        "given": "Elisabet"
+      },
+      {
+        "family": "Cunillera",
+        "given": "Ramon"
+      },
+      {
+        "family": "Palomeras",
+        "given": "Ernest"
+      },
+      {
+        "family": "Ibàñez",
+        "given": "Josep Maria"
+      },
+      {
+        "family": "Clavé",
+        "given": "Pere"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "European journal of neurology",
+    "container-title-short": "Eur J Neurol",
+    "volume": "28",
+    "issue": "11",
+    "page": "3670-3681",
+    "PMID": "34176195",
+    "DOI": "10.1111/ene.14998",
+    "URL": "https://doi.org/10.1111/ene.14998"
+  },
+  "Braun2019": {
+    "id": "Braun2019",
+    "type": "article-journal",
+    "title": "Adjustment of oral diet based on flexible endoscopic evaluation of swallowing (FEES) in acute stroke patients: a cross-sectional hospital-based registry study",
+    "author": [
+      {
+        "family": "Braun",
+        "given": "Tobias"
+      },
+      {
+        "family": "Juenemann",
+        "given": "Martin"
+      },
+      {
+        "family": "Viard",
+        "given": "Maxime"
+      },
+      {
+        "family": "Meyer",
+        "given": "Marco"
+      },
+      {
+        "family": "Reuter",
+        "given": "Iris"
+      },
+      {
+        "family": "Prosiegel",
+        "given": "Mario"
+      },
+      {
+        "family": "Kaps",
+        "given": "Manfred"
+      },
+      {
+        "family": "Tanislav",
+        "given": "Christian"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "container-title": "BMC neurology",
+    "container-title-short": "BMC Neurol",
+    "volume": "19",
+    "issue": "1",
+    "page": "282",
+    "PMID": "31718562",
+    "DOI": "10.1186/s12883-019-1499-8",
+    "URL": "https://doi.org/10.1186/s12883-019-1499-8"
+  },
+  "Pinho2024": {
+    "id": "Pinho2024",
+    "type": "article-journal",
+    "title": "Early flexible endoscopic evaluation of swallowing after mechanical thrombectomy in stroke patients",
+    "author": [
+      {
+        "family": "Pinho",
+        "given": "João"
+      },
+      {
+        "family": "Meyer",
+        "given": "Tareq"
+      },
+      {
+        "family": "Mall",
+        "given": "Bettina"
+      },
+      {
+        "family": "Maring",
+        "given": "Bettina"
+      },
+      {
+        "family": "Döpp",
+        "given": "Annalena"
+      },
+      {
+        "family": "Becker",
+        "given": "Johanna"
+      },
+      {
+        "family": "Wehner",
+        "given": "Anneke"
+      },
+      {
+        "family": "Thissen",
+        "given": "Sara"
+      },
+      {
+        "family": "Schumann-Werner",
+        "given": "Beate"
+      },
+      {
+        "family": "Nikoubashman",
+        "given": "Omid"
+      },
+      {
+        "family": "Wiesmann",
+        "given": "Martin"
+      },
+      {
+        "family": "Schulz",
+        "given": "Jörg B"
+      },
+      {
+        "family": "Werner",
+        "given": "Cornelius J"
+      },
+      {
+        "family": "Reich",
+        "given": "Arno"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Annals of clinical and translational neurology",
+    "container-title-short": "Ann Clin Transl Neurol",
+    "volume": "11",
+    "issue": "3",
+    "page": "757-767",
+    "PMID": "38217067",
+    "DOI": "10.1002/acn3.51998",
+    "URL": "https://doi.org/10.1002/acn3.51998"
+  },
+  "Galovic2019": {
+    "id": "Galovic2019",
+    "type": "article-journal",
+    "title": "Development and Validation of a Prognostic Model of Swallowing Recovery and Enteral Tube Feeding After Ischemic Stroke",
+    "author": [
+      {
+        "family": "Galovic",
+        "given": "Marian"
+      },
+      {
+        "family": "Stauber",
+        "given": "Anne Julia"
+      },
+      {
+        "family": "Leisi",
+        "given": "Natascha"
+      },
+      {
+        "family": "Krammer",
+        "given": "Werner"
+      },
+      {
+        "family": "Brugger",
+        "given": "Florian"
+      },
+      {
+        "family": "Vehoff",
+        "given": "Jochen"
+      },
+      {
+        "family": "Balcerak",
+        "given": "Philipp"
+      },
+      {
+        "family": "Müller",
+        "given": "Anna"
+      },
+      {
+        "family": "Müller",
+        "given": "Marlise"
+      },
+      {
+        "family": "Rosenfeld",
+        "given": "Jochen"
+      },
+      {
+        "family": "Polymeris",
+        "given": "Alexandros"
+      },
+      {
+        "family": "Thilemann",
+        "given": "Sebastian"
+      },
+      {
+        "family": "De Marchis",
+        "given": "Gian Marco"
+      },
+      {
+        "family": "Niemann",
+        "given": "Thorsten"
+      },
+      {
+        "family": "Leifke",
+        "given": "Maren"
+      },
+      {
+        "family": "Lyrer",
+        "given": "Philippe"
+      },
+      {
+        "family": "Saladin",
+        "given": "Petra"
+      },
+      {
+        "family": "Kahles",
+        "given": "Timo"
+      },
+      {
+        "family": "Nedeltchev",
+        "given": "Krassen"
+      },
+      {
+        "family": "Sarikaya",
+        "given": "Hakan"
+      },
+      {
+        "family": "Jung",
+        "given": "Simon"
+      },
+      {
+        "family": "Fischer",
+        "given": "Urs"
+      },
+      {
+        "family": "Manno",
+        "given": "Concetta"
+      },
+      {
+        "family": "Cereda",
+        "given": "Carlo W"
+      },
+      {
+        "family": "Sander",
+        "given": "Josemir W"
+      },
+      {
+        "family": "Tettenborn",
+        "given": "Barbara"
+      },
+      {
+        "family": "Weder",
+        "given": "Bruno J"
+      },
+      {
+        "family": "Stoeckli",
+        "given": "Sandro J"
+      },
+      {
+        "family": "Arnold",
+        "given": "Marcel"
+      },
+      {
+        "family": "Kägi",
+        "given": "Georg"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "container-title": "JAMA neurology",
+    "container-title-short": "JAMA Neurol",
+    "volume": "76",
+    "issue": "5",
+    "page": "561-570",
+    "PMID": "30742198",
+    "DOI": "10.1001/jamaneurol.2018.4858",
+    "URL": "https://doi.org/10.1001/jamaneurol.2018.4858"
+  },
+  "Dennis2005FOOD": {
+    "id": "Dennis2005FOOD",
+    "type": "article-journal",
+    "title": "Effect of timing and method of enteral tube feeding for dysphagic stroke patients (FOOD): a multicentre randomised controlled trial",
+    "author": [
+      {
+        "family": "Dennis",
+        "given": "M S"
+      },
+      {
+        "family": "Lewis",
+        "given": "S C"
+      },
+      {
+        "family": "Warlow",
+        "given": "C"
+      },
+      {
+        "literal": "FOOD Trial Collaboration"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "container-title": "Lancet (London, England)",
+    "container-title-short": "Lancet",
+    "volume": "365",
+    "issue": "9461",
+    "page": "764-772",
+    "PMID": "15733717",
+    "DOI": "10.1016/S0140-6736(05)17983-5",
+    "URL": "https://doi.org/10.1016/S0140-6736(05)17983-5"
+  },
+  "Middleton2011QASC": {
+    "id": "Middleton2011QASC",
+    "type": "article-journal",
+    "title": "Implementation of evidence-based treatment protocols to manage fever, hyperglycaemia, and swallowing dysfunction in acute stroke (QASC): a cluster randomised controlled trial",
+    "author": [
+      {
+        "family": "Middleton",
+        "given": "Sandy"
+      },
+      {
+        "family": "McElduff",
+        "given": "Patrick"
+      },
+      {
+        "family": "Ward",
+        "given": "Jeanette"
+      },
+      {
+        "family": "Grimshaw",
+        "given": "Jeremy M"
+      },
+      {
+        "family": "Dale",
+        "given": "Simeon"
+      },
+      {
+        "family": "D'Este",
+        "given": "Catherine"
+      },
+      {
+        "family": "Drury",
+        "given": "Peta"
+      },
+      {
+        "family": "Griffiths",
+        "given": "Rhonda"
+      },
+      {
+        "family": "Cheung",
+        "given": "N Wah"
+      },
+      {
+        "family": "Quinn",
+        "given": "Clare"
+      },
+      {
+        "family": "Evans",
+        "given": "Malcolm"
+      },
+      {
+        "family": "Cadilhac",
+        "given": "Dominique"
+      },
+      {
+        "family": "Levi",
+        "given": "Christopher"
+      },
+      {
+        "literal": "QASC Trialists Group"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "container-title": "Lancet (London, England)",
+    "container-title-short": "Lancet",
+    "volume": "378",
+    "issue": "9804",
+    "page": "1699-1706",
+    "PMID": "21996470",
+    "DOI": "10.1016/S0140-6736(11)61485-2",
+    "URL": "https://doi.org/10.1016/S0140-6736(11)61485-2"
+  },
+  "Dziewas2018PHAST": {
+    "id": "Dziewas2018PHAST",
+    "type": "article-journal",
+    "title": "Pharyngeal electrical stimulation for early decannulation in tracheotomised patients with neurogenic dysphagia after stroke (PHAST-TRAC): a prospective, single-blinded, randomised trial",
+    "author": [
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Stellato",
+        "given": "Rebecca"
+      },
+      {
+        "family": "van der Tweel",
+        "given": "Ingeborg"
+      },
+      {
+        "family": "Walther",
+        "given": "Ernst"
+      },
+      {
+        "family": "Werner",
+        "given": "Cornelius J"
+      },
+      {
+        "family": "Braun",
+        "given": "Tobias"
+      },
+      {
+        "family": "Citerio",
+        "given": "Giuseppe"
+      },
+      {
+        "family": "Jandl",
+        "given": "Mitja"
+      },
+      {
+        "family": "Friedrichs",
+        "given": "Michael"
+      },
+      {
+        "family": "Nötzel",
+        "given": "Katja"
+      },
+      {
+        "family": "Vosko",
+        "given": "Milan R"
+      },
+      {
+        "family": "Mistry",
+        "given": "Satish"
+      },
+      {
+        "family": "Hamdy",
+        "given": "Shaheen"
+      },
+      {
+        "family": "McGowan",
+        "given": "Susan"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Zwittag",
+        "given": "Paul"
+      },
+      {
+        "family": "Bath",
+        "given": "Philip M"
+      },
+      {
+        "literal": "PHAST-TRAC investigators"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "container-title": "The Lancet. Neurology",
+    "container-title-short": "Lancet Neurol",
+    "volume": "17",
+    "issue": "10",
+    "page": "849-859",
+    "PMID": "30170898",
+    "DOI": "10.1016/S1474-4422(18)30255-2",
+    "URL": "https://doi.org/10.1016/S1474-4422(18)30255-2"
+  },
+  "Horn2026": {
+    "id": "Horn2026",
+    "type": "article-journal",
+    "title": "An Exploratory Classification Framework for Poststroke Dysphagia Severity Using Administrative Data: Administrative Data Dysphagia Severity Scale",
+    "author": [
+      {
+        "family": "Horn",
+        "given": "Janet"
+      },
+      {
+        "family": "Simpson",
+        "given": "Kit N"
+      },
+      {
+        "family": "Simpson",
+        "given": "Annie N"
+      },
+      {
+        "family": "Bonilha",
+        "given": "Leonardo F"
+      },
+      {
+        "family": "Bonilha",
+        "given": "Heather S"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "American journal of speech-language pathology",
+    "container-title-short": "Am J Speech Lang Pathol",
+    "volume": "35",
+    "issue": "1",
+    "page": "98-108",
+    "PMID": "41124314",
+    "DOI": "10.1044/2025_AJSLP-24-00313",
+    "URL": "https://doi.org/10.1044/2025_AJSLP-24-00313"
+  },
+  "Smith2015PISCES": {
+    "id": "Smith2015PISCES",
+    "type": "article-journal",
+    "title": "Diagnosis of Stroke-Associated Pneumonia: Recommendations From the Pneumonia in Stroke Consensus Group",
+    "author": [
+      {
+        "family": "Smith",
+        "given": "Craig J"
+      },
+      {
+        "family": "Kishore",
+        "given": "Amit K"
+      },
+      {
+        "family": "Vail",
+        "given": "Andy"
+      },
+      {
+        "family": "Chamorro",
+        "given": "Angel"
+      },
+      {
+        "family": "Garau",
+        "given": "Javier"
+      },
+      {
+        "family": "Hopkins",
+        "given": "Stephen J"
+      },
+      {
+        "family": "Di Napoli",
+        "given": "Mario"
+      },
+      {
+        "family": "Kalra",
+        "given": "Lalit"
+      },
+      {
+        "family": "Langhorne",
+        "given": "Peter"
+      },
+      {
+        "family": "Montaner",
+        "given": "Joan"
+      },
+      {
+        "family": "Roffe",
+        "given": "Christine"
+      },
+      {
+        "family": "Rudd",
+        "given": "Anthony G"
+      },
+      {
+        "family": "Tyrrell",
+        "given": "Pippa J"
+      },
+      {
+        "family": "van de Beek",
+        "given": "Diederik"
+      },
+      {
+        "family": "Woodhead",
+        "given": "Mark"
+      },
+      {
+        "family": "Meisel",
+        "given": "Andreas"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "container-title": "Stroke",
+    "container-title-short": "Stroke",
+    "volume": "46",
+    "issue": "8",
+    "page": "2335-2340",
+    "PMID": "26111886",
+    "DOI": "10.1161/STROKEAHA.115.009617",
+    "URL": "https://doi.org/10.1161/STROKEAHA.115.009617"
+  },
+  "Benchimol2015RECORD": {
+    "id": "Benchimol2015RECORD",
+    "type": "article-journal",
+    "title": "The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) statement",
+    "author": [
+      {
+        "family": "Benchimol",
+        "given": "Eric I"
+      },
+      {
+        "family": "Smeeth",
+        "given": "Liam"
+      },
+      {
+        "family": "Guttmann",
+        "given": "Astrid"
+      },
+      {
+        "family": "Harron",
+        "given": "Katie"
+      },
+      {
+        "family": "Moher",
+        "given": "David"
+      },
+      {
+        "family": "Petersen",
+        "given": "Irene"
+      },
+      {
+        "family": "Sørensen",
+        "given": "Henrik T"
+      },
+      {
+        "family": "von Elm",
+        "given": "Erik"
+      },
+      {
+        "family": "Langan",
+        "given": "Sinéad M"
+      },
+      {
+        "literal": "RECORD Working Committee"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "container-title": "PLoS medicine",
+    "container-title-short": "PLoS Med",
+    "volume": "12",
+    "issue": "10",
+    "page": "e1001885",
+    "PMID": "26440803",
+    "DOI": "10.1371/journal.pmed.1001885",
+    "URL": "https://doi.org/10.1371/journal.pmed.1001885"
+  },
+  "vonElm2007STROBE": {
+    "id": "vonElm2007STROBE",
+    "type": "article-journal",
+    "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies",
+    "author": [
+      {
+        "family": "von Elm",
+        "given": "Erik"
+      },
+      {
+        "family": "Altman",
+        "given": "Douglas G"
+      },
+      {
+        "family": "Egger",
+        "given": "Matthias"
+      },
+      {
+        "family": "Pocock",
+        "given": "Stuart J"
+      },
+      {
+        "family": "Gøtzsche",
+        "given": "Peter C"
+      },
+      {
+        "family": "Vandenbroucke",
+        "given": "Jan P"
+      },
+      {
+        "literal": "STROBE Initiative"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "container-title": "PLoS medicine",
+    "container-title-short": "PLoS Med",
+    "volume": "4",
+    "issue": "10",
+    "page": "e296",
+    "PMID": "17941714",
+    "DOI": "10.1371/journal.pmed.0040296",
+    "URL": "https://doi.org/10.1371/journal.pmed.0040296"
+  },
+  "Selg2026": {
+    "id": "Selg2026",
+    "type": "article-journal",
+    "title": "Incidence of dysphagia in acute stroke patients-a prospective multicentre cohort study",
+    "author": [
+      {
+        "family": "Selg",
+        "given": "Jenny"
+      },
+      {
+        "family": "Mirkoska",
+        "given": "Vesna"
+      },
+      {
+        "family": "Holmlund",
+        "given": "Thorbjörn"
+      },
+      {
+        "family": "Jäghagen",
+        "given": "Levring"
+      },
+      {
+        "family": "Wester",
+        "given": "Per"
+      },
+      {
+        "family": "Hägglund",
+        "given": "Patricia"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Frontiers in neurology",
+    "container-title-short": "Front Neurol",
+    "volume": "17",
+    "page": "1886254",
+    "PMID": "42964110",
+    "DOI": "10.3389/fneur.2026.1886254",
+    "URL": "https://doi.org/10.3389/fneur.2026.1886254"
+  },
+  "Hotz2025": {
+    "id": "Hotz2025",
+    "type": "article-journal",
+    "title": "Dysphagia Management is Associated with Reduced Mortality in Patients with Moderate to Severe Acute Ischemic Stroke",
+    "author": [
+      {
+        "family": "Hotz",
+        "given": "Julian Frederic"
+      },
+      {
+        "family": "Kaindl",
+        "given": "Lisa"
+      },
+      {
+        "family": "Schneider",
+        "given": "Lisa"
+      },
+      {
+        "family": "Krebs",
+        "given": "Stefan"
+      },
+      {
+        "family": "Karisik",
+        "given": "Anel"
+      },
+      {
+        "family": "Mikšová",
+        "given": "Dominika"
+      },
+      {
+        "family": "Bichler",
+        "given": "Maximilian"
+      },
+      {
+        "family": "Ritscher",
+        "given": "Lavinia"
+      },
+      {
+        "family": "Staudacher",
+        "given": "Moritz"
+      },
+      {
+        "family": "Lagler",
+        "given": "Heimo"
+      },
+      {
+        "family": "Burgmann",
+        "given": "Heinz"
+      },
+      {
+        "family": "Lang",
+        "given": "Wilfried"
+      },
+      {
+        "family": "Ferrari",
+        "given": "Julia"
+      },
+      {
+        "family": "Knoflach",
+        "given": "Michael"
+      },
+      {
+        "family": "Sykora",
+        "given": "Marek"
+      },
+      {
+        "literal": "Austria Stroke Unit Registry Collaborators"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "Neurology and therapy",
+    "container-title-short": "Neurol Ther",
+    "volume": "14",
+    "issue": "4",
+    "page": "1539-1552",
+    "PMID": "40489041",
+    "DOI": "10.1007/s40120-025-00783-1",
+    "URL": "https://doi.org/10.1007/s40120-025-00783-1"
+  },
+  "Labeit2023Assessment": {
+    "id": "Labeit2023Assessment",
+    "type": "article-journal",
+    "title": "The assessment of dysphagia after stroke: state of the art and future directions",
+    "author": [
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Michou",
+        "given": "Emilia"
+      },
+      {
+        "family": "Hamdy",
+        "given": "Shaheen"
+      },
+      {
+        "family": "Trapl-Grundschober",
+        "given": "Michaela"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Bath",
+        "given": "Philip M"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "The Lancet. Neurology",
+    "container-title-short": "Lancet Neurol",
+    "volume": "22",
+    "issue": "9",
+    "page": "858-870",
+    "PMID": "37596008",
+    "DOI": "10.1016/S1474-4422(23)00153-9",
+    "URL": "https://doi.org/10.1016/S1474-4422(23)00153-9"
+  },
+  "Labeit2024Treatment": {
+    "id": "Labeit2024Treatment",
+    "type": "article-journal",
+    "title": "Dysphagia after stroke: research advances in treatment interventions",
+    "author": [
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Michou",
+        "given": "Emilia"
+      },
+      {
+        "family": "Trapl-Grundschober",
+        "given": "Michaela"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Bath",
+        "given": "Philip M"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "The Lancet. Neurology",
+    "container-title-short": "Lancet Neurol",
+    "volume": "23",
+    "issue": "4",
+    "page": "418-428",
+    "PMID": "38508837",
+    "DOI": "10.1016/S1474-4422(24)00053-X",
+    "URL": "https://doi.org/10.1016/S1474-4422(24)00053-X"
+  },
+  "Lueg2026GEMIDAS": {
+    "id": "Lueg2026GEMIDAS",
+    "type": "article-journal",
+    "title": "Dysphagia as a geriatric syndrome: nationwide outcomes from the GEMIDAS registry",
+    "author": [
+      {
+        "family": "Lueg",
+        "given": "Gero"
+      },
+      {
+        "family": "Willschrei",
+        "given": "Peter"
+      },
+      {
+        "family": "Pourhassan",
+        "given": "Maryam"
+      },
+      {
+        "family": "Peranovic",
+        "given": "Sara"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Wirth",
+        "given": "Rainer"
+      },
+      {
+        "family": "Neuendorff",
+        "given": "Nina Rosa"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Archives of gerontology and geriatrics",
+    "container-title-short": "Arch Gerontol Geriatr",
+    "volume": "150",
+    "page": "106341",
+    "PMID": "42361766",
+    "DOI": "10.1016/j.archger.2026.106341",
+    "URL": "https://doi.org/10.1016/j.archger.2026.106341"
+  },
+  "Lueg2026Dehydration": {
+    "id": "Lueg2026Dehydration",
+    "type": "article-journal",
+    "title": "In-hospital mortality in co-occurring dehydration and dysphagia: results from the nationwide GEMIDAS Pro registry",
+    "author": [
+      {
+        "family": "Lueg",
+        "given": "Gero"
+      },
+      {
+        "family": "Funk",
+        "given": "Lukas"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Peranovic",
+        "given": "Sara"
+      },
+      {
+        "family": "Kerkmann",
+        "given": "Regina"
+      },
+      {
+        "family": "Bartel",
+        "given": "Jannis"
+      },
+      {
+        "family": "Pourhassan",
+        "given": "Maryam"
+      },
+      {
+        "family": "Neuendorff",
+        "given": "Nina Rosa"
+      },
+      {
+        "family": "Wirth",
+        "given": "Rainer"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "European geriatric medicine",
+    "container-title-short": "Eur Geriatr Med",
+    "PMID": "42862540",
+    "DOI": "10.1007/s41999-026-01627-3",
+    "URL": "https://doi.org/10.1007/s41999-026-01627-3"
+  },
+  "Marae2026FEESAccess": {
+    "id": "Marae2026FEESAccess",
+    "type": "article-journal",
+    "title": "Mapping neurogenic dysphagia diagnostics in Germany: accessibility, implementation practices, and barriers to swallowing endoscopy",
+    "author": [
+      {
+        "family": "Marae",
+        "given": "Julia Gelenar"
+      },
+      {
+        "family": "Masanneck",
+        "given": "Lars"
+      },
+      {
+        "family": "Pawlitzki",
+        "given": "Marc"
+      },
+      {
+        "family": "Huber",
+        "given": "Cinja"
+      },
+      {
+        "family": "Hofacker",
+        "given": "Jule"
+      },
+      {
+        "family": "Lapa",
+        "given": "Sriramya"
+      },
+      {
+        "family": "Jung",
+        "given": "Anne"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Meuth",
+        "given": "Sven G"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Neurological research and practice",
+    "container-title-short": "Neurol Res Pract",
+    "volume": "8",
+    "issue": "1",
+    "page": "17",
+    "PMID": "41851886",
+    "DOI": "10.1186/s42466-026-00473-9",
+    "URL": "https://doi.org/10.1186/s42466-026-00473-9"
+  },
+  "Suntrup2023PES": {
+    "id": "Suntrup2023PES",
+    "type": "article-journal",
+    "title": "Pharyngeal electrical stimulation for postextubation dysphagia in acute stroke: a randomized controlled pilot trial",
+    "author": [
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Marian",
+        "given": "Thomas"
+      },
+      {
+        "family": "Schröder",
+        "given": "Jens"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Critical care (London, England)",
+    "container-title-short": "Crit Care",
+    "volume": "27",
+    "issue": "1",
+    "page": "383",
+    "PMID": "37789340",
+    "DOI": "10.1186/s13054-023-04665-6",
+    "URL": "https://doi.org/10.1186/s13054-023-04665-6"
+  },
+  "Suntrup2025PES": {
+    "id": "Suntrup2025PES",
+    "type": "article-journal",
+    "title": "Treating postextubation dysphagia after stroke with pharyngeal electrical stimulation -insights from a randomized controlled pilot trial",
+    "author": [
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "von Itter",
+        "given": "Jonas"
+      },
+      {
+        "family": "Jung",
+        "given": "Anne"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "Neurotherapeutics : the journal of the American Society for Experimental NeuroTherapeutics",
+    "container-title-short": "Neurotherapeutics",
+    "volume": "22",
+    "issue": "4",
+    "page": "e00613",
+    "PMID": "40383663",
+    "DOI": "10.1016/j.neurot.2025.e00613",
+    "URL": "https://doi.org/10.1016/j.neurot.2025.e00613"
+  },
+  "Labeit2026PESCosts": {
+    "id": "Labeit2026PESCosts",
+    "type": "article-journal",
+    "title": "Pharyngeal electrical stimulation for postextubation dysphagia after stroke: a randomized trial on hospitalization costs from a health insurance perspective",
+    "author": [
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Jung",
+        "given": "Anne"
+      },
+      {
+        "family": "von Itter",
+        "given": "Jonas"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Kremer",
+        "given": "Almut"
+      },
+      {
+        "family": "Meuth",
+        "given": "Sven G"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Scientific reports",
+    "container-title-short": "Sci Rep",
+    "volume": "16",
+    "issue": "1",
+    "page": "8556",
+    "PMID": "41803360",
+    "DOI": "10.1038/s41598-026-43591-9",
+    "URL": "https://doi.org/10.1038/s41598-026-43591-9"
+  },
+  "Labeit2018NIHSS": {
+    "id": "Labeit2018NIHSS",
+    "type": "article-journal",
+    "title": "Predicting Dysphagia with National Institute of Health Stroke Scale: Distinction between Infra- and Supratentorial Region is Essential",
+    "author": [
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Mueller",
+        "given": "Hannah"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "container-title": "Cerebrovascular diseases (Basel, Switzerland)",
+    "container-title-short": "Cerebrovasc Dis",
+    "volume": "46",
+    "issue": "3-4",
+    "page": "152-160",
+    "PMID": "30253410",
+    "DOI": "10.1159/000493371",
+    "URL": "https://doi.org/10.1159/000493371"
+  },
+  "Labeit2022FEESVFSS": {
+    "id": "Labeit2022FEESVFSS",
+    "type": "article-journal",
+    "title": "Comparison of Simultaneous Swallowing Endoscopy and Videofluoroscopy in Neurogenic Dysphagia",
+    "author": [
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Boehmer",
+        "given": "Maik"
+      },
+      {
+        "family": "Sporns",
+        "given": "Peter"
+      },
+      {
+        "family": "Sauer",
+        "given": "Sonja"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Roderigo",
+        "given": "Malte"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "container-title": "Journal of the American Medical Directors Association",
+    "container-title-short": "J Am Med Dir Assoc",
+    "volume": "23",
+    "issue": "8",
+    "page": "1360-1366",
+    "PMID": "34678269",
+    "DOI": "10.1016/j.jamda.2021.09.026",
+    "URL": "https://doi.org/10.1016/j.jamda.2021.09.026"
+  },
+  "Dziewas2024IntegratedFEES": {
+    "id": "Dziewas2024IntegratedFEES",
+    "type": "article-journal",
+    "title": "Systematic approach to contextualize findings of flexible endoscopic evaluation of swallowing in neurogenic dysphagia- towards an integrated FEES report",
+    "author": [
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Oelenberg",
+        "given": "Stephan"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Wüller",
+        "given": "Christina"
+      },
+      {
+        "family": "Jung",
+        "given": "Anne"
+      },
+      {
+        "family": "von Itter",
+        "given": "Jonas"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Neurological research and practice",
+    "container-title-short": "Neurol Res Pract",
+    "volume": "6",
+    "issue": "1",
+    "page": "26",
+    "PMID": "38720388",
+    "DOI": "10.1186/s42466-024-00321-8",
+    "URL": "https://doi.org/10.1186/s42466-024-00321-8"
+  },
+  "Warnecke2021Classification": {
+    "id": "Warnecke2021Classification",
+    "type": "article-journal",
+    "title": "Neurogenic Dysphagia: Systematic Review and Proposal of a Classification System",
+    "author": [
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Schroeder",
+        "given": "Jens"
+      },
+      {
+        "family": "Reckels",
+        "given": "Alexander"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Lapa",
+        "given": "Sriramya"
+      },
+      {
+        "family": "Claus",
+        "given": "Inga"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "Neurology",
+    "container-title-short": "Neurology",
+    "volume": "96",
+    "issue": "6",
+    "page": "e876-e889",
+    "PMID": "33318164",
+    "DOI": "10.1212/WNL.0000000000011350",
+    "URL": "https://doi.org/10.1212/WNL.0000000000011350"
+  },
+  "Jung2026CoughStroke": {
+    "id": "Jung2026CoughStroke",
+    "type": "article-journal",
+    "title": "Cough reflex testing for dysphagia severity and pneumonia risk after acute stroke: a prospective observational study",
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Anne"
+      },
+      {
+        "family": "Labeit",
+        "given": "Bendix"
+      },
+      {
+        "family": "Oelenberg",
+        "given": "Stephan"
+      },
+      {
+        "family": "Wueller",
+        "given": "Christina"
+      },
+      {
+        "family": "Ahring",
+        "given": "Sigrid"
+      },
+      {
+        "family": "Sauer",
+        "given": "Sonja"
+      },
+      {
+        "family": "Schulze Hillert",
+        "given": "Lisa-Marie"
+      },
+      {
+        "family": "Hartwig",
+        "given": "Linda"
+      },
+      {
+        "family": "Muhle",
+        "given": "Paul"
+      },
+      {
+        "family": "Pilatus",
+        "given": "Anne"
+      },
+      {
+        "family": "Warnecke",
+        "given": "Tobias"
+      },
+      {
+        "family": "Dziewas",
+        "given": "Rainer"
+      },
+      {
+        "family": "Suntrup-Krueger",
+        "given": "Sonja"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Stroke and vascular neurology",
+    "container-title-short": "Stroke Vasc Neurol",
+    "PMID": "42276582",
+    "DOI": "10.1136/svn-2026-005197",
+    "URL": "https://doi.org/10.1136/svn-2026-005197"
+  },
+  "InEKData2025": {
+    "id": "InEKData2025",
+    "type": "webpage",
+    "title": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025, data delivery January 16, 2026, classifications 2025",
+    "author": [
+      {
+        "literal": "Institut für das Entgeltsystem im Krankenhaus"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://datenbrowser.inek.org/DRG202601",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "InEKManual2026": {
+    "id": "InEKManual2026",
+    "type": "webpage",
+    "title": "InEK DatenBrowser user manual, version September 1, 2026; dataset section 2.51",
+    "author": [
+      {
+        "literal": "Institut für das Entgeltsystem im Krankenhaus"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://datenbrowser.inek.org/assets/manual/InekDatenBrowser.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "BfArMOPS2025": {
+    "id": "BfArMOPS2025",
+    "type": "webpage",
+    "title": "OPS 2025, neurological complex treatment codes 8-981 and 8-98b",
+    "author": [
+      {
+        "literal": "Bundesinstitut für Arzneimittel und Medizinprodukte"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2025/block-8-97...8-98.htm",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "BfArMR132025": {
+    "id": "BfArMR132025",
+    "type": "webpage",
+    "title": "ICD-10-GM 2025, R13 dysphagia",
+    "author": [
+      {
+        "literal": "Bundesinstitut für Arzneimittel und Medizinprodukte"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-r10-r19.htm",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "BfArMU692025": {
+    "id": "BfArMU692025",
+    "type": "webpage",
+    "title": "ICD-10-GM 2025, U69 pneumonia-timing codes",
+    "author": [
+      {
+        "literal": "Bundesinstitut für Arzneimittel und Medizinprodukte"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u69-u69.htm",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "InEKPCCL2025": {
+    "id": "InEKPCCL2025",
+    "type": "webpage",
+    "title": "Abschlussbericht zur Weiterentwicklung des aG-DRG-Systems fuer das Jahr 2025. December 19, 2024. Section 3.3.1.4, CCL matrix and PCCL",
+    "author": [
+      {
+        "literal": "Institut für das Entgeltsystem im Krankenhaus"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://www.g-drg.de/content/download/14761/file/Abschlussbericht_aG-DRG_2025_2024-12-19.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "BfArMFunction2025": {
+    "id": "BfArMFunction2025",
+    "type": "webpage",
+    "title": "ICD-10-GM 2025, U50-U52 functional impairment codes and assessment timing",
+    "author": [
+      {
+        "literal": "Bundesinstitut für Arzneimittel und Medizinprodukte"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u50-u52.htm",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "BfArMBarthel2025": {
+    "id": "BfArMBarthel2025",
+    "type": "webpage",
+    "title": "ICD-10-GM 2025, Barthel Index criteria according to the Hamburg Manual",
+    "author": [
+      {
+        "literal": "Bundesinstitut für Arzneimittel und Medizinprodukte"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/zusatz-06-anh-barthelindex.htm",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          17
+        ]
+      ]
+    }
+  }
+}
