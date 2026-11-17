@@ -1,3 +1,9 @@
+# Historical export-list snapshot — superseded
+
+This 58-query list records the state before the twelve E86 exports were completed. It is retained for provenance and is not the current task list. The current list contains 46 queries: [Markdown](outcomes_manual_exports_46.md), [CSV](outcomes_manual_exports_46.csv). The companion `outcomes_manual_exports_58.csv` is likewise a historical snapshot.
+
+---
+
 # Manuelle InEK-Exporte: 58 noch offene Downloads
 
 Stand: 17. November 2026. Alle zwölf vorgesehenen E43-Ereignisexporte sind bereits vorhanden. Für die anderen fünf Endpunkte fehlen noch 58 native Downloads, wenn die geprüfte Pneumonie-Komplementoption verwendet wird. Diese Liste beschreibt ausschließlich manuelle Bedienung; sie enthält keine Browser-, Klick- oder Downloadautomatisierung.

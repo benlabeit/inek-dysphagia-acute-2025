@@ -3,5 +3,5 @@ pneumonia,awaiting_native_exports,0,10,2026-11-17,"No new three-factor estimate 
 aspiration_pneumonitis,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
 pulmonary_union,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
 malnutrition_union,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
-volume_depletion,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
+volume_depletion,completed,3,0,2026-11-17,E86 coded volume depletion; three separate joint standardizations independently validated. Not specific for low-intake dehydration.
 severe_malnutrition,completed,4,0,2026-11-17,E43 only; three original models plus one post hoc coarsened-PCCL sensitivity
