@@ -4,17 +4,25 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 [Project repository](https://github.com/benlabeit/inek-dysphagia-acute-2025) · [Companion early-rehabilitation manuscript](https://github.com/benlabeit/inek-dysphagia-rehabilitation-2025)
 
-## Current manuscript after author comments
+## Current manuscript and outcome extension
 
-The current author-revised Word manuscript is [Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx](Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx). It incorporates the 15 initial author comments and the final PES comment submitted on 17 November 2026. The final comment adds PHADER and expands the discussion of PHAST-TRAC, STEPS and the postextubation trial and its economic analysis, distinguishing populations and evidence strength. Numerical results, the abstract and figures are unchanged. Zotero fields are preserved; references and citation numbers are updated. The earlier Word, PDF and Markdown files below remain the preceding version, including their original reference numbering. Use this new Word file for further manuscript editing. Native Word pagination has not been rechecked.
+The current Word manuscript is [Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx](Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx), with [Online Resource 1](ESM_1.docx). This revision uses the manuscript supplied by the author on 17 November 2026 as its documented source, retains the previously requested comment corrections, and adds verified outcome analyses. Introduction changes are limited to those earlier author requests. The existing discussion is retained with focused additions on nutrition, hydration and interpretation of adjustment. The two original figures are preserved.
 
-## Preceding NRP manuscript, supplement and Zotero versions
+The extension adds jointly age-and-principal-diagnosis standardized length of stay and seven individual-code diagnosis/procedure/process-marker comparisons (Supplementary Table S8). Twelve new unchanged E43 event exports additionally support separate age-sex-diagnosis and age-diagnosis-PCCL models of unspecified severe protein-energy malnutrition (Table S9). The full malnutrition union and the other proposed three-factor outcome models remain pending; they are not reported as completed. A total of 58 native exports remain outstanding. A generalized independent original-workbook validator is included for resumption once each endpoint is complete.
 
-Compatibility filenames `Manuscript_Acute_Dysphagia_2025.docx` and `Manuscript_Acute_Dysphagia_2025.pdf` are byte-identical aliases of the current static NRP manuscript and PDF, so previous repository links remain current. They are not additional manuscript versions.
+- E43: age-sex-diagnosis RR **5.11 (4.15-6.29)**; separate age-diagnosis-PCCL RR **2.71 (approximately 2.12-3.45)**.
+- Adult length-of-stay difference standardized for age and principal diagnosis: **9.74 days (9.45-10.03)**; survivor-only sensitivity: **10.05 days (9.73-10.37)**.
+- The E43 PCCL sensitivity has many sparse and boundary-risk strata. Its approximate model-based confidence interval is not guaranteed to be well calibrated. Coarsening PCCL to 0, 1-2 and 3-6 yields RR **2.87 (approximately 2.25-3.67)** and still leaves sparse/boundary strata. This is a post hoc robustness analysis, not a correction for interval calibration.
 
-`Manuscript_NRP_Acute.docx` is the static manuscript; `Manuscript_NRP_Acute_Zotero.docx` is the separate working copy with embedded Zotero citation metadata. `ESM_1.docx` and `ESM_1.pdf` contain Online Resource 1; supplement citation numbers follow the main manuscript. `manuscript_acute.md` and `manuscript_acute_supplement.md` are the source texts. The current main manuscript has two tables and two figures.
+These are exploratory coded associations, not causal estimates. Sex and PCCL are not included simultaneously. PCCL may incorporate downstream diagnoses and is not admission NIHSS adjustment. New pooled-weight LOS contrasts and earlier dysphagia-weighted within-DRG contrasts have different estimands.
 
-RIS/CSL import files, the citation map and Zotero guidance are in `research/zotero/`. Citation-field JSON and visible-text preservation passed programmatic checks. The fields contain embedded references and are not linked to the user's personal Zotero library. A live Word/Zotero refresh and native Word pagination remain untested; the supplied PDFs are independently rendered reading copies. See [Zotero guidance](research/zotero/ZOTERO_HINWEISE.md).
+See the outcome methods, aggregate tables, reproducible scripts and manual export checklist added with this revision. Original workbooks and detailed small-cell audits remain excluded. The InEK manual (01 September 2026), section I.4, expressly disallows automated use; data acquisition must follow the provider's conditions. Source workbooks were exported through the official InEK data-browser interface. The analysis scripts operate locally and do not acquire data.
+
+## Earlier document versions
+
+The other manuscript Word/PDF/Markdown files and `ESM_1.pdf` are **earlier versions**. They do not contain the current outcome extension or all subsequent author comments. In particular, the older compatibility filenames are not aliases of the current Word manuscript. Use the two Word files linked above for further editing.
+
+RIS/CSL import files and Zotero guidance are in `research/zotero/`. Four additional primary references support the expanded discussion; their identifiers and scope are documented in `OUTCOMES_ADDITIONAL_REFERENCES.md`. Zotero citation metadata are retained and the displayed citations, bibliography and supplement references are updated together. Native Word pagination and live Zotero refresh have not been rechecked; no current PDF is supplied because the available document renderer could not run. Numerical, text, table, and OOXML integrity checks are documented with the revision.
 
 ## Publication figures and expanded literature audit
 

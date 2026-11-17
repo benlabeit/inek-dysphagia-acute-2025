@@ -1,0 +1,4873 @@
+{
+  "schema_version": 1,
+  "cohort": "acute",
+  "definition_locked_date": "2026-11-17",
+  "delivery": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+  "source_url": "https://datenbrowser.inek.org/",
+  "status": "defined_before_additional_event_exports",
+  "scope": "Diagnosis outcomes only. Procedural endpoints require an independent AND procedure selector; never add them to the cohort OPS OR field.",
+  "query_logic": "OR within each selector; AND across selectors. Dysphagia ND and outcome further-ND selectors are distinct.",
+  "endpoint_definitions": {
+    "pneumonia": {
+      "label": "Coded pneumonia, J12-J18 secondary-diagnosis union",
+      "codes": [
+        "J12.0",
+        "J12.1",
+        "J12.2",
+        "J12.3",
+        "J12.8",
+        "J12.9",
+        "J13",
+        "J14",
+        "J15.0",
+        "J15.1",
+        "J15.2",
+        "J15.3",
+        "J15.4",
+        "J15.5",
+        "J15.6",
+        "J15.7",
+        "J15.8",
+        "J15.9",
+        "J16.0",
+        "J16.8",
+        "J17.0",
+        "J17.1",
+        "J17.2",
+        "J17.3",
+        "J17.8",
+        "J18.0",
+        "J18.1",
+        "J18.2",
+        "J18.8",
+        "J18.9"
+      ],
+      "role": "clinical outcome"
+    },
+    "aspiration_pneumonitis": {
+      "label": "Coded pneumonitis/pneumonia due to food and vomit, J69.0 secondary diagnosis",
+      "codes": [
+        "J69.0"
+      ],
+      "role": "clinical outcome"
+    },
+    "pulmonary_union": {
+      "label": "Coded pneumonia or aspiration-related pneumonitis, J12-J18 or J69.0 unique-case union",
+      "codes": [
+        "J12.0",
+        "J12.1",
+        "J12.2",
+        "J12.3",
+        "J12.8",
+        "J12.9",
+        "J13",
+        "J14",
+        "J15.0",
+        "J15.1",
+        "J15.2",
+        "J15.3",
+        "J15.4",
+        "J15.5",
+        "J15.6",
+        "J15.7",
+        "J15.8",
+        "J15.9",
+        "J16.0",
+        "J16.8",
+        "J17.0",
+        "J17.1",
+        "J17.2",
+        "J17.3",
+        "J17.8",
+        "J18.0",
+        "J18.1",
+        "J18.2",
+        "J18.8",
+        "J18.9",
+        "J69.0"
+      ],
+      "role": "overlapping clinical composite; not independent of component outcomes"
+    },
+    "malnutrition_union": {
+      "label": "Coded energy/protein malnutrition, E40-E44 or E46 secondary-diagnosis union",
+      "codes": [
+        "E40",
+        "E41",
+        "E42",
+        "E43",
+        "E44.0",
+        "E44.1",
+        "E46"
+      ],
+      "role": "clinical outcome",
+      "exclusion": "E45 developmental retardation following protein-energy malnutrition is excluded from this adult current-malnutrition definition; E64.0 sequelae, R64 cachexia and Z-codes are not substituted."
+    },
+    "volume_depletion": {
+      "label": "Coded volume depletion, E86 secondary diagnosis",
+      "codes": [
+        "E86"
+      ],
+      "role": "clinical outcome; not specific for low-intake dehydration"
+    },
+    "severe_malnutrition": {
+      "label": "Coded unspecified severe protein-energy malnutrition, E43 secondary diagnosis",
+      "codes": [
+        "E43"
+      ],
+      "role": "secondary sensitivity and continuity with original manuscript; subset of malnutrition_union"
+    }
+  },
+  "event_export_count": 72,
+  "event_exports_per_endpoint": 12,
+  "reference_export_count": 12,
+  "reference_export_role": "Optional verification and full-age crude prevalence; adult analysis remains separate.",
+  "models": {
+    "age_sex_principal_diagnosis": "sex",
+    "age_principal_diagnosis_pccl_sensitivity": "pccl",
+    "age_principal_diagnosis": "total"
+  },
+  "no_joint_sex_pccl": true,
+  "zero_rule": "No absent query or row is treated as zero. Explicit zero-query handling requires source-backed protocol amendment.",
+  "optional_exact_reuse_amendment": {
+    "date": "2026-11-17",
+    "cli_flag": "--allow-exact-pneumonia-complement",
+    "default_enabled": false,
+    "endpoint": "pneumonia",
+    "eligible_principal_diagnosis": "allhd",
+    "required_proof": "Existing full-age endpoint source has explicit zero in every minor age group; one opposite adult age-band endpoint source is directly exported and valid.",
+    "reused_sources": [
+      "acute_all_pneumonia_2025.xlsx",
+      "acute_dys_pneumonia_2025.xlsx"
+    ],
+    "maximum_downloads_saved": 2,
+    "new_event_downloads_if_used": 70,
+    "no_synthetic_workbooks": true,
+    "method": "Exact subtraction of counts for each age/sex/PCCL category; complete source hashes retained."
+  },
+  "denominators_reused": [
+    "acute_joint_age18_74_allhd_all_2025.xlsx",
+    "acute_joint_age18_74_allhd_dys_2025.xlsx",
+    "acute_joint_age18_74_i63_all_2025.xlsx",
+    "acute_joint_age18_74_i63_dys_2025.xlsx",
+    "acute_joint_age18_74_i61_all_2025.xlsx",
+    "acute_joint_age18_74_i61_dys_2025.xlsx",
+    "acute_joint_age75plus_allhd_all_2025.xlsx",
+    "acute_joint_age75plus_allhd_dys_2025.xlsx",
+    "acute_joint_age75plus_i63_all_2025.xlsx",
+    "acute_joint_age75plus_i63_dys_2025.xlsx",
+    "acute_joint_age75plus_i61_all_2025.xlsx",
+    "acute_joint_age75plus_i61_dys_2025.xlsx"
+  ],
+  "event_queries": [
+    {
+      "filename": "acute_outcome_pneumonia_age18_74_allhd_all_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age18_74_allhd_dys_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age18_74_i63_all_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age18_74_i63_dys_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age18_74_i61_all_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age18_74_i61_dys_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age75plus_allhd_all_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age75plus_allhd_dys_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age75plus_i63_all_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age75plus_i63_dys_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age75plus_i61_all_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pneumonia_age75plus_i61_dys_2025.xlsx",
+      "endpoint": "pneumonia",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age18_74_allhd_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age18_74_allhd_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age18_74_i63_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age18_74_i63_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age18_74_i61_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age18_74_i61_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age75plus_allhd_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age75plus_allhd_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age75plus_i63_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age75plus_i63_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age75plus_i61_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_age75plus_i61_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age18_74_allhd_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age18_74_allhd_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age18_74_i63_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age18_74_i63_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age18_74_i61_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age18_74_i61_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age75plus_allhd_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age75plus_allhd_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age75plus_i63_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age75plus_i63_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age75plus_i61_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_age75plus_i61_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age18_74_allhd_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age18_74_allhd_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age18_74_i63_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age18_74_i63_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age18_74_i61_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age18_74_i61_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age75plus_allhd_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age75plus_allhd_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age75plus_i63_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age75plus_i63_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age75plus_i61_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_age75plus_i61_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age18_74_allhd_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age18_74_allhd_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age18_74_i63_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age18_74_i63_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age18_74_i61_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age18_74_i61_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age75plus_allhd_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age75plus_allhd_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age75plus_i63_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age75plus_i63_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age75plus_i61_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_age75plus_i61_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age18_74_allhd_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age18_74_allhd_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age18_74",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age18_74_i63_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age18_74_i63_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age18_74_i61_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age18_74_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age18_74_i61_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age18_74",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age18_74_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "18-29 Jahre",
+          "30-39 Jahre",
+          "40-49 Jahre",
+          "50-54 Jahre",
+          "55-59 Jahre",
+          "60-64 Jahre",
+          "65-74 Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age75plus_allhd_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_allhd_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age75plus_allhd_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age75plus",
+      "principal_diagnosis": "allhd",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_allhd_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age75plus_i63_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i63_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age75plus_i63_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i63",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i63_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I63.0",
+          "I63.1",
+          "I63.2",
+          "I63.3",
+          "I63.4",
+          "I63.5",
+          "I63.6",
+          "I63.8",
+          "I63.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age75plus_i61_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "all",
+      "denominator_file": "acute_joint_age75plus_i61_all_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_age75plus_i61_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "age_band": "age75plus",
+      "principal_diagnosis": "i61",
+      "population": "dys",
+      "denominator_file": "acute_joint_age75plus_i61_dys_2025.xlsx",
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "Altersklassen": [
+          "75-79 Jahre",
+          "80+ Jahre"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ],
+        "Hauptdiagnosen": [
+          "I61.0",
+          "I61.1",
+          "I61.2",
+          "I61.3",
+          "I61.4",
+          "I61.5",
+          "I61.6",
+          "I61.8",
+          "I61.9"
+        ]
+      }
+    }
+  ],
+  "full_age_reference_queries": [
+    {
+      "filename": "acute_all_pneumonia_2025.xlsx",
+      "endpoint": "pneumonia",
+      "population": "all",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": true,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_dys_pneumonia_2025.xlsx",
+      "endpoint": "pneumonia",
+      "population": "dys",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": true,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_allages_allhd_all_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "population": "all",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_aspiration_pneumonitis_allages_allhd_dys_2025.xlsx",
+      "endpoint": "aspiration_pneumonitis",
+      "population": "dys",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_allages_allhd_all_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "population": "all",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_pulmonary_union_allages_allhd_dys_2025.xlsx",
+      "endpoint": "pulmonary_union",
+      "population": "dys",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "J12.0",
+          "J12.1",
+          "J12.2",
+          "J12.3",
+          "J12.8",
+          "J12.9",
+          "J13",
+          "J14",
+          "J15.0",
+          "J15.1",
+          "J15.2",
+          "J15.3",
+          "J15.4",
+          "J15.5",
+          "J15.6",
+          "J15.7",
+          "J15.8",
+          "J15.9",
+          "J16.0",
+          "J16.8",
+          "J17.0",
+          "J17.1",
+          "J17.2",
+          "J17.3",
+          "J17.8",
+          "J18.0",
+          "J18.1",
+          "J18.2",
+          "J18.8",
+          "J18.9",
+          "J69.0"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_allages_allhd_all_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "population": "all",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_malnutrition_union_allages_allhd_dys_2025.xlsx",
+      "endpoint": "malnutrition_union",
+      "population": "dys",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "E40",
+          "E41",
+          "E42",
+          "E43",
+          "E44.0",
+          "E44.1",
+          "E46"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_allages_allhd_all_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "population": "all",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_volume_depletion_allages_allhd_dys_2025.xlsx",
+      "endpoint": "volume_depletion",
+      "population": "dys",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "E86"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_allages_allhd_all_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "population": "all",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ]
+      }
+    },
+    {
+      "filename": "acute_outcome_severe_malnutrition_allages_allhd_dys_2025.xlsx",
+      "endpoint": "severe_malnutrition",
+      "population": "dys",
+      "role": "optional full-age union reference, no age or principal diagnosis filter",
+      "already_available_for_pneumonia": false,
+      "filters": {
+        "Prozeduren": [
+          "8-981.20",
+          "8-981.21",
+          "8-981.22",
+          "8-981.23",
+          "8-981.30",
+          "8-981.31",
+          "8-981.32",
+          "8-981.33",
+          "8-98b.20",
+          "8-98b.21",
+          "8-98b.22",
+          "8-98b.23",
+          "8-98b.30",
+          "8-98b.31",
+          "8-98b.32",
+          "8-98b.33"
+        ],
+        "weitere Nebendiagnosen": [
+          "E43"
+        ],
+        "Nebendiagnosen": [
+          "R13.0",
+          "R13.1",
+          "R13.9"
+        ]
+      }
+    }
+  ]
+}

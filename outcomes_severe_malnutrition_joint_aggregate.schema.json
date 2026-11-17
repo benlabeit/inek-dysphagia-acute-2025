@@ -1,0 +1,100 @@
+{
+  "file": "outcomes_severe_malnutrition_joint_aggregate.csv",
+  "schema_version": 1,
+  "level": "model-level aggregates only",
+  "delivery_id": "DRG202601",
+  "delivery_label": "Unterjährige Datenlieferung DRG Januar bis Dezember 2025",
+  "cohort": "Acute OPS-defined cohort; adults aged 18 years or older",
+  "fields": {
+    "endpoint": {
+      "type": "string",
+      "description": "Registered diagnosis endpoint key. severe_malnutrition means E43 only; it is not the full malnutrition union."
+    },
+    "label": {
+      "type": "string",
+      "description": "Clinical coding definition."
+    },
+    "analysis": {
+      "type": "string",
+      "description": "Name of the directly standardized model."
+    },
+    "status": {
+      "type": "string",
+      "description": "Reported model-level result."
+    },
+    "all_n": {
+      "type": "integer",
+      "description": "Total adult cases retained on model-specific common support."
+    },
+    "dys_n": {
+      "type": "integer",
+      "description": "Dysphagia-coded cases retained on model-specific common support."
+    },
+    "no_dys_n": {
+      "type": "integer",
+      "description": "Complement cases without the selected R13 coding, retained on model-specific common support."
+    },
+    "crude_rr_same_population": {
+      "type": "number",
+      "description": "Crude coded-outcome risk ratio in exactly the same common-support population as the standardized model."
+    },
+    "dys_standardized_risk": {
+      "type": "number",
+      "description": "Pooled-weight standardized probability in the dysphagia-coded group (0–1 scale)."
+    },
+    "no_dys_standardized_risk": {
+      "type": "number",
+      "description": "Pooled-weight standardized probability in the comparator group (0–1 scale)."
+    },
+    "rr": {
+      "type": "number",
+      "description": "Ratio of standardized risks, dysphagia/comparator."
+    },
+    "rr_ci_lower": {
+      "type": "number",
+      "description": "Lower approximate 95% confidence limit for the standardized RR."
+    },
+    "rr_ci_upper": {
+      "type": "number",
+      "description": "Upper approximate 95% confidence limit for the standardized RR."
+    },
+    "risk_difference": {
+      "type": "number",
+      "description": "Standardized dysphagia risk minus comparator risk on the probability scale; multiply by 100 for percentage points."
+    },
+    "risk_difference_ci_lower": {
+      "type": "number",
+      "description": "Lower approximate 95% confidence limit for the risk difference on the probability scale."
+    },
+    "risk_difference_ci_upper": {
+      "type": "number",
+      "description": "Upper approximate 95% confidence limit for the risk difference on the probability scale."
+    },
+    "analysis_role": {
+      "type": "string",
+      "description": "Primary, descriptive PCCL sensitivity, or secondary model designation."
+    },
+    "interval_qualification": {
+      "type": "string",
+      "description": "Interval limitations including qualitative sparsity/boundary flags, without stratum counts."
+    },
+    "severity_qualification": {
+      "type": "string",
+      "description": "Interpretation limitations concerning NIHSS, residual confounding and PCCL."
+    },
+    "pccl_grouping": {
+      "type": "string",
+      "description": "Native PCCL levels, coarsened levels, or not included. The coarsened model is a post hoc QA sensitivity."
+    }
+  },
+  "excluded_content": [
+    "Raw workbooks",
+    "Stratum-level event or non-event counts",
+    "Detailed age/sex/PCCL cells",
+    "Input-workbook hashes or mappings",
+    "Local source paths",
+    "Ingestion logs"
+  ],
+  "provenance": "First three model rows from the validated joint pipeline; fourth row from independent 60-digit Decimal recalculation and post hoc PCCL coarsening. No private strata or source hash mapping included.",
+  "model_rows": 4
+}

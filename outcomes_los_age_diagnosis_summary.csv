@@ -1,0 +1,3 @@
+analysis,adjusted_factors,all_n,dys_n,no_dys_n,included_strata,dys_standardized_mean_days,no_dys_standardized_mean_days,mean_difference_days,ci_lower,ci_upper,crude_mean_difference_days,crude_ci_lower,crude_ci_upper
+LOS_age_principal_diagnosis,adult_age_band + principal_diagnosis,279255,33641,245614,6,17.269406682368714,7.525617180424095,9.743789501944619,9.45348371457336,10.034095289315877,8.853851335627498,8.668493854472604,9.039208816782391
+LOS_age_principal_diagnosis_discharge_alive,adult_age_band + principal_diagnosis,266506,28638,237868,6,17.48776126107775,7.437143991939293,10.050617269138456,9.72698695316316,10.374247585113753,9.397421790788094,9.191350005437059,9.60349357613913
