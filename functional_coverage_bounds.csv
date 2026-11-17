@@ -1,0 +1,16 @@
+﻿cohort,instrument,group,n,all_planned_codes_visible,interpretation,unique_union_count_bounds_lower,unique_union_count_bounds_upper,unique_union_fraction_bounds_lower,unique_union_fraction_bounds_upper
+acute,U50_Barthel,all,279277,True,Set-theoretic bounds; not an observed unique assessment rate,21058,114814,0.07540184118276837,0.4111115487490914
+acute,U50_Barthel,dys,33643,True,Set-theoretic bounds; not an observed unique assessment rate,9215,18177,0.2739054186606426,0.5402906994025503
+acute,U50_Barthel,no_dys,245634,True,Set-theoretic bounds; not an observed unique assessment rate,19056,96637,0.07757883680597963,0.39341866354006366
+acute,U50_motor_FIM,all,279277,True,Set-theoretic bounds; not an observed unique assessment rate,441,1406,0.0015790774034381636,0.005034428184204213
+acute,U50_motor_FIM,dys,33643,True,Set-theoretic bounds; not an observed unique assessment rate,246,339,0.007312070861694855,0.010076390333799007
+acute,U50_motor_FIM,no_dys,245634,True,Set-theoretic bounds; not an observed unique assessment rate,425,1067,0.0017302165009729924,0.004343861191854548
+acute,U51_extended_Barthel,all,279277,True,Set-theoretic bounds; not an observed unique assessment rate,17307,28981,0.06197073156758344,0.1037715243288921
+acute,U51_extended_Barthel,dys,33643,True,Set-theoretic bounds; not an observed unique assessment rate,2342,4553,0.06961329251255834,0.1353327586719377
+acute,U51_extended_Barthel,no_dys,245634,True,Set-theoretic bounds; not an observed unique assessment rate,16189,24428,0.06590699984529828,0.09944877337827825
+acute,U51_cognitive_FIM,all,279277,True,Set-theoretic bounds; not an observed unique assessment rate,795,1471,0.0028466361354497504,0.005267172019178092
+acute,U51_cognitive_FIM,dys,33643,True,Set-theoretic bounds; not an observed unique assessment rate,169,339,0.005023333234253783,0.010076390333799007
+acute,U51_cognitive_FIM,no_dys,245634,True,Set-theoretic bounds; not an observed unique assessment rate,744,1132,0.003028896651115074,0.004608482539062182
+acute,U51_MMSE,all,279277,True,Set-theoretic bounds; not an observed unique assessment rate,4998,9890,0.017896210572299186,0.03541286965987174
+acute,U51_MMSE,dys,33643,True,Set-theoretic bounds; not an observed unique assessment rate,692,1891,0.02056891478167821,0.05620782926611777
+acute,U51_MMSE,no_dys,245634,True,Set-theoretic bounds; not an observed unique assessment rate,4306,7999,0.017530146478093422,0.03256471009713639

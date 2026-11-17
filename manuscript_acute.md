@@ -2,13 +2,13 @@
 
 # Abstract
 
-**Background:** Dysphagia is central to stroke care, but its nationwide inpatient burden is difficult to distinguish from stroke severity, case mix and diagnostic ascertainment. We examined associations between secondary-diagnosis coding of dysphagia and hospital outcomes in German acute stroke care.
+**Background:** Dysphagia is associated with adverse stroke outcomes, but its nationwide inpatient burden is difficult to separate from neurological severity and case mix.
 
-**Methods:** We analyzed aggregated InEK data from the January-December 2025 release. Hospital episodes were selected using 16 OPS codes for neurological complex treatment of acute stroke. Dysphagia was defined by any secondary diagnosis R13.0, R13.1 or R13.9. Outcomes included length of stay, coded respiratory diagnoses, in-hospital death and flexible endoscopic evaluation of swallowing (FEES). Overlapping pneumonia codes were evaluated using unique-case queries. Length of stay was additionally compared within diagnosis-related groups (DRGs), weighted to the dysphagia distribution. Exploratory analyses standardized mortality to the cohort's three-band age distribution and examined stays among episodes ending in discharge alive.
+**Methods:** We analyzed aggregate InEK January-December 2025 data for hospital episodes receiving OPS-defined neurological complex treatment of acute stroke. Dysphagia was defined by R13.0, R13.1 or R13.9 secondary diagnoses. Outcomes included length of stay, unique-case pneumonia coding and inpatient death. Exploratory analyses compared stays within diagnosis-related groups (DRGs), standardized mortality by age and outcomes by patient clinical complexity level (PCCL), and examined diagnosis and functional subgroups.
 
-**Results:** Among 279,277 episodes, 33,643 (12.05%) had an R13 secondary diagnosis. Mean hospital stay was 16.26 versus 7.41 days, a difference of 8.85 days (95% confidence interval [CI] 8.67-9.04). The within-DRG difference was 3.61 days (95% CI 3.45-3.78), covering 98.28% of episodes with dysphagia. Aspiration-related pneumonitis/pneumonia codes occurred in 23.19% versus 1.81% of episodes (risk ratio [RR] 12.82, 95% CI 12.38-13.27). The combined J12-J18 or J69.0 endpoint occurred in 33.22% versus 4.57% (RR 7.27, 95% CI 7.10-7.44). In-hospital mortality was 14.87% versus 3.15% (RR 4.72, 95% CI 4.56-4.88); after age standardization, the RR was 4.08 (95% CI 3.95-4.23). FEES was coded in 20.14% of episodes with dysphagia.
+**Results:** Among 279,277 episodes, 33,643 (12.05%) had dysphagia coding. Mean stay was 16.26 versus 7.41 days; the within-DRG difference was 3.61 days (95% confidence interval [CI] 3.45-3.78), covering 98.28% of dysphagia episodes. The combined J12-J18 or J69.0 pulmonary endpoint occurred in 33.22% versus 4.57% (risk ratio [RR] 7.27, 95% CI 7.10-7.44). Mortality was 14.87% versus 3.15% (RR 4.72, 95% CI 4.56-4.88); separate age and PCCL standardizations yielded RRs of 4.08 (95% CI 3.95-4.23) and 3.20 (95% CI 3.07-3.33). The PCCL-standardized J12-J18 pneumonia RR was 2.07 (95% CI 1.97-2.16). Functional-category mortality contrasts varied: RR 1.08 (95% CI 1.03-1.15) at Barthel Index 0-15 and 1.02 (95% CI 0.90-1.15) at extended Barthel Index 0-15.
 
-**Conclusions:** Recorded dysphagia marks a substantial concentration of pulmonary morbidity, mortality and inpatient resource use in German acute stroke care. The findings support prioritizing dysphagia assessment and management within comprehensive stroke services. Residual confounding, selection and coding differences preclude causal estimates of preventable complications or savings.
+**Conclusions:** Recorded dysphagia identifies substantial pulmonary morbidity, mortality and resource use. Associations persisted after separate administrative standardizations but varied within functional subgroups. Selective coding and residual neurological-severity confounding preclude claims of independent causal effects or preventable burden.
 
 **Keywords:** dysphagia; stroke; administrative data; pneumonia; length of stay; FEES; Germany
 
@@ -22,7 +22,7 @@ Resource implications are similarly relevant. A German FEES-based study found th
 
 Germany's InEK database has already been used to describe FEES implementation. Ungerer and colleagues analyzed 1,540,947 stroke-unit episodes from 2019 to 2024, documenting variation in FEES coding across years and institutional service levels [Ungerer2026]. A further nationwide analysis is therefore most useful when it addresses the burden accompanying documented dysphagia rather than claiming novelty for national FEES frequencies alone. International administrative studies also illustrate the importance of interpretation: a US analysis found longer stays but lower adjusted inpatient mortality among patients with coded dysphagia, emphasizing the sensitivity of administrative associations to ascertainment and selection [Vasan2023].
 
-We examined the association of an R13 secondary diagnosis with respiratory diagnoses, inpatient death, FEES use and length of stay in the 2025 InEK acute stroke-care cohort. We additionally distinguished overlapping pneumonia codes, described coded dysphagia in clinically relevant treatment and diagnosis subgroups, and compared length of stay within DRGs. The objective was to quantify the nationwide burden associated with recorded dysphagia while keeping the limits of aggregated administrative information explicit.
+We examined the association of an R13 secondary diagnosis with respiratory diagnoses, inpatient death, FEES use and length of stay in the 2025 InEK acute stroke-care cohort. We additionally distinguished overlapping pneumonia codes, described coded dysphagia in clinically relevant treatment and diagnosis subgroups, compared length of stay within DRGs, and examined whether outcome contrasts persisted within documented functional categories and after PCCL standardization. The objective was to quantify the nationwide burden associated with recorded dysphagia while keeping the limits of aggregated administrative information explicit.
 
 # Methods
 
@@ -56,11 +56,15 @@ We report proportions, unadjusted risk ratios and risk differences. Proportion i
 
 For DRGs with estimable values in both groups, we calculated the within-DRG mean difference and weighted it by the number of episodes with dysphagia in that DRG. Thus, the comparison was standardized to the observed DRG distribution of the dysphagia subgroup. A sensitivity analysis required at least 20 episodes in each group per DRG. Associated bed-days were calculated as the sum of each within-DRG difference multiplied by its dysphagia count. This descriptive quantity is not an attributable or preventable burden estimate.
 
-For exploratory age-standardized mortality, we reconstructed deaths and denominators in three bands: under 65, 65-79 and 80 years or older. Group-specific risks were directly standardized to the pooled age distribution of all 279,277 selected episodes, with weights 24.196%, 36.477% and 39.327%, respectively. The under-65 band included the 22 episodes aged under 18. Confidence intervals for the standardized risk difference and log risk ratio used the delta method with fixed observed weights and independent binomial variances. This comparison addresses broad age composition only; residual differences within bands and other confounding remain. Mortality within principal-diagnosis I61 was reconstructed only after confirming that every expected endcode was present in all four relevant exports. I63 mortality was not reported as an exact subgroup result because an endcode was omitted from the death tables.
+For exploratory age-standardized mortality, we reconstructed deaths and denominators in three bands: under 65, 65-79 and 80 years or older. Group-specific risks were directly standardized to the pooled age distribution of all 279,277 selected episodes, with weights 24.196%, 36.477% and 39.327%, respectively. The under-65 band included the 22 episodes aged under 18. Confidence intervals for the standardized risk difference and log risk ratio used the delta method with fixed observed weights and independent binomial variances. This comparison addresses broad age composition only; residual differences within bands and other confounding remain. Mortality within principal-diagnosis I61 was reconstructed only after confirming that every expected endcode was present in all four relevant exports. Because I63.6 was omitted from the death tables, an exact cerebral-infarction sensitivity cohort was explicitly restricted to the eight endcodes I63.0-I63.5, I63.8 and I63.9. It was not labeled the full I63 group. Main-diagnosis categories are mutually exclusive, permitting sums of complete endcode sets. These restrictions address diagnostic composition, not severity within a diagnosis.
+
+For PCCL-standardized mortality and J12-J18 pneumonia, the seven PCCL categories (0-6) were confirmed to be exhaustive and mutually exclusive in the total, dysphagia and corresponding outcome-filtered exports. Both exposure groups were represented in every stratum. Group-specific risks were directly standardized to the PCCL distribution of the entire care cohort; intervals used the same fixed-weight binomial delta method as the age analysis. Age and PCCL standardizations were separate analyses. PCCL summarizes the resource-related contribution of coded complications and comorbidities and is not an admission neurological score [InEKPCCL2025]. It can include diagnoses on pathways between dysphagia and outcomes. Consequently, this standardization is descriptive rather than an estimate of a baseline-severity-adjusted causal effect.
+
+Functional sensitivities compared mortality and J12-J18 pneumonia within each of 21 ICD-10-GM categories representing the Barthel Index, motor Functional Independence Measure (FIM), extended Barthel Index, cognitive FIM and Mini-Mental State Examination (MMSE). Instruments were analyzed separately. The 2025 U50/U51 rules specify assessment during the first five hospital days, or at the beginning of geriatric or early-rehabilitation care, and the highest score within that window when values change [BfArMFunction2025]. Thus, these codes are temporally defined proxies rather than proven pre-dysphagia measurements. The Barthel Index includes eating or PEG self-care, preventing its interpretation as entirely independent of swallowing-related care [BfArMBarthel2025]. Each individual-code analysis required explicit denominator and outcome rows in all four relevant exports. Missing rows were retained as non-estimable rather than zero. All candidate categories and their availability are reported in Supplementary Tables S1-S2. We did not add code counts to infer unique test coverage, combine instruments into one scale, or calculate a multi-category functional standardization without verified episode-level exclusivity. A code-absent group does not indicate normal function. These analyses were developed after inspection of the initial results and remain exploratory.
 
 We also subtracted the death cohorts' counts, sums and second moments from their corresponding total cohorts to derive length of stay among episodes ending in discharge alive. Overall reconstruction used the Info sample-SD convention. Survivor DRG reconstruction used population-SD moments and required an explicitly displayed death row in both the total and dysphagia exports; an absent row could contain suppressed cases and was not treated as zero. The resulting restricted within-DRG comparison was weighted to the included dysphagia-survivor distribution, with coverage reported. These analyses condition on survival and are descriptive sensitivity analyses, not estimates free of mortality-related selection.
 
-The nationwide delivery is not a random sample. The intervals are model-based summaries conditional on the observed data and, for the DRG analysis, the observed weights. They assume independent episodes and do not account for hospital clustering, repeat admissions, coding error or residual confounding. No individual-level multivariable adjustment was possible. Multiple comparisons were considered exploratory; interpretation emphasized magnitude, consistency and clinical context rather than significance thresholds.
+The nationwide delivery is not a random sample. The intervals are model-based summaries conditional on the observed data and, for the DRG analysis, the observed weights. They assume independent episodes and do not account for hospital clustering, repeat admissions, coding error or residual confounding. No patient-level records or admission NIHSS measurements were available. Separate marginal standardizations must not be interpreted as simultaneous adjustment for age, sex, principal diagnosis, functional status and PCCL. Multiple comparisons were considered exploratory; interpretation emphasized magnitude, consistency and clinical context rather than significance thresholds.
 
 ## Literature context and research governance
 
@@ -82,7 +86,17 @@ Aspiration-related pneumonitis/pneumonia codes occurred in 7,801 episodes with d
 
 There were 5,003 inpatient deaths among episodes with dysphagia and 7,746 among comparator episodes, yielding mortality proportions of 14.87% and 3.15%. Volume depletion and both pneumonia-timing markers were also more frequent in episodes with dysphagia. Table 2 presents the principal coded outcomes; Table 3 separates the overlapping pulmonary categories.
 
-After direct standardization to the cohort's three-band age distribution, mortality was 13.1696% with an R13 secondary diagnosis and 3.22435% without one (RR 4.08, 95% CI 3.95-4.23; risk difference 9.95 percentage points, 95% CI 9.59-10.30). Age-specific RRs were 4.83 below age 65, 4.82 at ages 65-79 and 3.69 at age 80 or older (Table 5). Within the principal-diagnosis I61 subgroup, 611 of 3,364 episodes with dysphagia and 1,084 of 8,784 comparator episodes ended in death (18.16% versus 12.34%; RR 1.47, 95% CI 1.34-1.61). This smaller subgroup contrast describes a different diagnostic case mix and does not isolate a causal effect of dysphagia.
+After direct standardization to the cohort's three-band age distribution, mortality was 13.1696% with an R13 secondary diagnosis and 3.22435% without one (RR 4.08, 95% CI 3.95-4.23; risk difference 9.95 percentage points, 95% CI 9.59-10.30). Age-specific RRs were 4.83 below age 65, 4.82 at ages 65-79 and 3.69 at age 80 or older (Table 5). These age-specific and standardized estimates describe broad age composition without controlling neurological severity.
+
+## Diagnosis and functional severity sensitivities
+
+After standardization to the pooled PCCL distribution, mortality was 11.47% with an R13 secondary diagnosis and 3.59% without one (RR 3.20, 95% CI 3.07-3.33; risk difference 7.88 percentage points, 95% CI 7.48-8.28). PCCL-standardized J12-J18 pneumonia risks were 6.99% and 3.39% (RR 2.07, 95% CI 1.97-2.16; risk difference 3.61 percentage points, 95% CI 3.32-3.90). The mortality association varied across PCCL categories, with RRs of 6.91 at PCCL 0, 2.01 at PCCL 3 and 1.14 at PCCL 4; the standardized contrast does not imply a uniform stratum-specific association.
+
+The exactly observed cerebral-infarction sensitivity cohort excluding I63.6 comprised 175,955 episodes. Mortality was 3,871/26,604 with dysphagia and 5,556/149,351 without dysphagia (14.55% versus 3.72%; RR 3.91, 95% CI 3.76-4.07). Within the complete I61 subgroup, mortality was 611/3,364 versus 1,084/8,784 (18.16% versus 12.34%; RR 1.47, 95% CI 1.34-1.61). These different contrasts demonstrate the relevance of diagnostic composition but do not control severity within each diagnosis (Table 6).
+
+Functional-category associations were heterogeneous. Within Barthel Index 0-15 (U50.50), mortality was 1,894/9,215 versus 2,244/11,843 (20.55% versus 18.95%; RR 1.08, 95% CI 1.03-1.15), whereas the J12-J18 pneumonia RR was 1.32 (95% CI 1.23-1.42). Within extended Barthel Index 0-15 (U51.20), mortality was 334/1,093 versus 400/1,332 (30.56% versus 30.03%; RR 1.02, 95% CI 0.90-1.15); the pneumonia RR was 1.47 (95% CI 1.20-1.79). Mortality RRs in less impaired Barthel categories ranged from 2.42 at 20-35 points to 31.88 at 100 points, with substantial differences in baseline risks and subgroup sizes (Supplementary Tables S1-S2). These selected groups must not be compared with the full-cohort crude RR as a decomposition of confounding.
+
+Exact comparisons were available for 31 of 42 category-by-outcome combinations; the remaining 11 were not estimable because required rows were absent. Coding was incomplete: even the sum of all six displayed Barthel category counts covered only 41.11% of the full cohort, an upper bound on unique coverage rather than a verified union. Consequently, the functional analyses describe episodes with particular recorded assessments, not a severity adjustment of the complete cohort.
 
 ## Length of stay and FEES
 
@@ -94,7 +108,7 @@ FEES was coded in 6,776 episodes with dysphagia (20.14%) and 2,182 comparator ep
 
 # Discussion
 
-This analysis identified a large concentration of inpatient burden among hospital episodes with an R13 secondary diagnosis in German acute stroke care. Approximately one in eight episodes had documented dysphagia. These episodes accounted for markedly higher proportions of pulmonary diagnoses and inpatient death and had a mean stay more than twice that of the comparator group. A substantial length-of-stay difference persisted within DRGs. The findings establish the scale of the recorded burden and the importance of swallowing-related care within acute neurological services, while leaving the causal contribution of dysphagia unresolved.
+This analysis identified a large concentration of inpatient burden among hospital episodes with an R13 secondary diagnosis in German acute stroke care. Approximately one in eight episodes had documented dysphagia. These episodes accounted for markedly higher proportions of pulmonary diagnoses and inpatient death and had a mean stay more than twice that of the comparator group. A substantial length-of-stay difference persisted within DRGs, and mortality and pneumonia contrasts persisted after PCCL standardization. However, associations varied materially across diagnostic and functional subgroups, including a near-null mortality contrast in the most impaired extended-Barthel group. The findings establish the scale of recorded burden while leaving the causal contribution of dysphagia unresolved.
 
 ## Coding frequency and clinical dysphagia are different measures
 
@@ -111,6 +125,12 @@ Pneumonia-timing markers add a useful descriptive distinction. Both early and la
 The higher inpatient mortality is consistent with several clinical studies, but administrative associations are not uniform. Vasan and colleagues found lower adjusted inpatient mortality associated with coded dysphagia in US ischemic and hemorrhagic stroke admissions despite longer stays [Vasan2023]. This contrast reinforces the possibility of differences in case selection, documentation and survival time available for diagnosis. The present cohort also requires at least 24 hours of qualifying complex treatment, potentially excluding very early deaths and short episodes. More severe neurological injury, frailty, pre-existing swallowing disorders and limitations of treatment may contribute to the observed mortality difference. Without these variables, an independent mortality effect cannot be estimated.
 
 Volume depletion was also more frequent with dysphagia, but E86 is not a validated dysphagia-specific dehydration phenotype. It can precede hospitalization or reflect other disease processes. Likewise, malnutrition and respiratory failure codes are useful burden markers without resolving their temporal or causal relationship to swallowing dysfunction. Longitudinal studies have demonstrated that clinically important consequences may extend beyond discharge, although their definitions and follow-up differ from the current study [Ho2018].
+
+## Interpreting the severity analyses
+
+The additional analyses address different aspects of case mix. Restriction to cerebral infarction reduces the influence of transient ischemic syndromes in the broad care cohort, while separate I61 results show that the same dysphagia code can identify different relative risks across diagnoses. PCCL standardization demonstrates that the overall contrasts are not explained solely by unequal distributions of this administrative complexity measure. It does not establish independence from neurological injury: PCCL is influenced by diagnoses accumulated during the episode, including potential complications and consequences of swallowing impairment. Conditioning on such variables may remove mediated associations or create selection bias.
+
+The functional sensitivities add clinical context because their coding rules specify an early assessment window. Nevertheless, early assessment is not necessarily before dysphagia, the recorded categories are broad, and test availability is selective. The near-null mortality association within extended Barthel Index 0-15 and the much smaller contrast within Barthel Index 0-15 indicate that the full-cohort RR is not a generalizable effect across functional states. Conversely, the persistence of pneumonia contrasts in these groups is compatible with clinically relevant swallowing-related burden, but remains vulnerable to residual confounding and ascertainment. These observations do not prove a causal interaction, a protective effect in any group, or a percentage of risk explained by severity. Differences between instruments also cannot be used to rank their confounding control, because they select different episodes. Admission NIHSS, premorbid disability, lesion characteristics, treatment limitations and swallowing-onset times would be needed to more directly address neurological baseline severity.
 
 ## Hospital stay and resource implications
 
@@ -132,13 +152,13 @@ Evidence supporting better dysphagia pathways comes from designs that examine ca
 
 ## Strengths and limitations
 
-The principal strengths are national coverage of the defined care pathway, transparent code-based selection, reconstruction from original exports, direct handling of overlapping outcomes, and sensitivity analysis of hospital stay. Important limitations are absence of NIHSS and functional status, incomplete clinical ascertainment, lack of onset times, inability to link patients or model hospital clustering, small-cell suppression and reliance on a specific interim data release. The very narrow model-based intervals do not encompass these uncertainties. All associations are exploratory and descriptive. A companion analysis of neurological and neurosurgical early rehabilitation uses the same source and may include overlapping episodes; it is not an independent replication, and the two cohorts cannot be interpreted as linked stages of individual recovery.
+The principal strengths are national coverage of the defined care pathway, transparent code-based selection, reconstruction from original exports, direct handling of overlapping outcomes, and sensitivity analysis of hospital stay. Important limitations are absence of admission NIHSS, premorbid disability and patient-level functional measurements; selective availability of broad functional coding categories; incomplete clinical ascertainment; lack of onset times; inability to link patients or model hospital clustering; small-cell suppression; and reliance on a specific interim data release. The very narrow model-based intervals do not encompass these uncertainties. All associations are exploratory and descriptive. A companion analysis of neurological and neurosurgical early rehabilitation uses the same source and may include overlapping episodes; it is not an independent replication, and the two cohorts cannot be interpreted as linked stages of individual recovery.
 
-A useful next step is a harmonized multiyear analysis with principal-stroke and adult-only sensitivity cohorts, followed by validation against clinical swallowing assessments and patient-level adjustment. Studies assessing service improvement should measure time to screening, indication and timing of FEES, nutrition, functional recovery and clinically adjudicated pulmonary outcomes. Such work can determine which elements of the observed burden are modifiable.
+A useful next step is validation of these diagnostic and functional sensitivities against admission clinical measurements and harmonized multiyear analyses, including explicitly defined adult-only cohorts. Studies assessing service improvement should measure time to screening, indication and timing of FEES, nutrition, functional recovery and clinically adjudicated pulmonary outcomes. Such work can determine which elements of the observed burden are modifiable.
 
 # Conclusion
 
-An R13 secondary diagnosis identified a substantial burden of pulmonary morbidity, inpatient mortality and prolonged hospitalization in the German OPS-defined acute stroke-care cohort. The persistent within-DRG length-of-stay difference underlines the resource implications of documented dysphagia. These findings support attention to systematic swallowing assessment and management, but they do not quantify independent causal effects, preventable events or savings.
+An R13 secondary diagnosis identified a substantial burden of pulmonary morbidity, inpatient mortality and prolonged hospitalization in the German OPS-defined acute stroke-care cohort. PCCL-standardized outcome contrasts and the within-DRG length-of-stay difference support its relevance as a marker of inpatient care burden. Functional subgroup results show that the association is not uniform across documented impairment levels. The findings support systematic swallowing assessment and management without quantifying effects independent of neurological baseline severity, preventable events or savings.
 
 # Tables
 
@@ -197,7 +217,7 @@ The four categories sum to the corresponding full group denominator. This partit
 
 Mean hospital stay was 16.26 days (sample SD 17.14) with an R13 secondary diagnosis and 7.41 days (sample SD 7.15) without one. Within-DRG means are weighted to the observed distribution of episodes with dysphagia. Associated bed-days multiply observed mean differences by exposed-group counts; they are not estimates of preventable bed-days or economic savings. DRG grouping may itself be influenced by dysphagia, complications and treatment.
 
-## Table 5 Exploratory age, diagnosis and survivor analyses
+## Table 5 Exploratory age and survivor analyses
 
 | Analysis | R13 secondary diagnosis | No R13 secondary diagnosis | Contrast with 95% CI |
 | --- | ---: | ---: | ---: |
@@ -205,11 +225,23 @@ Mean hospital stay was 16.26 days (sample SD 17.14) with an R13 secondary diagno
 | Mortality, age 65-79 | 1,284/11,240 (11.42%) | 2,150/90,633 (2.37%) | RR 4.82 (4.51-5.15) |
 | Mortality, age 80 or older | 3,469/17,647 (19.66%) | 4,913/92,183 (5.33%) | RR 3.69 (3.54-3.84) |
 | Mortality, directly age-standardized | 13.1696%; underlying n = 33,643 | 3.22435%; underlying n = 245,634 | RR 4.08 (3.95-4.23) |
-| Mortality, principal diagnosis I61 | 611/3,364 (18.16%) | 1,084/8,784 (12.34%) | RR 1.47 (1.34-1.61) |
 | Stay among episodes ending in discharge alive | n = 28,640; 16.72 days (SD 17.63) | n = 237,888; 7.32 days (SD 6.97) | Difference 9.40 days (9.19-9.60) |
 | Restricted survivor within-DRG comparison | n = 27,222; 95.05% of dysphagia survivors | n = 228,798; 58 common DRGs | Difference 3.59 days (3.41-3.78) |
 
-The standardized mortality rates are weighted risks, not observed event counts; the reference is the pooled three-band age distribution of the full OPS cohort. Survivor SDs are sample SDs reconstructed from moments. The restricted survivor DRG comparison uses only exactly reconstructable strata and is weighted to the included dysphagia-survivor distribution. Its comparator count describes available episodes rather than the analysis weights. Confidence intervals are model-based and do not account for clustering or residual confounding. Mortality in principal-diagnosis I63 is not tabulated because I63.6 death rows were omitted and could contain suppressed cases. All analyses in this table are exploratory.
+The standardized mortality rates are weighted risks, not observed event counts; the reference is the pooled three-band age distribution of the full OPS cohort. Survivor SDs are sample SDs reconstructed from moments. The restricted survivor DRG comparison uses only exactly reconstructable strata and is weighted to the included dysphagia-survivor distribution. Its comparator count describes available episodes rather than the analysis weights. Confidence intervals are model-based and do not account for clustering or residual confounding. The restricted I63 sensitivity in Table 6 excludes I63.6 explicitly; no result is inferred for the omitted I63.6 death rows. All analyses in this table are exploratory.
+
+## Table 6 Administrative complexity and clinical subgroup sensitivities
+
+| Analysis | R13 secondary diagnosis | No R13 secondary diagnosis | RR with 95% CI |
+| --- | ---: | ---: | ---: |
+| Mortality standardized by PCCL | 11.47% | 3.59% | 3.20 (3.07-3.33) |
+| J12-J18 pneumonia standardized by PCCL | 6.99% | 3.39% | 2.07 (1.97-2.16) |
+| Mortality principal I63 excluding I63.6 | 3,871/26,604 (14.55%) | 5,556/149,351 (3.72%) | 3.91 (3.76-4.07) |
+| Mortality principal I61 | 611/3,364 (18.16%) | 1,084/8,784 (12.34%) | 1.47 (1.34-1.61) |
+| Mortality Barthel Index 0-15 U50.50 | 1,894/9,215 (20.55%) | 2,244/11,843 (18.95%) | 1.08 (1.03-1.15) |
+| Mortality extended Barthel Index 0-15 U51.20 | 334/1,093 (30.56%) | 400/1,332 (30.03%) | 1.02 (0.90-1.15) |
+
+PCCL rows are weighted risks standardized to the pooled distribution of all 279,277 episodes across seven PCCL categories; they are separate from age standardization. All other rows are crude comparisons within the explicitly named subgroups. I63 excluding I63.6 contains I63.0, I63.1, I63.2, I63.3, I63.4, I63.5, I63.8 and I63.9. Functional subgroups may overlap and are not a partition of the full cohort. The two severe functional categories summarize the clinically important restriction; all 21 candidate categories, including non-estimable results, appear in Supplementary Tables S1-S2. None of these comparisons provides simultaneous control for all baseline risk factors. All analyses and intervals are exploratory and model-based.
 
 # References
 
@@ -273,7 +305,69 @@ The standardized mortality rates are weighted risks, not observed event counts; 
 - **[BfArMR132025]** BfArM. ICD-10-GM 2025, R13 dysphagia. [Official classification](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-r10-r19.htm).
 - **[BfArMU692025]** BfArM. ICD-10-GM 2025, U69 pneumonia-timing codes. [Official classification](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u69-u69.htm).
 
-Sources accessed November 16, 2026. Stable citation keys are retained to support reference-manager conversion before journal submission.
+- **[InEKPCCL2025]** InEK GmbH. Abschlussbericht zur Weiterentwicklung des aG-DRG-Systems fuer das Jahr 2025. December 19, 2024. Section 3.3.1.4, CCL matrix and PCCL. [Official report](https://www.g-drg.de/content/download/14761/file/Abschlussbericht_aG-DRG_2025_2024-12-19.pdf).
+- **[BfArMFunction2025]** BfArM. ICD-10-GM 2025, U50-U52 functional impairment codes and assessment timing. [Official classification](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u50-u52.htm).
+- **[BfArMBarthel2025]** BfArM. ICD-10-GM 2025, Barthel Index criteria according to the Hamburg Manual. [Official scoring criteria](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/zusatz-06-anh-barthelindex.htm).
+
+Literature and original coding sources accessed November 16, 2026; additional PCCL and functional coding sources verified November 17, 2026. Stable citation keys are retained to support reference-manager conversion before journal submission.
+
+# Supplementary functional analyses
+
+## Supplementary Table S1 In hospital mortality within documented functional categories
+
+| Instrument score and code | R13 events / episodes | No R13 events / episodes | RR with 95% CI |
+| --- | ---: | ---: | ---: |
+| Barthel 100 (U50.00) | 25/369 | 38/17,880 | 31.88 (19.45-52.25) |
+| Barthel 80-95 (U50.10) | 20/685 | 66/19,056 | 8.43 (5.14-13.82) |
+| Barthel 60-75 (U50.20) | 49/1,101 | 106/16,164 | 6.79 (4.86-9.47) |
+| Barthel 40-55 (U50.30) | 139/2,493 | 284/17,768 | 3.49 (2.86-4.25) |
+| Barthel 20-35 (U50.40) | 362/4,314 | 483/13,926 | 2.42 (2.12-2.76) |
+| Barthel 0-15 (U50.50) | 1,894/9,215 | 2,244/11,843 | 1.08 (1.03-1.15) |
+| Motor FIM 85-91 (U50.01) | NR/16 | NR/425 | Not estimable |
+| Motor FIM 69-84 (U50.11) | NR/9 | NR/184 | Not estimable |
+| Motor FIM 59-68 (U50.21) | NR/11 | NR/103 | Not estimable |
+| Motor FIM 43-58 (U50.31) | NR/24 | NR/150 | Not estimable |
+| Motor FIM 31-42 (U50.41) | NR/33 | NR/81 | Not estimable |
+| Motor FIM 13-30 (U50.51) | 26/246 | 15/124 | 0.87 (0.48-1.59) |
+| Extended Barthel 70-90 (U51.00) | 72/1,118 | 115/16,189 | 9.07 (6.80-12.09) |
+| Extended Barthel 20-65 (U51.10) | 286/2,342 | 378/6,907 | 2.23 (1.93-2.58) |
+| Extended Barthel 0-15 (U51.20) | 334/1,093 | 400/1,332 | 1.02 (0.90-1.15) |
+| Cognitive FIM 30-35 (U51.01) | NR/51 | NR/744 | Not estimable |
+| Cognitive FIM 11-29 (U51.11) | 14/169 | 15/311 | 1.72 (0.85-3.47) |
+| Cognitive FIM 5-10 (U51.21) | 17/119 | 16/77 | 0.69 (0.37-1.28) |
+| MMSE 24-30 (U51.02) | 21/692 | 32/4,306 | 4.08 (2.37-7.04) |
+| MMSE 17-23 (U51.12) | 35/663 | 37/2,453 | 3.50 (2.22-5.51) |
+| MMSE 0-16 (U51.22) | 45/536 | 54/1,240 | 1.93 (1.32-2.83) |
+
+NR indicates that a required source row was absent; this may represent zero or suppressed events and is not assigned zero. Denominators are shown when explicitly available. * Sparse comparison with fewer than five events or non-events in a group, or fewer than 20 episodes in a group; intervals are particularly unstable. FIM, Functional Independence Measure; MMSE, Mini-Mental State Examination. Each row compares R13 coding groups within the named assessment category. Instruments and categories are not pooled into a verified exclusive classification, and rows must not be summed as unique episodes. These exploratory contrasts are not adjusted for age, sex, diagnosis or other functional domains.
+
+## Supplementary Table S2 J12 J18 pneumonia within documented functional categories
+
+| Instrument score and code | R13 events / episodes | No R13 events / episodes | RR with 95% CI |
+| --- | ---: | ---: | ---: |
+| Barthel 100 (U50.00) | 23/369 | 100/17,880 | 11.14 (7.17-17.33) |
+| Barthel 80-95 (U50.10) | 28/685 | 191/19,056 | 4.08 (2.76-6.02) |
+| Barthel 60-75 (U50.20) | 77/1,101 | 341/16,164 | 3.32 (2.61-4.21) |
+| Barthel 40-55 (U50.30) | 191/2,493 | 726/17,768 | 1.88 (1.61-2.19) |
+| Barthel 20-35 (U50.40) | 445/4,314 | 888/13,926 | 1.62 (1.45-1.80) |
+| Barthel 0-15 (U50.50) | 1,282/9,215 | 1,245/11,843 | 1.32 (1.23-1.42) |
+| Motor FIM 85-91 (U50.01) | NR/16 | NR/425 | Not estimable |
+| Motor FIM 69-84 (U50.11) | NR/9 | NR/184 | Not estimable |
+| Motor FIM 59-68 (U50.21) | NR/11 | NR/103 | Not estimable |
+| Motor FIM 43-58 (U50.31) | NR/24 | NR/150 | Not estimable |
+| Motor FIM 31-42 (U50.41) | NR/33 | NR/81 | Not estimable |
+| Motor FIM 13-30 (U50.51) | 44/246 | 15/124 | 1.48 (0.86-2.55) |
+| Extended Barthel 70-90 (U51.00) | 97/1,118 | 314/16,189 | 4.47 (3.59-5.57) |
+| Extended Barthel 20-65 (U51.10) | 297/2,342 | 478/6,907 | 1.83 (1.60-2.10) |
+| Extended Barthel 0-15 (U51.20) | 182/1,093 | 151/1,332 | 1.47 (1.20-1.79) |
+| Cognitive FIM 30-35 (U51.01) | 5/51 | 9/744 | 8.10 (2.82-23.29) |
+| Cognitive FIM 11-29 (U51.11) | 25/169 | 20/311 | 2.30 (1.32-4.02) |
+| Cognitive FIM 5-10 (U51.21) | 22/119 | 12/77 | 1.19 (0.62-2.25) |
+| MMSE 24-30 (U51.02) | 65/692 | 165/4,306 | 2.45 (1.86-3.23) |
+| MMSE 17-23 (U51.12) | 87/663 | 150/2,453 | 2.15 (1.67-2.75) |
+| MMSE 0-16 (U51.22) | 61/536 | 118/1,240 | 1.20 (0.89-1.60) |
+
+NR indicates that a required source row was absent; this may represent zero or suppressed events and is not assigned zero. Denominators are shown when explicitly available. * Sparse comparison with fewer than five events or non-events in a group, or fewer than 20 episodes in a group; intervals are particularly unstable. FIM, Functional Independence Measure; MMSE, Mini-Mental State Examination. Each row compares R13 coding groups within the named assessment category. Instruments and categories are not pooled into a verified exclusive classification, and rows must not be summed as unique episodes. These exploratory contrasts are not adjusted for age, sex, diagnosis or other functional domains.
 
 # Supplementary literature search appendix
 
@@ -328,9 +422,9 @@ The 2026 DESIRE cohort and 2025 Austrian registry were additionally identified t
 
 ## Evidence interpretation
 
-The bibliography contains 26 journal publications plus five official data or coding sources. It includes clinical cohorts, nationwide registries, administrative analyses, randomized trials, a consensus definition and reporting/clinical guidelines. Effect measures retain their original meaning: published adjusted odds ratios and hazard ratios are not directly equated to the current unadjusted risk ratios.
+The bibliography contains 26 journal publications plus eight official data or coding sources. It includes clinical cohorts, nationwide registries, administrative analyses, randomized trials, a consensus definition and reporting/clinical guidelines. Effect measures retain their original meaning: published adjusted odds ratios and hazard ratios are not directly equated to the current unadjusted risk ratios.
 
-Ungerer 2026 is a direct predecessor using German national DRG data, so the current manuscript makes no first-national-FEES-analysis claim. The main incremental contribution is the 2025 inpatient burden analysis, exact handling of overlapping pulmonary diagnoses and descriptive DRG-stratified hospital-stay comparison. Ho 2018 defines dysphagia through nasogastric-tube use and therefore represents a different phenotype. Vasan 2023 supplies a counterexample to uniformly increased inpatient mortality in coding-based studies. Horn 2026 is exploratory and does not validate a severity score for German R13 codes. QASC evaluates a multicomponent bundle; PHAST-TRAC evaluates a selected tracheotomized population. Their results cannot be generalized into an efficacy claim for procedures recorded in these exports.
+Ungerer 2026 is a direct predecessor using German national DRG data, so the current manuscript makes no first-national-FEES-analysis claim. The main incremental contribution is the 2025 inpatient burden analysis, exact handling of overlapping pulmonary diagnoses, descriptive DRG-stratified hospital-stay comparison, and transparently bounded diagnosis, PCCL and functional sensitivities. Ho 2018 defines dysphagia through nasogastric-tube use and therefore represents a different phenotype. Vasan 2023 supplies a counterexample to uniformly increased inpatient mortality in coding-based studies. Horn 2026 is exploratory and does not validate a severity score for German R13 codes. QASC evaluates a multicomponent bundle; PHAST-TRAC evaluates a selected tracheotomized population. Their results cannot be generalized into an efficacy claim for procedures recorded in these exports.
 
 Before journal submission, the search should be updated and the final wording checked against complete texts of every retained reference. Reference selection here supports contextual interpretation rather than an exhaustive evidence synthesis.
 
@@ -338,4 +432,4 @@ Before journal submission, the search should be updated and the final wording ch
 
 The statistical results in this draft are based on verified aggregate exports. Before submission, the authors should finalize authorship and affiliations, corresponding-author details, institutional ethics approval or waiver determination, funding and conflicts of interest, contributor roles, the intended journal and any required reporting checklist. Data availability should identify the exact InEK release and applicable access conditions. Analysis code and query definitions are maintained in the private project repository for author review: [https://github.com/benlabeit/inek-dysphagia-acute-2025](https://github.com/benlabeit/inek-dysphagia-acute-2025). Public availability at publication remains to be arranged. A statement on use of generative AI should follow the selected journal's policy and accurately describe the authors' verification and responsibility.
 
-No author list, ethics approval, funding source, conflict declaration or patient-level adjustment has been assumed. Age-standardized mortality and survivor analyses were reconstructed from the verified aggregate exports using the methods above. The companion early-rehabilitation manuscript should be disclosed as a related analysis of the same data source.
+No author list, ethics approval, funding source, conflict declaration or patient-level adjustment has been assumed. Separate age- and PCCL-standardized outcomes, diagnosis-restricted comparisons, functional-category sensitivities and survivor analyses were reconstructed from the verified aggregate exports using the methods above. The companion early-rehabilitation manuscript should be disclosed as a related analysis of the same data source.

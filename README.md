@@ -12,6 +12,39 @@ The unit is a hospital DRG episode, not a unique person. Dysphagia means a selec
 
 Root CSV files are curated output snapshots. Raw workbooks, full parsed code tables, and generated result JSON are excluded from this repository. It contains no rehabilitation-specific inputs or analyses. The separate companion cohort can share hospital episodes or patients with this cohort; its totals must not be added as independent patients or combined attributable burden.
 
+## Severity sensitivity revision of 17 November 2026
+
+Completed additions use the same original exports and do not change the original cohort definition:
+
+- Seven-level PCCL direct standardization: mortality RR **3.20 (3.07-3.33)** and J12-J18 pneumonia RR **2.07 (1.97-2.16)**, with 95% model-based confidence intervals and the pooled cohort PCCL distribution as reference.
+- Explicit principal-diagnosis mortality comparisons, including complete I61 and an explicitly restricted I63 set **excluding I63.6**. Suppressed or absent endcode rows are never set to zero.
+- All 21 planned U50/U51 categories, kept within five distinct instruments, for mortality and J12-J18 pneumonia. Within Barthel 0-15 (U50.50), mortality RR is **1.08 (1.03-1.15)**. The other categories, unknown rows, coding coverage bounds, and sparse cells are also retained; this example is not the whole sensitivity analysis.
+
+These are separate descriptive standardizations or code-conditioned comparisons. None is admission-NIHSS adjustment, and their attenuation cannot be interpreted as a causal percentage explained. PCCL can include downstream complications. Functional coding is incomplete, may depend on assessment practices, and cannot be aligned precisely with dysphagia or outcome onset. The code-absent complement is not a normal-function group.
+
+The joint age-by-sex-by-principal-diagnosis analysis requires additional exports. A planned query definition and reproducible implementation are included separately; the current original six/seven workbooks do not supply the required cross-classified cells. Until the new files are obtained and validated, it remains **pending**, not an accomplished multivariable adjustment. The exact 24-query plan is `joint_query_plan.json`, with methods in `joint_standardization_methods.md`. The default runner performs an availability check only and creates no joint effect estimates. Once all additional files are obtained, use:
+
+```sh
+python run_all.py --joint
+```
+
+This validates the original inputs and executes all completed analyses followed by the new joint mortality analysis. A missing joint workbook causes the requested joint run to fail; it never substitutes a zero cell. An isolated check is `python analyze_joint_standardization.py --cohort acute --status-only`. `--check-inputs` applies to the original manifest only; it does not validate the new joint analysis.
+
+
+### Additional pipeline steps and curated tables
+
+`run_all.py` executes `standardize_pccl.py`, `analyze_principal_diagnosis_sensitivity.py`, and `analyze_functional_sensitivity.py` with `--cohort acute`. Each accepts optional `--data-root` and `--out-dir` arguments and requires only this repository's original cohort exports. `export_severity_tables.py` then writes:
+
+- `results/severity_summary.csv`: crude and PCCL-standardized outcome risks and contrasts.
+- `results/pccl_strata.csv`: all seven PCCL strata, with small cells flagged.
+- `results/diagnosis_sensitivity.csv`: explicitly defined principal-diagnosis mortality groups.
+- `results/functional_sensitivity.csv`: every planned code/outcome, both code-present and code-absent comparisons, including unknown/sparse status rows.
+- `results/functional_coverage_bounds.csv`: set-theoretic coverage bounds, not observed unique assessment rates.
+
+Reviewed copies are stored at the repository root. Curated severity rows with fewer than five events or non-events in either arm retain their labels and status but omit numerical count/effect cells. Full flagged audit JSON/CSV stays in Git-ignored `results/`. Rates are proportions and risk differences are on the probability scale.
+
+The revised Word version requires native pagination review; the separately typeset PDF is an independent reading layout and cannot validate Word pagination. Text, references, and editable table contents are checked against the Markdown source.
+
 ## Reproduce
 
 Tested with Python 3.12.14, openpyxl 3.1.5, and et_xmlfile 2.0.0. The latter is the installed dependency of openpyxl; all other analysis imports are from Python's standard library.

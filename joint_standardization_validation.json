@@ -1,0 +1,117 @@
+{
+  "status": "synthetic_validation_passed",
+  "validated_module": "analyze_joint_standardization.py",
+  "validation_date_utc": "2026-11-17",
+  "study_joint_data_status": "pending",
+  "study_effects_computed": false,
+  "scope": "Independent numerical and end-to-end validation using synthetic data only. None of the numbers in this file are study results.",
+  "independent_reference_method": "Constructed synthetic age/diagnosis/sex/PCCL count records, grouped them independently of build_cells, and used exact rational arithmetic (fractions.Fraction) for pooled risks, binomial variances and matched crude ratios. Normal/delta intervals were independently evaluated with z=1.959963984540054.",
+  "synthetic_fixture": {
+    "new_query_workbooks": 24,
+    "original_reference_workbooks": 4,
+    "workbook_format": "Info worksheets with selection metadata and integer-recoverable age, sex and PCCL distributions",
+    "adult_cases": 590,
+    "adult_dysphagia_cases": 190,
+    "adult_comparator_cases": 400,
+    "minors_in_original_total_reference_only": 20,
+    "features": [
+      "Unequal supported strata with different risks and group allocations",
+      "A comparator-only sex stratum",
+      "A dysphagia-only sex stratum",
+      "A supported zero-event stratum",
+      "Sex and PCCL partitions deliberately produce different retained populations",
+      "All four recorded sex categories",
+      "Children in the original reference exports, excluded from adult query exports"
+    ]
+  },
+  "synthetic_expected_values_not_study_results": {
+    "age_sex_principal_diagnosis": {
+      "retained_total_n": 530,
+      "retained_dys_n": 180,
+      "retained_comparator_n": 350,
+      "total_coverage_fraction": "53/59",
+      "dys_coverage_fraction": "18/19",
+      "comparator_coverage_fraction": "7/8",
+      "retained_cells": 6,
+      "excluded_cells_including_empty_cells": 18,
+      "standardized_rr_exact_fraction": "612/295",
+      "standardized_rr": 2.074576271186441,
+      "standardized_rr_ci": [
+        1.3335415858403556,
+        3.227395943755047
+      ],
+      "matched_crude_rr_exact_fraction": "595/297",
+      "matched_crude_rr": 2.0033670033670035,
+      "matched_crude_counts_dys_events_dys_n_comparator_events_comparator_n": [
+        34,
+        180,
+        33,
+        350
+      ]
+    },
+    "age_principal_diagnosis_pccl": {
+      "retained_total_n": 590,
+      "retained_dys_n": 190,
+      "retained_comparator_n": 400,
+      "coverage_all_groups": 1.0,
+      "retained_cells": 6,
+      "excluded_cells_including_empty_cells": 36,
+      "standardized_rr_exact_fraction": "7854/4091",
+      "standardized_rr": 1.9198240039110241,
+      "standardized_rr_ci": [
+        1.2795897099117468,
+        2.8803953153446042
+      ],
+      "matched_crude_rr_exact_fraction": "1440/817",
+      "matched_crude_rr": 1.762545899632803,
+      "matched_crude_counts_dys_events_dys_n_comparator_events_comparator_n": [
+        36,
+        190,
+        43,
+        400
+      ]
+    }
+  },
+  "checks_passed": [
+    "Joint-cell reconstruction matches independently grouped synthetic records",
+    "Other principal diagnoses are reconstructed separately within total, dysphagia, total deaths and dysphagia deaths",
+    "Pooled standardized risks, RR, risk difference and normal/delta intervals match independent calculations within 1e-12",
+    "Crude comparison uses exactly the retained common-support population",
+    "Coverage is correct separately for total, dysphagia and comparator populations",
+    "Supported zero-event strata are retained",
+    "Unsupported strata are excluded using denominators only",
+    "No common-support cells returns not_estimable",
+    "Zero standardized dysphagia risk returns RR zero and no log-RR interval",
+    "Negative other-diagnosis residual is rejected",
+    "Dysphagia denominator exceeding total is rejected",
+    "Comparator deaths exceeding comparator population are rejected",
+    "Incomplete I63 selection is rejected",
+    "A minor in an adult age-query source is rejected",
+    "Changed native age distribution in an original reference is rejected even when the broad adult total is preserved",
+    "Original-reference minors do not enter either adult standardization",
+    "All 24 new and four original synthetic Info workbooks pass the full parsing and validation pipeline",
+    "Missing 48 new queries and eight original references yield pending status with effects_computed false",
+    "A pending status-only run creates only its status JSON",
+    "A pending normal run exits with code 2 and writes no effect estimates",
+    "An available status-only run still writes no effect estimates",
+    "A complete synthetic command-line run matches both independent reference calculations"
+  ],
+  "limitations": [
+    "Synthetic validation verifies implementation behavior, not the scientific validity or completeness of future study inputs.",
+    "The actual joint-query workbooks were not available and no study joint-standardization estimates were produced.",
+    "Synthetic source workbooks and output files are temporary QA material and are not included in the scientific repository package."
+  ],
+  "actual_export_schema_checks": [
+    {
+      "filename": "rehab_joint_age75plus_allhd_all_2025.xlsx",
+      "n": 15604,
+      "status": "passed"
+    },
+    {
+      "filename": "rehab_joint_age75plus_allhd_dys_2025.xlsx",
+      "n": 11050,
+      "status": "passed"
+    }
+  ],
+  "actual_schema_note": "Observed Altersgruppe field accepted directly; original selection text preserved. This does not constitute completion of the joint analysis."
+}

@@ -17,6 +17,10 @@ SCRIPTS = [
     'analyze_acute_exports.py',
     'analyze_acute_extensions.py',
     'export_summary_tables.py',
+    ['standardize_pccl.py', '--cohort', 'acute'],
+    ['analyze_principal_diagnosis_sensitivity.py', '--cohort', 'acute'],
+    ['analyze_functional_sensitivity.py', '--cohort', 'acute'],
+    ['export_severity_tables.py', '--cohort', 'acute'],
 ]
 
 
@@ -55,17 +59,24 @@ def main():
                         help='Only validate all files, selections, deliveries, counts and hashes.')
     parser.add_argument('--allow-hash-mismatch', action='store_true',
                         help='Explicitly permit changed file bytes; exact stored metadata and N still required.')
+    parser.add_argument('--joint', action='store_true',
+                        help='Also calculate joint mortality standardization; all 24 new exports are required.')
     args = parser.parse_args()
     validate_inputs(args.allow_hash_mismatch)
     if args.check_inputs:
         return
     result_dir = ROOT / 'results'
     result_dir.mkdir(exist_ok=True)
-    for name in SCRIPTS:
-        print('Running', name, flush=True)
+    commands = list(SCRIPTS)
+    commands.append(['analyze_joint_standardization.py', '--cohort', 'acute'] +
+                    ([] if args.joint else ['--status-only']))
+    for entry in commands:
+        command = [entry] if isinstance(entry, str) else entry
+        name = command[0]
+        print('Running', ' '.join(command), flush=True)
         log = result_dir / (Path(name).stem + '.log')
         with log.open('w', encoding='utf-8') as stream:
-            done = subprocess.run([sys.executable, str(ROOT / name)], cwd=ROOT,
+            done = subprocess.run([sys.executable, str(ROOT / name), *command[1:]], cwd=ROOT,
                                   stdout=stream, stderr=subprocess.STDOUT, check=False)
         if done.returncode:
             raise SystemExit(f'{name} failed (exit {done.returncode}); see results/{log.name}')

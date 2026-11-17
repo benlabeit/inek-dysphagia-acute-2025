@@ -79,3 +79,39 @@ Outstanding queries include exact episode overlap; principal-diagnosis-restricte
 - [BfArM ICD-10-GM R13](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-r10-r19.htm).
 - [BfArM thrombectomy/material OPS](https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2025/block-8-80...8-85.htm).
 - [BfArM gastrostomy OPS](https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2025/block-5-42...5-54.htm).
+
+## Additional severity analyses
+
+### PCCL standardization
+
+PCCL 0-6 is an exhaustive single-valued partition of the Info distribution. All seven strata and both exposure groups are observed in the four exports needed for each endpoint. In stratum g, recover comparator cases and events by total minus dysphagia. Use pooled cohort weights w_g = N_Tg / N_T and standardized risks P_D = sum(w_g p_Dg), P_C = sum(w_g p_Cg). With weights treated as fixed, V_j = sum(w_g^2 p_jg(1-p_jg)/N_jg). The log-RR delta-method standard error is sqrt(V_D/P_D^2 + V_C/P_C^2); risk-difference variance is V_D + V_C. These are model-based independent-episode intervals, not uncertainty bounds for coding, hospital clustering, repeated admissions, or residual confounding.
+
+PCCL describes the costs and complexity of recorded comorbidities and complications across the episode. It can reflect downstream conditions and is not a pretreatment neurological severity score. It is distinct from the within-DRG length-of-stay standardization, and neither analysis identifies an independent causal dysphagia effect. No combined age/sex/PCCL adjustment is inferred from the original marginal distributions.
+
+### Functional coding and conditional comparisons
+
+`analyze_functional_sensitivity.py` evaluates every planned U50/U51 code separately: six Barthel categories, six motor-FIM categories, three extended-Barthel categories, three cognitive-FIM categories, and three MMSE categories. Instruments are not pooled. For each endpoint, an effect is calculated only when the exact code row is visible in total, dysphagia, total-event, and dysphagia-event exports. Otherwise that planned row is retained as unknown. Small reconstructed event/non-event cells are flagged; no continuity correction rescues a zero-event log-RR interval.
+
+Each code-present analysis compares dysphagia and comparator cases within that same recorded category. A separately labelled code-absent complement is obtained by subtraction. It includes unassessed cases, unrecorded assessments, and other severity categories; it is not a low-severity reference. These within-category estimates are not simultaneously adjusted for age, sex, principal diagnosis, or other functions. Contrasts across categories may reflect selection or confounding and are not themselves a formal causal interaction test.
+
+ICD-10-GM 2025 specifies U50/U51 assessment within the first five inpatient days, using the highest score if values change; for geriatric or early rehabilitation treatment, the same approach applies at treatment initiation. These are not verified pre-dysphagia measurements. Barthel and motor-FIM include feeding-related activities. U52/FRB directly includes supervised dysphagia (-50 points) and is especially unsuitable as an independent neurological severity measure.
+
+The exports do not prove unique-case exclusivity across codes/instruments or quantify their overlap. For completely observed code sets, unique assessment coverage is bounded between the largest code count and the sum of code counts capped at cohort N. These are set-theoretic bounds, not estimated coverage or confidence limits. Missing-code uncertainty is retained by the script. Differential coding/assessment between exposure groups is a potential selection bias.
+
+### Principal-diagnosis comparisons
+
+The diagnosis script uses exact named endcode sets and reports missing-code checks for every required export. Complete I61 contains nine specified endcodes. The I63 sensitivity explicitly excludes I63.6 and includes I63.0/.1/.2/.3/.4/.5/.8/.9; it must never be called complete I63. Individual diagnosis comparisons are included when their rows are observed. Restricting diagnosis improves diagnostic comparability but leaves within-diagnosis neurological severity and other confounding unresolved.
+
+### Planned joint demographic and diagnosis adjustment
+
+The original exports provide separate age, sex, and PCCL marginals. They cannot be combined into artificial patient records or a joint model. The planned additional exports select adult age band (18-74 or 75+) and principal diagnosis jointly and report Info sex distributions, allowing genuine age-by-sex-by-diagnosis cells. This uses the actual available dataset filters; a sex selector is not assumed from a handbook screenshot. The three diagnosis groups are I63, I61, and other principal diagnoses derived by total minus the two directly queried mutually exclusive groups. The same exports can support a separate age-by-diagnosis-by-PCCL analysis, without joint sex/PCCL adjustment. Mortality comparisons must use the same restricted cohort for crude and standardized estimates, explicitly report excluded sex/age groups, and handle empty or suppressed cells without zeros or invented overlap.
+
+This optional extension is pending until new exports are acquired and validated. The plan contains no estimated effects. Functional subgroup analyses, PCCL standardization, and future joint adjustment are exploratory additions selected after inspecting the original study presentation and data; none was prospectively prespecified.
+
+### Added primary sources
+
+- [InEK 2025 system development report](https://www.g-drg.de/content/download/14761/file/Abschlussbericht_aG-DRG_2025_2024-12-19.pdf): PCCL calculation and interpretation.
+- [BfArM 2025 functional coding U50-U52](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u50-u52.htm): score categories and assessment windows.
+- [BfArM 2025 Barthel Index](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/zusatz-06-anh-barthelindex.htm): items including eating and PEG self-care.
+- [BfArM 2025 FRB](https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/zusatz-08-anh-frb-schoenle.htm): direct contribution of dysphagia and tracheostoma.
+

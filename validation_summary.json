@@ -1,0 +1,51 @@
+{
+  "validation_date": "2026-11-17",
+  "cohort": "acute",
+  "scope": "Original-input analyses plus completed PCCL, principal-diagnosis and functional-code sensitivities. Joint adjustment remains a separate pending extension.",
+  "baseline_numeric_values_compared": 3023,
+  "new_numeric_values_compared": 1769,
+  "baseline_csv_equal": {
+    "key_results.csv": true,
+    "drg_standardization.csv": true,
+    "sd_convention_audit.csv": true
+  },
+  "curated_rows": {
+    "severity_summary.csv": 4,
+    "pccl_strata.csv": 14,
+    "diagnosis_sensitivity.csv": 7,
+    "functional_sensitivity.csv": 84,
+    "functional_coverage_bounds.csv": 15
+  },
+  "status": "passed",
+  "isolated_inputs": 6,
+  "assumptions": [
+    "Reproduction uses original hashes and metadata from query_manifest.json.",
+    "Validation confirms arithmetic reproducibility; it does not establish causal validity or coding completeness.",
+    "Native Word pagination is not covered by this pipeline validation."
+  ],
+  "joint_availability_check": "Isolated original-only reproduction fixture: pending; 0/24 new files; no joint effects computed",
+  "missing_joint_run_exit_code": 2,
+  "complete_runner_with_pending_joint_status": "passed",
+  "joint_implementation_validation": "See joint_standardization_validation.json; synthetic validation and schema checks are not study effect estimates.",
+  "manuscript_artifacts": {
+    "manuscript_acute.md": {
+      "sha256": "0f0417847e2413fbbc78035ddea8518ec4def737d0188e86b50609626bd44add",
+      "bytes": 69149
+    },
+    "Manuscript_Acute_Dysphagia_2025.docx": {
+      "sha256": "6f8ee48eda6359b294c40f4e1412cccbd9a6069f59727d3f60274261b690b559",
+      "bytes": 65998
+    },
+    "Manuscript_Acute_Dysphagia_2025.pdf": {
+      "sha256": "fade79f0fa3c7b1be94240aa7309189fe193ca427304a08382d6f7917f217f11",
+      "bytes": 168928
+    }
+  },
+  "document_validation": {
+    "markdown_and_editable_word_content": "matched by document QA",
+    "independent_pdf_pages_visually_reviewed": 26,
+    "independent_pdf_layout": "passed",
+    "native_word_pagination": "not verified; independent PDF is not a Word render",
+    "joint_adjustment_in_manuscript": "not performed; explicitly pending"
+  }
+}
