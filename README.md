@@ -4,9 +4,25 @@ This private project contains an English manuscript draft and reproducible aggre
 
 [Project repository](https://github.com/benlabeit/inek-dysphagia-acute-2025) · [Companion early-rehabilitation manuscript](https://github.com/benlabeit/inek-dysphagia-rehabilitation-2025)
 
+## NRP manuscript, supplement and Zotero versions
+
+Compatibility filenames `Manuscript_Acute_Dysphagia_2025.docx` and `Manuscript_Acute_Dysphagia_2025.pdf` are byte-identical aliases of the current static NRP manuscript and PDF, so previous repository links remain current. They are not additional manuscript versions.
+
+`Manuscript_NRP_Acute.docx` is the static manuscript; `Manuscript_NRP_Acute_Zotero.docx` is the separate working copy with embedded Zotero citation metadata. `ESM_1.docx` and `ESM_1.pdf` contain Online Resource 1; supplement citation numbers follow the main manuscript. `manuscript_acute.md` and `manuscript_acute_supplement.md` are the source texts. The current main manuscript has two tables and two figures.
+
+RIS/CSL import files, the citation map and Zotero guidance are in `research/zotero/`. Citation-field JSON and visible-text preservation passed programmatic checks. The fields contain embedded references and are not linked to the user's personal Zotero library. A live Word/Zotero refresh and native Word pagination remain untested; the supplied PDFs are independently rendered reading copies. See [Zotero guidance](research/zotero/ZOTERO_HINWEISE.md).
+
+## Publication figures and expanded literature audit
+
+The NRP revision adds two publication figures and an expanded PubMed literature audit. Figure files, their numeric plotting data, legends and quality checks are in `figures/nrp/`; the complete author-focused literature screening and source verification are in `research/`. Original InEK workbooks, full abstracts and source XML are excluded. See [figure reproduction](figures/nrp/README.md) and [literature provenance](research/README.md).
+
+## Private development and source-data availability
+
+This repository must remain **private** during manuscript development. A later public release is planned, subject to author approval and data-reuse clarification. Original InEK Excel exports remain excluded because permission for repository redistribution has not been established; this does not assert a blanket prohibition. See [DATA_AVAILABILITY.md](DATA_AVAILABILITY.md) for the current source-access and rights-clearance statement.
+
 ## Manuscript and scientific status
 
-`manuscript_acute.md` is the English source draft. `Manuscript_Acute_Dysphagia_2025.docx` is the editable Word version, and `Manuscript_Acute_Dysphagia_2025.pdf` is the fixed-layout reading copy. These manuscript versions require author review of interpretation, authorship, affiliations, declarations, journal requirements, and limitations before submission. `acute_literature_final.json` records the literature assessment.
+`manuscript_acute.md` is the English source draft. `Manuscript_NRP_Acute.docx` is the editable Word version, and `Manuscript_NRP_Acute.pdf` is the fixed-layout reading copy. These manuscript versions require author review of interpretation, authorship, affiliations, declarations, journal requirements, and limitations before submission. `acute_literature_final.json` records the literature assessment.
 
 The unit is a hospital DRG episode, not a unique person. Dysphagia means a selected R13.0/R13.1/R13.9 **secondary diagnosis**. The comparator lacks these selected secondary codes; a principal dysphagia diagnosis or uncoded dysphagia is not excluded. The OPS cohort is a care-pathway cohort and includes indications beyond confirmed stroke. Additional analyses were selected after reviewing the original presentation and are exploratory.
 
@@ -22,7 +38,7 @@ Completed additions use the same original exports and do not change the original
 
 These are separate descriptive standardizations or code-conditioned comparisons. None is admission-NIHSS adjustment, and their attenuation cannot be interpreted as a causal percentage explained. PCCL can include downstream complications. Functional coding is incomplete, may depend on assessment practices, and cannot be aligned precisely with dysphagia or outcome onset. The code-absent complement is not a normal-function group.
 
-## Simultaneous two-factor revision of 17 November 2026
+## Simultaneous adjustment revision of 17 November 2026
 
 Eight additional directly age-filtered exports have been obtained and validated against the original source totals and every native age category. The following **separate simultaneous two-factor mortality analyses are completed**:
 
@@ -39,7 +55,7 @@ After supplying the eight additional all-diagnosis age exports in `raw/`, run:
 python run_all.py --twofactor
 ```
 
-An isolated run is `python analyze_joint_twofactor.py --cohort acute`; verify it with `python verify_joint_actual.py --cohort acute --twofactor`. The default runner only checks availability; `--twofactor` requires all eight files and validates them before estimation. `--check-inputs` validates the original manifest only. The raw workbooks are never edited.
+An isolated run is `python analyze_joint_twofactor.py --cohort acute`; verify it with `python verify_joint_actual.py --cohort acute --twofactor`. For the joint extensions, the default runner only checks availability; `--twofactor` requires all eight files and validates them before estimation. `--check-inputs` validates the original manifest only. The raw workbooks are never edited.
 
 ### Completed three-factor diagnosis analyses
 
@@ -58,7 +74,7 @@ Reproduce all completed analyses, both two-factor models, both three-factor mode
 python run_all.py --joint
 ```
 
-Place the original cohort files and all 24 new files listed in `joint_query_plan.json` in `raw/`. The eight two-factor files are a subset of these 24, not another eight required downloads. A missing workbook stops its corresponding computation without zero substitution. The default runner performs availability checks only; `--twofactor` executes only the additional two-factor models. See `joint_standardization_methods.md` for formulas, source validation and limitations.
+Place the original cohort files and all 24 new files listed in `joint_query_plan.json` in `raw/`. The eight two-factor files are a subset of these 24, not another eight required downloads. A missing workbook stops its corresponding computation without zero substitution. For the joint extensions, the default runner performs availability checks only; `--twofactor` executes only the additional two-factor models. See `joint_standardization_methods.md` for formulas, source validation and limitations.
 
 ### Post hoc cell-exclusion influence diagnostics
 
