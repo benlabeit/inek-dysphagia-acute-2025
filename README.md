@@ -6,7 +6,7 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 ## Current manuscript after author comments
 
-The current author-revised Word manuscript is [Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx](Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx). It incorporates the 15 comments in the author-edited upload of 17 November 2026. Numerical results, the abstract and figures are unchanged. Zotero fields are preserved; the neutral STEPS trial is added and citation numbers are updated. The earlier Word, PDF and Markdown files below remain the preceding version, including their original reference numbering. Use this new Word file for further manuscript editing. Native Word pagination has not been rechecked.
+The current author-revised Word manuscript is [Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx](Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx). It incorporates the 15 initial author comments and the final PES comment submitted on 17 November 2026. The final comment adds PHADER and expands the discussion of PHAST-TRAC, STEPS and the postextubation trial and its economic analysis, distinguishing populations and evidence strength. Numerical results, the abstract and figures are unchanged. Zotero fields are preserved; references and citation numbers are updated. The earlier Word, PDF and Markdown files below remain the preceding version, including their original reference numbering. Use this new Word file for further manuscript editing. Native Word pagination has not been rechecked.
 
 ## Preceding NRP manuscript, supplement and Zotero versions
 
