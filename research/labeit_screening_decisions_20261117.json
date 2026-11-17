@@ -1,0 +1,662 @@
+[
+  {
+    "pmid": "43026607",
+    "key": "Muhle2026IndividualizedTDCS",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Healthy-volunteer neuromodulation feasibility; no patient burden or clinical efficacy endpoint relevant to current claims.",
+    "caveat": "Eight healthy adults; corrected primary interaction nonsignificant. Do not use exploratory within-group changes as treatment benefit.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42862540",
+    "key": "Lueg2026Dehydration",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "External national evidence linking coded dysphagia and volume depletion to hospital prognosis; supports E86 discussion.",
+    "caveat": "Geriatric admissions aged 65+ in GEMIDAS 2006–2024, not the InEK OPS cohorts; adjusted ORs not equivalent to current RRs; overlaps same registry as PMID42361766.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42567925",
+    "key": "Muhle2026CorticalSubnetworks",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Basic physiology of cortical connectivity during swallowing in healthy adults; beyond hospital-burden focus.",
+    "caveat": "74 healthy adults, no dysphagic clinical cohort or service outcome.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42469330",
+    "key": "Muhle2026DEFISS",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "Clinical severity and airway protection missing from administrative data; risk-stratified assessment in ventilated stroke.",
+    "caveat": "Prospective n39, only five dysphagia-related reintubations; not broad national external validation and not an InEK severity-adjustment instrument.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42361766",
+    "key": "Lueg2026GEMIDAS",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Independent national geriatric data-source comparison for dysphagia as marker of mortality, aspiration coding and adverse discharge.",
+    "caveat": "GEMIDAS geriatric admissions, R13 main OR secondary; different case mix and exposure from InEK secondary-only; overlaps PMID42862540.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42304253",
+    "key": "Kocar2026FEESPneumonia",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Clinical FEES findings beyond binary aspiration relate to longer-term pneumonia; supports phenotyping rather than judging R13 severity.",
+    "caveat": "Retrospective n98 geriatric cohort with internal model assessment; likely overlaps same 98-patient four-year cohort as PMID40606509, so not independent replication.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42276582",
+    "key": "Jung2026CoughStroke",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "Airway protection and cough modify the relationship between swallowing dysfunction and respiratory complications.",
+    "caveat": "Prospective n395 acute-stroke ICU cohort; cough test has imperfect diagnostic accuracy and does not replace FEES or prove a prevention effect.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "42054965",
+    "key": "Brux2026FOODDM",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Relevant only if a detailed nutritional-management recommendation is added; integrates texture and nutrition.",
+    "caveat": "Expert Delphi framework, not trial evidence that modified diets reduce pneumonia or mortality; current burden manuscripts do not test diet formulations.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41860704",
+    "key": "Jung2026NeurogeriatricReview",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "German neurogeriatric review supports broad syndrome framing but overlaps the fuller English neurogeriatric review already selected.",
+    "caveat": "Narrative review with B Labeit initials; disambiguated via Düsseldorf affiliation and public institutional email. Avoid redundant review citation.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41851886",
+    "key": "Marae2026FEESAccess",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "National German implementation/access context for FEES use and continuity between acute, rehabilitation and outpatient care.",
+    "caveat": "82 certified instructors, 52.6% response; self-report and advertised-service mapping, not a census of patient-level inpatient use or proof of guideline nonadherence.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41803360",
+    "key": "Labeit2026PESCosts",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Separates observed LOS/resource burden from proven intervention savings; economic follow-up of PES pilot.",
+    "caveat": "Secondary economic analysis of SAME n60 trial as PMIDs37789340 and40383663. Mean DRG expenditure difference nonsignificant (one-sided p=.087); no proven cost effectiveness.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41744255",
+    "key": "Labeit2026Outpatient",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Care continuity and reassessment after discharge; specialized neurogenic dysphagia service changes diagnosis and management.",
+    "caveat": "Retrospective selected 255 outpatients; no untreated control and not an early-rehabilitation efficacy trial.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41623427",
+    "key": "Hofacker2025DBSDysphagia",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Disease-specific Parkinson/DBS therapy review; not needed for current aggregate burden or FEES/PEG/tracheotomy claims.",
+    "caveat": "Not a stroke or early-rehabilitation intervention study; avoid generalizing DBS evidence.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41571515",
+    "key": "Cheng2026Metaplasticity",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Healthy-volunteer cross-modal stimulation physiology, outside clinical burden question.",
+    "caveat": "21 healthy volunteers; no significant swallowing-behavior change and no patient outcome evidence.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41349566",
+    "key": "Labeit2025Neurogeriatric",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Neurogeriatric framework for age, comorbidity and mixed dysphagia mechanisms; supports R13 as a heterogeneous syndrome.",
+    "caveat": "Narrative review, not a source for numerical prevalence or adjusted outcome estimates.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41295988",
+    "key": "Labeit2026GERisearch",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Survey of geriatric physicians' research working conditions, unrelated to study endpoints.",
+    "caveat": "Research infrastructure survey is not dysphagia service utilization evidence.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "41032649",
+    "key": "Labeit2026ClassificationComment",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Conceptual discussion of dysphagia classification; broader phenotyping is supported better by the validated 2021 classification paper.",
+    "caveat": "Editorial/comment without abstract; full text not critically appraised, therefore no numerical or novel clinical claim assigned.",
+    "assessment_basis": "PubMed title/publication type; no abstract; no substantive new claim assigned",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40708460",
+    "key": "Karisik2025LongTermPSD",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Evidence gap for structured long-term reassessment and pathways following inpatient rehabilitation.",
+    "caveat": "Guideline synthesis/position paper, not comparative treatment-effect evidence; does not show that all current care is inadequate.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40642379",
+    "key": "Peranovic2025DementiaFEES",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Dementia-specific FEES phenotypes illustrate heterogeneity, but dementia-specific analysis is not part of current manuscripts.",
+    "caveat": "Selected n107 hospitalized geriatric patients; cannot estimate early-rehabilitation prevalence; broader phenotype paper covers current claim.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40606509",
+    "key": "Stoev2025CoughForce",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Cough force and long-term pulmonary risk support broader airway-safety assessment beyond a diagnosis code.",
+    "caveat": "n98 geriatric cohort, four-year follow-up, not in-hospital outcome; likely same cohort as PMID42304253.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40383663",
+    "key": "SuntrupKrueger2025PESRecovery",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Detailed dysphagia recovery and hospital-stay secondary outcomes after PES provide intervention-specific context.",
+    "caveat": "SAME n60 randomized pilot as PMID37789340; secondary trajectories, not a second independent RCT; generalization to all coded dysphagia inappropriate.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40377204",
+    "key": "Labeit2025FoslevodopaCase",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Akinetic-crisis rescue therapy case report, not a source for dysphagia burden or care-pathway claims.",
+    "caveat": "No PubMed abstract; title and publication metadata establish narrow case-report scope.",
+    "assessment_basis": "PubMed title/publication type; no abstract; no substantive new claim assigned",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40202551",
+    "key": "SuntrupKrueger2025CognitiveReserve",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Cognition and swallowing reserve in older volunteers could contextualize missing cognition data, but not needed in focused burden discussion.",
+    "caveat": "63 older volunteers without preexisting dysphagia-causing disease; no hospital outcome estimates.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "40091074",
+    "key": "Dziewas2025Decannulation",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Tracheotomy, secretion management, cough and swallowing assessment as components of decannulation pathways.",
+    "caveat": "Clinical review/framework; no efficacy estimate and cannot identify inappropriate tracheotomy or delayed decannulation from OPS coding.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "39849098",
+    "key": "Doerner2025IFSH",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Brain MRI biomarker associations with cognition/depression; no relevant dysphagia or care outcome question.",
+    "caveat": "CSVD imaging cohort, unrelated to the present study endpoints.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "39030033",
+    "key": "Labeit2024DietReply",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Author reply associated with the 2024 stroke-treatment review; no independent evidence to add.",
+    "caveat": "No PubMed abstract; correspondence, not a distinct intervention trial; primary review preferred.",
+    "assessment_basis": "PubMed title/publication type; no abstract; no substantive new claim assigned",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "38954267",
+    "key": "Sasegbon2024EmergingTreatments",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Broader neurogenic dysphagia treatment landscape relevant to the mixed neurological early-rehabilitation cohort.",
+    "caveat": "Narrative review, not evidence that every patient is eligible for PES or that recorded intervention frequencies measure underuse.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "38720388",
+    "key": "Dziewas2024IntegratedFEES",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "FEES reports should integrate phenotype, severity, etiology and management; explains information absent from the OPS 1-613 flag.",
+    "caveat": "Clinical reporting framework/review, not an outcome trial or a validated administrative severity measure.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "38627620",
+    "key": "Kudelka2024CGA",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "German geriatric assessment practice survey is adjacent service evidence, but more specific FEES access study better fits current claims.",
+    "caveat": "76 analyzed survey records; not a neurorehabilitation service census or dysphagia outcome study.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "38581884",
+    "key": "Muhle2024PESPreExtubation",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "PES before extubation provides distinct exploratory ICU treatment evidence alongside postextubation studies.",
+    "caveat": "32 prospective treated patients versus 32 historical matched controls; nonrandomized, pneumonia difference nonsignificant; not the n60 randomized trial.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "38508837",
+    "key": "Labeit2024Treatment",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Contemporary stroke dysphagia treatment framework distinguishes protective care from swallowing rehabilitation.",
+    "caveat": "Review; numerical effects must come from primary trials; does not establish national underuse from coded rates.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "38135841",
+    "key": "Labeit2024DIGESTFEES",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Disease-specific FEES severity measurement validation in Parkinson disease is adjacent, but not directly applicable to aggregate R13.",
+    "caveat": "66 PD FEES videos; not validated for the present all-neurological or stroke administrative cohort.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37789340",
+    "key": "SuntrupKrueger2023PESPilot",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Original randomized PES postextubation pilot provides the primary trial report behind subsequent recovery/economic analyses.",
+    "caveat": "n60 severe dysphagic stroke patients; primary reintubation endpoint 13% vs33%, p=.067, did not reach significance; favorable secondary endpoints are exploratory.",
+    "assessment_basis": "Primary publisher full text (PubMed record lacks abstract)",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37596008",
+    "key": "Labeit2023Assessment",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Contemporary assessment hierarchy and indications for instrumental evaluation; supports interpretation of coded dysphagia/FEES.",
+    "caveat": "State-of-the-art review, not a claim that every R13-coded episode needs FEES.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37400784",
+    "key": "RegnerNelke2023TBCase",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Rare tuberculosis-related vocal-cord palsy case is mechanistically adjacent to tracheostomy but unnecessary for broad early-rehabilitation burden.",
+    "caveat": "Single case; cannot support prevalence or outcome estimates.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37375566",
+    "key": "Calles2023Sarcopenic",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Useful only to qualify a proposed sarcopenic explanation of dysphagia; current manuscripts should avoid inferring mechanisms from malnutrition codes.",
+    "caveat": "Selected n109 geriatrics cohort; no significant dysphagia-sarcopenia association; not proof that sarcopenic dysphagia cannot occur.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37318543",
+    "key": "Labeit2023DiagnosticsErratum",
+    "acute_decision": "correction",
+    "rehab_decision": "correction",
+    "claim_mapping": "Erratum linked to PMID37160432; bibliographic housekeeping if that review is cited.",
+    "caveat": "No abstract; not independent evidence and correction content requires full-text checking before using corrected details.",
+    "assessment_basis": "PubMed title/publication type; no abstract; no substantive new claim assigned",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37160432",
+    "key": "Labeit2023Diagnostics",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "German clinical management context specifically for post-stroke screening, indicated FEES and care.",
+    "caveat": "Narrative review overlapping English Lancet assessment/treatment reviews; cite once for German clinical context, not repeatedly for the same claim. Linked erratum PMID37318543.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "37021194",
+    "key": "Labeit2023Costs",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Direct German FEES-based acute-stroke expenditure study anchors resource-burden discussion.",
+    "caveat": "n674 FEES-selected patients; severe FEDSS6 associated with modeled insurer expenditure; reimbursement is not actual cost, and observational association does not establish savings.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "36793109",
+    "key": "Labeit2023Sensory",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "Sensory and secretion-management deficits demonstrate clinically relevant heterogeneity concealed by R13 coding.",
+    "caveat": "Prospective acute-stroke n57; association with clinical severity, not causal outcomes or treatment benefit.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "36371409",
+    "key": "Labeit2022MedicationPD",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Medication-swallowing impairment in Parkinson disease illustrates a separate phenotype not measured here.",
+    "caveat": "n66 PD patients, medication-specific assessment; no current manuscript endpoint or subgroup requiring citation.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "35966778",
+    "key": "Labeit2022Presbyphagia",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Age-related swallowing reserve may contextualize age gradients but cannot explain them causally.",
+    "caveat": "64 community-dwelling older adults; presbyphagic alterations are not equivalent to inpatient coded dysphagia.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "34862828",
+    "key": "Labeit2022MyositisAlgorithm",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Myositis differential-diagnosis algorithm supports treatable etiology, but current paper does not study unexplained dysphagia diagnosis.",
+    "caveat": "Selected 72 patients with IIM-compatible pattern; narrow diagnostic cohort, not early-rehabilitation prevalence.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "34836134",
+    "key": "Muhle2021GastricMotility",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Neurocritical gastric dysmotility and swallowing dysfunction may share severity-related factors, outside measured endpoint set.",
+    "caveat": "n976 neurologic ICU patients; high gastric residual volume is not captured by R13/PEG and is not investigated in these manuscripts.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "34678269",
+    "key": "Labeit2022FEESVFSS",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Direct simultaneous FEES/VFSS comparison supports complementary instrumental assessment and cautions against inferring all assessment from one procedure code.",
+    "caveat": "Prospective n49; modality comparison, not national service utilization or intervention efficacy.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "34394727",
+    "key": "Warnecke2021Tensilon",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Endoscopic tensilon test for myasthenia diagnosis is relevant to disease-specific evaluation, not the burden analysis.",
+    "caveat": "Selected n100 unclear dysphagia cohort; no tested InEK subgroup requiring its diagnostic-accuracy estimate.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33966636",
+    "key": "Muhle2021SESETD",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Prospective SESETD decannulation pathway directly relevant to dysphagia-tracheostomy care in early rehabilitation.",
+    "caveat": "n377 neurologic ICU patients after mechanical-ventilation weaning; not a national early-rehab cohort and not causal evidence from tracheostomy codes.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33711182",
+    "key": "Labeit2021IIM",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "IIM dysphagia severity and pneumonia illustrate non-stroke heterogeneity but are outside current disease-specific analyses.",
+    "caveat": "Retrospective n71 IIM patients; general neurogenic classification reference suffices for mixed-etiology limitation.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33650729",
+    "key": "Claus2021EMST",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "PD-specific randomized expiratory-muscle training evidence is relevant to a disease-specific treatment review, not current main results.",
+    "caveat": "n50 PD patients; cannot generalize to severe mixed early-rehabilitation cohort or claim general reduced pneumonia.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33521647",
+    "key": "Dziewas2021COVID",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Severe COVID-related dysphagia case series is adjacent to critical-illness rehabilitation, but no COVID-specific question is analyzed.",
+    "caveat": "Six selected tracheotomized patients; no general burden or causal efficacy estimate.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33449304",
+    "key": "SuntrupKrueger2021Capsaicinoids",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Capsaicinoid physiology in healthy individuals is outside clinical burden study scope.",
+    "caveat": "Healthy-subject mechanistic experiment; not patient outcome evidence.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33338309",
+    "key": "Pawlitzki2021NMOSD",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Rare NMOSD/MOGAD-related dysphagia illustrates broad etiology, but not needed without such subgroup analysis.",
+    "caveat": "n13 selected patients; cannot estimate dysphagia burden in broad neurological rehabilitation.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33324915",
+    "key": "Warnecke2020SESETDReliability",
+    "acute_decision": "context",
+    "rehab_decision": "include",
+    "claim_mapping": "Reliability of standardized secretion/swallow/cough assessment underpins FEES-based decannulation pathways.",
+    "caveat": "Small video-rating reliability study; not comparative care effectiveness. Complement to prospective SESETD study rather than independent clinical replication.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33318164",
+    "key": "Warnecke2021Classification",
+    "acute_decision": "include",
+    "rehab_decision": "include",
+    "claim_mapping": "Validated phenotypic heterogeneity explains why binary R13 coding cannot substitute for clinical dysphagia characterization.",
+    "caveat": "Systematic review plus 1,012-video validation; clinical FEES phenotypes do not validate an administrative severity scale.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33230259",
+    "key": "Muhle2020DualTaskHealthy",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Healthy young-adult dual-task swallowing experiment does not support current hospital burden claims.",
+    "caveat": "n27 healthy participants; no patient outcomes.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33178124",
+    "key": "Nelke2020VocalFoldMG",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Rare myasthenia-related vocal-fold paralysis case illustrates a reversible diagnosis, unnecessary for aggregate outcomes.",
+    "caveat": "Case report/review; not representative of the care cohort.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33084118",
+    "key": "Labeit2021DualTaskPD",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "PD dual-task swallowing illustrates attention effects but not a measured administrative exposure or outcome.",
+    "caveat": "n30 PD patients; physiologic task comparison, not inpatient resource study.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "33068056",
+    "key": "Muhle2021SensoryStimulation",
+    "acute_decision": "exclude",
+    "rehab_decision": "exclude",
+    "claim_mapping": "Artificial sensory-lesion neurostimulation physiology in healthy volunteers is outside current clinical burden scope.",
+    "caveat": "n10 healthy volunteers; experimental hypesthesia not equivalent to stroke or early rehabilitation.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "32773397",
+    "key": "Claus2020PDPredictors",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "PD-specific dysphagia predictors are not needed without a PD subgroup hypothesis.",
+    "caveat": "n200 PD patients; thresholds cannot be transferred to all neurological early-rehabilitation admissions.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "32650400",
+    "key": "Labeit2020MyositisReview",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Myositis systematic review addresses disease-specific prevalence and treatment, outside current principal questions.",
+    "caveat": "Pooled IIM prevalence not comparable with either InEK OPS cohort; broad phenotype reference already covers etiologic diversity.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "32417630",
+    "key": "Labeit2020Freezing",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Oropharyngeal freezing is a Parkinson-specific phenotype; stroke comparison exists but not an inpatient outcome study.",
+    "caveat": "n50 PD plus retrospective stroke/healthy control videos; not prevalence evidence for the present cohorts.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "32257098",
+    "key": "Labeit2020LCIG",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "LCIG in PD is a highly specific treatment pilot not needed for broad resource burden.",
+    "caveat": "Only11 pre/post FEES cases; overall score change nonsignificant. PubMed abstract has a duplicated/truncated Results string, so no secondary numerical claims used.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "31381234",
+    "key": "Labeit2019SensoryTest",
+    "acute_decision": "context",
+    "rehab_decision": "context",
+    "claim_mapping": "Original FEES sensory-test validation supports detailed methods only if the technique itself is discussed.",
+    "caveat": "20 healthy volunteers before/after anesthesia; current manuscripts do not perform this sensory test. Clinical application paper PMID36793109 more relevant.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "31338062",
+    "key": "Labeit2019Jo1Case",
+    "acute_decision": "exclude",
+    "rehab_decision": "context",
+    "claim_mapping": "Isolated Jo-1 myositis dysphagia case is differential-diagnosis context but not useful for current aggregate claims.",
+    "caveat": "Single case; no general outcome estimate.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "31280655",
+    "key": "SuntrupKrueger2019Extubation",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "Clinical dysphagia severity and extubation failure provide direct airway/resource-burden context in severe stroke.",
+    "caveat": "Prospective n133; FEDSS associated with extubation failure, observational; DEFISS development not full external validation.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  },
+  {
+    "pmid": "30253410",
+    "key": "Labeit2018NIHSS",
+    "acute_decision": "include",
+    "rehab_decision": "context",
+    "claim_mapping": "Stroke severity and lesion location alter dysphagia risk, emphasizing unmeasured confounding and the limits of R13 coding.",
+    "caveat": "Retrospective FEES-selected n687; NIHSS has moderate accuracy and is an adjunct, not replacement, for swallowing assessment.",
+    "assessment_basis": "Primary PubMed title, abstract, metadata",
+    "screened_date": "2026-11-17"
+  }
+]

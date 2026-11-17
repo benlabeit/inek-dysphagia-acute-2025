@@ -1,0 +1,26 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "0",
+    "retmax": "0",
+    "retstart": "0",
+    "idlist": [],
+    "translationset": [
+      {
+        "from": "Labeit Bendix",
+        "to": "Labeit, Bendix[Full Author Name] OR labeit bendix[Author]"
+      }
+    ],
+    "querytranslation": "(labeit, bendix[Author] OR labeit bendix[Author]) AND Ruven[Author]",
+    "warninglist": {
+      "phrasesignored": [],
+      "quotedphrasesnotfound": [],
+      "outputmessages": [
+        "No items found."
+      ]
+    }
+  }
+}
