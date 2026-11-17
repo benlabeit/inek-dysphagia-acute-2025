@@ -1,0 +1,134 @@
+{
+  "cohort": "acute",
+  "status": "READY",
+  "outputs": {
+    "main": {
+      "source_sha256": "fe972a5df7cd2ae29729092a1bcf6f4600961226ae963b46d40a39932cc2989f",
+      "docx_sha256": "2016e844ad57ff38cade5010f3ef845c5f5e181a8c362509396c04d2c23b8fa0",
+      "pdf_sha256": "a0a1f23a4d94af7c4a5e789afde9c3f0dbc04d6951637aae1aebf2573f460bed",
+      "structural_qa": {
+        "status": "PASS",
+        "exact_paragraph_and_table_content_match": true,
+        "paragraphs": 156,
+        "tables": 2,
+        "figures": 2,
+        "non_page_fields": 0,
+        "docx_sha256": "2016e844ad57ff38cade5010f3ef845c5f5e181a8c362509396c04d2c23b8fa0"
+      },
+      "reference_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "pdf_pages": 15,
+      "docx_bytes": 509164,
+      "pdf_bytes": 688968,
+      "pdf_visual_qa": "PASS",
+      "source": "manuscript_acute.md",
+      "docx": "Manuscript_NRP_Acute.docx",
+      "pdf": "Manuscript_NRP_Acute.pdf",
+      "figures": [
+        {
+          "path": "figures/nrp/acute_figure1.png",
+          "sha256": "0123385a2deda9221b7e7d8e3ee31d1c8b5144ab9114325b5cf8c7c6f4f2feb5"
+        },
+        {
+          "path": "figures/nrp/acute_figure2.png",
+          "sha256": "ec7a327ff14528eab3f7aaf9727dcaecddfbd6aac0f9d14c3d9360faf765c329"
+        }
+      ]
+    },
+    "supplement": {
+      "source_sha256": "1112eb05d999cc0a1af9aa6596affda6c9ac0584cce71d8f96ebc72af44bf384",
+      "docx_sha256": "6572561f16137333a6d8a6f6a0c0b6563349dd946ecab76711dc549b7db4b2ee",
+      "pdf_sha256": "53ebac02a43abd6d4abc98f8520c2fc4483fa205dcc5f0a79166281923fb329a",
+      "structural_qa": {
+        "status": "PASS",
+        "exact_paragraph_and_table_content_match": true,
+        "paragraphs": 96,
+        "tables": 7,
+        "figures": 0,
+        "non_page_fields": 0,
+        "docx_sha256": "6572561f16137333a6d8a6f6a0c0b6563349dd946ecab76711dc549b7db4b2ee"
+      },
+      "reference_numbers": [
+        19,
+        20,
+        21
+      ],
+      "pdf_pages": 11,
+      "docx_bytes": 52530,
+      "pdf_bytes": 124280,
+      "pdf_visual_qa": "PASS",
+      "source": "manuscript_acute_supplement.md",
+      "docx": "ESM_1.docx",
+      "pdf": "ESM_1.pdf",
+      "figures": []
+    }
+  },
+  "source_document_manifest_sha256": "833b7241059b89ce128fd1c2ecc0eab6721392998298827d5c7b8e66ca433988",
+  "pdf_engine": "Independent ReportLab rendering, not native DOCX rendering",
+  "native_word_visual_qa": "Unavailable: packaged render_docx.py failed with FileNotFoundError for LibreOffice soffice.exe. No desktop/UI fallback used. Native Word pagination unverified.",
+  "pdf_visual_qa": "PASS",
+  "bibliography_style": "Springer Basic numeric brackets; official Zotero CSL/citeproc output supplied by root",
+  "zotero": {
+    "citation_fields": 41,
+    "unique_references": 47,
+    "bibliography_fields": 1,
+    "visible_text_unchanged": true,
+    "field_json_valid": true,
+    "personal_zotero_library_linked": false,
+    "word_plugin_roundtrip_tested": false,
+    "sha256": "5a19e41b7960d24c1afee1ca71b7c59e58a5fd598d18c131366949d1b4fda0fd",
+    "source": "Manuscript_NRP_Acute.docx",
+    "output": "Manuscript_NRP_Acute_Zotero.docx"
+  },
+  "legacy_aliases": {
+    "Manuscript_Acute_Dysphagia_2025.docx": "Manuscript_NRP_Acute.docx",
+    "Manuscript_Acute_Dysphagia_2025.pdf": "Manuscript_NRP_Acute.pdf"
+  }
+}
