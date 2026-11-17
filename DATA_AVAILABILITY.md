@@ -1,6 +1,6 @@
 # Data availability and repository status
 
-This is a private manuscript-development repository. Public release is planned only after the authors approve the final materials and data-reuse questions have been resolved. No change to repository visibility is made by this package.
+This acute-care repository was made public on 17 November 2026 at the author's request. It provides analysis code, query definitions and disclosure-checked aggregate outputs. The separate rehabilitation repository remains private. This status supersedes prior private-development statements in dated audit records.
 
 Original InEK Excel exports are not redistributed because permission for repository redistribution has not been established. This is an unresolved permission question, not a claim that all redistribution is prohibited. Registered users can obtain the source aggregates through the [InEK DatenBrowser](https://datenbrowser.inek.org/) using the documented selections and subject to the service's terms.
 

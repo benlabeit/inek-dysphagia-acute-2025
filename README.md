@@ -1,10 +1,14 @@
 # Dysphagia in acute neurological complex treatment: InEK 2025
 
-This private project contains an English manuscript draft and reproducible aggregate analyses of coded dysphagia in acute neurological complex-treatment hospital episodes in Germany. The analysis uses **Unterjährige Datenlieferung DRG Januar bis Dezember 2025**, whose documented delivery snapshot is 16 January 2026. It is a provisional reporting snapshot, not verified final population completeness.
+This project contains an English manuscript draft and reproducible aggregate analyses of coded dysphagia in acute neurological complex-treatment hospital episodes in Germany. The analysis uses **Unterjährige Datenlieferung DRG Januar bis Dezember 2025**, whose documented delivery snapshot is 16 January 2026. It is a provisional reporting snapshot, not verified final population completeness.
 
 [Project repository](https://github.com/benlabeit/inek-dysphagia-acute-2025) · [Companion early-rehabilitation manuscript](https://github.com/benlabeit/inek-dysphagia-rehabilitation-2025)
 
-## NRP manuscript, supplement and Zotero versions
+## Current manuscript after author comments
+
+The current author-revised Word manuscript is [Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx](Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx). It incorporates the 15 comments in the author-edited upload of 17 November 2026. Numerical results, the abstract and figures are unchanged. Zotero fields are preserved; the neutral STEPS trial is added and citation numbers are updated. The earlier Word, PDF and Markdown files below remain the preceding version, including their original reference numbering. Use this new Word file for further manuscript editing. Native Word pagination has not been rechecked.
+
+## Preceding NRP manuscript, supplement and Zotero versions
 
 Compatibility filenames `Manuscript_Acute_Dysphagia_2025.docx` and `Manuscript_Acute_Dysphagia_2025.pdf` are byte-identical aliases of the current static NRP manuscript and PDF, so previous repository links remain current. They are not additional manuscript versions.
 
@@ -16,9 +20,9 @@ RIS/CSL import files, the citation map and Zotero guidance are in `research/zote
 
 The NRP revision adds two publication figures and an expanded PubMed literature audit. Figure files, their numeric plotting data, legends and quality checks are in `figures/nrp/`; the complete author-focused literature screening and source verification are in `research/`. Original InEK workbooks, full abstracts and source XML are excluded. See [figure reproduction](figures/nrp/README.md) and [literature provenance](research/README.md).
 
-## Private development and source-data availability
+## Public repository and source-data availability
 
-This repository must remain **private** during manuscript development. A later public release is planned, subject to author approval and data-reuse clarification. Original InEK Excel exports remain excluded because permission for repository redistribution has not been established; this does not assert a blanket prohibition. See [DATA_AVAILABILITY.md](DATA_AVAILABILITY.md) for the current source-access and rights-clearance statement.
+This acute-care repository was made public on 17 November 2026 at the author's request. The companion rehabilitation repository remains private. This status supersedes the earlier private-development instructions retained in dated audit records. Original InEK Excel exports remain excluded because permission for repository redistribution has not been established; this does not assert a blanket prohibition. See [DATA_AVAILABILITY.md](DATA_AVAILABILITY.md) for the current source-access and rights-clearance statement.
 
 ## Manuscript and scientific status
 
