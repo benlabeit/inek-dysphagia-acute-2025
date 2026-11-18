@@ -4,18 +4,34 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 [Project repository](https://github.com/benlabeit/inek-dysphagia-acute-2025) · [Companion early-rehabilitation manuscript](https://github.com/benlabeit/inek-dysphagia-rehabilitation-2025)
 
-## Current manuscript and analyses (18 November 2026)
+## Current adult cohort analysis (18 November 2026)
 
-[Manuscript (Word)](Manuscript_InEK_Acute_Stroke.docx) · [Manuscript (PDF)](Manuscript_InEK_Acute_Stroke.pdf) · [Online Resource 1 (Word)](ESM_1.docx) · [Online Resource 1 (PDF)](ESM_1.pdf) · [Figures and plotting data](figures/nrp/harmonized/) · [Data availability](DATA_AVAILABILITY.md)
+[Manuscript (Word)](Manuscript_InEK_Acute_Stroke.docx) · [Manuscript (PDF)](Manuscript_InEK_Acute_Stroke.pdf) · [Online Resource 1 (Word)](ESM_1.docx) · [Online Resource 1 (PDF)](ESM_1.pdf) · [Data availability](DATA_AVAILABILITY.md)
 
-The all-age cohort included 279,277 acute-care episodes, of which 33,643 had secondary dysphagia coding. All 279,255 adults contributed to the common age-by-principal-diagnosis analysis. Age bands were 18–74 and 75 years or older. The separate models adding sex or clinical complexity (PCCL) retained 279,248 and 279,254 adults, respectively.
+Every analysis in the current manuscript uses adults aged 18 years or older (33,641 dysphagia-coded episodes and 245,614 comparators). Crude and age-standardized risk ratios were available for all 16 binary endpoints. Age and principal diagnosis were available for 14. The separate age–diagnosis–sex and age–diagnosis–PCCL models were available for seven endpoints each. Age-by-DRG estimates were available for six. The requested age-by-sex-by-DRG model remains unestimated for every endpoint. The source workbooks display separate sex and PCCL distributions. They do not provide their joint distribution.
 
-The [model-level results](outcomes_harmonized_binary_summary.csv) cover 16 crude comparisons, 14 age-by-diagnosis comparisons and seven endpoints each in the separate sex and PCCL models. Supplementary Table S14 reports all nine standardized estimates for pneumonia (J12–J18), the combined pulmonary endpoint (J12–J18 or J69.0), and protein-energy malnutrition. The [availability matrix](outcomes_model_availability.csv) identifies which models could be estimated for each endpoint. The [updated status table](outcomes_analysis_status.csv) records completion of the planned outcome queries. Earlier export checklists and manuscript files are historical.
+| Current output | Contents |
+| --- | --- |
+| [Binary endpoints](adult_binary.csv) | Model availability, risks, RRs and RDs, nominal intervals, model denominators and matched crude contrasts |
+| [Hospital stay](adult_los.csv) | Adult crude, age–diagnosis and age–DRG mean differences, with precision and survivor sensitivities |
+| [Adult cohort](adult_cohort.csv) and [functional analyses](adult_functional.csv) | Adult counts and within-category contrasts |
+| [Identification bounds](adult_drg_bounds.csv) | Age–DRG bounds with dysphagia-group reference weights for ten endpoints lacking observable DRG events |
+| [Figure 1](adult_figure_1.pdf) · [Figure 2](adult_figure_2.pdf) · [Figure 3](adult_figure_3.pdf) | Crude risks, model-specific adult RRs and hospital stay |
+| [Manual export guide](ADULT_EXPORTS.md) · [Filter list](adult_manual_exports.csv) | Remaining event tables, E43 source recovery and a single-DRG feasibility pilot |
 
-The [within-DRG comparison](WITHIN_DRG_BINARY.md) covers all 16 binary endpoints. Tables S15–S16 give six directly estimated adult comparisons by DRG, by DRG and age, and by DRG, age and principal diagnosis. Table S17 gives identification ranges for the ten endpoints whose DRG-specific event counts were unavailable. The public files contain aggregate estimates, group coverage, the matched crude contrasts, and a manual source export list.
+The current standardized point estimates apply **pooled common-support weights to all outcomes**, including hospital stay and binary comparisons within DRG. Earlier files beginning with `within_drg_binary_` use the dysphagia-coded distribution for DRG analyses. Those estimates and the earlier all-age documentation are historical. The current results use only available sources and are provisional pending additional manual exports.
 
+To reproduce, place the independently obtained workbooks in a private local directory, then run:
 
-### Reproducing the outcome tables
+```sh
+python adult_analysis.py --raw /path/to/private/workbooks
+python adult_figures.py
+python adult_export_plan.py
+```
+
+The analysis uses openpyxl. Plotting additionally uses pandas, numpy and matplotlib. Workbooks are never published. The analysis retains the two previously verified E43 adult three-factor estimates if their source workbooks are unavailable. Source-level details for the original analyses follow below as a historical record.
+
+### Reproducing the earlier outcome tables
 
 The [query plan](outcomes_query_plan.json) documents the filters and expected filenames. Obtain the source workbooks through the [InEK DatenBrowser](https://datenbrowser.inek.org/) under its access conditions and place them in the local `raw/` directory. The following commands use the original workbooks locally. They regenerate the adult models for the three combined endpoints, verify each model independently and rebuild the consolidated table alongside the earlier reviewed model summaries.
 
