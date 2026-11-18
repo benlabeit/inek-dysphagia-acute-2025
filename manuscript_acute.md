@@ -20,9 +20,9 @@ Short title: Dysphagia burden in acute stroke care
 
 Background: Dysphagia may accompany pulmonary, nutritional and resource burdens in acute stroke care. We assessed these associations in nationwide administrative data.
 
-Methods: We compared adult German hospital episodes receiving neurological complex treatment for acute stroke in 2025, according to secondary dysphagia coding. For 16 binary endpoints we estimated crude risk ratios (RRs) and directly standardized for age and principal diagnosis with either sex or patient clinical complexity level (PCCL). We also compared outcomes within the same age band and diagnosis-related group (DRG). For hospital stay we compared mean days.
+Methods: We compared adult episodes with and without secondary dysphagia coding in German hospitals providing neurological complex treatment for acute stroke in 2025. We estimated absolute risks and standardized risk ratios (RRs) for 16 endpoints by age, principal diagnosis and sex. We also compared episodes within the same age band and diagnosis-related group (DRG). For length of stay we compared mean days.
 
-Results: Of 279,255 adult episodes, 33,641 (12.05%) had dysphagia coding. Pneumonia or aspiration-related pneumonitis occurred in 33.22% versus 4.57%. For in-hospital death, RRs (95% CIs) were 4.72 (4.56–4.88) crude, 3.95 (3.81–4.11) with age, diagnosis and sex, 2.29 (2.19–2.40) with age, diagnosis and PCCL, and 2.80 (2.70–2.92) within observable age–DRG strata. In DRG B70D alone the age- and sex-standardized mortality RR was 8.04 (7.27–8.89). Mean hospital stay differed by 8.85 days crude, 9.88 days after standardization for age and diagnosis, and 2.86 days within age–DRG strata.
+Results: Of 279,255 episodes, 52.7% involved adults aged ≥75 years, 63.0% had cerebral infarction as the principal diagnosis and 33,641 (12.05%) had dysphagia coding. Pneumonia or aspiration-related pneumonitis occurred in 33.22% of episodes with dysphagia coding and 4.57% without. The mortality RR (95% CI) was 3.95 (3.81–4.11) after standardization for age, principal diagnosis and sex and 2.80 (2.70–2.92) within observable age–DRG strata. Mean hospital stay differed by 8.85 days before adjustment, 9.88 days after standardization for age and principal diagnosis and 2.86 days within age–DRG strata.
 
 Conclusions: Recorded dysphagia marked pulmonary and nutritional morbidity, mortality, prolonged hospitalization and differing procedure use. Coding, uncertain timing and residual severity confounding prevent causal attribution.
 
@@ -56,6 +56,8 @@ FEES was identified by OPS 1-613 and intracranial mechanical thrombectomy by OPS
 
 Additional post hoc analyses considered unspecified severe protein-energy malnutrition (E43), unspecified protein-energy malnutrition (E46), volume depletion (E86), simple endotracheal intubation (OPS 8-701) and PEG using the thread-pull technique (OPS 5-431.22). We also counted each episode with any of E40, E41, E42, E43, E44.0, E44.1 or E46 once, using an InEK query for the combined definition. The procedure codes do not measure overall ventilation requirement, reintubation, or every PEG technique.
 
+We assessed discharge status from the in-hospital death category (discharge reason 07) and the total episode count. For discharge destination, we defined four groups with an explicitly coded receiving setting (rehabilitation, nursing facility, hospice and transfer to another hospital). The denominator for a destination was the number of episodes ending alive. Routine completion of treatment does not identify the subsequent place of residence (Online Resource 1, Table S7).
+
 ### Statistical analysis
 
 We compared risks, risk ratios (RRs) and risk differences for 16 binary endpoints and mean hospital days for length of stay. Both adult age bands (18–74 and ≥75 years) contributed to all cohort-wide analyses. The planned diagnosis grouping distinguished cerebral infarction (I63), intracerebral haemorrhage (I61) and all remaining principal diagnoses within each age band.
@@ -76,6 +78,8 @@ We calculated nominal 95% confidence intervals from independent-episode variance
 
 Exploratory functional analyses compared mortality and pneumonia within 21 coded Barthel, Functional Independence Measure or Mini-Mental State Examination categories. We required observable adult denominators and event counts and report results only when both groups contained at least five events and five non-events. Functional coding can reflect selective assessment during admission [18].
 
+For the figures we selected eight endpoints covering mortality, pulmonary and nutritional diagnoses and care procedures. We show absolute risks, followed by two standardized comparisons. Age, principal diagnosis and sex characterize clinical case mix. Comparing episodes within the same age band and DRG addresses variation within billing groups assigned at the end of the stay. Component diagnoses and timing codes appear in Supplementary Fig. S1. This presentation choice was made after the analyses.
+
 The study was not preregistered; endpoints and sensitivities were selected during retrospective replication and expansion of the source presentations. All additional analyses were exploratory, with nominal 95% CIs and no multiplicity correction. Intervals assume independent episodes and omit hospital clustering, repeat admissions, coding uncertainty and confounding. Admission NIHSS was unavailable. No model jointly controls all measured domains or establishes independence from baseline neurological severity.
 
 ### AI assistance
@@ -86,15 +90,21 @@ OpenAI ChatGPT/Codex assisted analysis programming, numerical checks and manuscr
 
 ### Cohort and clinical burden
 
-The cohort included 279,255 adult episodes. Secondary dysphagia was coded in 33,641 (12.05%). The comparator comprised 245,614 episodes. Of the included adults, 132,183 were aged 18–74 years and 147,072 were aged ≥75 years (Table 1).
+The cohort comprised 279,255 adult hospital episodes, including 33,641 (12.05%) with secondary dysphagia coding and 245,614 without it. Overall, 132,519 episodes (47.5%) involved women, 147,072 (52.7%) involved adults aged ≥75 years, and 109,830 (39.3%) involved adults aged ≥80 years. Adults aged ≥80 years accounted for 52.5% of episodes with dysphagia coding and 37.5% of those without (Table 1).
 
-The combined pulmonary endpoint occurred in 33.22% versus 4.57% of adults with and without dysphagia coding. Corresponding proportions were 23.19% versus 1.81% for J69.0 and 11.52% versus 2.86% for J12–J18 pneumonia (Fig. 1 and Table 2).
+Cerebral infarction (I63) was the principal diagnosis in 176,014 episodes (63.0%) and intracerebral haemorrhage (I61) in 12,146 (4.3%). The remaining 91,095 (32.6%) included at least 75,050 episodes (26.9% of all episodes) with a named G45 principal diagnosis (transient cerebral ischaemia and related syndromes). Some less frequent diagnoses were pooled in the source. Cerebral infarction accounted for 79.1% of episodes with dysphagia coding and 60.8% without, and intracerebral haemorrhage for 10.0% and 3.6%, respectively.
+
+Pneumonia or aspiration-related pneumonitis occurred in 33.22% of episodes with dysphagia coding and 4.57% of those without (Fig. 1). The component frequencies were 23.19% versus 1.81% for J69.0 and 11.52% versus 2.86% for J12–J18 pneumonia (Table 2).
 
 In-hospital death occurred in 14.87% versus 3.15%, protein-energy malnutrition in 3.02% versus 0.67%, and volume depletion in 12.18% versus 4.46%. The source reports diagnoses accumulated over the admission.
 
+### Discharge status and destination
+
+Of 279,255 adult episodes, 266,506 (95.4%) ended in live discharge. This comprised 28,638 of 33,641 episodes (85.1%) with dysphagia coding and 237,868 of 245,614 (96.8%) without. After standardization for age, principal diagnosis and sex, the proportions discharged alive were 86.8% and 96.7%, respectively (difference −9.89 percentage points, 95% CI −10.30 to −9.47). The exports contained no counts specific to rehabilitation, nursing facilities, hospice or transfer to another hospital. Destination-specific comparisons therefore remain unavailable (Online Resource 1, Table S7).
+
 ### Common and additional case-mix analyses
 
-All 16 endpoints supported crude and age-only comparisons and the five-group age–diagnosis specification, with sex or PCCL entered separately. The finer, six-group specification could be estimated for 14 endpoints (Fig. 2, Table 3 and Online Resource 1). Both suppressed outcome queries retained a missing status.
+All 16 endpoints supported crude and age-only comparisons and the common five-group age–diagnosis specification with sex or PCCL entered separately (Table 3). The finer, six-group specification was estimable for 14 endpoints (Online Resource 1, Table S2e).
 
 In the common diagnosis grouping, model 2 retained 279,248 of 279,255 adults across ten supported sex-specific strata. Model 3 retained 279,254 adults across 34 supported PCCL strata. Each model used the same supported cases and weights for every endpoint.
 
@@ -110,11 +120,11 @@ Among episodes with a recorded Barthel Index of 0–15, the mortality RR was 1.0
 
 Mean hospital stay was 16.26 days with dysphagia coding and 7.41 days without it. The crude difference was 8.85 days (95% CI 8.67–9.04). After standardization for the five age–diagnosis groups, it was 9.88 days (95% CI 9.62–10.14) and among adults discharged alive it was 10.23 days (95% CI 9.95–10.52). The finer six-group estimate for all adults was 9.74 days (95% CI 9.45–10.03).
 
-On the 272,072 episodes in 203 observable age–DRG strata, the crude mean stay difference was 8.76 days. Standardizing the same cases by age and DRG yielded 2.86 days. One stratum had a singleton comparator. The other 202 strata yielded 2.86 days (95% CI 2.74–2.98). Additional standardization for principal diagnosis within DRGs yielded 3.34 days (3.22–3.47) in 179 strata with estimable variance (Fig. 3).
+Among the 272,072 episodes in 203 observable age–DRG strata, the crude mean stay difference was 8.76 days. Standardization on those same cases yielded 2.86 days. One stratum had a single comparator episode. In the remaining 202 strata (272,066 episodes), the difference was 2.86 days (95% CI 2.74–2.98) (Fig. 3). Adding principal diagnosis within DRGs yielded 3.34 days (3.22–3.47) in the 179 strata with estimable variance (Online Resource 1, Table S5).
 
 Simple endotracheal intubation was recorded in 7.97% versus 1.59% and thread-pull PEG in 6.99% versus 0.13% (Table 2).
 
-FEES was recorded in 20.14% versus 0.89%. These percentages describe episodes with an OPS 1-613 code. The age–diagnosis standardized RR was 21.73 (20.70–22.81).
+FEES was recorded in 20.14% of episodes with dysphagia coding and 0.89% of those without. For this procedure, the standardized RR was 21.65 (20.62–22.72) with age, principal diagnosis and sex and 15.81 (14.93–16.75) within observable age–DRG strata (Fig. 2).
 
 ## Discussion
 
@@ -212,36 +222,53 @@ This study used aggregate hospital episode data from the InEK DatenBrowser (http
 
 ![Figure 1](adult_figure_1.png)
 
-Fig. 1 Crude percentages for all 16 endpoints in 33,641 adult episodes with a secondary dysphagia code and 245,614 without one. Overlapping diagnoses and procedure markers can occur in the same episode. Table 2 gives the corresponding event counts and risk ratios.
+Fig. 1  Observed risks for eight clinical outcomes and care procedures in 33,641 adult episodes with secondary dysphagia coding and 245,614 without it. Each percentage uses the full respective group as denominator. Outcomes may overlap. Table 2 gives counts and crude risk ratios for all 16 endpoints. FEES, flexible endoscopic evaluation of swallowing. PEG, percutaneous endoscopic gastrostomy.
 
 ![Figure 2](adult_figure_2.png)
 
-Fig. 2 Risk ratios and nominal 95% confidence intervals. Panel A shows crude, sex- or PCCL-standardized and two within-DRG comparisons for all 16 endpoints. Diagnosis uses the common five age–diagnosis groups. Each within-DRG model includes observable named strata, with endpoint-specific coverage. Panel B shows mortality in B70D only. Supplementary Fig. S1 shows the additional age and diagnosis specifications. Tables S2–S4 give risks, matched crude RRs and model denominators.
+Fig. 2  Standardized risk ratios for the eight endpoints in Fig. 1. Points and bars show estimates and nominal 95% confidence intervals on a logarithmic scale. The left panel standardizes for age band, principal diagnosis and sex. The right panel compares episodes within the same age band and observable diagnosis-related group (DRG). Its coverage varies by endpoint. Supplementary Fig. S1 gives the other eight endpoints. Tables S2–S4 give absolute risks, coverage and additional models.
 
 ![Figure 3](adult_figure_3.png)
 
-Fig. 3 Differences in mean hospital stay between adults with and without dysphagia coding. Open points include strata with a singleton and therefore lack a full-support interval. The adjacent restricted estimates require at least two episodes per group and stratum. Discharged-alive and B70D estimates each use their own reference population.
+Fig. 3  Difference in mean hospital stay for dysphagia-coded minus comparator episodes, in days, with 95% confidence intervals. The crude and age–principal diagnosis comparisons use all 279,255 adult episodes. The within-DRG estimate uses the 202 age–DRG strata with at least two episodes per group (272,066 episodes). The estimate across all 203 observable strata also rounded to 2.86 days (Table S5).
 
 ## Electronic supplementary material
 
-Online Resource 1 provides model definitions, standardized risks and differences, the finer diagnosis sensitivity, within-DRG coverage, the B70D mortality analysis, length of stay, functional categories and the literature-search appendix.
+Online Resource 1 provides full model results and coverage, the finer principal-diagnosis sensitivity, the B70D mortality analysis, hospital stay and functional categories. It also gives the additional eight endpoints in Supplementary Fig. S1, discharge status and destination availability in Table S7, and the literature-search appendix.
 
 ## Tables
 
-### Table 1  Characteristics of adult hospital episodes
+### Table 1  Characteristics of adult episodes receiving neurological complex treatment for acute stroke
 
-| Characteristic | Dysphagia code, n (%) | No dysphagia code, n (%) |
-| --- | --- | --- |
-| All adult episodes | 33,641 (100.00) | 245,614 (100.00) |
-| 18–74 years | 11,541 (34.31) | 120,642 (49.12) |
-| ≥75 years | 22,100 (65.69) | 124,972 (50.88) |
-| Male | 17,551 (52.17) | 129,178 (52.59) |
-| Female | 16,090 (47.83) | 116,429 (47.40) |
-| Cerebral infarction (I63) | 26,612 (79.11) | 149,402 (60.83) |
-| Intracerebral haemorrhage (I61) | 3,364 (10.00) | 8,782 (3.58) |
-| Intracranial thrombectomy | 6,447 (19.16) | 13,102 (5.33) |
+| Characteristic | All adults | Dysphagia code | No dysphagia code |
+| --- | --- | --- | --- |
+| Adult episodes | 279,255 (100.0%) | 33,641 (100.0%) | 245,614 (100.0%) |
+| Age, years |  |  |  |
+| 18–29 | 1,037 (0.4%) | 44 (0.1%) | 993 (0.4%) |
+| 30–39 | 3,635 (1.3%) | 173 (0.5%) | 3,462 (1.4%) |
+| 40–49 | 10,094 (3.6%) | 540 (1.6%) | 9,554 (3.9%) |
+| 50–54 | 9,701 (3.5%) | 615 (1.8%) | 9,086 (3.7%) |
+| 55–59 | 17,691 (6.3%) | 1,262 (3.8%) | 16,429 (6.7%) |
+| 60–64 | 25,394 (9.1%) | 2,120 (6.3%) | 23,274 (9.5%) |
+| 65–74 | 64,631 (23.1%) | 6,787 (20.2%) | 57,844 (23.6%) |
+| 75–79 | 37,242 (13.3%) | 4,453 (13.2%) | 32,789 (13.3%) |
+| ≥80 | 109,830 (39.3%) | 17,647 (52.5%) | 92,183 (37.5%) |
+| Recorded sex |  |  |  |
+| Female | 132,519 (47.5%) | 16,090 (47.8%) | 116,429 (47.4%) |
+| Male | 146,729 (52.5%) | 17,551 (52.2%) | 129,178 (52.6%) |
+| Other or unknown | 7 (<0.1%) | 0 (0.0%) | 7 (<0.1%) |
+| Principal diagnosis |  |  |  |
+| Cerebral infarction (I63) | 176,014 (63.0%) | 26,612 (79.1%) | 149,402 (60.8%) |
+| Intracerebral haemorrhage (I61) | 12,146 (4.3%) | 3,364 (10.0%) | 8,782 (3.6%) |
+| All other principal diagnoses | 91,095 (32.6%) | 3,665 (10.9%) | 87,430 (35.6%) |
+| Patient clinical complexity level |  |  |  |
+| 0 | 154,413 (55.3%) | 7,857 (23.4%) | 146,556 (59.7%) |
+| 1–2 | 85,139 (30.5%) | 13,589 (40.4%) | 71,550 (29.1%) |
+| 3–6 | 39,703 (14.2%) | 12,195 (36.3%) | 27,508 (11.2%) |
+| Recorded procedure |  |  |  |
+| Intracranial mechanical thrombectomy | 19,549 (7.0%) | 6,447 (19.2%) | 13,102 (5.3%) |
 
-Percentages use the total of the respective column. Seven comparator episodes belonged to other or unknown sex categories.
+Values are episode counts (percent of the column total). Within each section, the age, sex, principal-diagnosis and PCCL categories each sum to the respective group total. Thrombectomy is a procedure recorded during the episode. PCCL, patient clinical complexity level.
 
 ### Table 2  Crude adult risks and risk ratios
 

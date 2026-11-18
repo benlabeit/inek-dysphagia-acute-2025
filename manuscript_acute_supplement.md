@@ -154,11 +154,11 @@ The planned specification distinguished I63, I61 and all remaining diagnoses sep
 
 Dashes indicate an unavailable finer-group estimate following source suppression. The two missing event counts were left unestimated. Other model-level denominators, absolute risks and differences are available in adult_binary.csv.
 
-### Supplementary Fig. S1  Sensitivity to the age and diagnosis grouping
+### Supplementary Fig. S1  Pulmonary diagnoses and malnutrition subtypes
 
 ![Figure S1](adult_figure_s1.png)
 
-Each point represents a risk ratio with a nominal 95% confidence interval. The left panel shows the crude and age-only estimates alongside the five- and six-group age–diagnosis estimates. The right panel shows sex and PCCL added separately to each age–diagnosis specification. The six-group points are unavailable for E44.0 and E44.1. Model coverage and numerical values are given in Tables S2a–e.
+Points and bars show standardized risk ratios and nominal 95% confidence intervals for the eight component diagnoses and timing codes that complement Fig. 2. The left panel uses age band, principal diagnosis and sex. The right panel uses the observable age–DRG strata for each outcome. Numerical results, coverage, PCCL analyses and the finer diagnosis groups are given in Tables S2a–e and S3a–b.
 
 ### Supplementary Table S3a  Age and DRG
 
@@ -263,6 +263,38 @@ Counts, means and standard deviations yielded integer sums of days and squared d
 | MMSE | U51.22 | 0-16 | 1.93 (1.32–2.83) | 1.20 (0.89–1.60) |
 
 The unrestricted event workbooks contained zero children in every paediatric category for both death and pneumonia and both source groups. Their event counts are therefore adult counts. The denominators were reconstructed separately from age-filtered adult workbooks. We required a named source row in each necessary denominator and event table and at least five events and five non-events in both exposure groups. Missing values remain unavailable. Functional coding can be selective and may reflect neurological impairment assessed during admission.
+
+### Supplementary Table S7  Discharge status and destination in adult episodes
+
+Percentages for discharge status use all adult episodes in the respective column. Death is a competing discharge outcome. For the four destinations, the intended denominator is the number of episodes ending alive in each group. A companion crude proportion can also use the full cohort.
+
+| Discharge outcome | All adults | Dysphagia code | No dysphagia code |
+| --- | --- | --- | --- |
+| Adult episodes | 279,255 | 33,641 | 245,614 |
+| Discharged alive | 266,506 (95.4%) | 28,638 (85.1%) | 237,868 (96.8%) |
+| In-hospital death (07) | 12,749 (4.6%) | 5,003 (14.9%) | 7,746 (3.2%) |
+| Destination among live discharges |  |  |  |
+| Rehabilitation facility (09) | Unavailable | Unavailable | Unavailable |
+| Nursing facility (10) | Unavailable | Unavailable | Unavailable |
+| Hospice (11) | Unavailable | Unavailable | Unavailable |
+| External hospital transfer (06, 08, 13) | Unavailable | Unavailable | Unavailable |
+
+Discharged alive by model. Absolute risks are directly standardized to each model’s pooled reference population. The risk difference is expressed in percentage points (dysphagia-coded minus comparator).
+
+| Standardization | Episodes | With / without code (%) | Risk difference (95% CI) |
+| --- | --- | --- | --- |
+| Age, diagnosis and sex | 279,248 | 86.8 / 96.7 | −9.89 (−10.30 to −9.47) |
+| Age, diagnosis and PCCL | 279,254 | 91.2 / 96.2 | −4.96 (−5.32 to −4.59) |
+| Age within observable DRGs | 230,593 | 88.6 / 95.9 | −7.33 (−7.72 to −6.93) |
+| Age and sex in B70D | 69,259 | 88.7 / 98.6 | −9.86 (−10.72 to −9.00) |
+
+Of 216 native workbooks reviewed, 198 had no discharge-reason filter and 18 were filtered to death. None contained a destination distribution. The hospital-distribution worksheet describes the reporting hospitals. Live discharge was obtained by subtracting observed deaths from the matching adult denominators. All four destination counts and their adjusted comparisons are unavailable.
+
+The external hospital-transfer definition combines transfers to another hospital (06), transfers under a cooperation agreement (08) and external psychiatric transfers (13). Other discharge reasons include routine completion of treatment, which leaves the receiving setting unspecified. Consequently a return home cannot be identified. Internal transfers and transitional care are outside the four specified categories.
+
+The companion query plan defines the same age bands, diagnosis groups and dysphagia definition as the main analysis. The planned comparisons use survivor denominators and the matching destination-specific event counts at each level. DRG analyses require observable named DRGs in the denominator, death and destination workbooks. Suppressed or pooled counts remain unavailable unless a separate, directly observed aggregate identifies the required comparison.
+
+Discharge coding source. IQTIG, Spezifikationsjahr 2025, Ausfüllhinweise (DEK), Entlassungsgrund. https://iqtig.org/downloads/erfassung/fdok/sj2025/v06/dek/Ausfuellhinweise_DEK.html
 
 ## Supplementary literature search appendix
 
@@ -372,7 +404,7 @@ The scope is complete for these PubMed queries as retrieved on the search date, 
 
 ### Reproducing the adult cohort analyses
 
-The current adult analyses are implemented in adult_analysis.py. They use verified local workbooks. The derived results are adult_binary.csv, adult_los.csv, adult_cohort.csv and adult_functional.csv. The extension audit is adult_export_audit.csv. The independent verification script adult_validate.py recalculates all 157 estimable binary contrasts and intervals from the original workbook cells. The plotting script adult_figures.py reads the aggregate outputs. The repository also retains earlier analytic versions and sensitivity analyses.
+The current adult analyses are implemented in adult_analysis.py. They use verified local workbooks. The derived results are adult_binary.csv, adult_los.csv, adult_cohort.csv and adult_functional.csv. The extension audit is adult_export_audit.csv. The independent verification script adult_validate.py recalculates all 157 estimable binary contrasts and intervals from the original workbook cells. The plotting script adult_figures.py reads the aggregate outputs. The repository also retains earlier analytic versions and sensitivity analyses. The discharge analysis and its manual filter list are reproduced by adult_discharge.py. The corresponding outputs are adult_discharge.csv and adult_discharge_queries.csv.
 
 ## References
 

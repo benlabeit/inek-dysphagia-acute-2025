@@ -10,7 +10,7 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 Read the [manuscript](manuscript_acute.md) and [supplement](manuscript_acute_supplement.md) directly on GitHub.
 
-The adult cohort comprises 279,255 episodes, including 33,641 with secondary dysphagia coding and 245,614 comparators. All 128 extension queries have a final disposition. The export audit verified 126 native workbooks. InEK suppressed queries 46 (E44.0) and 58 (E44.1), both for dysphagia-coded adults aged 18–74 with principal diagnosis I61.
+The adult cohort comprises 279,255 episodes, including 33,641 with secondary dysphagia coding and 245,614 comparators. In the full cohort, 52.7% were aged ≥75 years, 39.3% ≥80 years, and 47.5% were female. The principal diagnosis was cerebral infarction (I63) in 63.0% and intracerebral haemorrhage (I61) in 4.3%. Table 1 reports all nine native adult age groups, sex, principal diagnosis, PCCL and thrombectomy. All 128 extension queries have a final disposition. The export audit verified 126 native workbooks. InEK suppressed queries 46 (E44.0) and 58 (E44.1), both for dysphagia-coded adults aged 18–74 with principal diagnosis I61.
 
 | Comparison | Binary endpoints | Length of stay |
 | --- | --- | --- |
@@ -27,8 +27,16 @@ To retain a common diagnosis adjustment after the two suppressions, adults aged 
 | [Binary endpoints](adult_binary.csv) | Model status, standardized risks, RRs, RDs, 95% intervals, common support, coverage, matched crude RR and shares of the reference weight in sparse or boundary-risk strata |
 | [Hospital stay](adult_los.csv) | Group means, differences, matched crude differences and interval sensitivity analyses |
 | [Adult cohort](adult_cohort.csv) and [functional categories](adult_functional.csv) | Episode characteristics and functional subgroup results |
-| [Figure 1](adult_figure_1.pdf) · [Figure 2](adult_figure_2.pdf) · [Figure 3](adult_figure_3.pdf) · [Supplementary Fig. S1](adult_figure_s1.pdf) | Crude risks, adjusted RRs including the B70D mortality pilot, hospital stay, and sensitivity to the diagnosis grouping |
+| [Figure 1](adult_figure_1.pdf) · [Figure 2](adult_figure_2.pdf) · [Figure 3](adult_figure_3.pdf) · [Supplementary Fig. S1](adult_figure_s1.pdf) | Absolute risks and two standardized RRs for eight clinical outcomes and procedures, three contrasts for hospital stay, and the other eight pulmonary and nutritional endpoints in S1 |
 | [Export guide](ADULT_EXPORTS.md) · [128 query definitions](adult_manual_exports.csv) · [Audit](adult_export_audit.csv) | File names, disposition and SHA-256 of available extension workbooks. Original workbooks and the private portal log are retained outside the repository. |
+
+### Discharge status and destination
+
+Of the 279,255 adult episodes, 266,506 (95.4%) ended in live discharge. This comprised 28,638/33,641 (85.1%) episodes with dysphagia coding and 237,868/245,614 (96.8%) without. After standardization for age, principal diagnosis and sex, the live-discharge proportions were 86.8% and 96.7% (difference −9.89 percentage points, 95% CI −10.30 to −9.47). The 216 available workbooks included 18 queries restricted to inpatient death and 198 with no discharge filter. Receiving-setting counts are unavailable. The hospital-distribution worksheet refers to reporting hospitals.
+
+The [discharge results and availability](adult_discharge.csv) and Supplementary Table S7 distinguish status from four explicitly coded destinations. The [Excel export plan](InEK_Akut_Entlassungsziele_Exportplan.xlsx) and its [machine-readable filter list](adult_discharge_queries.csv) cover rehabilitation (09), nursing facilities (10), hospice (11), and explicit external hospital transfer (06, 08, 13). The main denominator is live discharges, with a companion crude proportion among all adult episodes. Routine completion of treatment does not establish that the person returned home. [2025 discharge-reason key](https://iqtig.org/downloads/erfassung/fdok/sj2025/v06/dek/Ausfuellhinweise_DEK.html)
+
+Queries 1–16 provide the core outcome counts and named DRGs across both age bands. Queries 17–40 add the diagnosis restrictions for the common sex and PCCL models, where counts are available. Queries 41–48 add the finer diagnosis sensitivity and 49–64 the optional B70D analysis. Save manually obtained native workbooks in the same private directory as the adult cohort workbooks, using the filenames in the plan. If reasons 06, 08 and 13 require separate requests, append the individual code to the outcome token (for example `external_hospital_transfer_06`). The analysis accepts the combined query or all three disjoint component queries. Suppressed files supply no event count.
 
 ### Reproducing the current results
 
@@ -37,6 +45,7 @@ Place the previously obtained source workbooks and the 126 verified extension wo
 ```sh
 python adult_analysis.py --raw /path/to/private/workbooks --protocol /path/to/Exportprotokoll.csv
 python adult_validate.py --raw /path/to/private/workbooks
+python adult_discharge.py --raw /path/to/private/workbooks
 python adult_figures.py
 ```
 

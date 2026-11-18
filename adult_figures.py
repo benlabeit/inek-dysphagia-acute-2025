@@ -1,103 +1,147 @@
-"""Draw the adult-cohort figures directly from the published analysis tables."""
+"""Publication figures from the adult cohort's released summary estimates."""
 from pathlib import Path
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib.ticker import FixedLocator, NullLocator, ScalarFormatter
 import numpy as np
 import pandas as pd
-from matplotlib.ticker import ScalarFormatter
-from matplotlib.lines import Line2D
 
-ROOT=Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent
 LABEL={'mortality':'In-hospital death','J69.0':'Aspiration-related pneumonitis (J69.0)',
        'PNEUMONIA_UNION':'Pneumonia (J12–J18)','PULMONARY_UNION':'Pneumonia or aspiration-related pneumonitis',
        'J96.00':'Hypoxemic respiratory failure','U69.01':'Pneumonia after 48 hours','U69.04':'Pneumonia by 48 hours',
        'MALNUT_UNION':'Protein-energy malnutrition (any)','E43':'Severe malnutrition (E43)','E44.0':'Moderate malnutrition (E44.0)',
        'E44.1':'Mild malnutrition (E44.1)','E46':'Unspecified malnutrition (E46)','E86':'Volume depletion',
        '8-701':'Simple endotracheal intubation','5-431.22':'PEG, thread-pull technique','1-613':'FEES'}
+
+MAIN = ['mortality','PULMONARY_UNION','J96.00','MALNUT_UNION','E86','8-701','5-431.22','1-613']
+DETAIL = ['J69.0','PNEUMONIA_UNION','U69.01','U69.04','E43','E44.0','E44.1','E46']
+DISPLAY = {**LABEL,'PULMONARY_UNION':'Pneumonia or aspiration pneumonitis',
+           'MALNUT_UNION':'Protein-energy malnutrition','J96.00':'Hypoxaemic respiratory failure',
+           '8-701':'Endotracheal intubation','5-431.22':'Gastrostomy (thread-pull PEG)',
+           '1-613':'Endoscopic swallowing evaluation (FEES)',
+           'U69.01':'Pneumonia after 48 h','U69.04':'Pneumonia within 48 h'}
+INK = '#17344B'
+BLUE = '#116A82'
+RUST = '#AA532A'
+GRID = '#DCE3E7'
+
+
+def save(fig, index):
+    for ext in ('png','pdf'):
+        meta={'CreationDate':None,'ModDate':None} if ext=='pdf' else None
+        fig.savefig(ROOT/f'adult_figure_{index}.{ext}',dpi=300,facecolor='white',metadata=meta)
+    plt.close(fig)
+
+
+def categories(keys, split, headers):
+    y=np.arange(len(keys),dtype=float)
+    y[split:]+=.85
+    headings=[(-.83,headers[0]),(y[split]-.82,headers[1])]
+    return y,headings
+
+
+def layout(widths, height=4.65):
+    fig=plt.figure(figsize=(8.6,height))
+    grid=fig.add_gridspec(1,len(widths),width_ratios=widths,left=.015,right=.985,top=.855,bottom=.16,wspace=.06)
+    return fig,[fig.add_subplot(grid[0,i]) for i in range(len(widths))]
+
+
+def row_labels(ax, keys, y, headings):
+    ax.axis('off')
+    for yi,label in headings:
+        ax.text(0,yi,label,va='center',weight='bold',color=INK,fontsize=10.5)
+    for yi,key in zip(y,keys):
+        ax.text(.015,yi,DISPLAY[key],va='center',fontsize=9.4)
+
+
+def prepare_axis(ax, y):
+    ax.set_ylim(y[-1]+.6,-1.18)
+    ax.set_yticks([])
+    ax.spines[['left','top','right']].set_visible(False)
+    ax.spines['bottom'].set_color('#84949C')
+    ax.tick_params(axis='x',length=3,pad=4,labelsize=9)
+
+
+def forest_axis(ax,xmax,ticks):
+    ax.set_xscale('log');ax.set_xlim(.86,xmax)
+    ax.xaxis.set_major_locator(FixedLocator(ticks))
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.xaxis.set_minor_locator(NullLocator())
+    ax.grid(axis='x',color=GRID,lw=.7,zorder=0)
+    ax.axvline(1,color='#85949D',lw=1,zorder=1)
+
+
+def forest(data, keys, split, headings, index, xmax, ticks):
+    y,groups=categories(keys,split,headings)
+    fig,axes=layout([3.65,1.84,.52,1.84,.57])
+    for ax in axes:prepare_axis(ax,y)
+    row_labels(axes[0],keys,y,groups)
+    styles=[('M2','Age, diagnosis and sex',BLUE,'o'),
+            ('age_drg','Age within DRG',RUST,'s')]
+    for i,(model,title,color,marker) in enumerate(styles):
+        ax,value=axes[i*2+1:i*2+3]
+        forest_axis(ax,xmax,ticks)
+        ax.set_title(title,loc='left',fontsize=10.5,color=color,weight='bold',pad=8)
+        value.axis('off')
+        for yi,key in zip(y,keys):
+            r=data.loc[(key,model)]
+            ax.hlines(yi,r.rr_low,r.rr_high,color=color,lw=1.5,zorder=2)
+            ax.plot(r.rr,yi,marker=marker,markersize=5,color=color,zorder=3,ls='')
+            value.text(.95,yi,f'{r.rr:.2f}',va='center',ha='right',fontsize=9.5)
+    fig.text(.69,.035,'Risk ratio (95% CI), logarithmic scale',ha='center',fontsize=9.5)
+    save(fig,index)
+
+
 def plot():
-    plt.rcParams.update({'font.size':9,'pdf.fonttype':42,'axes.spines.top':False,'axes.spines.right':False})
-    x=pd.read_csv(ROOT/'adult_binary.csv').set_index(['outcome','model'])
-    def base(h):
-        f,a=plt.subplots(figsize=(9.2,h));f.subplots_adjust(left=.42,right=.975,bottom=.13,top=.91);return f,a
-    def labels(a):
-        a.set_yticks(range(len(LABEL)),list(LABEL.values()));a.set_ylim(len(LABEL)-.45,-.6)
-        a.grid(axis='x',color='#dce1e5',zorder=0);a.tick_params(axis='y',length=0,pad=7);a.spines['left'].set_visible(False)
-    def save(f,i):
-        for ext in ['png','pdf']:
-            f.savefig(ROOT/f'adult_figure_{i}.{ext}',dpi=260,facecolor='white')
-        plt.close(f)
-    f,a=base(6.4);labels(a)
-    for i,k in enumerate(LABEL):
-        r=x.loc[k,'M1'];d,c=r.dys_risk*100,r.comparator_risk*100
-        a.plot([c,d],[i,i],color='#aab8c1');a.plot(c,i,'s',color='#aa4f2d',ms=5);a.plot(d,i,'o',color='#15657b',ms=5)
-    a.legend([Line2D([],[],ls='',marker='o',color='#15657b'),Line2D([],[],ls='',marker='s',color='#aa4f2d')],['Dysphagia code','No dysphagia code'],loc='lower center',bbox_to_anchor=(.48,1.02),ncol=2,frameon=False)
-    a.set_xlabel('Episodes with the outcome (%)');save(f,1)
-    colors = ['#475467','#087e9b','#8a4182','#bb5725','#41653d']
-    cases = [('M1','Crude','o'),('M2','Age + diagnosis + sex','^'),
-             ('M3','Age + diagnosis + PCCL','s'),('age_drg','Age + DRG','D'),
-             ('age_hd_drg','Age + diagnosis + DRG','x')]
-    f = plt.figure(figsize=(9.2,9.6))
-    grid = f.add_gridspec(2,1,height_ratios=[8,1.25],left=.405,right=.965,top=.955,bottom=.089,hspace=.32)
-    a = f.add_subplot(grid[0]); pilot = f.add_subplot(grid[1],sharex=a)
-    labels(a)
-    def point(ax,row,y,marker,color):
-        ax.plot([row.rr_low,row.rr_high],[y,y],color=color,lw=.95,zorder=2)
-        ax.plot(row.rr,y,ls='',marker=marker,color=color,ms=4.4,zorder=3)
-    for off,(model,title,marker),color in zip(np.linspace(-.31,.31,len(cases)),cases,colors):
-        for i,k in enumerate(LABEL):
-            point(a,x.loc[k,model],i+off,marker,color)
-    a.set_title('A   Adult cohort',loc='left',fontsize=11,weight='bold')
-    pilot.set_title('B   In-hospital death within B70D only',loc='left',fontsize=11,weight='bold')
-    pilot.set_yticks([0,1,2],['Crude','Age','Age + sex (model 4)'])
-    pilot.set_ylim(2.55,-.65);pilot.tick_params(axis='y',length=0,pad=7)
-    for i,(model,marker,col) in enumerate([('B70D_crude','o',colors[0]),('B70D_age','v','#9c7441'),('M4_B70D','^',colors[1])]):
-        point(pilot,x.loc['mortality',model],i,marker,col)
-    for ax in [a,pilot]:
-        ax.set_xscale('log');ax.set_xlim(.86,95);ax.set_xticks([1,2,5,10,20,50])
-        ax.xaxis.set_major_formatter(ScalarFormatter());ax.minorticks_off()
-        ax.axvline(1,color='#8a9197',lw=.85);ax.grid(axis='x',color='#e2e6e8',zorder=0)
-        ax.spines['left'].set_visible(False)
-    a.legend([Line2D([],[],marker=m,color=c,lw=1) for (_,_,m),c in zip(cases,colors)],
-             [title for _,title,_ in cases],loc='upper center',bbox_to_anchor=(.35,-.044),
-             ncol=3,frameon=False,fontsize=8.0,columnspacing=1.1,handlelength=1.1)
-    pilot.set_xlabel('Risk ratio (95% CI, logarithmic scale)',labelpad=6)
-    save(f,2)
-    t=pd.read_csv(ROOT/'adult_los.csv').set_index('model')
-    labs={'M1':'Crude','age':'Age','age_hd':'Age + diagnosis, common grouping',
-          'age_hd_fine':'Age + diagnosis, finer grouping',
-          'age_drg':'Age + DRG','age_drg_n2':'Age + DRG, ≥2 per group and stratum',
-          'age_hd_drg':'Age + diagnosis + DRG',
-          'age_hd_drg_n2':'Age + diagnosis + DRG, ≥2 per group and stratum',
-          'age_hd_survivors':'Discharged alive, age + diagnosis',
-          'B70D_age':'B70D only, age'}
-    f,a=base(5.4);f.subplots_adjust(left=.47,right=.97,top=.95,bottom=.14)
-    a.set_yticks(range(len(labs)),list(labs.values()));a.invert_yaxis()
-    for i,k in enumerate(labs):
-        r=t.loc[k]
-        if pd.notna(r.ci_low):a.plot([r.ci_low,r.ci_high],[i,i],color='#15657b',lw=1.8)
-        a.plot(r.difference,i,marker='o',color='#15657b',mfc='white' if pd.isna(r.ci_low) else '#15657b')
-    for y in (3.5,7.5):a.axhline(y,lw=.6,color='#dce1e5')
-    a.tick_params(axis='y',length=0,pad=7);a.spines['left'].set_visible(False)
-    a.grid(axis='x',color='#dce1e5');a.set_xlim(0,11.3);a.set_xlabel('Difference in mean hospital stay (days)');save(f,3)
-    f,(ax1,ax2)=plt.subplots(1,2,figsize=(12.2,8.3),sharey=True)
-    f.subplots_adjust(left=.32,right=.99,top=.925,bottom=.19,wspace=.12)
-    panels=[(ax1,'Age and principal diagnosis',[('M1','Crude','o','#475467'),('age','Age alone','+','#996a19'),('age_hd','Age + diagnosis (5 groups)','s','#38734b'),('age_hd_fine','Age + diagnosis (6 groups)','x','#964b2c')]),
-            (ax2,'Sex and PCCL models',[('M2','Sex (5 groups)','^','#167e99'),('M2_fine','Sex (6 groups)','v','#367db3'),('M3','PCCL (5 groups)','s','#843875'),('M3_fine','PCCL (6 groups)','D','#b87299')])]
-    for ax,title,models in panels:
-        ax.set_title(title,loc='left',weight='bold',fontsize=11)
-        for off,(m,label,marker,col) in zip(np.linspace(-.3,.3,len(models)),models):
-            for i,k in enumerate(LABEL):
-                row=x.loc[k,m]
-                if pd.notna(row.rr):
-                    point(ax,row,i+off,marker,col)
-        ax.axvline(1,color='#8a9197',lw=.85);ax.set_xscale('log');ax.set_xlim(.82,95)
-        ax.set_xticks([1,2,5,10,20,50]);ax.xaxis.set_major_formatter(ScalarFormatter())
-        ax.minorticks_off();ax.grid(axis='x',color='#e2e6e8',zorder=0);ax.spines['left'].set_visible(False)
-        ax.tick_params(axis='y',length=0,pad=5);ax.set_xlabel('Risk ratio (95% CI)')
-        ax.legend([Line2D([],[],marker=m,color=c,lw=1) for _,_,m,c in models],
-                  [label for _,label,_,_ in models],loc='upper center',bbox_to_anchor=(.5,-.095),
-                  ncol=1,frameon=False,fontsize=8.5)
-    ax1.set_yticks(range(len(LABEL)),list(LABEL.values()));ax1.set_ylim(len(LABEL)-.48,-.55)
-    save(f,'s1')
-if __name__=='__main__':plot()
+    plt.rcParams.update({'font.size':10,'font.family':'DejaVu Sans','pdf.fonttype':42,
+                         'axes.edgecolor':'#84949C','text.color':INK,'axes.labelcolor':INK,
+                         'xtick.color':INK})
+    data=pd.read_csv(ROOT/'adult_binary.csv').set_index(['outcome','model'])
+    groupnames=['Clinical outcomes','Recorded procedures']
+    y,groups=categories(MAIN,5,groupnames)
+    fig,axes=layout([3.6,3.15,.87,.87])
+    for ax in axes:prepare_axis(ax,y)
+    labels,ax,with_code,without_code=axes
+    row_labels(labels,MAIN,y,groups)
+    for value,title,color in [(with_code,'With code',BLUE),(without_code,'Without code',RUST)]:
+        value.axis('off');value.set_title(title,fontsize=9.6,color=color,weight='bold',pad=9)
+    ax.set_xlim(-.7,35);ax.set_xticks([0,10,20,30]);ax.grid(axis='x',color=GRID,lw=.7)
+    ax.set_xlabel('Episodes with the outcome (%)')
+    for yi,key in zip(y,MAIN):
+        r=data.loc[(key,'M1')];d,c=r.dys_risk*100,r.comparator_risk*100
+        ax.hlines(yi,min(c,d),max(c,d),color='#A6B5BD',lw=1.2)
+        ax.plot(d,yi,'o',color=BLUE,ms=5.5);ax.plot(c,yi,'s',color=RUST,ms=5)
+        for value,n in [(with_code,d),(without_code,c)]:
+            value.text(.5,yi,f'{n:.2f}%',ha='center',va='center',fontsize=9.4)
+    fig.legend([Line2D([],[],ls='',marker='o',color=BLUE),Line2D([],[],ls='',marker='s',color=RUST)],
+               ['With dysphagia coding','Without dysphagia coding'],frameon=False,ncol=2,
+               loc='upper left',bbox_to_anchor=(.013,.992),fontsize=9.5,handlelength=1.0)
+    save(fig,1)
+    forest(data,MAIN,5,groupnames,2,85,[1,2,5,10,20,50])
+    forest(data,DETAIL,4,['Pulmonary diagnoses','Malnutrition subtypes'],'s1',22,[1,2,5,10,20])
+
+    los=pd.read_csv(ROOT/'adult_los.csv').set_index('model')
+    fig,axes=layout([2.9,3.0,1.8],height=2.65)
+    labels,ax,values=axes
+    fig.subplots_adjust(top=.83,bottom=.30)
+    for a in axes:prepare_axis(a,[0,1,2]);a.set_ylim(2.5,-.55)
+    labels.axis('off');values.axis('off')
+    values.set_title('Difference (95% CI)',fontsize=10,loc='center',pad=8,weight='bold')
+    ax.set_xticks([0,2,4,6,8,10]);ax.set_xlim(-.2,11);ax.grid(axis='x',color=GRID,lw=.8)
+    ax.set_xlabel('Difference in mean stay (days)')
+    for i,(model,title,color) in enumerate([('M1','Crude',INK),('age_hd','Age and principal diagnosis',BLUE),
+                                            ('age_drg_n2','Age within DRG (202 strata)',RUST)]):
+        r=los.loc[model]
+        labels.text(.005,i,title,va='center',fontsize=10)
+        ax.hlines(i,r.ci_low,r.ci_high,color=color,lw=1.8)
+        ax.plot(r.difference,i,'o',color=color,ms=6)
+        values.text(.53,i,f'{r.difference:.2f} ({r.ci_low:.2f}–{r.ci_high:.2f})',ha='center',va='center',fontsize=10)
+    save(fig,3)
+
+
+if __name__=='__main__':
+    plot()

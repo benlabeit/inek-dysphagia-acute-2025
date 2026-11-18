@@ -232,17 +232,48 @@ def los(raw, out):
     add('B70D_age',summarize(b70d,'B70D, age'))
     write_table(out/'adult_los.csv',rows)
 
-def cohort(raw,out,den):
-    info=[]
-    for p in POPS:
-        bands=[den[a,'allhd',p] for a in AGES]
-        vals={'All':sum(b['n'] for b in bands),'18–74 years':bands[0]['n'],'≥75 years':bands[1]['n']}
-        for s in ('männlich','weiblich'):
-            vals[s]=sum(b['distributions']['sex'][s] for b in bands)
-        for h in ('i63','i61'): vals[h]=sum(den[a,h,p]['n'] for a in AGES)
-        vals['8-836.80']=sum(code_margins(raw,a,'allhd',p,'Prozeduren')['8-836.80'] for a in AGES)
-        info.append(vals)
-    write_table(out/'adult_cohort.csv',[dict(characteristic=k,dys_n=info[1][k],comparator_n=v-info[1][k]) for k,v in info[0].items()])
+def cohort(raw, out, den):
+    """Tabulate episode characteristics for the entire cohort and both disjoint groups."""
+    profiles = {}
+    for pop in POPS:
+        bands = [den[a,'allhd',pop] for a in AGES]
+        total = sum(b['n'] for b in bands)
+        profile = {'All':total, '18–74 years':bands[0]['n'], '≥75 years':bands[1]['n']}
+        for age in sum(QUERY_AGES.values(),[]):
+            profile[age] = sum(b['distributions']['age'][age] for b in bands)
+        for sex in ('männlich','weiblich'):
+            profile[sex] = sum(b['distributions']['sex'][sex] for b in bands)
+        profile['other_sex'] = total-profile['männlich']-profile['weiblich']
+        for h in ('i63','i61'):
+            profile[h] = sum(den[a,h,pop]['n'] for a in AGES)
+        profile['other_hd'] = total-profile['i63']-profile['i61']
+        for label,levels in [('PCCL 0',('0',)),('PCCL 1–2',('1','2')),('PCCL 3–6',('3','4','5','6'))]:
+            profile[label] = sum(b['distributions']['pccl'][k] for b in bands for k in levels)
+        profile['8-836.80'] = sum(code_margins(raw,a,'allhd',pop,'Prozeduren')['8-836.80'] for a in AGES)
+        for partition in (sum(QUERY_AGES.values(),[]), ('männlich','weiblich','other_sex'),
+                          ('i63','i61','other_hd'),('PCCL 0','PCCL 1–2','PCCL 3–6')):
+            if sum(profile[k] for k in partition) != total:
+                raise ValueError(f'{pop}: cohort partition does not sum to episode count')
+        profiles[pop] = profile
+    total,dys = profiles['all'],profiles['dys']
+    comp_n = total['All']-dys['All']
+    rows = []
+    for key,n in total.items():
+        d = dys[key]
+        if not (0 <= d <= n and n-d <= comp_n):
+            raise ValueError(f'Invalid nested counts for {key}')
+        rows.append(dict(characteristic=key, dys_n=d, comparator_n=n-d, all_n=n,
+                         dys_pct=100*d/dys['All'], comparator_pct=100*(n-d)/comp_n,
+                         all_pct=100*n/total['All'], count_type='exact'))
+    # Some G45 end codes are pooled into the unidentified remainder. The visible count
+    # is a lower bound for all adults. Subtracting group-specific lower bounds is invalid.
+    visible = sum(n for age in AGES for k,n in code_margins(raw,age,'allhd','all','Hauptdiagnosen').items()
+                  if k.startswith('G45'))
+    rows.append(dict(characteristic='G45 visible',dys_n=None,comparator_n=None,all_n=visible,
+                     dys_pct=None,comparator_pct=None,all_pct=100*visible/total['All'],
+                     count_type='lower bound from named principal-diagnosis rows; subset of other_hd'))
+    write_table(out/'adult_cohort.csv',rows)
+
 
 def functional(raw,out):
     from outcomes_standardization_core import MINOR_AGES
