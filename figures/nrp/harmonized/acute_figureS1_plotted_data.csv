@@ -1,0 +1,13 @@
+cohort,figure,panel,analysis,series,label,estimate,ci_lower,ci_upper,unit,n_total,n_dys,n_no_dys,events,denominator,drgs,dys_coverage,source_file,source_key,ci_method
+acute,1,,age_sex,matched_crude,Age + sex,4.717295553440428,4.561077772227099,4.878863823372851,risk ratio,279248,33641,245607,,,,,acute_joint_twofactor.json,analyses/age_sex/crude_same_common_support_population,log risk-ratio binomial approximation
+acute,1,,age_sex,standardized,Age + sex,4.208295876110372,4.066312889432721,4.355236466655225,risk ratio,279248,33641,245607,,,,,acute_joint_twofactor.json,analyses/age_sex/standardized,fixed pooled weights; independent-binomial log-RR delta
+acute,1,,age_sex_principal_diagnosis,matched_crude,"Age + principal diagnosis
++ sex",4.717295553440428,4.561077772227099,4.878863823372851,risk ratio,279248,33641,245607,,,,,acute_joint_standardization.json,age_sex_principal_diagnosis/crude_same_common_support_population,log risk-ratio binomial approximation
+acute,1,,age_sex_principal_diagnosis,standardized,"Age + principal diagnosis
++ sex",3.977609010566055,3.822916555375,4.138561020562038,risk ratio,279248,33641,245607,,,,,acute_joint_standardization.json,age_sex_principal_diagnosis/standardized,fixed pooled weights; independent-binomial log-RR delta
+acute,1,,age_pccl,matched_crude,Age + PCCL,4.715602955288143,4.5594542036478085,4.877099371703645,risk ratio,279255,33641,245614,,,,,acute_joint_twofactor.json,analyses/age_pccl/crude_same_common_support_population,log risk-ratio binomial approximation
+acute,1,,age_pccl,standardized,Age + PCCL,2.775742691725068,2.6685833079880013,2.8872051577337414,risk ratio,279255,33641,245614,,,,,acute_joint_twofactor.json,analyses/age_pccl/standardized,fixed pooled weights; independent-binomial log-RR delta
+acute,1,,age_principal_diagnosis_pccl_sensitivity,matched_crude,"Age + principal diagnosis
++ PCCL",4.71480055065819,4.558668208788327,4.876280355221383,risk ratio,279254,33640,245614,,,,,acute_joint_standardization.json,age_principal_diagnosis_pccl_sensitivity/crude_same_common_support_population,log risk-ratio binomial approximation
+acute,1,,age_principal_diagnosis_pccl_sensitivity,standardized,"Age + principal diagnosis
++ PCCL",2.1925026409614685,2.100031376207907,2.2890457185945903,risk ratio,279254,33640,245614,,,,,acute_joint_standardization.json,age_principal_diagnosis_pccl_sensitivity/standardized,fixed pooled weights; independent-binomial log-RR delta
