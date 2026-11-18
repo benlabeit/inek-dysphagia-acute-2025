@@ -1,0 +1,2 @@
+outcome,label,role,analysis,status,all_n,dys_n,no_dys_n,dys_rate,no_dys_rate,rr,rr_ci_lower,rr_ci_upper,risk_difference,risk_difference_ci_lower,risk_difference_ci_upper,crude_rr_same_supported_adult_population,included_strata,sparse_strata,sparse_reference_weight,boundary_strata,boundary_reference_weight
+mortality,In-hospital death,clinical,age_principal_diagnosis,estimated,279255,33641,245614,0.13420304479954942,0.033674077846769665,3.9853517417826914,3.83029606859228,4.146684282702903,0.10052896695277976,0.09600328478549035,0.10505464912006916,4.715602955288143,6,0,0,0,0

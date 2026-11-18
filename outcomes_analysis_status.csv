@@ -1,7 +1,7 @@
 endpoint,status,models_reported,remaining_native_exports,status_date,interpretation
-pneumonia,awaiting_native_exports,0,10,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
-aspiration_pneumonitis,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
-pulmonary_union,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
-malnutrition_union,awaiting_native_exports,0,12,2026-11-17,"No new three-factor estimate reported. Existing single-code analyses, where available, are separate."
+pneumonia,completed,3,0,2026-11-18,Three separate adult standardizations independently verified. The unrestricted all-age comparison is also available in outcomes_harmonized_binary_summary.csv.
+aspiration_pneumonitis,completed,3,0,2026-11-17,J69.0 coded pneumonitis/pneumonia due to food and vomit; three separate joint standardizations independently validated. Does not establish incident or bacteriologically confirmed aspiration pneumonia.
+pulmonary_union,completed,3,0,2026-11-18,Three separate adult standardizations independently verified. The unrestricted all-age comparison is also available in outcomes_harmonized_binary_summary.csv.
+malnutrition_union,completed,3,0,2026-11-18,Three separate adult standardizations independently verified. The unrestricted all-age comparison is also available in outcomes_harmonized_binary_summary.csv.
 volume_depletion,completed,3,0,2026-11-17,E86 coded volume depletion; three separate joint standardizations independently validated. Not specific for low-intake dehydration.
 severe_malnutrition,completed,4,0,2026-11-17,E43 only; three original models plus one post hoc coarsened-PCCL sensitivity

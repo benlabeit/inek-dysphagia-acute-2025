@@ -1,0 +1,16 @@
+{
+  "endpoint": "aspiration_pneumonitis",
+  "label": "Coded pneumonitis/pneumonia due to food and vomit, J69.0 secondary diagnosis",
+  "status": "PASS",
+  "models_validated": [
+    "age_sex_principal_diagnosis",
+    "age_principal_diagnosis_pccl_sensitivity",
+    "age_principal_diagnosis"
+  ],
+  "checks_passed": 3129,
+  "validation_date": "2026-11-17",
+  "method": "Independent parsing of original denominator and event workbooks and 60-digit Decimal recalculation; production analysis functions were not imported.",
+  "public_result_file": "outcomes_aspiration_pneumonitis_joint_aggregate.csv",
+  "exclusions": "Detailed source cells, workbook paths, source hashes, and ingestion logs are not included.",
+  "scope": "Numerical and input-filter validation does not establish causal validity, admission neurological-severity adjustment, or confidence-interval calibration."
+}

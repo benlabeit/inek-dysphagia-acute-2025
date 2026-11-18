@@ -1,0 +1,17 @@
+outcome,label,all_age_drg,adult_drg,adult_age_drg,adult_age_hd_drg,marginal_bounds_only
+mortality,In-hospital death,True,True,True,True,False
+J69.0,Aspiration-related pneumonitis/pneumonia (J69.0),False,True,True,True,False
+PNEUMONIA_UNION,"Pneumonia (J12-J18), unique union",True,True,True,True,False
+PULMONARY_UNION,"Pneumonia or aspiration-related pneumonitis, unique union",False,True,True,True,False
+J96.00,Hypoxemic acute respiratory failure (J96.00),False,False,False,False,True
+U69.01,Pneumonia after 48 hours (U69.01),False,False,False,False,True
+U69.04,Pneumonia by 48 hours (U69.04),False,False,False,False,True
+E43,Unspecified severe protein-energy malnutrition (E43),False,False,False,False,True
+E44.0,Moderate protein-energy malnutrition (E44.0),False,False,False,False,True
+E44.1,Mild protein-energy malnutrition (E44.1),False,False,False,False,True
+E46,Unspecified protein-energy malnutrition (E46),False,False,False,False,True
+MALNUT_UNION,"Protein-energy malnutrition, unique E40/E41/E42/E43/E44.0/E44.1/E46 union",True,True,True,True,False
+E86,Volume depletion (E86),False,True,True,True,False
+8-701,Simple endotracheal intubation (8-701),False,False,False,False,True
+5-431.22,PEG by thread-pull technique (5-431.22),False,False,False,False,True
+1-613,FEES coding (1-613),False,False,False,False,True

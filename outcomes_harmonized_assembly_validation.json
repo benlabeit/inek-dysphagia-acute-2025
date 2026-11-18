@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "whole_cohort_code_checks": 14,
+  "binary_endpoints": 16,
+  "model_slots": 64,
+  "age_diagnosis_estimates": 14,
+  "three_factor_endpoint_count": 7,
+  "crude_population": 279277,
+  "standardization_adult_population": 279255,
+  "source_cell_counts_published": false,
+  "note": "Only model-level results and whole-cohort event totals are included; no detailed source strata or source hashes."
+}

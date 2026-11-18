@@ -34,6 +34,9 @@ R13 = {'R13.0', 'R13.1', 'R13.9'}
 HD_CODES = {hd: {hd.upper()+'.'+str(k) for k in [0,1,2,3,4,5,6,8,9]}
             for hd in ['i63', 'i61']}
 OUTCOMES = {
+    'J96.00': ('Nebendiagnosen', 'Hypoxemic acute respiratory failure', 'clinical'),
+    'U69.01': ('Nebendiagnosen', 'Pneumonia occurring more than 48 hours after admission, timing code', 'clinical_timing_marker'),
+    'U69.04': ('Nebendiagnosen', 'Pneumonia present within 48 hours after admission, timing code', 'clinical_timing_marker'),
     'E43': ('Nebendiagnosen', 'Unspecified severe protein-energy malnutrition', 'clinical'),
     'E44.0': ('Nebendiagnosen', 'Moderate protein-energy malnutrition', 'clinical'),
     'E44.1': ('Nebendiagnosen', 'Mild protein-energy malnutrition', 'clinical'),
@@ -346,7 +349,7 @@ def analyze(data_root):
                                              'not_adjusted_for':['sex','PCCL','NIHSS']}
         results[code]=item
     results['MALNUT_UNION']={
-        'role':'clinical','label':'Recorded protein-energy malnutrition, predeclared code union',
+        'role':'clinical','label':'Recorded protein-energy malnutrition, specified code union',
         'codes':UNION_CODES,'excluded_code':'E45 (developmental delay following protein-energy malnutrition)',
         'status':'requires_direct_union_exports','estimate':None,
         'reason':'Code rows are non-exclusive. Exact episode unions and event-specific sex/PCCL strata cannot be obtained by adding separate code counts.',
@@ -423,13 +426,15 @@ These analyses are a post hoc exploratory extension. All reported 95% confidence
 
 The script reads the two original unrestricted acute cohort exports and the twelve previously acquired adult denominator exports. It validates the exact 2025 delivery, OPS union, selected R13 secondary diagnoses, full explicit I63/I61 endcodes, both adult age selections, case counts, demographic partitions and reconciliation with the original cohort. Workbook hashes are retained only if the optional private audit is requested; the source workbooks are never modified. Case counts, not mentions, define events. Obtain workbooks separately in accordance with the provider's conditions. This script only reads local workbooks and performs no browser, download or network operation.
 
+The updated exact-code set also includes hypoxemic acute respiratory failure (J96.00) and the pneumonia timing markers U69.01 and U69.04. Ten of the twelve individual codes have complete six-stratum event grids in this snapshot; E44.0 and E44.1 remain non-estimable because source rows are missing or suppressed. The same age-by-principal-diagnosis specification, reference weights, risk-ratio and risk-difference methods are used for every complete exact-code outcome. U69.01 and U69.04 describe coded timing relative to hospital admission, not timing relative to dysphagia; they are related timing markers and not independent additional complications. J96.00 is hypoxemic acute respiratory failure, not every respiratory-failure subtype.
+
 The strata are age 18–74 or 75+ crossed with I63, I61 or all other principal diagnoses. The residual diagnosis group is recovered by subtracting the disjoint I63 and I61 populations from all diagnoses. Non-dysphagia counts and events are recovered by subtracting dysphagia from the same total. All nested counts and event bounds are checked. Each outcome must have its exact code row in all twelve source exports before a primary six-stratum analysis is produced. A missing row is unknown, never zero; incomplete outcomes receive a status without an adjusted estimate. No outcome-dependent restriction to visible rows is used.
 
 For supported strata, w_g=N_total,g/sum(N_total,g). Standardized risk is sum(w_g p_j,g), with fixed-weight binomial variance sum(w_g^2 p_j,g(1-p_j,g)/N_j,g). The standardized risk ratio uses a log-delta 95% interval, and the risk difference uses a normal 95% interval. Unsupported denominator strata are identified before looking at outcomes; coverage is reported. The crude comparator is recalculated on exactly the supported adult population. Zero-event strata remain included, and zero/boundary probabilities plus event/non-event counts below five are flagged. No continuity correction is applied; an undefined ratio or interval remains null.
 
 Unrestricted crude analyses use 279,277 hospital episodes, including 22 below age 18; their denominators are not the adult reference used for standardization. Adult analyses include 279,255 episodes before any common-support exclusions. These are separate hospital episodes, not identified unique patients. The intervals do not cover repeated admissions, hospital clustering, coding error or missing confounders. Broad age bands leave residual age confounding. There is no sex, PCCL or NIHSS adjustment in this extension.
 
-The malnutrition union is predeclared as E40, E41, E42, E43, E44.0, E44.1 or E46. E45 denotes developmental delay and is excluded from this nutritional-status endpoint. The union is not computed by summing overlapping secondary-diagnosis rows and remains pending direct union exports. E43 alone is unspecified severe protein-energy malnutrition, not all malnutrition. E86 records volume depletion rather than a validated low-intake dehydration assessment. J69.0 is the defined pneumonitis code. OPS 8-701 records simple endotracheal intubation, not all ventilation; OPS 5-431.22 records one PEG technique, not all gastrostomies or enteral nutrition. FEES (1-613) is explicitly a diagnostic process marker. Timing relative to dysphagia is unknown, so these are coding associations, not proven incident complications or treatment effects.
+The malnutrition union is specified as E40, E41, E42, E43, E44.0, E44.1 or E46. E45 denotes developmental delay and is excluded from this nutritional-status endpoint. The union is not computed by summing overlapping secondary-diagnosis rows and remains pending direct union exports. E43 alone is unspecified severe protein-energy malnutrition, not all malnutrition. E86 records volume depletion rather than a validated low-intake dehydration assessment. J69.0 is the defined pneumonitis code. OPS 8-701 records simple endotracheal intubation, not all ventilation; OPS 5-431.22 records one PEG technique, not all gastrostomies or enteral nutrition. FEES (1-613) is explicitly a diagnostic process marker. Timing relative to dysphagia is unknown, so these are coding associations, not proven incident complications or treatment effects.
 
 The published CSV contains one row per outcome/model or pending status. It omits event counts, individual strata, small-cell diagnostics, source filenames, raw-workbook hash mappings and local paths. Denominators and statistical estimates are model-level aggregates; probabilities and risk differences use units from 0 to 1. The interval note retains sparse/boundary qualifications without exposing the underlying cells. Original exports are not redistribution-authorized by this script.
 

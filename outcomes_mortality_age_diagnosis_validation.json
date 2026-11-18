@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source_workbooks_read": 28,
+  "joint_original_workbooks_read": 24,
+  "independent_numeric_checks": 8,
+  "maximum_numeric_difference": 0.0,
+  "method": "Original workbook exact-filter validation, native-age reconciliation, nested counts; independent rational risks and binomial variances.",
+  "scope": "Numerical verification is not confidence-interval calibration or elimination of residual confounding."
+}

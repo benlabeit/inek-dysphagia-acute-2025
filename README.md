@@ -4,42 +4,31 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 [Project repository](https://github.com/benlabeit/inek-dysphagia-acute-2025) · [Companion early-rehabilitation manuscript](https://github.com/benlabeit/inek-dysphagia-rehabilitation-2025)
 
-## Current manuscript and outcome extension
+## Current manuscript and analyses (18 November 2026)
 
-The current Word manuscript is [Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx](Manuscript_NRP_Acute_Zotero_Kommentare_eingearbeitet.docx), with [Online Resource 1](ESM_1.docx). This revision uses the manuscript supplied by the author on 17 November 2026 as its documented source, retains the previously requested comment corrections, and adds verified outcome analyses. Introduction changes are limited to those earlier author requests. The existing discussion is retained with focused additions on nutrition, hydration and interpretation of adjustment. The two original figures are preserved.
+[Manuscript (Word)](Manuscript_InEK_Acute_Stroke.docx) · [Manuscript (PDF)](Manuscript_InEK_Acute_Stroke.pdf) · [Online Resource 1 (Word)](ESM_1.docx) · [Online Resource 1 (PDF)](ESM_1.pdf) · [Figures and plotting data](figures/nrp/harmonized/) · [Data availability](DATA_AVAILABILITY.md)
 
-The extension adds jointly age-and-principal-diagnosis standardized length of stay and seven individual-code diagnosis/procedure/process-marker comparisons (Supplementary Table S8). Twelve unchanged E43 event exports support separate age-sex-diagnosis and age-diagnosis-PCCL models of unspecified severe protein-energy malnutrition (Table S9). Twelve additional E86 event exports now support the same separate joint models for coded volume depletion (Table S10); the three E86 models passed an independent original-workbook audit with 3,129 checks. The broad malnutrition union, pneumonia, aspiration-related pneumonitis and pulmonary-union three-factor analyses remain pending. A total of 46 native exports remain outstanding; see [the current export list](outcomes_manual_exports_46.md) and [analysis status](outcomes_analysis_status.csv). The 58-query files are retained only as historical snapshots before E86 completion.
+The all-age cohort included 279,277 acute-care episodes, of which 33,643 had secondary dysphagia coding. All 279,255 adults contributed to the common age-by-principal-diagnosis analysis. Age bands were 18–74 and 75 years or older. The separate models adding sex or clinical complexity (PCCL) retained 279,248 and 279,254 adults, respectively.
 
-- E43: age-sex-diagnosis RR **5.11 (4.15-6.29)**; separate age-diagnosis-PCCL RR **2.71 (approximately 2.12-3.45)**.
-- E86 coded volume depletion: age-sex-diagnosis RR **2.87 (2.75-2.99)**; separate age-diagnosis-PCCL RR **2.12 (approximately 2.00-2.26)**. The retained model populations are 279,248 and 279,254 adult episodes, respectively. E86 is not specific for low-intake dehydration.
-- Adult length-of-stay difference standardized for age and principal diagnosis: **9.74 days (9.45-10.03)**; survivor-only sensitivity: **10.05 days (9.73-10.37)**.
-- The E43 PCCL sensitivity has many sparse and boundary-risk strata. Its approximate model-based confidence interval is not guaranteed to be well calibrated. Coarsening PCCL to 0, 1-2 and 3-6 yields RR **2.87 (approximately 2.25-3.67)** and still leaves sparse/boundary strata. This is a post hoc robustness analysis, not a correction for interval calibration.
+The [model-level results](outcomes_harmonized_binary_summary.csv) cover 16 crude comparisons, 14 age-by-diagnosis comparisons and seven endpoints each in the separate sex and PCCL models. Supplementary Table S14 reports all nine standardized estimates for pneumonia (J12–J18), the combined pulmonary endpoint (J12–J18 or J69.0), and protein-energy malnutrition. The [availability matrix](outcomes_model_availability.csv) identifies which models could be estimated for each endpoint. The [updated status table](outcomes_analysis_status.csv) records completion of the planned outcome queries. Earlier export checklists and manuscript files are historical.
 
-These are exploratory coded associations, not causal estimates. Sex and PCCL are not included simultaneously. PCCL may incorporate downstream diagnoses and is not admission NIHSS adjustment. New pooled-weight LOS contrasts and earlier dysphagia-weighted within-DRG contrasts have different estimands.
+The [within-DRG comparison](WITHIN_DRG_BINARY.md) covers all 16 binary endpoints. Tables S15–S16 give six directly estimated adult comparisons by DRG, by DRG and age, and by DRG, age and principal diagnosis. Table S17 gives identification ranges for the ten endpoints whose DRG-specific event counts were unavailable. The public files contain aggregate estimates, group coverage, the matched crude contrasts, and a manual source export list.
 
-See the outcome methods, aggregate tables, reproducible scripts and manual export checklist added with this revision. Original workbooks and detailed small-cell audits remain excluded. The InEK manual (01 September 2026), section I.4, expressly disallows automated use; data acquisition must follow the provider's conditions. Source workbooks were exported through the official InEK data-browser interface. The analysis scripts operate locally and do not acquire data.
 
-## Earlier document versions
+### Reproducing the outcome tables
 
-The other manuscript Word/PDF/Markdown files and `ESM_1.pdf` are **earlier versions**. They do not contain the current outcome extension or all subsequent author comments. In particular, the older compatibility filenames are not aliases of the current Word manuscript. Use the two Word files linked above for further editing.
+The [query plan](outcomes_query_plan.json) documents the filters and expected filenames. Obtain the source workbooks through the [InEK DatenBrowser](https://datenbrowser.inek.org/) under its access conditions and place them in the local `raw/` directory. The following commands use the original workbooks locally. They regenerate the adult models for the three combined endpoints, verify each model independently and rebuild the consolidated table alongside the earlier reviewed model summaries.
 
-RIS/CSL import files and Zotero guidance are in `research/zotero/`. Four additional primary references support the expanded discussion; their identifiers and scope are documented in `OUTCOMES_ADDITIONAL_REFERENCES.md`. Zotero citation metadata are retained and the displayed citations, bibliography and supplement references are updated together. Native Word pagination and live Zotero refresh have not been rechecked; no current PDF is supplied because the available document renderer could not run. Numerical, text, table, and OOXML integrity checks are documented with the revision.
+```sh
+for endpoint in pneumonia pulmonary_union malnutrition_union
+do
+  python outcomes_analyze_joint.py --endpoint "$endpoint" --allow-exact-pneumonia-complement --data-root raw --out-dir results
+  python outcomes_verify_joint_independent.py --endpoint "$endpoint" --allow-exact-pneumonia-complement --raw raw --production-dir results/aggregate --out-dir "results/checks/$endpoint"
+done
+python outcomes_build_harmonized_summary.py --repo-root . --data-root raw --new-results . --joint-results results/aggregate --out-dir results/summary
+```
 
-## Publication figures and expanded literature audit
-
-The NRP revision adds two publication figures and an expanded PubMed literature audit. Figure files, their numeric plotting data, legends and quality checks are in `figures/nrp/`; the complete author-focused literature screening and source verification are in `research/`. Original InEK workbooks, full abstracts and source XML are excluded. See [figure reproduction](figures/nrp/README.md) and [literature provenance](research/README.md).
-
-## Public repository and source-data availability
-
-This acute-care repository was made public on 17 November 2026 at the author's request. The companion rehabilitation repository remains private. This status supersedes the earlier private-development instructions retained in dated audit records. Original InEK Excel exports remain excluded because permission for repository redistribution has not been established; this does not assert a blanket prohibition. See [DATA_AVAILABILITY.md](DATA_AVAILABILITY.md) for the current source-access and rights-clearance statement.
-
-## Manuscript and scientific status
-
-`manuscript_acute.md` is the English source draft. `Manuscript_NRP_Acute.docx` is the editable Word version, and `Manuscript_NRP_Acute.pdf` is the fixed-layout reading copy. These manuscript versions require author review of interpretation, authorship, affiliations, declarations, journal requirements, and limitations before submission. `acute_literature_final.json` records the literature assessment.
-
-The unit is a hospital DRG episode, not a unique person. Dysphagia means a selected R13.0/R13.1/R13.9 **secondary diagnosis**. The comparator lacks these selected secondary codes; a principal dysphagia diagnosis or uncoded dysphagia is not excluded. The OPS cohort is a care-pathway cohort and includes indications beyond confirmed stroke. Additional analyses were selected after reviewing the original presentation and are exploratory.
-
-Root CSV files are curated output snapshots. Raw workbooks, full parsed code tables, and generated result JSON are excluded from this repository. It contains no rehabilitation-specific inputs or analyses. The separate companion cohort can share hospital episodes or patients with this cohort; its totals must not be added as independent patients or combined attributable burden.
+The all-age broad malnutrition query uses both full-age reference workbooks listed in the plan. For pneumonia, where the all-age references explicitly record zero episodes under 18, the younger adult all-diagnosis distributions can be obtained by subtracting the older group. The all-age combined pulmonary count uses the observed overlap of J12–J18 with J69.0. The scripts run on local workbooks and the public summaries give model-level results. The estimates describe associations between recorded diagnoses and care episodes. Additional analyses were exploratory.
 
 ## Severity sensitivity revision of 17 November 2026
 

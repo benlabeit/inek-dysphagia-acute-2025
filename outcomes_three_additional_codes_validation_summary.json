@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "endpoints": [
+    "J96.00",
+    "U69.01",
+    "U69.04"
+  ],
+  "checks_passed": 252,
+  "workbooks_read": 12,
+  "method": "Independent original-XLSX extraction, exact input-filter checking and exact-rational risk/variance reconstruction; no production parser or model functions imported.",
+  "limitation": "Numerical verification does not establish causality, interval calibration, or admission-NIHSS adjustment; no sex/PCCL adjustment is available for these three codes."
+}

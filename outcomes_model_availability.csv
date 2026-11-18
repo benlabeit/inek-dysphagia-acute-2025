@@ -1,0 +1,18 @@
+outcome,label,role,domain,baseline_crude,age_principal_diagnosis,age_sex_principal_diagnosis,age_principal_diagnosis_pccl_sensitivity,other_analyses
+mortality,In-hospital death,clinical,mortality,estimated,estimated,estimated,estimated,
+J69.0,Aspiration-related pneumonitis/pneumonia (J69.0),clinical,pulmonary,estimated,estimated,estimated,estimated,
+PNEUMONIA_UNION,"Pneumonia (J12-J18), unique union",clinical,pulmonary,estimated,estimated,estimated,estimated,Single-factor PCCL and functional-category sensitivities retained separately.
+PULMONARY_UNION,"Pneumonia or aspiration-related pneumonitis, unique union",overlapping_composite,pulmonary,estimated,estimated,estimated,estimated,
+J96.00,Hypoxemic acute respiratory failure (J96.00),clinical,pulmonary,estimated,estimated,not_available,not_available,
+U69.01,Pneumonia after 48 hours (U69.01),clinical_timing_marker,pulmonary_timing,estimated,estimated,not_available,not_available,
+U69.04,Pneumonia by 48 hours (U69.04),clinical_timing_marker,pulmonary_timing,estimated,estimated,not_available,not_available,
+E43,Unspecified severe protein-energy malnutrition (E43),clinical,nutrition,estimated,estimated,estimated,estimated,Post hoc coarsened-PCCL sensitivity retained separately.
+E44.0,Moderate protein-energy malnutrition (E44.0),clinical,nutrition,estimated,not_estimable_incomplete_event_grid,not_available,not_available,
+E44.1,Mild protein-energy malnutrition (E44.1),clinical,nutrition,estimated,not_estimable_incomplete_event_grid,not_available,not_available,
+E46,Unspecified protein-energy malnutrition (E46),clinical,nutrition,estimated,estimated,not_available,not_available,
+MALNUT_UNION,"Protein-energy malnutrition, unique E40/E41/E42/E43/E44.0/E44.1/E46 union",clinical,nutrition,estimated,estimated,estimated,estimated,
+E86,Volume depletion (E86),clinical,hydration,estimated,estimated,estimated,estimated,
+8-701,Simple endotracheal intubation (8-701),procedure,procedures,estimated,estimated,not_available,not_available,
+5-431.22,PEG by thread-pull technique (5-431.22),procedure,procedures,estimated,estimated,not_available,not_available,
+1-613,FEES coding (1-613),process_marker,assessment,estimated,estimated,not_available,not_available,
+LOS,Length of hospital stay,resource_use,resource_use,estimated,estimated,not_available,not_available,Within-DRG comparison and discharge-alive sensitivity available; sex/PCCL-specific first and second LOS moments absent.

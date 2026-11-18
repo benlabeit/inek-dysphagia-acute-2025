@@ -1,6 +1,8 @@
-# Data availability and repository status
+# Data availability
 
-This acute-care repository was made public on 17 November 2026 at the author's request. It provides analysis code, query definitions and disclosure-checked aggregate outputs. The separate rehabilitation repository remains private. This status supersedes prior private-development statements in dated audit records.
+This study used aggregate hospital episode data from the InEK DatenBrowser ([https://datenbrowser.inek.org/DRG202601](https://datenbrowser.inek.org/DRG202601)), specifically the “Unterjährige Datenlieferung DRG Januar bis Dezember 2025” (data delivery of 16 January 2026). Registered users can reproduce the source queries through the InEK DatenBrowser under its terms of use. The query definitions, analysis code and aggregate results are available at [https://github.com/benlabeit/inek-dysphagia-acute-2025](https://github.com/benlabeit/inek-dysphagia-acute-2025). The original Excel exports are not redistributed. The authors had no access to patient-level data.
+
+## Source access and redistribution
 
 Original InEK Excel exports are not redistributed because permission for repository redistribution has not been established. This is an unresolved permission question, not a claim that all redistribution is prohibited. Registered users can obtain the source aggregates through the [InEK DatenBrowser](https://datenbrowser.inek.org/) using the documented selections and subject to the service's terms.
 
