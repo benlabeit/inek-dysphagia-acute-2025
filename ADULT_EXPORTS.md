@@ -2,7 +2,15 @@
 
 [Filter und Dateinamen für jede Abfrage](adult_manual_exports.csv) · [InEK-Datenlieferung 2025](https://datenbrowser.inek.org/DRG202601)
 
-## Erste zwei Exporte
+## Abgeschlossene Lieferung
+
+Alle 128 geplanten Abfragen haben einen dokumentierten Endstatus. Die 126 verfügbaren Originale sind anhand der Filter im Info-Blatt, der Erwachsenen-Altersgruppen, der Fallzahlen und der Prüfsummen verifiziert. Für Nr. 46 (E44.0) und Nr. 58 (E44.1), jeweils Alter 18–74 Jahre, I61 und Dysphagie, unterdrückte InEK die Ausgabe. Beide Fallzahlen bleiben leer. Alle acht B70D-Abfragen konnten für den Mortalitätsvergleich ausgewertet werden. Das [Prüfprotokoll ohne Fallzahlen](adult_export_audit.csv) enthält den Status je Abfrage.
+
+## Ablage für die Reproduktion
+
+Die 126 XLSX-Dateien unter ihren unveränderten Namen zusammen mit den früheren Originalexporten in demselben privaten lokalen Ordner ablegen. Diesen Ordner bei `adult_analysis.py --raw` angeben. Die private `Exportprotokoll.csv` kann im selben Ordner oder separat liegen. Mit `--protocol /pfad/Exportprotokoll.csv` werden Fallzahlen und Originalprüfsummen zusätzlich gegen das Lieferprotokoll geprüft.
+
+## Beispiel für die ersten zwei Abfragen
 
 Die CSV enthält die konkreten Selektionswerte. Für die ersten zwei Zeilen die Lieferung **Unterjährige Datenlieferung DRG Januar bis Dezember 2025** wählen, im Feld **Prozeduren** die angegebenen 16 Schlaganfall-OPS gemeinsam auswählen, unter **Altersgruppe** alle sieben Kategorien von 18–29 bis 65–74 Jahre auswählen und unter **weitere Nebendiagnosen** J96.00 setzen. Hauptdiagnose und Entlassungsgrund bleiben frei.
 
@@ -11,12 +19,12 @@ Die CSV enthält die konkreten Selektionswerte. Für die ersten zwei Zeilen die 
 
 Jeder Export muss im Blatt *Info* die richtige Lieferung, Altersauswahl und Filterkombination ausweisen. Bei nicht angezeigten Ergebnissen den Status „unterdrückt“ bzw. die genaue Bildschirmmeldung festhalten. Eine fehlende Angabe ist kein beobachteter Nullwert. Die Quelle enthält aggregierte Krankenhausfälle. Originaldateien verbleiben im privaten Projektbereich.
 
-## Welche Abfragen fehlen
+## Zusammensetzung des abgeschlossenen Abfrageplans
 
 | Abfragenummer | Zweck | Umfang |
 | --- | --- | --- |
-| 1–108 | Fehlende Ereignistabellen für Modelle 2 und 3 bei neun Endpunkten | Zwei Altersgruppen × drei Hauptdiagnose-Auswahlen × zwei Quellgruppen je Endpunkt. Die personenbezogenen Merkmale Geschlecht und PCCL werden getrennt aus den Info-Verteilungen ausgewertet. |
-| 109–120 | E43-Originaldateien für die zusätzlichen DRG-Analysen wiederbeschaffen | Zuerst das vorhandene Projektarchiv oder frühere Downloads prüfen. Die überprüften Erwachsenen-Schätzer für Modell 2 und 3 liegen bereits vor. Die ersten vier Dateien dieser Gruppe reichen für die einfachere Alters-DRG-Auswertung, die weiteren acht ergänzen die Hauptdiagnose. |
-| 121–128 | Machbarkeit von Modell 4 für Mortalität innerhalb der häufigen DRG B70D prüfen | Vier Nenner- und vier Todesfallabfragen. Jede Altersgruppe und Quellgruppe ist einzeln ausgewählt. Die Geschlechtsverteilung des Info-Blatts muss für den jeweiligen Nenner bzw. Endpunkt eindeutig zuordenbar sein. |
+| 1–108 | Ergänzte Ereignistabellen für Modelle 2 und 3 bei neun Endpunkten | Zwei Altersgruppen × drei Hauptdiagnose-Auswahlen × zwei Quellgruppen je Endpunkt. Die personenbezogenen Merkmale Geschlecht und PCCL werden getrennt aus den Info-Verteilungen ausgewertet. |
+| 109–120 | E43-Originaldateien für die zusätzlichen DRG-Analysen wiederbeschaffen | Alle zwölf Originale wurden in dieser Lieferung geprüft. Die ersten vier Dateien dieser Gruppe reichen für die einfachere Alters-DRG-Auswertung, die weiteren acht ergänzen die Hauptdiagnose. |
+| 121–128 | Modell 4 für Mortalität innerhalb der DRG B70D | Vier Nenner- und vier Todesfallabfragen. Jede Altersgruppe und Quellgruppe ist einzeln ausgewählt. Die Geschlechtsverteilung des Info-Blatts ist für den jeweiligen Nenner bzw. Endpunkt eindeutig zuordenbar. |
 
-Der B70D-Pilot ist eine Machbarkeitsprüfung für eine einzelne DRG. Eine populationsübergreifende Schätzung für Modell 4 setzt entsprechend gekreuzte Nenner und Ereigniszahlen in weiteren beobachtbaren Alters-DRG-Strata voraus. Die 108 Abfragen allein liefern keine gemeinsame Verteilung von DRG und Geschlecht. Bei einer Bereitstellung durch InEK wäre eine aggregierte Tabelle nach Altersgruppe, Geschlecht, DRG, Dysphagiegruppe und Endpunkt der direkte Weg. Für die Verweildauer werden je Zelle zusätzlich die Summe der Aufenthaltstage und der quadrierten Aufenthaltstage oder äquivalente Mittelwerte und Standardabweichungen benötigt. Für die anderen Verweildauermodelle werden analoge Zellen nach Alter, Hauptdiagnose und Geschlecht bzw. PCCL benötigt. Ein reiner Häufigkeitsexport nach Geschlecht oder PCCL liefert diese Aufenthaltsdauern nicht.
+Der B70D-Pilot ergab ein alters- und geschlechtsstandardisiertes relatives Mortalitätsrisiko von 8,04 (95%-KI 7,27–8,89) für diese einzelne DRG. Eine populationsübergreifende Schätzung für Modell 4 setzt entsprechend gekreuzte Nenner und Ereigniszahlen in weiteren beobachtbaren Alters-DRG-Strata voraus. Die 108 Abfragen allein liefern keine gemeinsame Verteilung von DRG und Geschlecht. Bei einer Bereitstellung durch InEK wäre eine aggregierte Tabelle nach Altersgruppe, Geschlecht, DRG, Dysphagiegruppe und Endpunkt der direkte Weg. Für die Verweildauer werden je Zelle zusätzlich die Summe der Aufenthaltstage und der quadrierten Aufenthaltstage oder äquivalente Mittelwerte und Standardabweichungen benötigt. Für die anderen Verweildauermodelle werden analoge Zellen nach Alter, Hauptdiagnose und Geschlecht bzw. PCCL benötigt. Ein reiner Häufigkeitsexport nach Geschlecht oder PCCL liefert diese Aufenthaltsdauern nicht.

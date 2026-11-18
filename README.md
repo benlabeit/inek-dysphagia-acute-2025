@@ -8,28 +8,41 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 [Manuscript (Word)](Manuscript_InEK_Acute_Stroke.docx) · [Manuscript (PDF)](Manuscript_InEK_Acute_Stroke.pdf) · [Online Resource 1 (Word)](ESM_1.docx) · [Online Resource 1 (PDF)](ESM_1.pdf) · [Data availability](DATA_AVAILABILITY.md)
 
-Every analysis in the current manuscript uses adults aged 18 years or older (33,641 dysphagia-coded episodes and 245,614 comparators). Crude and age-standardized risk ratios were available for all 16 binary endpoints. Age and principal diagnosis were available for 14. The separate age–diagnosis–sex and age–diagnosis–PCCL models were available for seven endpoints each. Age-by-DRG estimates were available for six. The requested age-by-sex-by-DRG model remains unestimated for every endpoint. The source workbooks display separate sex and PCCL distributions. They do not provide their joint distribution.
+Read the [manuscript](manuscript_acute.md) and [supplement](manuscript_acute_supplement.md) directly on GitHub.
+
+The adult cohort comprises 279,255 episodes, including 33,641 with secondary dysphagia coding and 245,614 comparators. All 128 extension queries have a final disposition. The export audit verified 126 native workbooks. InEK suppressed queries 46 (E44.0) and 58 (E44.1), both for dysphagia-coded adults aged 18–74 with principal diagnosis I61.
+
+| Comparison | Binary endpoints | Length of stay |
+| --- | --- | --- |
+| Crude | 16 of 16 | Full adult cohort |
+| Age and principal diagnosis plus sex (model 2), or PCCL separately (model 3) | 16 of 16 for each model using five common age–diagnosis groups. The planned six-group sensitivity is available for 14. | Age and principal diagnosis in both groupings. The exports lack joint stay moments for sex or PCCL. |
+| Age and DRG across named DRGs | 16 of 16. Positive denominators and observable event rows in both groups are required. Coverage varies by endpoint. | 203 age–DRG strata. Of these, 202 have estimable within-group variances. |
+| Age and sex within DRG (model 4) | Mortality within B70D only. No multi-DRG estimate is identifiable. | Within B70D, age-only mean difference. Sex-specific stay moments unavailable. |
+| Age, principal diagnosis and DRG | 16 of 16 on observable support | 183 strata, including 179 with estimable variances |
+
+To retain a common diagnosis adjustment after the two suppressions, adults aged 18–74 were grouped as I63 and all other diagnoses. At ≥75 years the groups were I63, I61 and all other diagnoses. The six-group sensitivity also distinguishes I61 at ages 18–74. Each estimate uses pooled weights over eligible strata and reports the crude contrast on the same cases. The event and denominator workbooks provide separate sex and PCCL distributions within a query. Their joint distribution is unknown. DRGs can incorporate procedures, diagnoses and other characteristics of the completed stay.
 
 | Current output | Contents |
 | --- | --- |
-| [Binary endpoints](adult_binary.csv) | Model availability, risks, RRs and RDs, nominal intervals, model denominators and matched crude contrasts |
-| [Hospital stay](adult_los.csv) | Adult crude, age–diagnosis and age–DRG mean differences, with precision and survivor sensitivities |
-| [Adult cohort](adult_cohort.csv) and [functional analyses](adult_functional.csv) | Adult counts and within-category contrasts |
-| [Identification bounds](adult_drg_bounds.csv) | Age–DRG bounds with dysphagia-group reference weights for ten endpoints lacking observable DRG events |
-| [Figure 1](adult_figure_1.pdf) · [Figure 2](adult_figure_2.pdf) · [Figure 3](adult_figure_3.pdf) | Crude risks, model-specific adult RRs and hospital stay |
-| [Manual export guide](ADULT_EXPORTS.md) · [Filter list](adult_manual_exports.csv) | Remaining event tables, E43 source recovery and a single-DRG feasibility pilot |
+| [Binary endpoints](adult_binary.csv) | Model status, standardized risks, RRs, RDs, 95% intervals, common support, coverage, matched crude RR and shares of the reference weight in sparse or boundary-risk strata |
+| [Hospital stay](adult_los.csv) | Group means, differences, matched crude differences and interval sensitivity analyses |
+| [Adult cohort](adult_cohort.csv) and [functional categories](adult_functional.csv) | Episode characteristics and functional subgroup results |
+| [Figure 1](adult_figure_1.pdf) · [Figure 2](adult_figure_2.pdf) · [Figure 3](adult_figure_3.pdf) · [Supplementary Fig. S1](adult_figure_s1.pdf) | Crude risks, adjusted RRs including the B70D mortality pilot, hospital stay, and sensitivity to the diagnosis grouping |
+| [Export guide](ADULT_EXPORTS.md) · [128 query definitions](adult_manual_exports.csv) · [Audit](adult_export_audit.csv) | File names, disposition and SHA-256 of available extension workbooks. Original workbooks and the private portal log are retained outside the repository. |
 
-The current standardized point estimates apply **pooled common-support weights to all outcomes**, including hospital stay and binary comparisons within DRG. Earlier files beginning with `within_drg_binary_` use the dysphagia-coded distribution for DRG analyses. Those estimates and the earlier all-age documentation are historical. The current results use only available sources and are provisional pending additional manual exports.
+### Reproducing the current results
 
-To reproduce, place the independently obtained workbooks in a private local directory, then run:
+Place the previously obtained source workbooks and the 126 verified extension workbooks together in a private directory. Install the dependencies in `requirements.txt` and `figure_requirements.txt`. With the private export log, the first command also checks the original checksums and workbook totals against the log. Omit the optional `--protocol` argument to check the files directly against the public query plan. The analysis uses openpyxl. Independent verification and figure generation additionally use NumPy, pandas and Matplotlib.
 
 ```sh
-python adult_analysis.py --raw /path/to/private/workbooks
+python adult_analysis.py --raw /path/to/private/workbooks --protocol /path/to/Exportprotokoll.csv
+python adult_validate.py --raw /path/to/private/workbooks
 python adult_figures.py
-python adult_export_plan.py
 ```
 
-The analysis uses openpyxl. Plotting additionally uses pandas, numpy and matplotlib. Workbooks are never published. The analysis retains the two previously verified E43 adult three-factor estimates if their source workbooks are unavailable. Source-level details for the original analyses follow below as a historical record.
+The independent script rebuilds all 157 estimable binary contrasts and all 11 hospital-stay analyses from workbook cells, including observable intervals and matched crude differences. The production stay analysis also checks integer moments and exact versus floating-point weighted estimates. In the binary output `age_hd`, `M2`, `M3` and `age_hd_drg` use the common five groups; the `_fine` suffix denotes the planned six. `M4` denotes the multi-DRG target and `M4_B70D` the estimable single-DRG mortality comparison. A sparse stratum contains fewer than five events or non-events in either group. A boundary-risk stratum has an observed risk of zero or one in either group. Intervals condition on observed weights and do not account for hospital clustering, coding uncertainty or selection of observable DRGs.
+
+The following sections and earlier manuscript variants document preceding analyses. In particular, [earlier bounds](adult_drg_bounds.csv) describe the release before the extension, and files beginning `within_drg_binary_` use a different reference distribution. Use the links above for the current paper.
 
 ### Reproducing the earlier outcome tables
 

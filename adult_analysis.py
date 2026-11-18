@@ -2,16 +2,16 @@
 import argparse
 import csv
 import json
-import math
 import tempfile
 from itertools import product
 from pathlib import Path
 import openpyxl
+from adult_export_audit import audit
 from outcomes_analyze_joint import build_cells, derive_pneumonia_complement
 from outcomes_analyze_los_age_diagnosis import Moments, read_source, run as analyze_stay, summarize, sum_moments
-from outcomes_standardization_core import QUERY_AGES, contrast, standardize
+from outcomes_standardization_core import QUERY_AGES, SEX_LABELS, read_info, contrast, standardize
 from outcomes_within_drg import (PROCEDURES, source, filename, observed, eligible, residual_cells,
-                                code_margins, margin_block, bounds_row, write_table)
+                                code_margins, write_table)
 
 HERE = Path(__file__).resolve().parent
 AGES = list(QUERY_AGES)
@@ -21,79 +21,133 @@ def read_csv(name):
     with (HERE/name).open(encoding='utf-8-sig') as f:
         return list(csv.DictReader(f))
 def bundle(cells):
-    r=standardize(cells)
-    s=r['standardized']; c=r['crude_same_common_support_population']
-    return dict(dys_n=c['dys_n'],comparator_n=c['no_dys_n'],dys_events=c['dys_events'],comparator_events=c['no_dys_events'],
-                dys_risk=s['dys_rate'],comparator_risk=s['no_dys_rate'],rr=s['rr'],rr_low=s['rr_ci'][0],rr_high=s['rr_ci'][1],
-                rd=s['risk_difference'],rd_low=s['risk_difference_ci'][0],rd_high=s['risk_difference_ci'][1],
-                strata=r['common_support']['included_cells'],matched_crude_rr=c['rr'])
-def event(raw,age,hd,pop,key):
-    record=source(raw,age,hd,pop,key)
-    if record:
-        info=record[1]
-        if 'distributions' not in info:
-            return derive_pneumonia_complement(raw,age,pop)
-        return info
-    tab='Prozeduren' if key in PROCEDURES else 'Nebendiagnosen'
-    n=code_margins(raw,age,hd,pop,tab).get(key)
-    return {'n':n} if n is not None else None
+    result = standardize(cells)
+    if result['status'] != 'estimated':
+        return None
+    s = result['standardized']
+    c = result['crude_same_common_support_population']
+    strata = result['strata']
+    low, high = s['rr_ci'] or (None, None)
+    return dict(dys_n=c['dys_n'], comparator_n=c['no_dys_n'],
+                dys_events=c['dys_events'], comparator_events=c['no_dys_events'],
+                dys_risk=s['dys_rate'], comparator_risk=s['no_dys_rate'],
+                rr=s['rr'], rr_low=low, rr_high=high, rd=s['risk_difference'],
+                rd_low=s['risk_difference_ci'][0], rd_high=s['risk_difference_ci'][1],
+                strata=len(strata), matched_crude_rr=c['rr'],
+                sparse_weight=sum(g['reference_weight'] for g in strata if g['sparse_event_cell']),
+                boundary_weight=sum(g['reference_weight'] for g in strata if g['boundary_probability']))
 
-def compare_drg(vals):
-    return bundle([dict(all_n=d+c,dys_n=d,all_events=a+b,dys_events=a) for d,c,a,b in vals])
 
-def binary(raw,out):
-    summaries=read_csv('outcomes_harmonized_binary_summary.csv')
-    endpoints={r['outcome']:r['label'] for r in summaries}
-    grid=list(product(AGES,HDS,POPS))
-    den={k:source(raw,*k,None)[1] for k in grid}
-    rows=[]; limits=[]
-    def add(model, result=None, note=''):
-        rows.append(dict(outcome=key,label=label,model=model,status='estimated' if result else 'unavailable',
-                         note=note,**(result or {})))
+def event(raw, age, hd, pop, key):
+    record = source(raw, age, hd, pop, key)
+    if record is None:
+        return None
+    info = record[1]
+    if 'distributions' not in info:  # Exact younger pneumonia complement, with zero paediatric events.
+        return derive_pneumonia_complement(raw, age, pop)
+    return info
+
+
+def diagnosis_parts(age, fine=False):
+    if age == 'age18_74' and not fine:
+        return [('i63', ()), ('allhd', ('i63',))]
+    return [('i63', ()), ('i61', ()), ('allhd', ('i63', 'i61'))]
+
+
+def counts(den, ev, age, hd, dimension, level=None):
+    def extract(info):
+        return info['n'] if dimension == 'total' else info['distributions'][dimension][level]
+    return {field: extract(records[age,hd,pop])
+            for field,records,pop in [('all_n',den,'all'), ('dys_n',den,'dys'),
+                                      ('all_events',ev,'all'), ('dys_events',ev,'dys')]}
+
+
+def common_cells(den, ev, dimension):
+    cells = []
+    levels = {'total': [None], 'sex': SEX_LABELS, 'pccl': [str(i) for i in range(7)]}[dimension]
+    for age in AGES:
+        for level in levels:
+            for hd, subtract in diagnosis_parts(age):
+                base = counts(den, ev, age, hd, dimension, level)
+                for other in subtract:
+                    part = counts(den, ev, age, other, dimension, level)
+                    base = {k: n - part[k] for k,n in base.items()}
+                cells.append(base)
+    return cells
+
+
+def drg_bundle(values):
+    return bundle([dict(all_n=d+c, dys_n=d, all_events=a+b, dys_events=a) for d,c,a,b in values])
+
+
+def b70d_models(raw):
+    # The extension audit has verified each restricted workbook's complete filter set.
+    den, ev = {}, {}
+    for age, pop, endpoint in product(AGES, POPS, (None, 'mortality')):
+        name = filename(age, 'allhd', pop, endpoint).replace('_2025.xlsx', '_B70D_2025.xlsx')
+        info = read_info(raw / name)
+        if info['n'] != source(raw,age,'allhd',pop,endpoint)[0]['B70D']:
+            raise ValueError(f'{name}: restricted cohort differs from named B70D row')
+        (den if endpoint is None else ev)[age,'allhd',pop] = info
+    age_cells = [counts(den,ev,a,'allhd','total') for a in AGES]
+    return {'B70D_crude': bundle([{k:sum(g[k] for g in age_cells) for k in age_cells[0]}]),
+            'B70D_age': bundle(age_cells),
+            'M4_B70D': bundle([counts(den,ev,a,'allhd','sex',s) for a,s in product(AGES,SEX_LABELS)])}
+
+
+def binary(raw, out):
+    endpoints = {r['outcome']:r['label'] for r in read_csv('outcomes_harmonized_binary_summary.csv')}
+    grid = list(product(AGES,HDS,POPS))
+    den = {k:source(raw,*k,None)[1] for k in grid}
+    pilot = b70d_models(raw)
+    rows = []
     for key,label in endpoints.items():
-        ev={k:event(raw,*k,key) for k in grid}
-        ages=[]
-        for a in AGES:
-            ages.append(dict(all_n=den[a,'allhd','all']['n'],dys_n=den[a,'allhd','dys']['n'],
-                             all_events=ev[a,'allhd','all']['n'],dys_events=ev[a,'allhd','dys']['n']))
-        add('M1',bundle([{k:sum(g[k] for g in ages) for k in ages[0]}]))
-        add('age',bundle(ages))
+        def add(model, result=None, note=''):
+            row = dict(outcome=key, label=label, model=model,
+                       status='estimated' if result else 'unavailable', note=note)
+            if result:
+                row.update(result)
+                row['dys_coverage'] = result['dys_n'] / full['dys_n']
+                row['comparator_coverage'] = result['comparator_n'] / full['comparator_n']
+            rows.append(row)
+        ev = {k:event(raw,*k,key) for k in grid}
+        missing = {k for k,v in ev.items() if v is None}
+        expected = {('age18_74','i61','dys')} if key in ('E44.0','E44.1') else set()
+        if missing != expected:
+            raise ValueError(f'{key}: unexpected missing queries {missing}')
+        ages = [counts(den,ev,a,'allhd','total') for a in AGES]
+        full = bundle([{k:sum(g[k] for g in ages) for k in ages[0]}])
+        add('M1', full)
+        add('age', bundle(ages))
         for model,dim in [('age_hd','total'),('M2','sex'),('M3','pccl')]:
-            if all(v is not None and (dim=='total' or 'distributions' in v) for v in ev.values()):
-                add(model,bundle(build_cells(den,ev,dim)))
-            elif key=='E43' and model in ('M2','M3'):
-                typ={'M2':'age_sex_principal_diagnosis','M3':'age_principal_diagnosis_pccl_sensitivity'}[model]
-                r=next(r for r in summaries if r['outcome']==key and r['analysis']==typ)
-                fields={'dys_n':'dys_n','comparator_n':'no_dys_n','dys_risk':'dys_rate','comparator_risk':'no_dys_rate',
-                        'rr':'rr','rr_low':'rr_ci_lower','rr_high':'rr_ci_upper','rd':'risk_difference',
-                        'rd_low':'risk_difference_ci_lower','rd_high':'risk_difference_ci_upper','strata':'included_strata',
-                        'matched_crude_rr':'crude_rr_same_supported_adult_population'}
-                add(model,{k:float(r[v]) if r[v] else None for k,v in fields.items()},'Previously validated adult aggregate; original event workbooks unavailable in this release.')
+            add(model, bundle(common_cells(den,ev,dim)), 'Five common age and diagnosis groups.')
+            if missing:
+                add(model+'_fine', note='Younger I61 dysphagia event query suppressed.')
             else:
-                add(model,note='Incomplete event strata for the requested factors.')
-        add('M4',note='Sex within age and DRG is unavailable in the source extracts.')
-        age_cells={}; joint={}
+                add(model+'_fine', bundle(build_cells(den,ev,dim)), 'Six planned age and diagnosis groups.')
+        add('M4', note='Age by sex by DRG across multiple DRGs unavailable.')
+        age_cells, joint = [], []
         for age in AGES:
-            by_hd={h:observed(raw,age,h,key) for h in HDS}
-            age_cells.update({(age,k):v for k,v in eligible(by_hd['allhd']).items()})
-            by_hd['other']=residual_cells(by_hd['allhd'],by_hd['i63'],by_hd['i61'])
-            for h in ('i63','i61','other'):
-                joint.update({(age,h,k):v for k,v in eligible(by_hd[h]).items()})
-        for model, cells in [('age_drg',age_cells),('age_hd_drg',joint)]:
-            add(model,compare_drg(cells.values()) if cells else None,'Named, jointly observable DRGs only; pooled weights.')
-        if not age_cells:
-            # Historical identification bounds use dysphagia-coded weights, explicitly separate from pooled point estimates.
-            result=bounds_row(key,'age_drg_dys_weights',[margin_block(raw,a,'allhd',key) for a in AGES])
-            if result: limits.append(result)
-    fields=list(dict.fromkeys(k for r in rows for k in r))
-    with (out/'adult_binary.csv').open('w',newline='') as f:
-        w=csv.DictWriter(f,fields);w.writeheader();w.writerows(rows)
-    if limits: write_table(out/'adult_drg_bounds.csv',limits)
+            by_hd = {h:observed(raw,age,h,key) for h in HDS}
+            age_cells.extend(eligible(by_hd['allhd']).values())
+            for h,subtract in diagnosis_parts(age):
+                group = residual_cells(by_hd[h], *(by_hd[k] for k in subtract)) if subtract else by_hd[h]
+                joint.extend(eligible(group).values())
+        add('age_drg', drg_bundle(age_cells), 'Named rows observed in both groups and event tables.')
+        add('age_hd_drg', drg_bundle(joint), 'Five common age and diagnosis groups within observable DRGs.')
+        if key == 'mortality':
+            for model, result in pilot.items():
+                add(model, result, 'Single DRG B70D; coverage is relative to the full adult cohort.')
+    fields = list(dict.fromkeys(k for r in rows for k in r))
+    with (out/'adult_binary.csv').open('w', newline='') as f:
+        writer = csv.DictWriter(f,fields,lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(rows)
     return den
 
-def drg_moments(raw,age,pop):
-    path=raw/filename(age,'allhd',pop,None)
-    overall=read_source(path,age,'allhd',pop)[0]
+def drg_moments(raw,age,pop,hd):
+    path=raw/filename(age,hd,pop,None)
+    overall=read_source(path,age,hd,pop)[0]
     w=openpyxl.load_workbook(path,read_only=True,data_only=True)
     try:
         rows=iter(w['DRG-Verteilung'].values)
@@ -114,32 +168,68 @@ def drg_moments(raw,age,pop):
         return moments
     finally: w.close()
 
-def los(raw,out):
-    with tempfile.TemporaryDirectory() as t:
-        analyze_stay(raw,Path(t))
-        source_data=json.loads((Path(t)/'los_age_diagnosis_results.json').read_text())
-    rows=[]
-    def add(name,r,crude=False):
-        x=r['crude_same_population'] if crude else r['standardized']
-        ci=x['ci95'] or [None,None]
-        rows.append(dict(model=name,dys_n=r['common_support']['dys_n'],comparator_n=r['common_support']['no_dys_n'],
-                         strata=1 if crude else r['common_support']['included_strata'],
-                         dys_mean=x['dys']['mean_days'] if crude else x['dys_mean_days'],
-                         comparator_mean=x['no_dys']['mean_days'] if crude else x['no_dys_mean_days'],
-                         difference=x['mean_difference_days'],ci_low=ci[0],ci_high=ci[1],
-                         matched_crude_difference=r['crude_same_population']['mean_difference_days']))
-    add('M1',source_data['primary'],True); add('age_hd',source_data['primary'])
-    add('age_hd_survivors',source_data['survivor_sensitivity'])
-    groups=[]
-    for a in AGES:
-        t,d=(drg_moments(raw,a,p) for p in POPS)
-        for drg in sorted(t.keys() & d.keys()):
-            c=t[drg]-d[drg]
-            if min(d[drg].n,c.n)>0:
-                groups.append(dict(age=a,hd=drg,total=t[drg],dys=d[drg]))
-    add('age_drg',summarize(groups,'age_drg'))
-    if any(min(g['dys'].n,(g['total']-g['dys']).n)<2 for g in groups):
-        add('age_drg_n2',summarize([g for g in groups if min(g['dys'].n,(g['total']-g['dys']).n)>=2],'age_drg_n2'))
+def los(raw, out):
+    with tempfile.TemporaryDirectory() as tmp:
+        analyze_stay(raw, Path(tmp))
+        original = json.loads((Path(tmp)/'los_age_diagnosis_results.json').read_text())
+    rows = []
+    def add(name, result, crude=False):
+        calc = result['crude_same_population'] if crude else result['standardized']
+        ci = calc['ci95'] or [None,None]
+        rows.append(dict(model=name, dys_n=result['common_support']['dys_n'],
+                         comparator_n=result['common_support']['no_dys_n'],
+                         strata=1 if crude else result['common_support']['included_strata'],
+                         dys_mean=calc['dys']['mean_days'] if crude else calc['dys_mean_days'],
+                         comparator_mean=calc['no_dys']['mean_days'] if crude else calc['no_dys_mean_days'],
+                         difference=calc['mean_difference_days'], ci_low=ci[0], ci_high=ci[1],
+                         matched_crude_difference=result['crude_same_population']['mean_difference_days']))
+    add('M1', original['primary'], True)
+    for key, suffix in [('primary',''),('survivor_sensitivity','_survivors')]:
+        strata = original[key]['strata']
+        def moments(arm):
+            return Moments(arm['n'],arm['sum_days'],arm['sum_squared_days'])
+        groups = []
+        for row in strata:
+            d, c = (moments(row[arm]) for arm in ('dys','no_dys'))
+            age,hd = row['age_band'],row['principal_diagnosis']
+            groups.append(dict(age=age,hd=hd,dys=d,total=d+c))
+        merged = {}
+        for g in groups:
+            diag = 'non_i63' if g['age']=='age18_74' and g['hd']!='i63' else g['hd']
+            group = merged.setdefault((g['age'],diag),dict(age=g['age'],hd=diag,dys=Moments(0,0,0),total=Moments(0,0,0)))
+            group['dys'] += g['dys']
+            group['total'] += g['total']
+        add('age_hd'+suffix,summarize(list(merged.values()),'five groups'))
+        add('age_hd_fine'+suffix,original[key])
+        if key=='primary':
+            age_groups = []
+            for age in AGES:
+                parts = [g for g in groups if g['age']==age]
+                age_groups.append(dict(age=age,hd='all',dys=sum_moments(g['dys'] for g in parts),
+                                       total=sum_moments(g['total'] for g in parts)))
+            add('age',summarize(age_groups,'age'))
+    age_drg, joint, b70d = [], [], []
+    for age in AGES:
+        maps = {(h,p):drg_moments(raw,age,p,h) for h,p in product(HDS,POPS)}
+        def groups(h, subtract):
+            codes = sorted(set.intersection(*(set(maps[k,p]) for k,p in product((h,*subtract),POPS))))
+            for code in codes:
+                t,d = (maps[h,p][code] - sum_moments(maps[k,p][code] for k in subtract) for p in POPS)
+                c = t-d
+                if min(d.n,c.n)>0:
+                    yield dict(age=age,hd=code,total=t,dys=d)
+        for g in groups('allhd', ()):
+            age_drg.append(g)
+            if g['hd']=='B70D':
+                b70d.append(g)
+        for h,subtract in diagnosis_parts(age):
+            joint.extend(groups(h,subtract))
+    for name,values in [('age_drg',age_drg),('age_hd_drg',joint)]:
+        add(name,summarize(values,name))
+        precision = [g for g in values if min(g['dys'].n,(g['total']-g['dys']).n)>=2]
+        if len(precision)<len(values):
+            add(name+'_n2',summarize(precision,name))
+    add('B70D_age',summarize(b70d,'B70D, age'))
     write_table(out/'adult_los.csv',rows)
 
 def cohort(raw,out,den):
@@ -188,5 +278,7 @@ def functional(raw,out):
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--raw',required=True,type=Path);ap.add_argument('--out',type=Path,default=HERE)
+    ap.add_argument('--protocol', type=Path, help='Optional private Exportprotokoll.csv with original checksums')
     args=ap.parse_args();args.out.mkdir(exist_ok=True,parents=True)
+    write_table(args.out/'adult_export_audit.csv', audit(args.raw,args.protocol))
     den=binary(args.raw,args.out);cohort(args.raw,args.out,den);los(args.raw,args.out);functional(args.raw,args.out)
