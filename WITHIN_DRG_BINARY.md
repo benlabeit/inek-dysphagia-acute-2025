@@ -1,6 +1,6 @@
 # Historical binary analyses within diagnosis-related groups
 
-The current adult-only analysis covers all 16 binary endpoints and uses pooled reference weights. See the [current manuscript and results](README.md#current-adult-cohort-analysis-18-november-2026). The material below documents the earlier comparison using dysphagia-group weights.
+The current adult-only analysis covers 16 inpatient binary endpoints and four discharge destinations among survivors. It uses pooled reference weights. The current comparisons by age and DRG are available for all 20 endpoints. See the [current manuscript and results](README.md#current-adult-cohort-analysis-18-november-2026). The material below documents the earlier comparison using dysphagia-group weights.
 
 The manuscript reports the adult case-mix comparisons in Tables S15 and S16 and the ranges compatible with marginal counts in Table S17. These post hoc analyses use German 2025 acute stroke-care episodes with and without secondary dysphagia coding. The 75-year boundary separates two adult age strata. The all-age analyses also include children.
 

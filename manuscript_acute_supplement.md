@@ -10,24 +10,24 @@ Proposed corresponding author: Bendix Labeit, Department of Neurology, Medical F
 
 Current affiliations and proposed correspondence require author confirmation for this study. This supplement does not imply that all listed authors have approved the manuscript.
 
-All analyses below use inpatient episodes at age 18 years or older. The groups comprise adults with a secondary dysphagia code (D) and all remaining adults (C). The model denominators describe episodes. One person can contribute more than one admission.
+All analyses below use inpatient episodes at age 18 years or older. The groups comprise adults with a secondary dysphagia code (D) and all remaining adults (C). The model denominators describe episodes. One person can contribute more than one admission. The 16 inpatient endpoints use all eligible admissions. The four additional destination endpoints use episodes ending alive.
 
 ### Supplementary Table S1  Analysis populations and model availability
 
 | Model or sensitivity | Binary endpoints | Mean hospital stay |
 | --- | --- | --- |
-| 1. Crude adult comparison | 16 / 16 | Full adult cohort |
-| 2. Age, principal diagnosis and sex | 16 / 16, five common groups | Sex-specific stay moments unavailable |
-| 3. Age, principal diagnosis and PCCL | 16 / 16, five common groups | PCCL-specific stay moments unavailable |
-| 4. Age and sex within DRGs | Multiple DRGs: 0 / 16. B70D only: mortality | Sex-specific within-DRG stay moments unavailable |
-| Age alone or age and diagnosis | 16 / 16 | Age only and five common groups |
-| Six planned age–diagnosis groups; with sex or PCCL separately | 14 / 16 for each specification | Six groups, including survivor sensitivity |
-| Age and DRG | 16 / 16 | 203 observable strata |
-| Age, principal diagnosis and DRG | 16 / 16 | 183 observable strata |
+| 1. Crude adult comparison | 20 / 20 | Full adult cohort |
+| 2. Age, principal diagnosis and sex | 20 / 20, five common groups | Sex-specific stay moments unavailable |
+| 3. Age, principal diagnosis and PCCL | 20 / 20, five common groups | PCCL-specific stay moments unavailable |
+| 4. Age and sex within DRGs | Across multiple DRGs unavailable. In B70D, death and four destinations. | Sex-specific within-DRG stay moments unavailable |
+| Age alone or age and diagnosis | 20 / 20 | Age only and five common groups |
+| Six planned age–diagnosis groups; with sex or PCCL separately | 17 / 20 (14 inpatient endpoints and three destinations) | Six groups, including survivor sensitivity |
+| Age and DRG | 20 / 20 | 203 observable strata |
+| Age, principal diagnosis and DRG | 20 / 20 | 183 observable strata |
 
 The adult cohort contained 33,641 dysphagia-coded episodes and 245,614 comparators. A comparison group was constructed by subtracting the dysphagia-coded subset from all episodes under identical filters. The two age bands were 18–74 and ≥75 years. Sex and PCCL were reported as separate marginal distributions within each source query. Joint sex-by-PCCL counts were unavailable.
 
-The 128-query extension produced 126 verified native workbooks. Queries 46 (E44.0) and 58 (E44.1) were suppressed for low case counts in adults aged 18–74 with principal diagnosis I61 and dysphagia coding. To use identical support definitions, the five-group specifications use I63 versus all non-I63 diagnoses at ages 18–74 and I63, I61 and all other diagnoses at ≥75. The broader younger group is observed by subtracting I63 from all principal diagnoses. Suppressed counts are unknown. The planned six-group specification is shown in Table S2e where estimable.
+The 128-query extension produced 126 verified native workbooks. Queries 46 (E44.0) and 58 (E44.1) were suppressed for low case counts in adults aged 18–74 with principal diagnosis I61 and dysphagia coding. To use identical support definitions, the five-group specifications use I63 versus all non-I63 diagnoses at ages 18–74 and I63, I61 and all other diagnoses at ≥75. The broader younger group is observed by subtracting I63 from all principal diagnoses. Suppressed counts are unknown. The planned six-group specification is shown in Table S2e where estimable. The destination extension comprised 64 further queries, with 62 verified workbooks and two documented suppressions. Tables S7a–d give the corresponding data and model results.
 
 ### Supplementary Table S2a  Age alone
 
@@ -131,7 +131,7 @@ RD is the difference in percentage points, D minus C. The matched crude RR uses 
 
 ### Supplementary Table S2e  Finer principal-diagnosis sensitivity
 
-The planned specification distinguished I63, I61 and all remaining diagnoses separately in both age bands. Fourteen endpoints had a complete event grid. The common five-group estimates for all 16 endpoints appear in Tables S2b–d.
+This sensitivity distinguishes I63, I61 and all remaining diagnoses separately at each adult age band. Fourteen of 16 inpatient endpoints had a complete event grid. Tables S2b–d give the five-group estimates for all 16. The equivalent destination results appear in Tables S7b and S7d.
 
 | Endpoint | Age + diagnosis, RR (95% CI) | Age + diagnosis + sex, RR (95% CI) | Age + diagnosis + PCCL, RR (95% CI) |
 | --- | --- | --- | --- |
@@ -216,7 +216,7 @@ B70D is a stroke DRG defined in part by a duration of up to 72 hours of neurolog
 | Age | 4,915 / 64,345 | 2 | 11.27 / 1.40 | 8.05 (7.28–8.90) | 9.87 (9.01–10.73) |
 | Age and sex (model 4) | 4,915 / 64,344 | 4 | 11.26 / 1.40 | 8.04 (7.27–8.89) | 9.86 (9.00–10.72) |
 
-In the age- and sex-standardized model, four strata had denominators in both groups. One comparator episode was outside this shared support. The same-case crude RR was 10.08. The age-only and age-and-sex RRs were 8.05 and 8.04. The multi-DRG mortality analysis in Table S3a used a different population (77 age–DRG strata). The B70D result applies only to that billing group. Joint age–sex–DRG event counts for all endpoints across multiple DRGs were unavailable.
+In the age- and sex-standardized model, four strata had denominators in both groups. One comparator episode was outside this shared support. The same-case crude RR was 10.08. The age-only and age-and-sex RRs were 8.05 and 8.04. The multi-DRG mortality analysis in Table S3a used a different population (77 age–DRG strata). The B70D result applies only to that billing group. Joint age–sex–DRG event counts for all endpoints across multiple DRGs were unavailable. Table S7c gives the B70D analyses for the four discharge destinations.
 
 ### Supplementary Table S5  Mean hospital stay in adults
 
@@ -264,9 +264,9 @@ Counts, means and standard deviations yielded integer sums of days and squared d
 
 The unrestricted event workbooks contained zero children in every paediatric category for both death and pneumonia and both source groups. Their event counts are therefore adult counts. The denominators were reconstructed separately from age-filtered adult workbooks. We required a named source row in each necessary denominator and event table and at least five events and five non-events in both exposure groups. Missing values remain unavailable. Functional coding can be selective and may reflect neurological impairment assessed during admission.
 
-### Supplementary Table S7  Discharge status and destination in adult episodes
+### Supplementary Table S7a  Discharge status and observed destination
 
-Percentages for discharge status use all adult episodes in the respective column. Death is a competing discharge outcome. For the four destinations, the intended denominator is the number of episodes ending alive in each group. A companion crude proportion can also use the full cohort.
+Counts are hospital episodes. Vital status uses all adult episodes in each column. The five destination rows use live discharges in that column. The first four destinations are explicitly coded and mutually exclusive. The fifth contains all remaining reasons for live discharge.
 
 | Discharge outcome | All adults | Dysphagia code | No dysphagia code |
 | --- | --- | --- | --- |
@@ -274,12 +274,13 @@ Percentages for discharge status use all adult episodes in the respective column
 | Discharged alive | 266,506 (95.4%) | 28,638 (85.1%) | 237,868 (96.8%) |
 | In-hospital death (07) | 12,749 (4.6%) | 5,003 (14.9%) | 7,746 (3.2%) |
 | Destination among live discharges |  |  |  |
-| Rehabilitation facility (09) | Unavailable | Unavailable | Unavailable |
-| Nursing facility (10) | Unavailable | Unavailable | Unavailable |
-| Hospice (11) | Unavailable | Unavailable | Unavailable |
-| External hospital transfer (06, 08, 13) | Unavailable | Unavailable | Unavailable |
+| Rehabilitation facility (09) | 22,281 (8.36%) | 6,112 (21.34%) | 16,169 (6.80%) |
+| Nursing facility (10) | 11,904 (4.47%) | 3,278 (11.45%) | 8,626 (3.63%) |
+| Hospice (11) | 257 (0.10%) | 101 (0.35%) | 156 (0.07%) |
+| External hospital transfer (06, 08, 13) | 24,487 (9.19%) | 7,071 (24.69%) | 17,416 (7.32%) |
+| Other or unspecified | 207,577 (77.89%) | 12,076 (42.17%) | 195,501 (82.19%) |
 
-Discharged alive by model. Absolute risks are directly standardized to each model’s pooled reference population. The risk difference is expressed in percentage points (dysphagia-coded minus comparator).
+Live discharge by model. Standardized proportions use each model’s pooled reference population. Risk differences are in percentage points (dysphagia-coded minus comparator).
 
 | Standardization | Episodes | With / without code (%) | Risk difference (95% CI) |
 | --- | --- | --- | --- |
@@ -288,13 +289,95 @@ Discharged alive by model. Absolute risks are directly standardized to each mode
 | Age within observable DRGs | 230,593 | 88.6 / 95.9 | −7.33 (−7.72 to −6.93) |
 | Age and sex in B70D | 69,259 | 88.7 / 98.6 | −9.86 (−10.72 to −9.00) |
 
-Of 216 native workbooks reviewed, 198 had no discharge-reason filter and 18 were filtered to death. None contained a destination distribution. The hospital-distribution worksheet describes the reporting hospitals. Live discharge was obtained by subtracting observed deaths from the matching adult denominators. All four destination counts and their adjusted comparisons are unavailable.
+Matching denominator and death workbooks supplied the number of live discharges within age, diagnosis, sex, PCCL or DRG strata as applicable. The 62 destination workbooks were checked against the planned filters, the delivery and the counts in the private retrieval log. Queries 45 and 46 were suppressed for hospice discharges at ages 18–74 with principal diagnosis I61, for all episodes and for the dysphagia-coded subset.
 
-The external hospital-transfer definition combines transfers to another hospital (06), transfers under a cooperation agreement (08) and external psychiatric transfers (13). Other discharge reasons include routine completion of treatment, which leaves the receiving setting unspecified. Consequently a return home cannot be identified. Internal transfers and transitional care are outside the four specified categories.
+Code 06 denotes transfer to another hospital, 08 transfer under a cooperation agreement and 13 external psychiatric transfer. Transfers were queried together. Routine treatment completion gives no receiving setting. The residual also includes reasons such as internal transfer or transitional care. It cannot establish discharge home.
 
-The companion query plan defines the same age bands, diagnosis groups and dysphagia definition as the main analysis. The planned comparisons use survivor denominators and the matching destination-specific event counts at each level. DRG analyses require observable named DRGs in the denominator, death and destination workbooks. Suppressed or pooled counts remain unavailable unless a separate, directly observed aggregate identifies the required comparison.
+The competing in-hospital death outcome is reported separately. Companion crude proportions for each destination using all adult admissions are available in adult_discharge.csv. The principal destination analyses in Tables S7b–d condition on survival.
 
 Discharge coding source. IQTIG, Spezifikationsjahr 2025, Ausfüllhinweise (DEK), Entlassungsgrund. https://iqtig.org/downloads/erfassung/fdok/sj2025/v06/dek/Ausfuellhinweise_DEK.html
+
+### Supplementary Table S7b  Clinical case-mix comparisons among live discharges
+
+D/C gives risks (%) in dysphagia-coded and comparator episodes. RD is their difference in percentage points. Intervals are nominal 95% confidence intervals. The common age–principal diagnosis groups are defined in Table S1.
+
+| Destination and adjustment | D / C (%) | RR (95% CI) | RD (95% CI) |
+| --- | --- | --- | --- |
+| Rehabilitation facility |  |  |  |
+| Crude | 21.34 / 6.80 | 3.14 (3.06–3.22) | 14.54 (14.06 to 15.03) |
+| Age | 22.38 / 6.81 | 3.29 (3.20–3.38) | 15.57 (15.06 to 16.08) |
+| Age and principal diagnosis | 20.91 / 7.02 | 2.98 (2.89–3.07) | 13.89 (13.35 to 14.43) |
+| Age, principal diagnosis, sex | 20.86 / 7.02 | 2.97 (2.88–3.06) | 13.83 (13.30 to 14.37) |
+| Age, principal diagnosis, PCCL | 19.47 / 7.31 | 2.66 (2.56–2.77) | 12.15 (11.44 to 12.87) |
+| Nursing facility |  |  |  |
+| Crude | 11.45 / 3.63 | 3.16 (3.04–3.28) | 7.82 (7.44 to 8.20) |
+| Age | 10.29 / 3.70 | 2.78 (2.68–2.89) | 6.59 (6.25 to 6.94) |
+| Age and principal diagnosis | 10.66 / 3.74 | 2.85 (2.73–2.98) | 6.92 (6.50 to 7.33) |
+| Age, principal diagnosis, sex | 10.68 / 3.74 | 2.85 (2.73–2.98) | 6.94 (6.52 to 7.36) |
+| Age, principal diagnosis, PCCL | 9.56 / 3.89 | 2.46 (2.32–2.61) | 5.68 (5.14 to 6.21) |
+| Hospice |  |  |  |
+| Crude | 0.35 / 0.07 | 5.38 (4.19–6.91) | 0.29 (0.22 to 0.36) |
+| Age | 0.35 / 0.07 | 5.33 (4.13–6.87) | 0.29 (0.21 to 0.36) |
+| Age and principal diagnosis | 0.40 / 0.07 | 5.94 (4.50–7.85) | 0.33 (0.24 to 0.42) |
+| Age, principal diagnosis, sex | 0.40 / 0.07 | 6.01 (4.55–7.95) | 0.34 (0.24 to 0.43) |
+| Age, principal diagnosis, PCCL | 0.19 / 0.08 | 2.49 (1.82–3.39) | 0.12 (0.06 to 0.17) |
+| External hospital transfer |  |  |  |
+| Crude | 24.69 / 7.32 | 3.37 (3.29–3.46) | 17.37 (16.86 to 17.88) |
+| Age | 24.81 / 7.38 | 3.36 (3.28–3.45) | 17.43 (16.91 to 17.96) |
+| Age and principal diagnosis | 23.91 / 7.56 | 3.16 (3.08–3.25) | 16.35 (15.77 to 16.93) |
+| Age, principal diagnosis, sex | 23.94 / 7.56 | 3.17 (3.08–3.25) | 16.37 (15.80 to 16.95) |
+| Age, principal diagnosis, PCCL | 19.62 / 7.99 | 2.46 (2.37–2.55) | 11.63 (10.95 to 12.32) |
+
+Crude, age, age–diagnosis and common PCCL analyses used all 266,506 live discharges. The common sex model used 266,502 (28,638 dysphagia-coded and 237,864 comparator episodes). Four comparator episodes fell outside shared sex strata. Sex and PCCL are available in separate margins of the Info sheet.
+
+### Supplementary Table S7c  Destination contrasts within observable DRGs
+
+D/C gives the numbers of dysphagia-coded and comparator live discharges contributing to the model. Coverage is the percentage of all 28,638 and 237,868 live discharges in the respective exposure groups. The matched crude RR uses the same episodes as the standardized RR.
+
+| Model | D / C (n) | Coverage D / C (%) | Strata | RR (95% CI) | Matched crude RR |
+| --- | --- | --- | --- | --- | --- |
+| Rehabilitation facility |  |  |  |  |  |
+| Age and DRG | 25,951 / 187,368 | 90.6 / 78.8 | 51 | 1.95 (1.88–2.01) | 2.77 |
+| Age, diagnosis and DRG | 24,747 / 151,160 | 86.4 / 63.5 | 76 | 1.92 (1.86–1.99) | 2.35 |
+| Age and sex within B70D | 4,238 / 63,465 | 14.8 / 26.7 | 4 | 2.68 (2.46–2.93) | 2.52 |
+| Nursing facility |  |  |  |  |  |
+| Age and DRG | 25,215 / 189,430 | 88.0 / 79.6 | 40 | 2.64 (2.50–2.78) | 2.87 |
+| Age, diagnosis and DRG | 23,968 / 150,706 | 83.7 / 63.4 | 60 | 2.40 (2.28–2.52) | 2.89 |
+| Age and sex within B70D | 4,238 / 63,465 | 14.8 / 26.7 | 4 | 3.06 (2.79–3.36) | 3.87 |
+| Hospice |  |  |  |  |  |
+| Age and DRG | 13,427 / 103,058 | 46.9 / 43.3 | 7 | 4.66 (3.04–7.13) | 4.87 |
+| Age, diagnosis and DRG | 8,542 / 80,850 | 29.8 / 34.0 | 5 | 4.21 (2.47–7.19) | 4.48 |
+| Age and sex within B70D | 4,238 / 63,465 | 14.8 / 26.7 | 4 | 6.77 (3.23–14.18) | 5.88 |
+| External hospital transfer |  |  |  |  |  |
+| Age and DRG | 26,327 / 192,245 | 91.9 / 80.8 | 62 | 2.25 (2.18–2.33) | 3.03 |
+| Age, diagnosis and DRG | 24,815 / 153,044 | 86.7 / 64.3 | 80 | 2.25 (2.17–2.32) | 2.68 |
+| Age and sex within B70D | 4,238 / 63,465 | 14.8 / 26.7 | 4 | 2.72 (2.53–2.92) | 2.85 |
+
+Multi-DRG models required matching named DRGs for the population, deaths and destination counts in both source groups. Pooled or missing rows leave the destination count in an individual DRG unknown. This restricts hospice coverage particularly. Sex-specific multi-DRG margins were unavailable. The B70D analyses use dedicated age- and DRG-filtered sex margins.
+
+### Supplementary Table S7d  Finer diagnosis grouping and single-DRG sensitivity analyses
+
+Estimates are RRs with nominal 95% CIs. The finer age–diagnosis specification separates I61 from other non-I63 diagnoses among adults aged 18–74. Each setting uses the available common support for that model.
+
+Six age–principal diagnosis groups
+
+| Destination | Age and diagnosis | Plus sex | Plus PCCL |
+| --- | --- | --- | --- |
+| Rehabilitation facility | 2.74 (2.65–2.83) | 2.74 (2.65–2.82) | 2.23 (2.15–2.30) |
+| Nursing facility | 2.85 (2.72–2.98) | 2.85 (2.73–2.99) | 2.52 (2.36–2.69) |
+| Hospice | Unavailable | Unavailable | Unavailable |
+| External hospital transfer | 3.04 (2.95–3.13) | 3.04 (2.95–3.13) | 2.25 (2.16–2.34) |
+
+Live discharges within DRG B70D
+
+| Destination | Crude | Age | Age and sex |
+| --- | --- | --- | --- |
+| Rehabilitation facility | 2.52 (2.32–2.73) | 2.69 (2.46–2.93) | 2.68 (2.46–2.93) |
+| Nursing facility | 3.87 (3.53–4.23) | 3.07 (2.80–3.37) | 3.06 (2.79–3.36) |
+| Hospice | 5.88 (2.93–11.81) | 6.58 (3.16–13.72) | 6.77 (3.23–14.18) |
+| External hospital transfer | 2.85 (2.67–3.05) | 2.71 (2.52–2.91) | 2.72 (2.53–2.92) |
+
+For hospice, the two suppressed I61 queries precluded the six-group specification. All five-group models remained estimable without imputing these counts. Within B70D the crude and age-only comparisons use 67,704 live discharges and the age-and-sex comparison uses 67,703. The full CSV reports model-specific risks, risk differences, confidence intervals and sparse-stratum diagnostics.
 
 ## Supplementary literature search appendix
 
@@ -404,7 +487,7 @@ The scope is complete for these PubMed queries as retrieved on the search date, 
 
 ### Reproducing the adult cohort analyses
 
-The current adult analyses are implemented in adult_analysis.py. They use verified local workbooks. The derived results are adult_binary.csv, adult_los.csv, adult_cohort.csv and adult_functional.csv. The extension audit is adult_export_audit.csv. The independent verification script adult_validate.py recalculates all 157 estimable binary contrasts and intervals from the original workbook cells. The plotting script adult_figures.py reads the aggregate outputs. The repository also retains earlier analytic versions and sensitivity analyses. The discharge analysis and its manual filter list are reproduced by adult_discharge.py. The corresponding outputs are adult_discharge.csv and adult_discharge_queries.csv.
+adult_analysis.py produces the inpatient, length-of-stay and cohort tables. adult_validate.py independently recalculates 157 inpatient contrasts and 11 stay estimates. adult_discharge.py uses matching discharge, mortality and denominator workbooks to generate adult_discharge.csv and the export audit. adult_discharge_validate.py independently recalculates all 53 estimable destination contrasts, their confidence intervals and their matched populations. adult_figures.py reads these aggregate results.
 
 ## References
 

@@ -2,6 +2,7 @@
 import argparse
 import csv
 from functools import lru_cache
+from hashlib import sha256
 from itertools import product
 from pathlib import Path
 
@@ -117,7 +118,56 @@ def event_export(raw,key,age,hd,pop,drg=''):
     return {k:sum(p[0][k] for p in parts) for k in shared},combine_info([p[1] for p in parts],[1]*len(parts))
 
 
-def analyze(raw,out):
+def audit_exports(raw, out, protocol):
+    """Match every planned filter to its workbook and, if given, to the private retrieval log."""
+    plan = query_plan()
+    log = {}
+    if protocol:
+        wb = openpyxl.load_workbook(protocol, read_only=True, data_only=True)
+        try:
+            for sheet in ('Kernabfragen', 'Ergänzungen'):
+                for row in list(wb[sheet].values)[3:]:
+                    if row[0] is None:
+                        continue
+                    number, name = int(row[0]), row[10]
+                    if name in log or number < 1 or number > len(plan) or plan[number-1]['Dateiname'] != name:
+                        raise ValueError(f'{sheet}: inconsistent query number or repeated filename')
+                    log[name] = (row[7], row[8], row[9] or '')
+        finally:
+            wb.close()
+        if set(log)!={r['Dateiname'] for r in plan}:
+            raise ValueError('The retrieval log does not cover the complete query plan')
+    result = []
+    for row in plan:
+        name = row['Dateiname']
+        key = next(k for k,v in LABELS.items() if v == row['Entlassungskategorie'])
+        age = next(a for a in AGES if ', '.join(QUERY_AGES[a]) == row['Alter'])
+        hd = next((h for h in HDS if h != 'allhd' and ', '.join(HD_CODES[h]) == row['Hauptdiagnosen']), 'allhd')
+        pop = 'dys' if row['Nebendiagnosen'] else 'all'
+        rec = event_export(raw,key,age,hd,pop,row['DRG'])
+        path = raw/name
+        status = 'verified' if rec is not None else 'unavailable'
+        if log:
+            state, n, message = log[name]
+            if state == 'exportiert':
+                if rec is None or n != rec[1]['n']:
+                    raise ValueError(f'{name}: file or case count differs from retrieval log')
+            elif state == 'unterdrückt':
+                if rec is not None or n is not None or 'zu wenige' not in message.lower():
+                    raise ValueError(f'{name}: inconsistent suppression record')
+                status = 'suppressed'
+            elif rec is not None:
+                raise ValueError(f'{name}: log does not mark the observed export as complete')
+        # A grouped hospital-transfer query may be reconstructed from three single-code
+        # exports. The public hash describes the exact planned file only when it exists.
+        digest = sha256(path.read_bytes()).hexdigest() if path.is_file() else ''
+        result.append(dict(query=row['Nr'],outcome=key,age_band=age,diagnosis=hd,
+                           source_group=pop,drg=row['DRG'],filename=name,status=status,sha256=digest))
+    write_table(out/'adult_discharge_export_audit.csv',result)
+    return {r['filename'] for r in result if r['status']=='suppressed'}
+
+
+def analyze(raw,out,suppressed=()):
     grid=list(product(AGES,HDS,POPS))
     baseline={k:source(raw,*k,None) for k in grid}
     deaths={k:source(raw,*k,'mortality') for k in grid}
@@ -192,7 +242,7 @@ def analyze(raw,out):
             if all_key in events and dys_key in events:
                 combine_info([events[all_key],events[dys_key]],[1,-1])
         def add(model,result=None,reason='Matching event exports unavailable.',full=False):
-            population='all adult episodes' if full else 'adult live discharges in B70D' if model=='B70D_age_sex' else 'adult live discharges'
+            population='all adult episodes' if full else 'adult live discharges in B70D' if model.startswith('B70D_') else 'adult live discharges'
             d0,c0=(all_d,all_c) if full else (live_d,live_c)
             row=dict(outcome=key,model=model,population=population,status='unavailable',reason=reason)
             if result is not None:
@@ -207,10 +257,14 @@ def analyze(raw,out):
             return bundle([{field:sum(b[field] for b in blocks) for field in blocks[0]}])
         add('crude_all_discharges',crude({k:v[1] for k,v in baseline.items()}) if have_age else None,full=True)
         add('M1',crude(live_info) if have_age else None)
+        add('age',bundle([counts(live_info,events,a,'allhd','total') for a in AGES]) if have_age else None)
         common_keys={k for k in grid if k[:2]!=('age18_74','i61')}
+        missing_files = {outcome_file(key,*k) for k in grid if k not in events}
+        fine_reason = ('Fine diagnosis grid incomplete after source suppression.'
+                       if missing_files.intersection(suppressed) else 'Fine diagnosis grid incomplete.')
         for m,dimension in [('age_hd','total'),('M2','sex'),('M3','pccl')]:
             add(m,bundle(common_cells(live_info,events,dimension)) if common_keys<=events.keys() else None)
-            add(m+'_fine',bundle(build_cells(live_info,events,dimension)) if len(events)==len(grid) else None)
+            add(m+'_fine',bundle(build_cells(live_info,events,dimension)) if len(events)==len(grid) else None, fine_reason)
         drgs={}
         for a,h in product(AGES,HDS):
             if not all((a,h,p) in events for p in POPS):continue
@@ -231,11 +285,21 @@ def analyze(raw,out):
         add('age_drg',billing(False),'Event export or shared named survivor and event DRG rows unavailable.')
         add('age_hd_drg',billing(True),'Event export or shared named survivor and event DRG rows unavailable.')
         pilot={(a,'allhd',p):event_export(raw,key,a,'allhd',p,'B70D') for a,p in product(AGES,POPS)}
-        result=None
+        add('M4',reason='Joint sex-specific event and denominator counts unavailable across multiple DRGs.')
+        pilot_models = {}
         if all(pilot.values()) and set(pilot)<=blive.keys():
             pe={k:v[1] for k,v in pilot.items()}
-            result=bundle([counts(blive,pe,a,'allhd','sex',level) for a,level in product(AGES,SEX_LABELS)])
-        add('B70D_age_sex',result)
+            for k,info in pe.items():
+                parent=records[k]
+                if parent is not None and 'B70D' in parent[0] and info['n']!=parent[0]['B70D']:
+                    raise ValueError(f'{key}, {k}: B70D event file disagrees with parent DRG row')
+            age_counts=[counts(blive,pe,a,'allhd','total') for a in AGES]
+            pilot_models['B70D_crude']=bundle([{k:sum(r[k] for r in age_counts) for k in age_counts[0]}])
+            pilot_models['B70D_age']=bundle(age_counts)
+            pilot_models['B70D_age_sex']=bundle([counts(blive,pe,a,'allhd','sex',level)
+                                                   for a,level in product(AGES,SEX_LABELS)])
+        for model in ('B70D_crude','B70D_age','B70D_age_sex'):
+            add(model,pilot_models.get(model))
     # Audit mutual exclusivity and the residual only when every destination is observed.
     crude_rows=[r for r in rows if r['model']=='M1' and r['status']=='estimated']
     d=sum(r['dys_events'] for r in crude_rows);c=sum(r['comparator_events'] for r in crude_rows)
@@ -253,9 +317,11 @@ if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--raw',type=Path,required=True)
     ap.add_argument('--out',type=Path,default=ROOT)
+    ap.add_argument('--protocol',type=Path,help='Optional private discharge retrieval log (.xlsx)')
     args=ap.parse_args();args.out.mkdir(exist_ok=True,parents=True)
     plan=query_plan()
     with (args.out/'adult_discharge_queries.csv').open('w',newline='',encoding='utf-8-sig') as f:
         writer=csv.DictWriter(f,plan[0].keys(),delimiter=';',lineterminator='\n')
         writer.writeheader();writer.writerows(plan)
-    analyze(args.raw,args.out)
+    suppressed=audit_exports(args.raw,args.out,args.protocol)
+    analyze(args.raw,args.out,suppressed)

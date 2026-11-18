@@ -18,13 +18,13 @@ Short title: Dysphagia burden in acute stroke care
 
 ## Abstract
 
-Background: Dysphagia may accompany pulmonary, nutritional and resource burdens in acute stroke care. We assessed these associations in nationwide administrative data.
+Background  We examined how documented dysphagia relates to inpatient outcomes and the care setting to which adults are discharged after acute stroke treatment in Germany.
 
-Methods: We compared adult episodes with and without secondary dysphagia coding in German hospitals providing neurological complex treatment for acute stroke in 2025. We estimated absolute risks and standardized risk ratios (RRs) for 16 endpoints by age, principal diagnosis and sex. We also compared episodes within the same age band and diagnosis-related group (DRG). For length of stay we compared mean days.
+Methods  We compared 2025 hospital episodes receiving neurological complex treatment for acute stroke, with and without a secondary dysphagia code. We estimated risks, risk ratios (RRs) and mean hospital stay. The main adjusted comparisons standardized for age, principal diagnosis and sex, or for age within observable diagnosis-related groups (DRGs). Discharge destinations were assessed among survivors.
 
-Results: Of 279,255 episodes, 52.7% involved adults aged ≥75 years, 63.0% had cerebral infarction as the principal diagnosis and 33,641 (12.05%) had dysphagia coding. Pneumonia or aspiration-related pneumonitis occurred in 33.22% of episodes with dysphagia coding and 4.57% without. The mortality RR (95% CI) was 3.95 (3.81–4.11) after standardization for age, principal diagnosis and sex and 2.80 (2.70–2.92) within observable age–DRG strata. Mean hospital stay differed by 8.85 days before adjustment, 9.88 days after standardization for age and principal diagnosis and 2.86 days within age–DRG strata.
+Results  Dysphagia was coded in 33,641 of 279,255 adult episodes (12.0%). Pneumonia or aspiration-related pneumonitis was recorded in 33.2% versus 4.6% of episodes with and without dysphagia coding, respectively, and in-hospital mortality was 14.9% versus 3.2%. After standardization for age, principal diagnosis and sex, the RRs were 6.98 (6.80–7.16) and 3.95 (3.81–4.11), respectively (95% CIs). Flexible endoscopic evaluation of swallowing was recorded in 20.1% versus 0.9%. Among 266,506 live discharges, 21.3% versus 6.8% went to rehabilitation and 11.4% versus 3.6% to a nursing facility. The corresponding age-, diagnosis- and sex-standardized RRs were 2.97 (2.88–3.06) and 2.85 (2.73–2.98). Within age–DRG strata the RRs were 1.95 and 2.64. Mean stay was 8.85 days longer overall and 2.86 days longer (95% CI 2.74–2.98) within age–DRG strata.
 
-Conclusions: Recorded dysphagia marked pulmonary and nutritional morbidity, mortality, prolonged hospitalization and differing procedure use. Coding, uncertain timing and residual severity confounding prevent causal attribution.
+Conclusions  Dysphagia coding marked higher pulmonary morbidity and mortality, longer stays and more frequent discharge to rehabilitation or nursing facilities among survivors. Differences in stroke severity and selective dysphagia coding may contribute to these associations.
 
 Keywords: Dysphagia; Stroke; Administrative data; Pneumonia; Length of stay; Swallowing assessment
 
@@ -36,7 +36,7 @@ German clinical cohorts and registry data link dysphagia to pneumonia, mortality
 
 The German Institute for the Hospital Remuneration System (InEK) database permits evaluation of hospital episodes across a broad range of providers. A recent analysis of 1,540,947 stroke-unit episodes from 2019 to 2024 described FEES coding and institutional variation [9]. The incremental question is therefore the inpatient burden accompanying documented dysphagia, rather than the novelty of national FEES frequencies.
 
-We examined associations of dysphagia coding with pulmonary diagnoses, nutritional and volume-depletion diagnoses, death, hospital stay and recorded care procedures in the 2025 InEK acute stroke-care cohort. Complementary diagnosis, demographic, administrative-complexity and functional analyses addressed measured aspects of case mix without equating these proxies with admission neurological severity.
+We examined how dysphagia coding related to pulmonary and nutritional diagnoses, death, hospital stay, recorded care procedures and discharge destination in the 2025 InEK acute stroke-care cohort. Complementary analyses addressed differences in diagnosis, demographics, administrative complexity and recorded function.
 
 ## Methods
 
@@ -56,17 +56,17 @@ FEES was identified by OPS 1-613 and intracranial mechanical thrombectomy by OPS
 
 Additional post hoc analyses considered unspecified severe protein-energy malnutrition (E43), unspecified protein-energy malnutrition (E46), volume depletion (E86), simple endotracheal intubation (OPS 8-701) and PEG using the thread-pull technique (OPS 5-431.22). We also counted each episode with any of E40, E41, E42, E43, E44.0, E44.1 or E46 once, using an InEK query for the combined definition. The procedure codes do not measure overall ventilation requirement, reintubation, or every PEG technique.
 
-We assessed discharge status from the in-hospital death category (discharge reason 07) and the total episode count. For discharge destination, we defined four groups with an explicitly coded receiving setting (rehabilitation, nursing facility, hospice and transfer to another hospital). The denominator for a destination was the number of episodes ending alive. Routine completion of treatment does not identify the subsequent place of residence (Online Resource 1, Table S7).
+We defined four mutually exclusive discharge destinations from the recorded discharge reason. These were rehabilitation facility (09), nursing facility (10), hospice (11) and external hospital transfer (06, 08 or 13). Each destination was assessed as a binary endpoint among episodes ending alive. We obtained the number discharged alive by subtracting observed inpatient deaths (07) from the matching episode totals. All remaining live discharges were grouped as other or unspecified. Routine completion of treatment leaves the subsequent place of residence unknown (Online Resource 1, Table S7a).
 
 ### Statistical analysis
 
-We compared risks, risk ratios (RRs) and risk differences for 16 binary endpoints and mean hospital days for length of stay. Both adult age bands (18–74 and ≥75 years) contributed to all cohort-wide analyses. The planned diagnosis grouping distinguished cerebral infarction (I63), intracerebral haemorrhage (I61) and all remaining principal diagnoses within each age band.
+We compared risks, risk ratios (RRs) and risk differences for 16 inpatient endpoints and four discharge destinations, and mean days for hospital stay. Both adult age bands (18–74 and ≥75 years) contributed. The planned diagnosis grouping distinguished cerebral infarction (I63), intracerebral haemorrhage (I61) and all remaining principal diagnoses within each age band.
 
-Two event queries were suppressed for low case counts. Both involved younger adults with I61 and dysphagia coding, for moderate (E44.0) or mild (E44.1) malnutrition. To use the same diagnosis adjustment for every endpoint, we combined I61 and other non-I63 principal diagnoses at ages 18–74. We obtained that combined group by subtracting I63 from all diagnoses. The three older diagnosis groups were retained. We adopted this five-group specification after reviewing export availability and repeated the analyses with all six planned groups whenever complete.
+InEK suppressed two malnutrition queries for younger adults with I61 and dysphagia coding (E44.0 and E44.1). To retain the same diagnosis adjustment, we combined I61 and other non-I63 principal diagnoses at ages 18–74 by subtracting I63 from the total. The three older diagnosis groups were retained. We applied these five groups to the discharge extension. Two additional queries for hospice discharge at ages 18–74 with I61 were suppressed. Six-group sensitivities used all three diagnoses at both ages when the necessary counts were observed.
 
-For all 16 endpoints, model 1 was the crude adult comparison. Model 2 standardized jointly for age band, principal diagnosis and sex. Model 3 standardized for age band, principal diagnosis and patient clinical complexity level (PCCL, categories 0–6). Within each filtered age–diagnosis population the source reports separate distributions for sex and PCCL. The number of cases and events at each combination of sex and PCCL is unknown, so including sex in model 3 would require assumptions about unobserved counts. PCCL can incorporate diagnoses recorded during admission [17].
+For each endpoint, model 1 was the crude comparison. Destination models used live discharges throughout, with an additional crude proportion among all adult admissions. Model 2 standardized jointly for age band, principal diagnosis and sex. Model 3 standardized for age band, principal diagnosis and patient clinical complexity level (PCCL, categories 0–6). Within each filtered age–diagnosis population the source reports separate distributions for sex and PCCL. The number of cases and events at each combination of sex and PCCL is unknown, so including sex in model 3 would require assumptions about unobserved counts. PCCL can incorporate diagnoses recorded during admission [17].
 
-Model 4 specified standardization for age and sex within DRGs. The available sex-specific denominators and event counts identified this comparison for death in B70D, a stroke DRG defined in part by neurological complex treatment lasting up to 72 hours. To compare all endpoints across multiple DRGs we standardized for age band and DRG using their jointly observed event counts. We also standardized for age, principal diagnosis and DRG. These two multi-DRG analyses provide no sex adjustment.
+Model 4 specified standardization for age and sex within DRGs. Sex-specific denominators and event counts identified this comparison in B70D for death and each discharge destination. B70D is a stroke DRG defined in part by neurological complex treatment lasting up to 72 hours. For comparisons across several DRGs, the observable joint counts supported standardization by age and DRG, and separately by age, principal diagnosis and DRG. Sex was unavailable jointly with age and DRG across multiple DRGs.
 
 For each point estimate, both exposure groups received the same weights, equal to the proportion of all included episodes in each stratum. Strata required a positive denominator in both groups. Within-DRG analyses additionally required identifiable named rows in all contributing source tables. A missing row or a pooled remainder could not identify events in an individual DRG. Each estimate was paired with a crude comparison on the same retained cases.
 
@@ -78,7 +78,7 @@ We calculated nominal 95% confidence intervals from independent-episode variance
 
 Exploratory functional analyses compared mortality and pneumonia within 21 coded Barthel, Functional Independence Measure or Mini-Mental State Examination categories. We required observable adult denominators and event counts and report results only when both groups contained at least five events and five non-events. Functional coding can reflect selective assessment during admission [18].
 
-For the figures we selected eight endpoints covering mortality, pulmonary and nutritional diagnoses and care procedures. We show absolute risks, followed by two standardized comparisons. Age, principal diagnosis and sex characterize clinical case mix. Comparing episodes within the same age band and DRG addresses variation within billing groups assigned at the end of the stay. Component diagnoses and timing codes appear in Supplementary Fig. S1. This presentation choice was made after the analyses.
+Figures 1 and 2 show eight inpatient endpoints and two discharge destinations, first as absolute risks and then as standardized RRs. Rehabilitation and nursing facilities were selected for graphical display because both identify the setting for ongoing care after the acute admission. Hospital transfer and hospice discharge are reported in the tables. The selection of settings for display preceded estimation of their effects. For each plotted endpoint we show the same two comparisons. Age, principal diagnosis and sex characterize clinical case mix, while age within DRG compares episodes assigned to the same billing group. Supplementary Fig. S1 shows the additional pulmonary and malnutrition codes.
 
 The study was not preregistered; endpoints and sensitivities were selected during retrospective replication and expansion of the source presentations. All additional analyses were exploratory, with nominal 95% CIs and no multiplicity correction. Intervals assume independent episodes and omit hospital clustering, repeat admissions, coding uncertainty and confounding. Admission NIHSS was unavailable. No model jointly controls all measured domains or establishes independence from baseline neurological severity.
 
@@ -100,19 +100,21 @@ In-hospital death occurred in 14.87% versus 3.15%, protein-energy malnutrition i
 
 ### Discharge status and destination
 
-Of 279,255 adult episodes, 266,506 (95.4%) ended in live discharge. This comprised 28,638 of 33,641 episodes (85.1%) with dysphagia coding and 237,868 of 245,614 (96.8%) without. After standardization for age, principal diagnosis and sex, the proportions discharged alive were 86.8% and 96.7%, respectively (difference −9.89 percentage points, 95% CI −10.30 to −9.47). The exports contained no counts specific to rehabilitation, nursing facilities, hospice or transfer to another hospital. Destination-specific comparisons therefore remain unavailable (Online Resource 1, Table S7).
+Of 279,255 adult episodes, 266,506 (95.4%) ended alive, including 28,638 with and 237,868 without dysphagia coding. Among these live discharges, 21.34% versus 6.80% went to rehabilitation and 11.45% versus 3.63% to a nursing facility (Fig. 1). The RRs after standardization for age, principal diagnosis and sex were 2.97 (2.88–3.06) for rehabilitation and 2.85 (2.73–2.98) for nursing facilities. Within observable age–DRG strata the RRs were 1.95 (1.88–2.01) and 2.64 (2.50–2.78), respectively (Fig. 2).
+
+External hospital transfers accounted for 24.69% versus 7.32% of live discharges with and without dysphagia coding, respectively. Hospice discharge was uncommon (0.35% versus 0.07%). Their age-, diagnosis- and sex-standardized RRs were 3.17 (3.08–3.25) and 6.01 (4.55–7.95), respectively (Tables 2–3). All four settings supported the common PCCL model and the age- and sex-standardized B70D analysis. The finer diagnosis breakdown for hospice was unavailable (Online Resource 1, Tables S7a–d).
 
 ### Common and additional case-mix analyses
 
-All 16 endpoints supported crude and age-only comparisons and the common five-group age–diagnosis specification with sex or PCCL entered separately (Table 3). The finer, six-group specification was estimable for 14 endpoints (Online Resource 1, Table S2e).
+All 16 inpatient endpoints and all four discharge destinations supported crude comparisons, age standardization and the five-group age–diagnosis specification with sex or PCCL entered separately. The six-group specification was estimable for 14 inpatient endpoints and three destinations (Table 3 and Online Resource 1, Tables S2e and S7d).
 
-In the common diagnosis grouping, model 2 retained 279,248 of 279,255 adults across ten supported sex-specific strata. Model 3 retained 279,254 adults across 34 supported PCCL strata. Each model used the same supported cases and weights for every endpoint.
+For inpatient endpoints the common sex model retained 279,248 of 279,255 episodes in ten strata, and the common PCCL model retained 279,254 in 34 strata. For the four destination endpoints, the same specifications retained 266,502 of 266,506 live discharges and 266,506 live discharges, respectively.
 
 For the combined pulmonary endpoint, standardized RRs were 6.98 (6.80–7.16) for age, principal diagnosis and sex, and 3.04 (2.95–3.14) for age, principal diagnosis and PCCL. Corresponding RRs for the malnutrition union were 4.43 (4.07–4.84) and 2.63 (2.35–2.94) (Table 3).
 
-All 16 endpoints also supported a comparison within observable age–DRG strata. For mortality this included 31,070 dysphagia-coded and 199,523 comparator episodes across 77 strata. The crude mortality RR on these same cases was 4.29. The age–DRG RR was 2.80 (2.70–2.92). Additional standardization for principal diagnosis within observable age–DRG strata yielded 2.75 (2.65–2.86) on its own supported cases. For the pulmonary composite and protein-energy malnutrition, age–DRG RRs were 3.76 (3.64–3.88) and 2.56 (2.30–2.85), respectively.
+All 16 inpatient endpoints and all four destinations also supported a comparison within observable age–DRG strata. For mortality this included 31,070 dysphagia-coded and 199,523 comparator episodes across 77 strata. The crude mortality RR on these same cases was 4.29. The age–DRG RR was 2.80 (2.70–2.92). Additional standardization for principal diagnosis within observable age–DRG strata yielded 2.75 (2.65–2.86) on its own supported cases. For the pulmonary composite and protein-energy malnutrition, age–DRG RRs were 3.76 (3.64–3.88) and 2.56 (2.30–2.85), respectively.
 
-In the single-DRG mortality analysis (B70D), model 4 included 4,915 dysphagia-coded and 64,344 comparator episodes. The age- and sex-standardized risks were 11.26% and 1.40%. The corresponding RR was 8.04 (7.27–8.89) versus a crude RR of 10.08 on the same cases. The other DRGs and endpoints lacked joint age- and sex-specific event counts (Online Resource 1, Table S4).
+In the single-DRG mortality analysis (B70D), model 4 included 4,915 dysphagia-coded and 64,344 comparator episodes. The age- and sex-standardized risks were 11.26% and 1.40%. The corresponding RR was 8.04 (7.27–8.89) versus a crude RR of 10.08 on the same cases. The same single-DRG model was estimable for all four destinations among survivors. Other inpatient endpoints lacked the joint counts needed for sex adjustment in B70D (Online Resource 1, Tables S4 and S7c).
 
 Among episodes with a recorded Barthel Index of 0–15, the mortality RR was 1.08 (95% CI 1.03–1.15). Among those with an extended Barthel Index of 0–15 it was 1.02 (0.90–1.15). These are comparisons among selected adults with documented scores (Online Resource 1, Table S6).
 
@@ -128,7 +130,7 @@ FEES was recorded in 20.14% of episodes with dysphagia coding and 0.89% of those
 
 ## Discussion
 
-Across all 16 endpoints, adults with dysphagia coding had higher recorded risks within the same age and principal-diagnosis groups, including after separate standardization for sex or clinical complexity. Risk ratios within observable age and billing groups were generally smaller. The mortality contrast also varied by functional category and billing group. These patterns describe the burden accompanying documented dysphagia during the admission.
+Adults with dysphagia coding had higher recorded risks of pulmonary and nutritional diagnoses and death, and longer hospital stays. Among those discharged alive, both rehabilitation and nursing-facility discharge were more frequent after accounting for age, principal diagnosis and sex. These associations persisted within observable age and billing groups. Mortality also varied by functional category and billing group.
 
 ### Coding and severity
 
@@ -158,6 +160,10 @@ Both early and later pneumonia markers were more frequent with dysphagia coding,
 
 The stay difference increased from 8.85 to 9.88 days after standardization for broad age and principal diagnosis. The age–DRG analysis addressed a different question. Its observed cases had a crude difference of 8.76 days and a difference of 2.86 days after comparing stays within the same billing group and age band. DRGs incorporate features of the completed admission, including procedures and complications. Adults with similar presenting diagnoses may receive different DRG assignments as their care diverges. These comparisons describe different episode populations and cannot identify preventable hospital days [6–8].
 
+### Discharge destination
+
+Among survivors with coded dysphagia, more than one in five episodes ended in rehabilitation and more than one in ten in a nursing facility. The two destinations reflect different care pathways. Preadmission residence, premorbid disability, discharge function and the local availability of beds were unavailable. A nursing-facility discharge could therefore represent a return to prior care. Rehabilitation coding identifies the immediate receiving setting and does not capture subsequent recovery. Because inpatient mortality differed between groups, destination comparisons describe the selected population surviving to discharge.
+
 ### FEES and clinical assessment
 
 FEES coding occurred in 20.14% versus 0.89% of adult episodes with and without dysphagia coding. The previous InEK study provides historical context [9]. Comparing years would require harmonized cohort definitions and procedure coding.
@@ -178,15 +184,15 @@ A 60-patient randomized pilot of pharyngeal electrical stimulation after extubat
 
 The interim release, coding-dependent ascertainment, broad age and diagnosis groups, unavailable admission NIHSS and onset times, selective functional coding and unlinked repeat admissions limit interpretation. Hospital-level clustering was unavailable. Separate sex and PCCL models leave residual case-mix differences. PCCL can reflect conditions arising during admission. Post hoc coarsening of the younger diagnosis groups preserved a common comparison for all endpoints while reducing diagnosis detail. Suppression and pooled DRG rows restricted coverage, especially for less frequent nutritional codes. Nominal intervals condition on observed weights and exclude coding, selection and multiplicity uncertainty. For moderate and mild malnutrition, strata with an observed risk of zero or one contributed 20.4% and 15.7% of the model 3 reference weight, respectively. The order of dysphagia, diagnoses and procedures within an admission was unknown.
 
-Outcomes after discharge were unavailable. Longitudinal work reports later pneumonia and mortality, but definitions based on nasogastric-tube use describe a different dysphagia phenotype [52].
+Follow-up after discharge was unavailable. Longitudinal work reports later pneumonia and mortality, but definitions based on nasogastric-tube use describe a different dysphagia phenotype [52].
 
 The companion neurological/neurosurgical early-rehabilitation analysis uses the same source and may include overlapping episodes. It is not an independent replication, and the cohorts cannot be linked as stages of individual recovery. Future validation should combine administrative codes with admission severity, standardized swallowing assessment and longitudinal outcomes, and measure the indication, timing and consequences of FEES to distinguish service need from recorded use.
 
-Within observable age–DRG strata, all 16 risk ratios were smaller than the crude RRs on the same retained episodes. For mild malnutrition only 38.5% of dysphagia-coded episodes and 22.9% of comparators contributed. Billing groups incorporate features of the completed admission, potentially including early death. The higher mortality RR within B70D reflects a single selected group with a low comparator mortality risk. Within B70D the RR changed little between age adjustment alone (8.05) and adjustment for age and sex (8.04). The difference from the multi-DRG RR of 2.80 therefore cannot be attributed to adding sex.
+Within observable age–DRG strata, all 16 inpatient risk ratios were smaller than the crude RRs on the same retained episodes. For mild malnutrition only 38.5% of dysphagia-coded episodes and 22.9% of comparators contributed. Billing groups incorporate features of the completed admission, potentially including early death. The higher mortality RR within B70D reflects a single selected group with a low comparator mortality risk. Within B70D the RR changed little between age adjustment alone (8.05) and adjustment for age and sex (8.04). The difference from the multi-DRG RR of 2.80 therefore cannot be attributed to adding sex.
 
 ## Conclusions
 
-Dysphagia coding marked pulmonary and nutritional morbidity, volume depletion, mortality, prolonged hospitalization and differing procedure use in German acute stroke care. Comparable analyses across observed outcome strata support attention to swallowing, nutritional and fluid-intake assessment and care planning, without establishing independence from neurological severity, causal treatment effects or preventable burden.
+Dysphagia coding identified adult acute stroke-care episodes with greater pulmonary and nutritional morbidity, higher mortality, more frequent use of swallowing-related procedures and longer hospital stays. Among survivors, discharge to rehabilitation and nursing facilities was also more frequent. These associations persisted across complementary case-mix comparisons. Clinical assessment and longitudinal follow-up are needed to establish how swallowing impairment contributes to care needs after stroke.
 
 ## Abbreviations
 
@@ -222,11 +228,11 @@ This study used aggregate hospital episode data from the InEK DatenBrowser (http
 
 ![Figure 1](adult_figure_1.png)
 
-Fig. 1  Observed risks for eight clinical outcomes and care procedures in 33,641 adult episodes with secondary dysphagia coding and 245,614 without it. Each percentage uses the full respective group as denominator. Outcomes may overlap. Table 2 gives counts and crude risk ratios for all 16 endpoints. FEES, flexible endoscopic evaluation of swallowing. PEG, percutaneous endoscopic gastrostomy.
+Fig. 1  Observed proportions in adult episodes with and without secondary dysphagia coding. Clinical outcomes and recorded procedures use all 33,641 and 245,614 episodes in the respective groups. Rehabilitation and nursing-facility discharge use the 28,638 and 237,868 live discharges, respectively. Table 2 gives event counts for all 20 binary endpoints. FEES, flexible endoscopic evaluation of swallowing. PEG, percutaneous endoscopic gastrostomy.
 
 ![Figure 2](adult_figure_2.png)
 
-Fig. 2  Standardized risk ratios for the eight endpoints in Fig. 1. Points and bars show estimates and nominal 95% confidence intervals on a logarithmic scale. The left panel standardizes for age band, principal diagnosis and sex. The right panel compares episodes within the same age band and observable diagnosis-related group (DRG). Its coverage varies by endpoint. Supplementary Fig. S1 gives the other eight endpoints. Tables S2–S4 give absolute risks, coverage and additional models.
+Fig. 2  Standardized risk ratios for the eight inpatient endpoints and two destinations in Fig. 1. Points and bars show estimates and nominal 95% confidence intervals on a logarithmic scale. The left panel standardizes for age band, principal diagnosis and sex. The right panel compares episodes within the same age band and observable diagnosis-related group (DRG), with endpoint-specific coverage. Destination models use live discharges. Supplementary Fig. S1 covers additional pulmonary and nutritional codes. Tables S2–S4 and S7 provide the other estimates.
 
 ![Figure 3](adult_figure_3.png)
 
@@ -234,7 +240,7 @@ Fig. 3  Difference in mean hospital stay for dysphagia-coded minus comparator ep
 
 ## Electronic supplementary material
 
-Online Resource 1 provides full model results and coverage, the finer principal-diagnosis sensitivity, the B70D mortality analysis, hospital stay and functional categories. It also gives the additional eight endpoints in Supplementary Fig. S1, discharge status and destination availability in Table S7, and the literature-search appendix.
+Online Resource 1 provides model results and coverage, the finer principal-diagnosis sensitivity, the B70D mortality analysis, hospital stay and functional categories. Supplementary Fig. S1 shows eight further inpatient endpoints. Tables S7a–d give discharge status, all four destinations and sensitivity analyses. The literature-search appendix follows.
 
 ## Tables
 
@@ -290,6 +296,13 @@ Values are episode counts (percent of the column total). Within each section, th
 | Simple endotracheal intubation | 2,681 (7.97) | 3,899 (1.59) | 5.02 (4.79–5.27) |
 | PEG, thread-pull technique | 2,353 (6.99) | 311 (0.13) | 55.24 (49.11–62.14) |
 | FEES | 6,776 (20.14) | 2,182 (0.89) | 22.67 (21.63–23.76) |
+| Discharge destination among survivors |  |  |  |
+| Rehabilitation facility | 6,112 (21.34) | 16,169 (6.80) | 3.14 (3.06–3.22) |
+| Nursing facility | 3,278 (11.45) | 8,626 (3.63) | 3.16 (3.04–3.28) |
+| Hospice | 101 (0.35) | 156 (0.07) | 5.38 (4.19–6.91) |
+| External hospital transfer | 7,071 (24.69) | 17,416 (7.32) | 3.37 (3.29–3.46) |
+
+Inpatient endpoints use all 33,641 dysphagia-coded and 245,614 comparator episodes. The final four rows use 28,638 and 237,868 live discharges. The other or unspecified live-discharge category is reported in Table S7a.
 
 ### Table 3  Adult risk ratios by standardization model
 
@@ -311,8 +324,13 @@ Values are episode counts (percent of the column total). Within each section, th
 | Simple endotracheal intubation | 5.82 | 5.81 | 2.40 | 1.41 |
 | PEG, thread-pull technique | 57.22 | 57.09 | 28.45 | 21.29 |
 | FEES | 21.73 | 21.65 | 18.31 | 15.81 |
+| Discharge destination among survivors |  |  |  |  |
+| Rehabilitation facility | 2.98 | 2.97 | 2.66 | 1.95 |
+| Nursing facility | 2.85 | 2.85 | 2.46 | 2.64 |
+| Hospice | 5.94 | 6.01 | 2.49 | 4.66 |
+| External hospital transfer | 3.16 | 3.17 | 2.46 | 2.25 |
 
-HD denotes principal diagnosis. The first three columns use the five common age–diagnosis groups. The last column uses sex-unadjusted, observable age–DRG strata. Within B70D alone, the age- and sex-standardized mortality RR was 8.04 (95% CI 7.27–8.89). Online Resource 1 gives intervals, denominators and matched crude comparisons.
+HD denotes principal diagnosis. The first three columns use the common five age–diagnosis groups. The last column uses observable age–DRG strata without sex adjustment. Destination models use survivors. An age- and sex-standardized analysis within B70D was possible for mortality (RR 8.04, 95% CI 7.27–8.89) and all four destinations. Online Resource 1 gives intervals, model denominators and matched crude comparisons.
 
 ## References
 

@@ -17,13 +17,16 @@ LABEL={'mortality':'In-hospital death','J69.0':'Aspiration-related pneumonitis (
        'E44.1':'Mild malnutrition (E44.1)','E46':'Unspecified malnutrition (E46)','E86':'Volume depletion',
        '8-701':'Simple endotracheal intubation','5-431.22':'PEG, thread-pull technique','1-613':'FEES'}
 
-MAIN = ['mortality','PULMONARY_UNION','J96.00','MALNUT_UNION','E86','8-701','5-431.22','1-613']
+DESTINATIONS = ['rehabilitation','nursing_facility']
+MAIN = ['mortality','PULMONARY_UNION','J96.00','MALNUT_UNION','E86','8-701','5-431.22','1-613'] + DESTINATIONS
+MAIN_SECTIONS = [(0,'Clinical outcomes'),(5,'Recorded procedures'),(8,'Destinations among live discharges')]
 DETAIL = ['J69.0','PNEUMONIA_UNION','U69.01','U69.04','E43','E44.0','E44.1','E46']
 DISPLAY = {**LABEL,'PULMONARY_UNION':'Pneumonia or aspiration pneumonitis',
            'MALNUT_UNION':'Protein-energy malnutrition','J96.00':'Hypoxaemic respiratory failure',
            '8-701':'Endotracheal intubation','5-431.22':'Gastrostomy (thread-pull PEG)',
            '1-613':'Endoscopic swallowing evaluation (FEES)',
-           'U69.01':'Pneumonia after 48 h','U69.04':'Pneumonia within 48 h'}
+           'U69.01':'Pneumonia after 48 h','U69.04':'Pneumonia within 48 h',
+           'rehabilitation':'Rehabilitation facility','nursing_facility':'Nursing facility'}
 INK = '#17344B'
 BLUE = '#116A82'
 RUST = '#AA532A'
@@ -37,10 +40,13 @@ def save(fig, index):
     plt.close(fig)
 
 
-def categories(keys, split, headers):
+def categories(keys, sections):
     y=np.arange(len(keys),dtype=float)
-    y[split:]+=.85
-    headings=[(-.83,headers[0]),(y[split]-.82,headers[1])]
+    headings=[]
+    for start,title in sections:
+        if start:
+            y[start:]+=.85
+        headings.append((y[start]-(.82 if start else .83),title))
     return y,headings
 
 
@@ -75,9 +81,9 @@ def forest_axis(ax,xmax,ticks):
     ax.axvline(1,color='#85949D',lw=1,zorder=1)
 
 
-def forest(data, keys, split, headings, index, xmax, ticks):
-    y,groups=categories(keys,split,headings)
-    fig,axes=layout([3.65,1.84,.52,1.84,.57])
+def forest(data, keys, sections, index, xmax, ticks, height=4.65):
+    y,groups=categories(keys,sections)
+    fig,axes=layout([3.65,1.84,.52,1.84,.57],height=height)
     for ax in axes:prepare_axis(ax,y)
     row_labels(axes[0],keys,y,groups)
     styles=[('M2','Age, diagnosis and sex',BLUE,'o'),
@@ -89,8 +95,8 @@ def forest(data, keys, split, headings, index, xmax, ticks):
         value.axis('off')
         for yi,key in zip(y,keys):
             r=data.loc[(key,model)]
-            ax.hlines(yi,r.rr_low,r.rr_high,color=color,lw=1.5,zorder=2)
-            ax.plot(r.rr,yi,marker=marker,markersize=5,color=color,zorder=3,ls='')
+            ax.errorbar(r.rr,yi,xerr=[[r.rr-r.rr_low],[r.rr_high-r.rr]],fmt=marker,
+                        markersize=3.4,color=color,elinewidth=1.1,capsize=2.1,capthick=.8,zorder=3)
             value.text(.95,yi,f'{r.rr:.2f}',va='center',ha='right',fontsize=9.5)
     fig.text(.69,.035,'Risk ratio (95% CI), logarithmic scale',ha='center',fontsize=9.5)
     save(fig,index)
@@ -101,14 +107,18 @@ def plot():
                          'axes.edgecolor':'#84949C','text.color':INK,'axes.labelcolor':INK,
                          'xtick.color':INK})
     data=pd.read_csv(ROOT/'adult_binary.csv').set_index(['outcome','model'])
-    groupnames=['Clinical outcomes','Recorded procedures']
-    y,groups=categories(MAIN,5,groupnames)
-    fig,axes=layout([3.6,3.15,.87,.87])
+    discharge=pd.read_csv(ROOT/'adult_discharge.csv')
+    displayed=discharge[discharge.outcome.isin(DESTINATIONS) & discharge.model.isin(['M1','M2','age_drg'])]
+    if len(displayed)!=len(DESTINATIONS)*3 or not displayed.status.eq('estimated').all():
+        raise ValueError('Destination estimates for the publication figures are incomplete')
+    data=pd.concat([data,displayed.set_index(['outcome','model'])],verify_integrity=True)
+    y,groups=categories(MAIN,MAIN_SECTIONS)
+    fig,axes=layout([3.58,2.99,.96,1.0],height=5.8)
     for ax in axes:prepare_axis(ax,y)
     labels,ax,with_code,without_code=axes
     row_labels(labels,MAIN,y,groups)
     for value,title,color in [(with_code,'With code',BLUE),(without_code,'Without code',RUST)]:
-        value.axis('off');value.set_title(title,fontsize=9.6,color=color,weight='bold',pad=9)
+        value.axis('off');value.set_title(title,fontsize=9.1,color=color,weight='bold',pad=9)
     ax.set_xlim(-.7,35);ax.set_xticks([0,10,20,30]);ax.grid(axis='x',color=GRID,lw=.7)
     ax.set_xlabel('Episodes with the outcome (%)')
     for yi,key in zip(y,MAIN):
@@ -121,8 +131,8 @@ def plot():
                ['With dysphagia coding','Without dysphagia coding'],frameon=False,ncol=2,
                loc='upper left',bbox_to_anchor=(.013,.992),fontsize=9.5,handlelength=1.0)
     save(fig,1)
-    forest(data,MAIN,5,groupnames,2,85,[1,2,5,10,20,50])
-    forest(data,DETAIL,4,['Pulmonary diagnoses','Malnutrition subtypes'],'s1',22,[1,2,5,10,20])
+    forest(data,MAIN,MAIN_SECTIONS,2,85,[1,2,5,10,20,50],height=5.8)
+    forest(data,DETAIL,[(0,'Pulmonary diagnoses'),(4,'Malnutrition subtypes')],'s1',22,[1,2,5,10,20])
 
     los=pd.read_csv(ROOT/'adult_los.csv').set_index('model')
     fig,axes=layout([2.9,3.0,1.8],height=2.65)
