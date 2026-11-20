@@ -240,21 +240,12 @@ Counts, means and standard deviations yielded integer sums of days and squared d
 
 | Instrument | ICD-10-GM | Score band | Death RR (95% CI) | Pneumonia RR (95% CI) |
 | --- | --- | --- | --- | --- |
-| Barthel | U50.00 | 100 | 31.87 (19.45–52.24) | 11.14 (7.17–17.33) |
-| Barthel | U50.10 | 80-95 | 8.43 (5.14–13.82) | 4.08 (2.76–6.02) |
-| Barthel | U50.20 | 60-75 | 6.79 (4.86–9.47) | 3.31 (2.61–4.21) |
-| Barthel | U50.30 | 40-55 | 3.49 (2.86–4.25) | 1.87 (1.61–2.19) |
-| Barthel | U50.40 | 20-35 | 2.42 (2.12–2.76) | 1.62 (1.45–1.80) |
-| Barthel | U50.50 | 0-15 | 1.08 (1.03–1.15) | 1.32 (1.23–1.42) |
 | motor FIM | U50.01 | 85-91 | Unavailable | Unavailable |
 | motor FIM | U50.11 | 69-84 | Unavailable | Unavailable |
 | motor FIM | U50.21 | 59-68 | Unavailable | Unavailable |
 | motor FIM | U50.31 | 43-58 | Unavailable | Unavailable |
 | motor FIM | U50.41 | 31-42 | Unavailable | Unavailable |
 | motor FIM | U50.51 | 13-30 | 0.87 (0.48–1.59) | 1.48 (0.86–2.55) |
-| extended Barthel | U51.00 | 70-90 | 9.06 (6.79–12.09) | 4.47 (3.59–5.57) |
-| extended Barthel | U51.10 | 20-65 | 2.23 (1.93–2.58) | 1.83 (1.60–2.10) |
-| extended Barthel | U51.20 | 0-15 | 1.02 (0.90–1.15) | 1.47 (1.20–1.79) |
 | cognitive FIM | U51.01 | 30-35 | Unavailable | 8.10 (2.82–23.29) |
 | cognitive FIM | U51.11 | 11-29 | 1.72 (0.85–3.47) | 2.30 (1.32–4.02) |
 | cognitive FIM | U51.21 | 5-10 | 0.69 (0.37–1.28) | 1.19 (0.62–2.25) |
@@ -465,7 +456,7 @@ No lower publication-year limit was imposed, preserving landmark screening and f
 
 38. "Dysphagia Management is Associated with Reduced Mortality"
 
-The 2026 DESIRE cohort and 2025 Austrian registry were additionally identified through a parallel relevance/freshness search and independently checked via PubMed 42964110 and PubMed 40489041. Publisher and PubMed pages were also opened directly for DOI/PMID verification. Queries 5-8 had truncated combined output and were followed by the more targeted queries 9-12; no retrieval totals were inferred from this sequence.
+The 2026 DESIRE cohort and 2025 Austrian registry were additionally identified through a parallel relevance/freshness search and independently checked via [PubMed 42964110](https://pubmed.ncbi.nlm.nih.gov/42964110/) and [PubMed 40489041](https://pubmed.ncbi.nlm.nih.gov/40489041/). Publisher and PubMed pages were also opened directly for DOI/PMID verification. Queries 5-8 had truncated combined output and were followed by the more targeted queries 9-12; no retrieval totals were inferred from this sequence.
 
 ### Evidence interpretation
 
@@ -494,5 +485,3 @@ adult_analysis.py produces the inpatient, length-of-stay and cohort tables. adul
 17. Institut für das Entgeltsystem im Krankenhaus (2024) Abschlussbericht zur Weiterentwicklung des aG-DRG-Systems fuer das Jahr 2025. December 19, 2024. Section 3.3.1.4, CCL matrix and PCCL. https://www.g-drg.de/content/download/14761/file/Abschlussbericht_aG-DRG_2025_2024-12-19.pdf. Accessed 17 Nov 2026
 
 18. Bundesinstitut für Arzneimittel und Medizinprodukte (2025) ICD-10-GM 2025, U50-U52 functional impairment codes and assessment timing. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u50-u52.htm. Accessed 17 Nov 2026
-
-19. Bundesinstitut für Arzneimittel und Medizinprodukte (2025) ICD-10-GM 2025, Barthel Index criteria according to the Hamburg Manual. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/zusatz-06-anh-barthelindex.htm. Accessed 17 Nov 2026

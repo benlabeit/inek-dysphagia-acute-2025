@@ -9,6 +9,8 @@ import argparse
 import csv
 import json
 
+from analyze_functional_sensitivity import INSTRUMENTS
+
 ROOT = Path(__file__).resolve().parent
 
 
@@ -76,6 +78,8 @@ def main():
     functional = read_result(cohort, 'functional_sensitivity')['cohorts'][cohort]
     functional_rows = []
     for result in functional['analyses']:
+        if result['instrument'] not in INSTRUMENTS:
+            continue
         for membership in ['code_present', 'code_absent']:
             functional_rows.append(effect_row({'cohort': cohort, 'outcome': result['outcome'],
                 'instrument': result['instrument'], 'code': result['code'],
@@ -84,6 +88,8 @@ def main():
     save('functional_sensitivity.csv', functional_rows)
     coverage_rows = []
     for instrument, groups in functional['coverage_by_instrument'].items():
+        if instrument not in INSTRUMENTS:
+            continue
         for group_name, group in groups.items():
             row = {'cohort': cohort, 'instrument': instrument, 'group': group_name,
                    'n': group['n'], 'all_planned_codes_visible': group['all_planned_codes_visible'],

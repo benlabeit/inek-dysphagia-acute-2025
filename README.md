@@ -26,7 +26,7 @@ To retain a common diagnosis adjustment across endpoints, adults aged 18–74 we
 | --- | --- |
 | [Inpatient binary endpoints](adult_binary.csv) · [Discharge endpoints](adult_discharge.csv) | Model status, standardized risks, RRs, RDs, 95% intervals, common support, coverage, matched crude RR and shares of the reference weight in sparse or boundary-risk strata |
 | [Hospital stay](adult_los.csv) | Group means, differences, matched crude differences and interval sensitivity analyses |
-| [Adult cohort](adult_cohort.csv) and [functional categories](adult_functional.csv) | Episode characteristics and functional subgroup results |
+| [Adult cohort](adult_cohort.csv) and [FIM and MMSE categories](adult_functional.csv) | Episode characteristics and functional subgroup results |
 | [Figure 1](adult_figure_1.pdf) · [Figure 2](adult_figure_2.pdf) · [Figure 3](adult_figure_3.pdf) · [Supplementary Fig. S1](adult_figure_s1.pdf) | Absolute risks and two standardized RRs for eight inpatient outcomes and procedures plus rehabilitation and nursing-facility discharge, three contrasts for hospital stay, and the other eight pulmonary and nutritional endpoints in S1 |
 | [Export guide](ADULT_EXPORTS.md) · [128 query definitions](adult_manual_exports.csv) · [Audit](adult_export_audit.csv) | File names, disposition and SHA-256 of available extension workbooks. Original workbooks and the private portal log are retained outside the repository. |
 
@@ -84,7 +84,7 @@ Completed additions use the same original exports and do not change the original
 
 - Seven-level PCCL direct standardization: mortality RR **3.20 (3.07-3.33)** and J12-J18 pneumonia RR **2.07 (1.97-2.16)**, with 95% model-based confidence intervals and the pooled cohort PCCL distribution as reference.
 - Explicit principal-diagnosis mortality comparisons, including complete I61 and an explicitly restricted I63 set **excluding I63.6**. Suppressed or absent endcode rows are never set to zero.
-- All 21 planned U50/U51 categories, kept within five distinct instruments, for mortality and J12-J18 pneumonia. Within Barthel 0-15 (U50.50), mortality RR is **1.08 (1.03-1.15)**. The other categories, unknown rows, coding coverage bounds, and sparse cells are also retained; this example is not the whole sensitivity analysis.
+- Mortality and J12–J18 pneumonia were compared within 12 U50/U51 categories, comprising six motor Functional Independence Measure (FIM) categories, three cognitive FIM categories and three Mini-Mental State Examination (MMSE) categories. The tables include coding coverage bounds and identify missing or sparse cells.
 
 These are separate descriptive standardizations or code-conditioned comparisons. None is admission-NIHSS adjustment, and their attenuation cannot be interpreted as a causal percentage explained. PCCL can include downstream complications. Functional coding is incomplete, may depend on assessment practices, and cannot be aligned precisely with dysphagia or outcome onset. The code-absent complement is not a normal-function group.
 

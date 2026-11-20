@@ -277,8 +277,12 @@ def cohort(raw, out, den):
 
 def functional(raw,out):
     from outcomes_standardization_core import MINOR_AGES
-    baseline=read_csv('functional_sensitivity.csv')
-    codes={r['code']:(r['instrument'],r['score_band']) for r in baseline}
+    from analyze_functional_sensitivity import INSTRUMENTS
+    codes = {
+        code: (instrument, band)
+        for instrument, definition in INSTRUMENTS.items()
+        for code, band in zip(definition['codes'], definition['score_bands'])
+    }
     result=[]
     for endpoint in ('mortality','PNEUMONIA_UNION'):
         parts=[]

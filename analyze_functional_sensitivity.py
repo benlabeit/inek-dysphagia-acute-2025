@@ -10,14 +10,9 @@ import argparse, csv, hashlib, json, math
 
 Z=1.959963984540054
 INSTRUMENTS={
- 'U50_Barthel':{'domain':'motor function','instrument':'Barthel Index',
-   'codes':['U50.00','U50.10','U50.20','U50.30','U50.40','U50.50'],
-   'score_bands':['100','80-95','60-75','40-55','20-35','0-15']},
  'U50_motor_FIM':{'domain':'motor function','instrument':'Motor FIM',
    'codes':['U50.01','U50.11','U50.21','U50.31','U50.41','U50.51'],
    'score_bands':['85-91','69-84','59-68','43-58','31-42','13-30']},
- 'U51_extended_Barthel':{'domain':'cognitive function','instrument':'Extended Barthel Index',
-   'codes':['U51.00','U51.10','U51.20'],'score_bands':['70-90','20-65','0-15']},
  'U51_cognitive_FIM':{'domain':'cognitive function','instrument':'Cognitive FIM',
    'codes':['U51.01','U51.11','U51.21'],'score_bands':['30-35','11-29','5-10']},
  'U51_MMSE':{'domain':'cognitive function','instrument':'MMSE',
