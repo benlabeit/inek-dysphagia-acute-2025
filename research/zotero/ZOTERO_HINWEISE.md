@@ -24,7 +24,7 @@ Die Supplemente behalten die Referenznummern der zugehörigen Hauptmanuskripte. 
 - Zitierstil: https://www.zotero.org/styles/springer-basic-brackets
 - Journalvorgaben: https://link.springer.com/journal/42466/submission-guidelines
 
-Literaturmetadaten wurden am 17. November 2026 aus den verifizierten PubMed-XML-Datensätzen und offiziellen Daten-/Klassifikationsquellen übernommen. DOIs und PubMed-IDs sind in den Importdateien enthalten; unbekannte Identifikatoren wurden nicht ergänzt. Es wurden weder persönliche Zotero-Daten verändert noch Bibliothekskennungen erfunden. Gleichlautende Publikationen in beiden Sammlungen können nach dem Import in Zotero als Dubletten zusammengeführt werden.
+DOIs und PubMed-IDs sind in den Importdateien enthalten; unbekannte Identifikatoren wurden nicht ergänzt. Es wurden weder persönliche Zotero-Daten verändert noch Bibliothekskennungen erfunden. Gleichlautende Publikationen in beiden Sammlungen können nach dem Import in Zotero als Dubletten zusammengeführt werden.
 
 
 Dieses Repository enthält nur die Literaturdateien der zugehörigen Kohorte. Die gemeinsam formulierten Hinweise gelten entsprechend für dieses Manuskript. Der offizielle Zotero-Prozessor, installierte Programmdateien und Quell-XML mit Abstracts werden nicht mitgeliefert. Die unveränderte CSL-Stildatei behält ihren enthaltenen CC-BY-SA-3.0-Lizenzhinweis und ihre Autorenangaben.
