@@ -397,12 +397,6 @@
       "plot_data_sha256": "9219576f61951fb869f9f4355f12e6ba48ffbcd55b170027a9e3561fe5d8497d"
     }
   },
-  "expanded_literature_package": {
-    "screened_records": 66,
-    "screening_json_sha256": "71b127038a898948dd1e7aa67792c785bf42519f4f4ff6118a9c7ce3ec50744a",
-    "source_xml_included": false,
-    "full_abstracts_included": false
-  },
   "nrp_word_revision": {
     "cohort": "acute",
     "status": "READY",

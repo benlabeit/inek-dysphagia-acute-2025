@@ -236,7 +236,7 @@ Fig. 3  Difference in mean hospital stay for dysphagia-coded minus comparator ep
 
 ## Electronic supplementary material
 
-Online Resource 1 provides model results and coverage, the finer principal-diagnosis sensitivity, the B70D mortality analysis, hospital stay and functional categories. Supplementary Fig. S1 shows eight further inpatient endpoints. Tables S7a–d give discharge status, all four destinations and sensitivity analyses. The literature-search appendix follows.
+Online Resource 1 provides model results and coverage, the finer principal-diagnosis sensitivity, the B70D mortality analysis, hospital stay and functional categories. Supplementary Fig. S1 shows eight further inpatient endpoints. Tables S7a–d give discharge status, all four destinations and sensitivity analyses.
 
 ## Tables
 

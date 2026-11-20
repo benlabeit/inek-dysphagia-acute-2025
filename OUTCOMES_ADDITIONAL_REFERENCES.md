@@ -16,4 +16,4 @@ Verified on 17 November 2026. These references support interpretation of the add
 - https://link.springer.com/article/10.1007/s00455-012-9414-0
 - https://pubmed.ncbi.nlm.nih.gov/37058873/
 
-The Word manuscript contains these sources as structured Zotero citation fields with embedded bibliographic data. Existing citation-item metadata were retained, and visible citation numbers and the bibliography were reconciled. This was a targeted interpretive update, not a new systematic review.
+The Word manuscript contains these sources as structured Zotero citation fields with embedded bibliographic data. Existing citation-item metadata were retained, and visible citation numbers and the bibliography were reconciled.
