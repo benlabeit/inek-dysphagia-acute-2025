@@ -1,4 +1,6 @@
-# Acute manuscript author names and current affiliations
+# Historical affiliation checks for the acute manuscript
+
+The [current manuscript](../manuscript_acute.md) lists the authors and their affiliations. This record documents the five names checked on 17 November 2026.
 
 Verification date: **17 November 2026**. Scope: the five requested German stroke researchers, in the exact requested order. Evidence comes from official hospital and university pages; publication affiliations and professional-society addresses were not used as sole evidence of current employment. English department names below are editorial translations unless an official English form is specifically identified.
 
