@@ -4,7 +4,7 @@ This project contains an English manuscript draft and reproducible aggregate ana
 
 [Project repository](https://github.com/benlabeit/inek-dysphagia-acute-2025) · [Companion early-rehabilitation manuscript](https://github.com/benlabeit/inek-dysphagia-rehabilitation-2025)
 
-## Current adult cohort analysis (18 November 2026)
+## Current adult cohort analysis
 
 [Manuscript (Word)](Manuscript_InEK_Acute_Stroke.docx) · [Manuscript (PDF)](Manuscript_InEK_Acute_Stroke.pdf) · [Online Resource 1 (Word)](ESM_1.docx) · [Online Resource 1 (PDF)](ESM_1.pdf) · [Data availability](DATA_AVAILABILITY.md)
 
@@ -14,11 +14,11 @@ The adult cohort comprises 279,255 episodes, including 33,641 with secondary dys
 
 | Comparison | Binary endpoints | Length of stay |
 | --- | --- | --- |
-| Crude | 20 of 20 (16 inpatient endpoints and four destinations among live discharges) | Full adult cohort |
+| Crude (model 1) | 20 of 20 (16 inpatient endpoints and four destinations among live discharges) | Full adult cohort |
 | Age and principal diagnosis plus sex (model 2), or PCCL separately (model 3) | 20 of 20 for each model using five common age–diagnosis groups. The six-group sensitivity is available for 17 (14 inpatient endpoints and three destinations). | Age and principal diagnosis in both groupings. The exports lack joint stay moments for sex or PCCL. |
-| Age and DRG across named DRGs | 20 of 20. Positive denominators and observable event rows in both groups are required. Coverage varies by endpoint. | 203 age–DRG strata. Of these, 202 have estimable within-group variances. |
-| Age and sex within DRG (model 4) | Mortality and all four discharge destinations within B70D. The joint age-by-sex counts are unavailable across multiple DRGs. | Within B70D, age-only mean difference. Sex-specific stay moments unavailable. |
-| Age, principal diagnosis and DRG | 20 of 20 on observable support | 183 strata, including 179 with estimable variances |
+| Age and DRG across named DRGs (model 4, `age_drg`) | 20 of 20. Positive denominators and observable event rows in both groups are required. Coverage varies by endpoint. | 203 age–DRG strata. Of these, 202 have estimable within-group variances. |
+| Sensitivity analysis: age and sex within B70D | In-hospital mortality and all four discharge destinations. The B70D-specific queries provide sex-specific event counts and denominators within each age band. | Within B70D, age-only mean difference. Sex-specific stay moments unavailable. |
+| Sensitivity analysis: age, principal diagnosis and DRG | 20 of 20 on observable support | 183 strata, including 179 with estimable variances |
 
 To retain a common diagnosis adjustment across endpoints, adults aged 18–74 were grouped as I63 and all other diagnoses. At ≥75 years the groups were I63, I61 and all other diagnoses. The six-group sensitivity also distinguishes I61 at ages 18–74. Each estimate uses pooled weights over eligible strata and reports the crude contrast on the same cases. The event and denominator workbooks provide separate sex and PCCL distributions within a query. Their joint distribution is unknown. DRGs can incorporate procedures, diagnoses and other characteristics of the completed stay.
 
@@ -59,7 +59,7 @@ python adult_discharge_validate.py --raw /path/to/private/workbooks
 python adult_figures.py
 ```
 
-Independent verification rebuilds all 157 inpatient binary contrasts, all 11 hospital-stay analyses and all 53 estimable discharge-destination contrasts from the workbook cells, including available intervals and matched crude comparisons. The production stay analysis also checks integer moments and exact versus floating-point weighted estimates. In the binary output `age_hd`, `M2`, `M3` and `age_hd_drg` use the common five groups; the `_fine` suffix denotes the planned six. `M4` denotes the multi-DRG target and `M4_B70D` the estimable single-DRG mortality comparison. A sparse stratum contains fewer than five events or non-events in either group. A boundary-risk stratum has an observed risk of zero or one in either group. Intervals condition on observed weights and do not account for hospital clustering, coding uncertainty or selection of observable DRGs.
+Independent verification rebuilds all 157 inpatient binary contrasts, all 11 hospital-stay analyses and all 53 estimable discharge-destination contrasts from the workbook cells, including available intervals and matched crude comparisons. The production stay analysis also checks integer moments and exact versus floating-point weighted estimates. In the binary output, `age_hd`, `M2`, `M3` and `age_hd_drg` use the five common age–diagnosis groups. The `_fine` suffix denotes the six-group sensitivity analyses. In both outcome CSVs, select `model = age_drg` to reproduce manuscript model 4. The historical CSV key `M4` records an unavailable comparison that would additionally require sex-specific counts across multiple DRGs. For the age- and sex-standardized B70D sensitivity, select `M4_B70D` for mortality in `adult_binary.csv` or `B70D_age_sex` for the four destinations in `adult_discharge.csv`. A sparse stratum contains fewer than five events or non-events in either group. A boundary-risk stratum has an observed risk of zero or one in either group. Intervals condition on observed weights and do not account for hospital clustering, coding uncertainty or selection of observable DRGs.
 
 The following sections and earlier manuscript variants document preceding analyses. In particular, [earlier bounds](adult_drg_bounds.csv) describe the release before the extension, and files beginning `within_drg_binary_` use a different reference distribution. Use the links above for the current paper.
 

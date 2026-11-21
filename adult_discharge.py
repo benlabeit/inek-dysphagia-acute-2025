@@ -285,6 +285,8 @@ def analyze(raw,out,suppressed=()):
         add('age_drg',billing(False),'Event export or shared named survivor and event DRG rows unavailable.')
         add('age_hd_drg',billing(True),'Event export or shared named survivor and event DRG rows unavailable.')
         pilot={(a,'allhd',p):event_export(raw,key,a,'allhd',p,'B70D') for a,p in product(AGES,POPS)}
+        # Published model 4 uses 'age_drg'. Keep the legacy 'M4' key for the
+        # unavailable multi-DRG comparison with additional sex adjustment.
         add('M4',reason='Joint sex-specific event and denominator counts unavailable across multiple DRGs.')
         pilot_models = {}
         if all(pilot.values()) and set(pilot)<=blive.keys():

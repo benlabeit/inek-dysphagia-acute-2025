@@ -125,6 +125,8 @@ def binary(raw, out):
                 add(model+'_fine', note='Younger I61 dysphagia event query suppressed.')
             else:
                 add(model+'_fine', bundle(build_cells(den,ev,dim)), 'Six planned age and diagnosis groups.')
+        # Historical CSV key for the unavailable age–sex–DRG comparison. The
+        # published model 4 is stored as 'age_drg' for all inpatient endpoints.
         add('M4', note='Age by sex by DRG across multiple DRGs unavailable.')
         age_cells, joint = [], []
         for age in AGES:

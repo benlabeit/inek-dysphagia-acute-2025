@@ -4,11 +4,9 @@ Article: Dysphagia and inpatient burden in German acute stroke care: a nationwid
 
 Journal: Neurological Research and Practice
 
-Authors: Bendix Labeit, Darius Günther Nabavi, Götz Thomalla, Martin Köhrmann, Rainer Dziewas
+Authors: Bendix Labeit, Cinja Huber, Anel Karisik, Darius Günther Nabavi, Götz Thomalla, Martin Köhrmann, Orhan Aktas, Michael Gliem, Rainer Dziewas
 
-Proposed corresponding author: Bendix Labeit, Department of Neurology, Medical Faculty and University Hospital Düsseldorf, Heinrich Heine University Düsseldorf, Düsseldorf, Germany; bendix.labeit@med.uni-duesseldorf.de
-
-Current affiliations and proposed correspondence require author confirmation for this study. This supplement does not imply that all listed authors have approved the manuscript.
+Corresponding author: Bendix Labeit, Department of Neurology, Medical Faculty and University Hospital Düsseldorf, Heinrich Heine University Düsseldorf, Düsseldorf, Germany; bendix.labeit@med.uni-duesseldorf.de
 
 All analyses below use inpatient episodes at age 18 years or older. The groups comprise adults with a secondary dysphagia code (D) and all remaining adults (C). The model denominators describe episodes. One person can contribute more than one admission. The 16 inpatient endpoints use all eligible admissions. The four additional destination endpoints use episodes ending alive.
 
@@ -19,13 +17,13 @@ All analyses below use inpatient episodes at age 18 years or older. The groups c
 | 1. Crude adult comparison | 20 / 20 | Full adult cohort |
 | 2. Age, principal diagnosis and sex | 20 / 20, five common groups | Sex-specific stay moments unavailable |
 | 3. Age, principal diagnosis and PCCL | 20 / 20, five common groups | PCCL-specific stay moments unavailable |
-| 4. Age and sex within DRGs | Across multiple DRGs unavailable. In B70D, death and four destinations. | Sex-specific within-DRG stay moments unavailable |
+| 4. Age and DRG | 20 / 20 | 203 observable strata |
 | Age alone or age and diagnosis | 20 / 20 | Age only and five common groups |
 | Six planned age–diagnosis groups; with sex or PCCL separately | 17 / 20 (14 inpatient endpoints and three destinations) | Six groups, including survivor sensitivity |
-| Age and DRG | 20 / 20 | 203 observable strata |
 | Age, principal diagnosis and DRG | 20 / 20 | 183 observable strata |
+| Sensitivity: age and sex within B70D | In-hospital mortality and four discharge destinations | Sex-specific within-DRG stay moments unavailable |
 
-The adult cohort contained 33,641 dysphagia-coded episodes and 245,614 comparators. A comparison group was constructed by subtracting the dysphagia-coded subset from all episodes under identical filters. The two age bands were 18–74 and ≥75 years. Sex and PCCL were reported as separate marginal distributions within each source query. Joint sex-by-PCCL counts were unavailable.
+The adult cohort contained 33,641 dysphagia-coded episodes and 245,614 comparators. A comparison group was constructed by subtracting the dysphagia-coded subset from all episodes under identical filters. The two age bands were 18–74 and ≥75 years. Sex and PCCL were reported as separate marginal distributions within each source query. Joint sex-by-PCCL counts were unavailable. The patient clinical complexity level (PCCL) is based on coded comorbidities and complications [19].
 
 The 128-query extension produced 126 verified native workbooks. Queries 46 (E44.0) and 58 (E44.1) were suppressed for low case counts in adults aged 18–74 with principal diagnosis I61 and dysphagia coding. To use identical support definitions, the five-group specifications use I63 versus all non-I63 diagnoses at ages 18–74 and I63, I61 and all other diagnoses at ≥75. The broader younger group is observed by subtracting I63 from all principal diagnoses. Suppressed counts are unknown. The planned six-group specification is shown in Table S2e where estimable. The destination extension comprised 64 further queries, with 62 verified workbooks and two documented suppressions. Tables S7a–d give the corresponding data and model results.
 
@@ -160,7 +158,7 @@ Dashes indicate an unavailable finer-group estimate following source suppression
 
 Points and bars show standardized risk ratios and nominal 95% confidence intervals for the eight component diagnoses and timing codes that complement Fig. 2. The left panel uses age band, principal diagnosis and sex. The right panel uses the observable age–DRG strata for each outcome. Numerical results, coverage, PCCL analyses and the finer diagnosis groups are given in Tables S2a–e and S3a–b.
 
-### Supplementary Table S3a  Age and DRG
+### Supplementary Table S3a  Age and DRG (model 4)
 
 | Endpoint | Strata | n, D / C | Coverage %, D / C | Risk %, D / C | RR (95% CI) | Matched crude RR |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -206,7 +204,7 @@ A stratum required a named DRG row in all contributing denominator and event tab
 
 A stratum required a named DRG row in all contributing denominator and event tables and a positive denominator in both groups. Coverage uses the full adult group denominator. A pooled remainder could not be allocated to individual DRGs. Data availability can select common or event-rich groups. The age- and diagnosis-specific contrasts use the five common age–diagnosis groups. Full risk differences and interval diagnostics are in adult_binary.csv.
 
-### Supplementary Table S4  In-hospital mortality within DRG B70D
+### Supplementary Table S4  Sensitivity analysis of in-hospital mortality within DRG B70D
 
 B70D is a stroke DRG defined in part by a duration of up to 72 hours of neurological complex treatment. Eight B70D-restricted workbooks comprised two adult age bands, two overlapping source groups (all episodes or dysphagia coded) and two selections (denominator or in-hospital death). Each restricted count equalled the B70D row in the corresponding unrestricted-DRG workbook. Separate sex margins in the denominator and death queries then supplied joint age-by-sex counts for mortality within this DRG.
 
@@ -214,7 +212,7 @@ B70D is a stroke DRG defined in part by a duration of up to 72 hours of neurolog
 | --- | --- | --- | --- | --- | --- |
 | Crude | 4,915 / 64,345 | 1 | 13.77 / 1.37 | 10.08 (9.16–11.10) | 12.41 (11.44–13.38) |
 | Age | 4,915 / 64,345 | 2 | 11.27 / 1.40 | 8.05 (7.28–8.90) | 9.87 (9.01–10.73) |
-| Age and sex (model 4) | 4,915 / 64,344 | 4 | 11.26 / 1.40 | 8.04 (7.27–8.89) | 9.86 (9.00–10.72) |
+| Age and sex | 4,915 / 64,344 | 4 | 11.26 / 1.40 | 8.04 (7.27–8.89) | 9.86 (9.00–10.72) |
 
 In the age- and sex-standardized model, four strata had denominators in both groups. One comparator episode was outside this shared support. The same-case crude RR was 10.08. The age-only and age-and-sex RRs were 8.05 and 8.04. The multi-DRG mortality analysis in Table S3a used a different population (77 age–DRG strata). The B70D result applies only to that billing group. Joint age–sex–DRG event counts for all endpoints across multiple DRGs were unavailable. Table S7c gives the B70D analyses for the four discharge destinations.
 
@@ -253,7 +251,7 @@ Counts, means and standard deviations yielded integer sums of days and squared d
 | MMSE | U51.12 | 17-23 | 3.50 (2.22–5.51) | 2.15 (1.67–2.75) |
 | MMSE | U51.22 | 0-16 | 1.93 (1.32–2.83) | 1.20 (0.89–1.60) |
 
-The unrestricted event workbooks contained zero children in every paediatric category for both death and pneumonia and both source groups. Their event counts are therefore adult counts. The denominators were reconstructed separately from age-filtered adult workbooks. We required a named source row in each necessary denominator and event table and at least five events and five non-events in both exposure groups. Missing values remain unavailable. Functional coding can be selective and may reflect neurological impairment assessed during admission.
+The unrestricted event workbooks contained zero children in every paediatric category for both death and pneumonia and both source groups. Their event counts are therefore adult counts. The denominators were reconstructed separately from age-filtered adult workbooks. We required a named source row in each necessary denominator and event table and at least five events and five non-events in both exposure groups. Missing values remain unavailable. Functional coding can be selective and may reflect neurological impairment assessed during admission [20].
 
 ### Supplementary Table S7a  Discharge status and observed destination
 
@@ -370,12 +368,8 @@ Live discharges within DRG B70D
 
 For hospice, the two suppressed I61 queries precluded the six-group specification. All five-group models remained estimable without imputing these counts. Within B70D the crude and age-only comparisons use 67,704 live discharges and the age-and-sex comparison uses 67,703. The full CSV reports model-specific risks, risk differences, confidence intervals and sparse-stratum diagnostics.
 
-## Reproducing the adult cohort analyses
+## References (numbered as in the main manuscript)
 
-adult_analysis.py produces the inpatient, length-of-stay and cohort tables. adult_validate.py independently recalculates 157 inpatient contrasts and 11 stay estimates. adult_discharge.py uses matching discharge, mortality and denominator workbooks to generate adult_discharge.csv and the export audit. adult_discharge_validate.py independently recalculates all 53 estimable destination contrasts, their confidence intervals and their matched populations. adult_figures.py reads these aggregate results.
+19. Institut für das Entgeltsystem im Krankenhaus (2024) Abschlussbericht zur Weiterentwicklung des aG-DRG-Systems fuer das Jahr 2025. December 19, 2024. Section 3.3.1.4, CCL matrix and PCCL. https://www.g-drg.de/content/download/14761/file/Abschlussbericht_aG-DRG_2025_2024-12-19.pdf. Accessed 17 Nov 2026
 
-## References
-
-17. Institut für das Entgeltsystem im Krankenhaus (2024) Abschlussbericht zur Weiterentwicklung des aG-DRG-Systems fuer das Jahr 2025. December 19, 2024. Section 3.3.1.4, CCL matrix and PCCL. https://www.g-drg.de/content/download/14761/file/Abschlussbericht_aG-DRG_2025_2024-12-19.pdf. Accessed 17 Nov 2026
-
-18. Bundesinstitut für Arzneimittel und Medizinprodukte (2025) ICD-10-GM 2025, U50-U52 functional impairment codes and assessment timing. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u50-u52.htm. Accessed 17 Nov 2026
+20. Bundesinstitut für Arzneimittel und Medizinprodukte (2025) ICD-10-GM 2025, U50-U52 functional impairment codes and assessment timing. https://klassifikationen.bfarm.de/icd-10-gm/kode-suche/htmlgm2025/block-u50-u52.htm. Accessed 17 Nov 2026

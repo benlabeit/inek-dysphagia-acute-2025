@@ -28,7 +28,7 @@ def main():
     for hd,age,pop in product(['allhd','i63','i61'],QUERY_AGES,['all','dys']):
         rows.append(make_row('E43 Original wiederbeschaffen für DRG-Sensitivitäten',age,hd,pop,'E43'))
     for age,outcome,pop in product(QUERY_AGES,[None,'mortality'],['all','dys']):
-        rows.append(make_row('Modell 4 Pilot B70D, nur Mortalität',age,'allhd',pop,outcome,'B70D'))
+        rows.append(make_row('B70D-Sensitivitätsanalyse nach Alter und Geschlecht, nur Mortalität',age,'allhd',pop,outcome,'B70D'))
     with (ROOT/'adult_manual_exports.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.writer(f,delimiter=';'); w.writerow(COLUMNS)
         for i,r in enumerate(rows,1): w.writerow([i,*r])
