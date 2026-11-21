@@ -1,5 +1,7 @@
 # Zotero für die beiden InEK Manuskripte
 
+Die aktuelle [Manuskript-Arbeitsfassung](../../Manuscript_InEK_Acute_Stroke.docx) enthält aktive Zotero-Felder. Die folgenden Angaben zu Dateinamen und Importdateien betreffen die früheren Arbeitsfassungen.
+
 Die Dateien mit `_Zotero.docx` sind Arbeitsfassungen mit Zotero-Zitationsfeldern, eingebetteten vollständigen Literaturdaten und einem Literaturverzeichnis-Feld. Die normalen Word-Dateien sind statische Fassungen für die Zeitschrift. Neurological Research and Practice fordert in seinen aktuellen Manuskriptvorgaben eine Fassung ohne Literatur-Feldfunktionen.
 
 ## Verwendung
