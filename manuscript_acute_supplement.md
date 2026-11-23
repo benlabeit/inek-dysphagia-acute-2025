@@ -4,9 +4,9 @@ Article: Dysphagia and inpatient burden in German acute stroke care: a nationwid
 
 Journal: Neurological Research and Practice
 
-Authors: Bendix Labeit, Cinja Huber, Anel Karisik, Darius Günther Nabavi, Götz Thomalla, Martin Köhrmann, Orhan Aktas, Michael Gliem, Rainer Dziewas
+Authors: Bendix Labeit, Cinja Huber, Anel Karisik, Darius Günther Nabavi, Götz Thomalla, Martin Köhrmann, Robin Jansen, Orhan Aktas, Michael Gliem, Rainer Dziewas
 
-Corresponding author: Bendix Labeit, Department of Neurology, Medical Faculty and University Hospital Düsseldorf, Heinrich Heine University Düsseldorf, Düsseldorf, Germany; bendix.labeit@med.uni-duesseldorf.de
+Corresponding author: Bendix Labeit, Department of Neurology, Medical Faculty and University Hospital Düsseldorf, Heinrich Heine University Düsseldorf, Düsseldorf, Germany; benlabeit@gmail.com
 
 All analyses below use inpatient episodes at age 18 years or older. The groups comprise adults with a secondary dysphagia code (D) and all remaining adults (C). The model denominators describe episodes. One person can contribute more than one admission. The 16 inpatient endpoints use all eligible admissions. The four additional destination endpoints use episodes ending alive.
 
